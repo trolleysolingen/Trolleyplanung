@@ -13,7 +13,6 @@ function logError(obj){
 }
 
 function addPublisher(reservationDay, reservationTimeslot) {
-
     $.ajax({
         type: "POST",
         url: "/reservations/addPublisher.json",
@@ -33,8 +32,17 @@ function deletePublisher(reservationDay, reservationTimeslot, publisherNumber) {
     });
 }
 
-function addGuest() {
-
+function addGuest(reservationDay, reservationTimeslot) {
+    var guestname = $('#guestname_' + reservationDay + '_' + reservationTimeslot).val();
+    if (guestname) {
+        $.ajax({
+            type: "POST",
+            url: "/reservations/addGuest.json",
+            data: {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, guestname: guestname}
+        }).done(function (data) {
+            displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+        });
+    }
 }
 
 function displayReservation(reservationDay, reservationTimeslot, reservation, publisher) {
@@ -43,23 +51,35 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
     if (reservation && reservation.Reservation) {
         if (reservation.Reservation.publisher1_id) {
             html += reservation.Publisher1.prename + ' ' + reservation.Publisher1.surname +
-                    " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", 1)'>X</a>" + "<br/>";
+                    " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", 1);'>X</a>" + "<br/>";
 
         }
         if (reservation.Reservation.publisher2_id) {
-            html += reservation.Publisher2.prename + ' ' + reservation.Publisher2.surname +
-                    " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", 2)'>X</a>" + "<br/>";
+            if (reservation.Publisher2.role_id == 3) {
+                html += reservation.Reservation.guestname;
+            } else {
+                html += reservation.Publisher2.prename + ' ' + reservation.Publisher2.surname
+            }
+            html += " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", 2);'>X</a>" + "<br/>";
         } else {
             if (reservation.Reservation.publisher1_id == publisher.Publisher.id) {
-                html += "<a href='javascript:void(0)' onclick='alert(1);'>Partner eintragen</a><br/>";
+                html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>" +
+                          "<a href='javascript:void(0)' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Partner eintragen</a></div>";
             } else {
-                html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ")'>Eintragen</a><br/>";
+                html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Eintragen</a><br/>";
             }
 
         }
     } else {
-        html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ")'>Eintragen</a>" + "<br/>";
+        html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Eintragen</a>" + "<br/>";
     }
 
     $('#td_' + reservationDay + '_' + reservationTimeslot).html(html);
+}
+
+function displayGuestField(reservationDay, reservationTimeslot) {
+    html = '<input type="text" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '"/>';
+    html += "<a href='javascript:void(0)' onclick='addGuest(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Speichern</a>";
+
+    $('#guestDiv_' + reservationDay + '_' + reservationTimeslot).html(html);
 }

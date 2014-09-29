@@ -416,3 +416,66 @@ Stack Trace:
 #9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
 #10 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #11 {main}
+2014-09-29 18:34:24 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\json\add_guest.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\json\\add_guest.ctp',
+)
+Request URL: /reservations/addGuest.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 18:52:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.prename' in 'field list'
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(31): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-29 18:52:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Publisher.prename' in 'field list'
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(31): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-29 18:53:13 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'prename' in field list is ambiguous
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(31): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}

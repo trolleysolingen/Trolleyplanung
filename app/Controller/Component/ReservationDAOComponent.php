@@ -88,6 +88,7 @@ class ReservationDAOComponent extends Component {
                 } else {
                     $reservation['Reservation']['publisher2_id'] = null;
                 }
+                $reservation['Reservation']['guestname'] = null;
 
                 $reservation = $model->save($reservation);
 
@@ -109,4 +110,59 @@ class ReservationDAOComponent extends Component {
 
         return $reservation;
     }
+
+    public function addGuest($reservationDay, $reservationTimeslot, $guestname) {
+        $model = ClassRegistry::init('Reservation');
+
+        $reservation = $model->find('first', array(
+                'conditions' => array(
+                    'Reservation.day' => $reservationDay,
+                    'Reservation.timeslot_id' => $reservationTimeslot
+                ),
+                'recursive' => -1
+            )
+        );
+
+        if ($reservation != null) {
+            $modelPublisher = ClassRegistry::init('Publisher');
+
+            $publisher = $modelPublisher->find('first', array(
+                    'conditions' => array(
+                        "CONCAT(Publisher.prename, ' ', Publisher.surname)" => $guestname
+                    ),
+                    'recursive' => -1
+                )
+            );
+
+            if (!$publisher) {
+                $publisher = $modelPublisher->find('first', array(
+                        'conditions' => array(
+                            'Role.name' => 'guest'
+                        ),
+                        'recursive' => 0
+                    )
+                );
+                $reservation['Reservation']['guestname'] = $guestname;
+            }
+
+            $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
+
+
+            $reservation = $model->save($reservation);
+
+            $reservation = $model->find('first', array(
+                    'conditions' => array(
+                        'Reservation.id' => $reservation['Reservation']['id']
+                    ),
+                    'recursive' => 0
+                )
+            );
+        }
+
+        // debug($reservation);
+
+        return $reservation;
+    }
+
+
 }

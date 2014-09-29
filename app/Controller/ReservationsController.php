@@ -72,4 +72,16 @@ class ReservationsController extends AppController {
 
 		$this->set("_serialize", array("reservation", "publisher"));
 	}
+
+	public function addGuest() {
+		$reservation = $this->ReservationDAO->addGuest(
+			$this->request->data['reservationDay'],
+			$this->request->data['reservationTimeslot'],
+			$this->request->data['guestname']);
+
+		$this->set("reservation", $reservation);
+		$this->set("publisher", $this->Session->read('publisher'));
+
+		$this->set("_serialize", array("reservation", "publisher"));
+	}
 }

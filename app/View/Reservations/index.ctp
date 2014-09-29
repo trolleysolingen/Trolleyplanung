@@ -55,17 +55,25 @@ Hallo <?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher
                     if ($reservationTmp['Reservation']['publisher1_id'] != null) {
                         echo $reservationTmp['Publisher1']['prename'] . ' ' . $reservationTmp['Publisher1']['surname'] .
                             " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
-                            $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'].
+                            $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
                             ", 1);'>X</a>" . '<br/>';
                     }
                     if ($reservationTmp['Reservation']['publisher2_id'] != null) {
-                        echo $reservationTmp['Publisher2']['prename'] . ' ' . $reservationTmp['Publisher2']['surname'] .
-                            " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
-                            $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'].
-                            ", 2);'>X</a>" . '<br/>';
+                        if ($reservationTmp['Publisher2']['role_id'] == 3) {
+                            // guest publisher
+                            echo $reservationTmp['Reservation']['guestname'];
+                        } else {
+                            echo $reservationTmp['Publisher2']['prename'] . ' ' . $reservationTmp['Publisher2']['surname'];
+                        }
+                        echo " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
+                                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
+                                ", 2);'>X</a>" . '<br/>';
                     } else {
                         if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
-                            echo "<a href='javascript:void(0)' onclick='alert(1);'>Partner eintragen</a>" . '<br/>';
+                            echo "<div id='guestDiv_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>".
+                                   "<a href='javascript:void(0)' onclick='displayGuestField(\"" .
+                                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
+                                ");'>Partner eintragen</a>" . '</div>';
                         } else {
                             echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
                                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'>Eintragen</a>" . '<br/>';
