@@ -88,7 +88,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `reservations` ;
 
 CREATE TABLE IF NOT EXISTS `reservations` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `congregation_id` INT NOT NULL,
   `day` DATE NOT NULL,
   `timeslot_id` INT NOT NULL,
