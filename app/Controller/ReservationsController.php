@@ -59,4 +59,15 @@ class ReservationsController extends AppController {
 
 		$this->set("_serialize", array("reservation"));
 	}
+
+	public function deletePublisher() {
+		$reservation = $this->ReservationDAO->deletePublisher(
+			$this->request->data['reservationDay'],
+			$this->request->data['reservationTimeslot'],
+			$this->request->data['publisherNumber']);
+
+		$this->set("reservation", $reservation);
+
+		$this->set("_serialize", array("reservation"));
+	}
 }

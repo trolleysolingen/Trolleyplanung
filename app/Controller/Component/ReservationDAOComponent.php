@@ -52,12 +52,57 @@ class ReservationDAOComponent extends Component {
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
-                    'Reservation.id' => $reservation['Reservation']['id'],
-                    'Reservation.timeslot_id' => $reservationTimeslot
+                    'Reservation.id' => $reservation['Reservation']['id']
                 ),
                 'recursive' => 0
             )
         );
+
+        // debug($reservation);
+
+        return $reservation;
+    }
+
+
+    public function deletePublisher($reservationDay, $reservationTimeslot, $publisherNumber) {
+        $model = ClassRegistry::init('Reservation');
+
+        $reservation = $model->find('first', array(
+                'conditions' => array(
+                    'Reservation.day' => $reservationDay,
+                    'Reservation.timeslot_id' => $reservationTimeslot
+                ),
+                'recursive' => -1
+            )
+        );
+
+
+        if ($reservation != null) {
+            if ($reservation['Reservation']['publisher1_id'] != null &&
+                $reservation['Reservation']['publisher2_id'] != null ) {
+
+                if ($publisherNumber == 1) {
+                    // delete publisher1 and put publisher2 to publisher1
+                    $reservation['Reservation']['publisher1_id'] = $reservation['Reservation']['publisher2_id'];
+                    $reservation['Reservation']['publisher2_id'] = null;
+                } else {
+                    $reservation['Reservation']['publisher2_id'] = null;
+                }
+
+                $reservation = $model->save($reservation);
+
+                $reservation = $model->find('first', array(
+                        'conditions' => array(
+                            'Reservation.id' => $reservation['Reservation']['id']
+                        ),
+                        'recursive' => 0
+                    )
+                );
+            } else {
+                $model->delete($reservation['Reservation']['id']);
+                $reservation = null;
+            }
+        }
 
         // debug($reservation);
 

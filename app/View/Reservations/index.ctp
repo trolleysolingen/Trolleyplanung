@@ -54,11 +54,15 @@ Hallo <?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher
                 if ($reservationTmp != null) {
                     if ($reservationTmp['Reservation']['publisher1_id'] != null) {
                         echo $reservationTmp['Publisher1']['prename'] . ' ' . $reservationTmp['Publisher1']['surname'] .
-                            " <a href='javascript:void(0)' onclick='alert(1);'>X</a>" . '<br/>';
+                            " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
+                            $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'].
+                            ", 1);'>X</a>" . '<br/>';
                     }
                     if ($reservationTmp['Reservation']['publisher2_id'] != null) {
                         echo $reservationTmp['Publisher2']['prename'] . ' ' . $reservationTmp['Publisher2']['surname'] .
-                            " <a href='javascript:void(0)' onclick='alert(1);'>X</a>" . '<br/>';
+                            " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
+                            $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'].
+                            ", 2);'>X</a>" . '<br/>';
                     } else {
                         if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
                             echo "<a href='javascript:void(0)' onclick='alert(1);'>Partner eintragen</a>" . '<br/>';
