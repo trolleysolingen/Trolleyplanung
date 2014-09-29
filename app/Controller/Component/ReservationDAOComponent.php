@@ -22,4 +22,45 @@ class ReservationDAOComponent extends Component {
 
         return $result;
     }
+
+    public function addPublisher($reservationDay, $reservationTimeslot, $publisher) {
+        $model = ClassRegistry::init('Reservation');
+
+        $reservation = $model->find('first', array(
+                'conditions' => array(
+                    'Reservation.day' => $reservationDay,
+                    'Reservation.timeslot_id' => $reservationTimeslot
+                ),
+            'recursive' => -1
+            )
+        );
+
+        if ($reservation != null) {
+            if ($reservation['Reservation']['publisher1_id'] == null) {
+                $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
+            } else if ($reservation['Reservation']['publisher2_id'] == null) {
+                $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
+            }
+        } else {
+            $reservation['Reservation']['congregation_id'] = $publisher['Publisher']['congregation_id'];
+            $reservation['Reservation']['day'] = $reservationDay;
+            $reservation['Reservation']['timeslot_id'] = $reservationTimeslot;
+            $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
+        }
+
+        $reservation = $model->save($reservation);
+
+        $reservation = $model->find('first', array(
+                'conditions' => array(
+                    'Reservation.id' => $reservation['Reservation']['id'],
+                    'Reservation.timeslot_id' => $reservationTimeslot
+                ),
+                'recursive' => 0
+            )
+        );
+
+        // debug($reservation);
+
+        return $reservation;
+    }
 }

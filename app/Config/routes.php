@@ -29,6 +29,9 @@
  * ...and connect the rest of 'Pages' controller's URLs.
  */
 	//Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+
+Router::parseExtensions('json');
+
 Router::connect('/', array('controller' => 'start', 'action' => 'index'));
 Router::connect('/VS-:congregationPath', array('controller' => 'start', 'action' => 'index'));
 Router::connect('/VS-:congregationPath/:controller', array('action' => 'index'));
@@ -40,7 +43,6 @@ Router::connect('/VS-:congregationPath/:controller/:action', array('controller' 
  */
 	CakePlugin::routes();
 
-Router::parseExtensions('json');
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use

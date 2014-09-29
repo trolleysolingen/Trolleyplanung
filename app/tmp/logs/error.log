@@ -326,3 +326,63 @@ Stack Trace:
 #3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
 #4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2014-09-29 13:27:17 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 13:32:09 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 13:33:11 Error: [MissingControllerException] Controller class ReservationController could not be found.
+Exception Attributes: array (
+  'class' => 'ReservationController',
+  'plugin' => NULL,
+)
+Request URL: /reservation/addPublisher.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 13:33:45 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 14:49:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Request URL: /reservations/addPublisher.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `tr...')
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1854): DboSource->create(Object(Reservation), Array, Array)
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(54): Model->save(Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(59): ReservationDAOComponent->addPublisher('2014-10-01', '2', Array)
+#6 [internal function]: ReservationsController->addPublisher()
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#10 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}

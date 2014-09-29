@@ -34,7 +34,7 @@ Hallo <?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher
             echo $timeslots[$slot]['Timeslot']['start'] . " - " . $timeslots[$slot]['Timeslot']['end'];
             echo "</td>";
             for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
-                echo "<td>";
+
                 $dateTmp = new DateTime();
                 $dateTmp->setTimestamp($dateStart->getTimestamp());
                 date_add($dateTmp, date_interval_create_from_date_string($weekDay . ' days'));
@@ -45,10 +45,12 @@ Hallo <?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher
                         $reservationTmp = $reservation;
                         break;
                     } elseif ($reservation['Reservation']['day'] > $dateTmp->format('Y-m-d')) {
+                        //reservation array is ordered by time -> we can end the search, reservation does not exist
                         break;
                     }
                 }
 
+                echo "<td id='td_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>";
                 if ($reservationTmp != null) {
                     if ($reservationTmp['Reservation']['publisher1_id'] != null) {
                         echo $reservationTmp['Publisher1']['prename'] . ' ' . $reservationTmp['Publisher1']['surname'] .
@@ -61,11 +63,13 @@ Hallo <?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher
                         if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
                             echo "<a href='javascript:void(0)' onclick='alert(1);'>Partner eintragen</a>" . '<br/>';
                         } else {
-                            echo "<a href='javascript:void(0)' onclick='alert(1);'>Eintragen</a>" . '<br/>';
+                            echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
+                                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'>Eintragen</a>" . '<br/>';
                         }
                     }
                 } else {
-                    echo "<a href='javascript:void(0)' onclick='addPublisher(\"" . $dateTmp->format('Y-m-d') . "\")'>Eintragen</a>" . '<br/>';
+                    echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
+                        $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'>Eintragen</a>" . '<br/>';
                 }
 
                 echo "</td>";
