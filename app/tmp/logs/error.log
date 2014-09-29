@@ -1,0 +1,328 @@
+2014-09-26 13:57:03 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\eclipse-php\t\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 13:57:22 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen
+Stack Trace:
+#0 C:\work\eclipse-php\t\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:17:44 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /Solingen
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(3): FormHelper->create('Start')
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:18:06 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(3): FormHelper->create('Start')
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:20:33 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(5): FormHelper->create(NULL, Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:20:48 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(5): FormHelper->create(NULL, Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:24:20 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /start/login
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:25:57 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/start/login
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:30:56 Error: [MissingControllerException] Controller class CongregationController could not be found.
+Exception Attributes: array (
+  'class' => 'CongregationController',
+  'plugin' => NULL,
+)
+Request URL: /congregation
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:58:10 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Congregation.1' in 'field list'
+Request URL: /VS-Solingen
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Congreg...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Congreg...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Congreg...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Congregation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('first', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(808): DboSource->query('findByPath', Array, Object(Congregation))
+#8 [internal function]: Model->__call('findByPath', Array)
+#9 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\CongregationDAOComponent.php(10): Congregation->findByPath('Solingen', Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\StartController.php(20): CongregationDAOComponent->getByPath('Solingen')
+#11 [internal function]: StartController->index()
+#12 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(StartController), Array)
+#13 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#14 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#15 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-09-26 22:30:03 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\index.ctp',
+)
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-27 14:38:44 Error: Fatal Error (1): Call to a member function getByPath() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\Controller\CongregationsController.php, line 15]
+2014-09-27 14:38:44 Error: [FatalErrorException] Call to a member function getByPath() on a non-object
+Request URL: /congregations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 15, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 15, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 14:39:20 Error: Fatal Error (64): Cannot redeclare CongregationsController::$components in [C:\work\PhpstormProjects\Trolleyplanung\app\Controller\CongregationsController.php, line 28]
+2014-09-27 14:39:20 Error: [FatalErrorException] Cannot redeclare CongregationsController::$components
+Request URL: /congregations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\work\Phpstor...', 28)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\work\Phpstor...', 28, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\work\Phpstor...', 28, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 15:35:15 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'congregation_id' in where clause is ambiguous
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(20): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(32): ReservationDAOComponent->getReservationsInTimeRange(1411336800, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-27 16:21:35 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Reservation.day' in 'order clause'
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Timeslo...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Timeslo...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Timeslo...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Timeslot), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\TimeslotDAOComponent.php(10): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(33): TimeslotDAOComponent->getAll()
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-27 17:20:48 Error: Fatal Error (4): syntax error, unexpected T_STRING in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 20]
+2014-09-27 17:20:48 Error: [FatalErrorException] syntax error, unexpected T_STRING
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 20, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 20, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:21:37 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 21]
+2014-09-27 17:21:37 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 21, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 21, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:22:36 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 22]
+2014-09-27 17:22:36 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 22, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 22, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:24:12 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 23]
+2014-09-27 17:24:12 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 23, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 23, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:24:50 Error: Fatal Error (1): Call to a member function format() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 13]
+2014-09-27 17:24:50 Error: [FatalErrorException] Call to a member function format() on a non-object
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 13)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 13, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 13, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 20:49:29 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/Reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-27 20:49:53 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-27 20:50:07 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /VS-Solingen/reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-27 20:51:52 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-27 20:53:46 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-27 21:01:21 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
