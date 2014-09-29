@@ -56,8 +56,9 @@ class ReservationsController extends AppController {
 							$this->Session->read('publisher'));
 
 		$this->set("reservation", $reservation);
+		$this->set("publisher", $this->Session->read('publisher'));
 
-		$this->set("_serialize", array("reservation"));
+		$this->set("_serialize", array("reservation", "publisher"));
 	}
 
 	public function deletePublisher() {
@@ -67,7 +68,8 @@ class ReservationsController extends AppController {
 			$this->request->data['publisherNumber']);
 
 		$this->set("reservation", $reservation);
+		$this->set("publisher", $this->Session->read('publisher'));
 
-		$this->set("_serialize", array("reservation"));
+		$this->set("_serialize", array("reservation", "publisher"));
 	}
 }

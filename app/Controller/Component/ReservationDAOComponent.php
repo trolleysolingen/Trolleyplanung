@@ -98,6 +98,7 @@ class ReservationDAOComponent extends Component {
                         'recursive' => 0
                     )
                 );
+
             } else {
                 $model->delete($reservation['Reservation']['id']);
                 $reservation = null;
