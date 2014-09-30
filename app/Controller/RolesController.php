@@ -18,11 +18,9 @@ class RolesController extends AppController {
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
-			$congregationPath = $this->params['congregationPath'];
-			$congregation = $this->CongregationDAO->getByPath($congregationPath);
-			return $this->redirect(array('controller' => 'VS-' . $congregation["Congregation"]["path"]));
+			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
 		} else if ($publisher['Role']['name'] != 'admin') {
-			return $this->redirect(array('controller' => 'VS-' . $publisher["Congregation"]["path"] . '/reservations', 'action' => 'index'));
+			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		}
 	}
 

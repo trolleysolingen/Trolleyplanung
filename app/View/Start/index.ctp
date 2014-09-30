@@ -1,6 +1,6 @@
 <div class="visible-xs-block">
 <?php
-	echo $this->Form->create(null, array('url' => array('controller' => 'VS-' . $congregation["Congregation"]["path"])
+	echo $this->Form->create(null, array('url' => array('controller' => 'start')
 	)); ?>
 	<div class="form-group">
 		<?php

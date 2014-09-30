@@ -11,9 +11,7 @@ class ReservationsController extends AppController {
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
-			$congregationPath = $this->params['congregationPath'];
-			$congregation = $this->CongregationDAO->getByPath($congregationPath);
-			return $this->redirect(array('controller' => 'VS-' . $congregation["Congregation"]["path"]));
+			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
 		}
 	}
 
@@ -23,16 +21,14 @@ class ReservationsController extends AppController {
  * @return void
  */
 	public function index() {
-		$congregationPath = $this->params['congregationPath'];
-		$congregation = $this->CongregationDAO->getByPath($congregationPath);
-
 		$mondayThisWeek = strtotime('monday this week');
-		
-		$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $congregation["Congregation"]["id"]);
+
+		$publisher = $this->Session->read('publisher');
+
+		$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"]);
 
 		$timeslots = $this->TimeslotDAO->getAll();
 
-		$this->set("congregation", $congregation);
 		$this->set("publisher", $this->Session->read('publisher'));
 		$this->set("mondayThisWeek", $mondayThisWeek);
 		$this->set("timeslots", $timeslots);
@@ -41,11 +37,8 @@ class ReservationsController extends AppController {
 
 
 	public function logout() {
-		$congregationPath = $this->params['congregationPath'];
-		$congregation = $this->CongregationDAO->getByPath($congregationPath);
-
 		$this->Session->delete('publisher');
-		return $this->redirect(array('controller' => 'VS-' . $congregation["Congregation"]["path"] . '/start', 'action' => 'index'));
+		return $this->redirect(array('controller' => 'start', 'action' => 'index'));
 	}
 
 

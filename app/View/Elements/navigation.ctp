@@ -38,17 +38,17 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
 						<p class="navbar-text hidden-xs">
-							<?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname'] . ' - ' . $congregation["Congregation"]["name"] ?>
+							<?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname'] . ' - ' . $publisher["Congregation"]["name"] ?>
 						</p>
 						
 						<li class="hidden-xs">
-							<?php echo $this->Html->link('<span class="glyphicon glyphicon-exit"></span>', array('controller' => 'VS-' . $congregation["Congregation"]["path"] . '/reservations', 'action' => 'logout'), array('escape' =>false)); ?>
+							<?php echo $this->Html->link('<span class="glyphicon glyphicon-exit"></span>', array('controller' => 'reservations', 'action' => 'logout'), array('escape' =>false)); ?>
 						</li>
 						<li class="visible-xs-block">
 							<?php
 							echo $this->Html->link(
 								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-exit')) . "  Abmelden",
-								array('controller' => 'VS-' . $congregation["Congregation"]["path"] . '/reservations', 'action' => 'logout'),
+								array('controller' => 'reservations', 'action' => 'logout'),
 								array('escape' => false)
 							); ?>
 						</li>
@@ -59,7 +59,7 @@
 				<div class="hidden-xs">
 					<?php
 					echo $this->Form->create(null, array('class' => 'navbar-form navbar-right', 'style' => 'margin-right: 20px;', 
-						'url' => array('controller' => 'VS-' . $congregation["Congregation"]["path"])
+						'url' => array('controller' => 'start')
 					)); ?>
 					<div class="form-group">
 						<?php

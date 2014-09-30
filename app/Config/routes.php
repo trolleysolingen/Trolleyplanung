@@ -33,9 +33,6 @@
 Router::parseExtensions('json');
 
 Router::connect('/', array('controller' => 'start', 'action' => 'index'));
-Router::connect('/VS-:congregationPath', array('controller' => 'start', 'action' => 'index'));
-Router::connect('/VS-:congregationPath/:controller', array('action' => 'index'));
-Router::connect('/VS-:congregationPath/:controller/:action', array('controller' => ':controller', 'action' => ':action'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
