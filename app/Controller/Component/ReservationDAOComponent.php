@@ -23,13 +23,14 @@ class ReservationDAOComponent extends Component {
         return $result;
     }
 
-    public function addPublisher($reservationDay, $reservationTimeslot, $publisher) {
+    public function addPublisher($congregationId, $reservationDay, $reservationTimeslot, $publisher) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
                     'Reservation.day' => $reservationDay,
-                    'Reservation.timeslot_id' => $reservationTimeslot
+                    'Reservation.timeslot_id' => $reservationTimeslot,
+                    'Reservation.congregation_id' => $congregationId
                 ),
             'recursive' => -1
             )
@@ -64,13 +65,14 @@ class ReservationDAOComponent extends Component {
     }
 
 
-    public function deletePublisher($reservationDay, $reservationTimeslot, $publisherNumber) {
+    public function deletePublisher($congregationId, $reservationDay, $reservationTimeslot, $publisherNumber) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
                     'Reservation.day' => $reservationDay,
-                    'Reservation.timeslot_id' => $reservationTimeslot
+                    'Reservation.timeslot_id' => $reservationTimeslot,
+                    'Reservation.congregation_id' => $congregationId
                 ),
                 'recursive' => -1
             )
@@ -111,13 +113,14 @@ class ReservationDAOComponent extends Component {
         return $reservation;
     }
 
-    public function addGuest($reservationDay, $reservationTimeslot, $guestname) {
+    public function addGuest($congregationId, $reservationDay, $reservationTimeslot, $guestname) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
                     'Reservation.day' => $reservationDay,
-                    'Reservation.timeslot_id' => $reservationTimeslot
+                    'Reservation.timeslot_id' => $reservationTimeslot,
+                    'Reservation.congregation_id' => $congregationId
                 ),
                 'recursive' => -1
             )

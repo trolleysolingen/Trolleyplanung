@@ -43,37 +43,43 @@ class ReservationsController extends AppController {
 
 
 	public function addPublisher() {
+		$publisher = $this->Session->read('publisher');
 		$reservation = $this->ReservationDAO->addPublisher(
+							$publisher['Congregation']['id'],
 							$this->request->data['reservationDay'],
 							$this->request->data['reservationTimeslot'],
 							$this->Session->read('publisher'));
 
 		$this->set("reservation", $reservation);
-		$this->set("publisher", $this->Session->read('publisher'));
+		$this->set("publisher", $publisher);
 
 		$this->set("_serialize", array("reservation", "publisher"));
 	}
 
 	public function deletePublisher() {
+		$publisher = $this->Session->read('publisher');
 		$reservation = $this->ReservationDAO->deletePublisher(
+			$publisher['Congregation']['id'],
 			$this->request->data['reservationDay'],
 			$this->request->data['reservationTimeslot'],
 			$this->request->data['publisherNumber']);
 
 		$this->set("reservation", $reservation);
-		$this->set("publisher", $this->Session->read('publisher'));
+		$this->set("publisher", $publisher);
 
 		$this->set("_serialize", array("reservation", "publisher"));
 	}
 
 	public function addGuest() {
+		$publisher = $this->Session->read('publisher');
 		$reservation = $this->ReservationDAO->addGuest(
+			$publisher['Congregation']['id'],
 			$this->request->data['reservationDay'],
 			$this->request->data['reservationTimeslot'],
 			$this->request->data['guestname']);
 
 		$this->set("reservation", $reservation);
-		$this->set("publisher", $this->Session->read('publisher'));
+		$this->set("publisher", $publisher);
 
 		$this->set("_serialize", array("reservation", "publisher"));
 	}
