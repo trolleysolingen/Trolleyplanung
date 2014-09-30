@@ -1,8 +1,3 @@
-<?php echo $this->Html->link(__('Abmelden'), array('controller' => 'VS-' . $congregation["Congregation"]["path"] . '/reservations', 'action' => 'logout')); ?>
-
-<br/>
-Hallo <?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname']; ?>!
-
 <?php
     $dateCounter = $mondayThisWeek;
 
