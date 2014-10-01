@@ -16,9 +16,16 @@ function addPublisher(reservationDay, reservationTimeslot) {
     $.ajax({
         type: "POST",
         url: "/reservations/addPublisher.json",
-        data: { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot }
-    }).done(function(data) {
-        displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+        data: { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot },
+        timeout: 10000,//in ms
+        dataType: "json",
+        success: function(data) {
+            displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+        },
+        error: function(request, status, err) {
+            logError(status);
+            logError(err);
+        }
     });
 }
 
@@ -26,9 +33,16 @@ function deletePublisher(reservationDay, reservationTimeslot, publisherNumber) {
     $.ajax({
         type: "POST",
         url: "/reservations/deletePublisher.json",
-        data: { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, publisherNumber: publisherNumber }
-    }).done(function(data) {
-        displayReservation(reservationDay, reservationTimeslot,  data.reservation, data.publisher);
+        data: { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, publisherNumber: publisherNumber },
+        timeout: 10000,//in ms
+        dataType: "json",
+        success: function(data) {
+            displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+        },
+        error: function(request, status, err) {
+            logError(status);
+            logError(err);
+        }
     });
 }
 
@@ -38,9 +52,16 @@ function addGuest(reservationDay, reservationTimeslot) {
         $.ajax({
             type: "POST",
             url: "/reservations/addGuest.json",
-            data: {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, guestname: guestname}
-        }).done(function (data) {
-            displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+            data: {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, guestname: guestname},
+            timeout: 10000,//in ms
+            dataType: "json",
+            success: function(data) {
+                displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+            },
+            error: function(request, status, err) {
+                logError(status);
+                logError(err);
+            }
         });
     }
 }
