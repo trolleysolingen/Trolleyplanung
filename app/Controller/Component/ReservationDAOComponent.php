@@ -65,7 +65,7 @@ class ReservationDAOComponent extends Component {
     }
 
 
-    public function deletePublisher($congregationId, $reservationDay, $reservationTimeslot, $publisherNumber) {
+    public function deletePublisher($congregationId, $reservationDay, $reservationTimeslot, $publisher, $deleteBoth) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
@@ -80,17 +80,18 @@ class ReservationDAOComponent extends Component {
 
 
         if ($reservation != null) {
-            if ($reservation['Reservation']['publisher1_id'] != null &&
+
+            if (!$deleteBoth &&
+                $reservation['Reservation']['publisher1_id'] != null &&
                 $reservation['Reservation']['publisher2_id'] != null ) {
 
-                if ($publisherNumber == 1) {
+                if ($reservation['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
                     // delete publisher1 and put publisher2 to publisher1
                     $reservation['Reservation']['publisher1_id'] = $reservation['Reservation']['publisher2_id'];
                     $reservation['Reservation']['publisher2_id'] = null;
-                } else {
+                } else if ($reservation['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
                     $reservation['Reservation']['publisher2_id'] = null;
                 }
-                $reservation['Reservation']['guestname'] = null;
 
                 $reservation = $model->save($reservation);
 

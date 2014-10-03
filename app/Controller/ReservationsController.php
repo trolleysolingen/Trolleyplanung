@@ -62,7 +62,8 @@ class ReservationsController extends AppController {
 			$publisher['Congregation']['id'],
 			$this->request->data['reservationDay'],
 			$this->request->data['reservationTimeslot'],
-			$this->request->data['publisherNumber']);
+			$publisher,
+			$this->request->data['deleteBoth'] == 'true');
 
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);

@@ -12,11 +12,11 @@ function logError(obj){
     }
 }
 
-function addPublisher(reservationDay, reservationTimeslot) {
+function ajaxCall(reservationDay, reservationTimeslot, url, data) {
     $.ajax({
         type: "POST",
-        url: "/reservations/addPublisher.json",
-        data: { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot },
+        url: url,
+        data: data,
         timeout: 10000,//in ms
         dataType: "json",
         success: function(data) {
@@ -29,40 +29,25 @@ function addPublisher(reservationDay, reservationTimeslot) {
     });
 }
 
-function deletePublisher(reservationDay, reservationTimeslot, publisherNumber) {
-    $.ajax({
-        type: "POST",
-        url: "/reservations/deletePublisher.json",
-        data: { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, publisherNumber: publisherNumber },
-        timeout: 10000,//in ms
-        dataType: "json",
-        success: function(data) {
-            displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
-        },
-        error: function(request, status, err) {
-            logError(status);
-            logError(err);
-        }
-    });
+function addPublisher(reservationDay, reservationTimeslot) {
+    var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot };
+    ajaxCall(reservationDay, reservationTimeslot, "/reservations/addPublisher.json", data);
+}
+
+function deletePublisher(reservationDay, reservationTimeslot, askPartner) {
+    var deleteBoth = false;
+    if (askPartner) {
+        deleteBoth = window.confirm("Soll der Partner ebenfalls gelöscht werden?");
+    }
+    var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, deleteBoth: deleteBoth };
+    ajaxCall(reservationDay, reservationTimeslot, "/reservations/deletePublisher.json", data);
 }
 
 function addGuest(reservationDay, reservationTimeslot) {
     var guestname = $('#guestname_' + reservationDay + '_' + reservationTimeslot).val();
     if (guestname) {
-        $.ajax({
-            type: "POST",
-            url: "/reservations/addGuest.json",
-            data: {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, guestname: guestname},
-            timeout: 10000,//in ms
-            dataType: "json",
-            success: function(data) {
-                displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
-            },
-            error: function(request, status, err) {
-                logError(status);
-                logError(err);
-            }
-        });
+        var data = {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, guestname: guestname};
+        ajaxCall(reservationDay, reservationTimeslot, "/reservations/addGuest.json", data);
     }
 }
 
@@ -71,9 +56,15 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 
     if (reservation && reservation.Reservation) {
         if (reservation.Reservation.publisher1_id) {
-            html += reservation.Publisher1.prename + ' ' + reservation.Publisher1.surname +
-                    " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", 1);'>X</a>" + "<br/>";
-
+            if (reservation.Publisher1.role_id == 3) {
+                html += reservation.Reservation.guestname;
+            } else {
+                html += reservation.Publisher1.prename + ' ' + reservation.Publisher1.surname;
+            }
+            if (reservation.Reservation.publisher1_id == publisher.Publisher.id) {
+                html += " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", " +  (reservation.Reservation.publisher2_id ? "true" : "false") + ");'>X</a>";
+            }
+            html += "<br/>";
         }
         if (reservation.Reservation.publisher2_id) {
             if (reservation.Publisher2.role_id == 3) {
@@ -81,7 +72,10 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
             } else {
                 html += reservation.Publisher2.prename + ' ' + reservation.Publisher2.surname
             }
-            html += " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", 2);'>X</a>" + "<br/>";
+            if (reservation.Reservation.publisher2_id == publisher.Publisher.id) {
+                html += " <a href='javascript:void(0)' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", true);'>X</a>";
+            }
+            html += "<br/>";
         } else {
             if (reservation.Reservation.publisher1_id == publisher.Publisher.id) {
                 html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>" +

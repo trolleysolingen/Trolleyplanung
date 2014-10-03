@@ -11,7 +11,7 @@
 
     for ($week = 0; $week < Configure::read("DISPLAYED_WEEKS"); $week++) {
         echo "<div " . ($week >= Configure::read("DISPLAYED_WEEKS_OPEN") ? "style='display:none'" : "") . ">";
-        echo "<table>";
+        echo "<table border='1'>";
         echo "<tr>";
         echo "<td><b>";
 
@@ -48,10 +48,18 @@
                 echo "<td id='td_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>";
                 if ($reservationTmp != null) {
                     if ($reservationTmp['Reservation']['publisher1_id'] != null) {
-                        echo $reservationTmp['Publisher1']['prename'] . ' ' . $reservationTmp['Publisher1']['surname'] .
-                            " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
-                            $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-                            ", 1);'>X</a>" . '<br/>';
+                        if ($reservationTmp['Publisher1']['role_id'] == 3) {
+                            // guest publisher
+                            echo $reservationTmp['Reservation']['guestname'];
+                        } else {
+                            echo $reservationTmp['Publisher1']['prename'] . ' ' . $reservationTmp['Publisher1']['surname'];
+                        }
+                        if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
+                            echo " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
+                                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
+                                ", " . ($reservationTmp['Reservation']['publisher2_id'] != null ? "true" : "false") . ");'>X</a>";
+                        }
+                        echo '<br/>';
                     }
                     if ($reservationTmp['Reservation']['publisher2_id'] != null) {
                         if ($reservationTmp['Publisher2']['role_id'] == 3) {
@@ -60,9 +68,12 @@
                         } else {
                             echo $reservationTmp['Publisher2']['prename'] . ' ' . $reservationTmp['Publisher2']['surname'];
                         }
-                        echo " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
+                        if ($reservationTmp['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
+                            echo " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
                                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-                                ", 2);'>X</a>" . '<br/>';
+                                ", 2);'>X</a>";
+                        }
+                        echo '<br/>';
                     } else {
                         if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
                             echo "<div id='guestDiv_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>".
