@@ -67,10 +67,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'trolleyuser',
-		'password' => 'trolley14$user',
-		'database' => 'trolleyplanung',
+		'host' => 'rdbms.strato.de',
+		'login' => 'U1851600',
+		'password' => '19Trolley35',
+		'database' => 'DB1851600',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
