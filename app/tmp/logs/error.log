@@ -1245,3 +1245,27 @@ Request URL: /VS-/reservations/logout
 Stack Trace:
 #0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-10-04 22:43:40 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat.
+',
+  'enabled' => true,
+)
+Request URL: /Trolleyplanung/reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3524): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1136): Model->setDataSource('default')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('reservations')
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): Model->getDataSource()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(28): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}

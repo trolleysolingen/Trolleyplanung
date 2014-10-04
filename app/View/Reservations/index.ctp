@@ -27,15 +27,22 @@
 			echo "<tr>";
 			echo "<td></td>";
 			for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
-				echo "<td style='width: 13%;'>";
+				echo "<th style='width: 13%;'>";
 				echo $weekDays[$weekDay];
-				echo "</td>";
+				echo "</th>";
 			}
 			echo "</tr>";
 			for ($slot = 0; $slot < sizeof($timeslots); $slot++) {
 				echo "<tr>";
 				echo "<td>";
-				echo $timeslots[$slot]['Timeslot']['start'] . " - " . $timeslots[$slot]['Timeslot']['end'];
+				echo "<table>";
+				echo "<tr>";
+				echo $timeslots[$slot]['Timeslot']['start'] . " - ";
+				echo "</tr><br>";
+				echo "<tr>";
+				echo $timeslots[$slot]['Timeslot']['end'];
+				echo "</tr>";
+				echo "</table>";
 				echo "</td>";
 				for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
 
@@ -91,12 +98,12 @@
 									");'>Partner eintragen</a>" . '</div>';
 							} else {
 								echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
-									$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'>Eintragen</a>" . '<br/>';
+									$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
 							}
 						}
 					} else {
 						echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
-							$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'>Eintragen</a>" . '<br/>';
+							$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
 					}
 
 					echo "</td>";
