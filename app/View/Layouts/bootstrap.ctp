@@ -17,10 +17,6 @@
 		echo $this->Html->css('glyphicons');
 		echo $this->Html->css('custom');
 
-		echo $this->Html->script('jquery-1.11.1.min');
-		echo $this->Html->script('trolleyplanung');
-		
-
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -54,9 +50,12 @@
     </div><!-- /.container-fluid -->
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<?php echo $this->Html->script('bootstrap.min'); ?>
+    <?php
+      echo $this->Html->script('jquery-1.11.1.min');
+	  echo $this->Html->script('bootstrap.min');
+      echo $this->Html->script('bootstrap-typeahead.min.js');
+      echo $this->Html->script('trolleyplanung');
+    ?>
 
   </body>
 </html>

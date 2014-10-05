@@ -1245,3 +1245,69 @@ Request URL: /VS-/reservations/logout
 Stack Trace:
 #0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-10-03 21:26:52 Error: [MissingActionException] Action ReservationsController::autocompletePublisher() could not be found.
+Exception Attributes: array (
+  'controller' => 'ReservationsController',
+  'action' => 'autocompletePublisher',
+)
+Request URL: /reservations/autocompletePublisher.json?query=T
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#2 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-04 13:14:57 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Publishers\autocomplete.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Publishers\\autocomplete.ctp',
+)
+Request URL: /publishers/autocomplete?query=J
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-05 16:20:09 Error: [MissingTableException] Table publisher_d_a_o_components for model PublisherDAOComponent was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'publisher_d_a_o_components',
+  'class' => 'PublisherDAOComponent',
+  'ds' => 'default',
+)
+Request URL: /reservations/addGuest.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('publisher_d_a_o...')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(808): Model->getDataSource()
+#2 [internal function]: Model->__call('getByName', Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(133): AppModel->getByName('Evgenia Ankenbr...', Array)
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(81): ReservationDAOComponent->addGuest('1', '2014-10-29', '1', Array, 'Evgenia Ankenbr...')
+#5 [internal function]: ReservationsController->addGuest()
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#9 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-10-05 16:21:18 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_guest.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_guest.ctp',
+)
+Request URL: /reservations/addGuest
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-05 16:21:18 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_guest.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_guest.ctp',
+)
+Request URL: /reservations/addGuest
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

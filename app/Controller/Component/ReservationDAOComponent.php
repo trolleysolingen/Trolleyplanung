@@ -4,6 +4,8 @@ App::uses('Component', 'Controller');
 
 class ReservationDAOComponent extends Component {
 
+    public $components = array('PublisherDAO');
+
     public function getReservationsInTimeRange($mondayThisWeek, $congregationId) {
         $model = ClassRegistry::init('Reservation');
 
@@ -114,7 +116,7 @@ class ReservationDAOComponent extends Component {
         return $reservation;
     }
 
-    public function addGuest($congregationId, $reservationDay, $reservationTimeslot, $guestname) {
+    public function addGuest($congregationId, $reservationDay, $reservationTimeslot, $publisher, $guestname) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
@@ -128,28 +130,14 @@ class ReservationDAOComponent extends Component {
         );
 
         if ($reservation != null) {
-            $modelPublisher = ClassRegistry::init('Publisher');
+            $guestPublisher = $this->PublisherDAO->getByName($guestname, $publisher);
 
-            $publisher = $modelPublisher->find('first', array(
-                    'conditions' => array(
-                        "CONCAT(Publisher.prename, ' ', Publisher.surname)" => $guestname
-                    ),
-                    'recursive' => -1
-                )
-            );
-
-            if (!$publisher) {
-                $publisher = $modelPublisher->find('first', array(
-                        'conditions' => array(
-                            'Role.name' => 'guest'
-                        ),
-                        'recursive' => 0
-                    )
-                );
+            if (!$guestPublisher) {
+                $guestPublisher = $this->PublisherDAO->getGuestPublisher();
                 $reservation['Reservation']['guestname'] = $guestname;
             }
 
-            $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
+            $reservation['Reservation']['publisher2_id'] = $guestPublisher['Publisher']['id'];
 
 
             $reservation = $model->save($reservation);

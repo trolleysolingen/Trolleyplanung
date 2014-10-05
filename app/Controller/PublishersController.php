@@ -13,7 +13,7 @@ class PublishersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'CongregationDAO');
+	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler');
 
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
@@ -115,5 +115,21 @@ class PublishersController extends AppController {
 			$this->Session->setFlash(__('The publisher could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+
+	public function autocomplete() {
+		$publisher = $this->Session->read('publisher');
+		$matchingPublishers = $this->PublisherDAO->getByAutocomplete($this->request->query('query'), $publisher);
+
+		$publishersJson = array();
+		foreach ($matchingPublishers as $matchingPublisher) {
+			$publishersJson[] = array(
+				'id' => $matchingPublisher['Publisher']['id'],
+				'name' => $matchingPublisher['Publisher']['prename'] . ' ' . $matchingPublisher['Publisher']['surname']);
+		}
+		$this->set("publishers", $publishersJson);
+
+		$this->set("_serialize", array("publishers"));
 	}
 }
