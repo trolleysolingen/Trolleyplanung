@@ -87,7 +87,7 @@
 							if ($reservationTmp['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
 								echo " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
 									$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-									", 2);'>X</a>";
+									", true);'>X</a>";
 							}
 							echo '<br/>';
 						} else {
