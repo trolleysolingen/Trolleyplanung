@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d810980-12a3-4bf9-861f-7fccbcce417b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/View/Publishers/autocomplete.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php" afterPath="$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/PublishersController.php" afterPath="$PROJECT_DIR$/app/Controller/PublishersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/Component/ReservationDAOComponent.php" afterPath="$PROJECT_DIR$/app/Controller/Component/ReservationDAOComponent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/ReservationsController.php" afterPath="$PROJECT_DIR$/app/Controller/ReservationsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Layouts/bootstrap.ctp" afterPath="$PROJECT_DIR$/app/View/Layouts/bootstrap.ctp" />
+    <list default="true" id="0d810980-12a3-4bf9-861f-7fccbcce417b" name="Default" comment="Autocomplete">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/logs/error.log" afterPath="$PROJECT_DIR$/app/tmp/logs/error.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_dev_de" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_dev_de" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Reservations/index.ctp" afterPath="$PROJECT_DIR$/app/View/Reservations/index.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_congregations" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_congregations" />
@@ -18,7 +12,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_reservations" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_reservations" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_roles" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_roles" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_timeslots" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_timeslots" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/js/trolleyplanung.js" afterPath="$PROJECT_DIR$/app/webroot/js/trolleyplanung.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Trolleyplanung.iws" />
@@ -44,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReservationDAOComponent.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReservationDAOComponent.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/Component/ReservationDAOComponent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25630254" vertical-offset="1925" max-vertical-offset="2822">
-              <caret line="124" column="52" selection-start-line="124" selection-start-column="52" selection-end-line="124" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1925" max-vertical-offset="2822">
+              <caret line="134" column="35" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -57,7 +50,7 @@
       <file leaf-file-name="PublishersController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/PublishersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.923077" vertical-offset="1632" max-vertical-offset="2397">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="2397">
               <caret line="128" column="95" selection-start-line="128" selection-start-column="95" selection-end-line="128" selection-end-column="95" />
               <folding />
             </state>
@@ -67,7 +60,7 @@
       <file leaf-file-name="ReservationsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/ReservationsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.307692" vertical-offset="841" max-vertical-offset="1598">
+            <state vertical-scroll-proportion="0.0" vertical-offset="841" max-vertical-offset="1598">
               <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
               <folding />
             </state>
@@ -77,7 +70,7 @@
       <file leaf-file-name="PublisherDAOComponent.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="357" max-vertical-offset="1139">
+            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1139">
               <caret line="47" column="37" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="37" />
               <folding />
             </state>
@@ -87,18 +80,18 @@
       <file leaf-file-name="trolleyplanung.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/webroot/js/trolleyplanung.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1449" max-vertical-offset="2176">
+            <state vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="2176">
               <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/View/Reservations/index.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="2142">
+              <caret line="84" column="126" selection-start-line="84" selection-start-column="126" selection-end-line="84" selection-end-column="126" />
               <folding />
             </state>
           </provider>
@@ -150,7 +143,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -399,6 +391,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -427,15 +420,15 @@
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -502,7 +495,13 @@
       <option name="project" value="LOCAL" />
       <updated>1412361567579</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Autocomplete">
+      <created>1412519239419</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1412519239419</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -518,7 +517,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2421875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2421875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -544,7 +543,13 @@
     <MESSAGE value="Versammlungsname in URL entfernt" />
     <MESSAGE value="timeout handling in ajax" />
     <MESSAGE value="Deletion only possible if user is in reservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deletion only possible if user is in reservation" />
+    <MESSAGE value="Autocomplete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Autocomplete" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Controller/ReservationsController.php">
@@ -874,25 +879,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Reservations/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/webroot/js/trolleyplanung.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1449" max-vertical-offset="2176">
-          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/ReservationsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.307692" vertical-offset="841" max-vertical-offset="1598">
+        <state vertical-scroll-proportion="0.0" vertical-offset="841" max-vertical-offset="1598">
           <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding />
         </state>
@@ -900,7 +889,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/PublishersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.923077" vertical-offset="1632" max-vertical-offset="2397">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="2397">
           <caret line="128" column="95" selection-start-line="128" selection-start-column="95" selection-end-line="128" selection-end-column="95" />
           <folding />
         </state>
@@ -908,7 +897,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0" vertical-offset="357" max-vertical-offset="1139">
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1139">
           <caret line="47" column="37" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="37" />
           <folding />
         </state>
@@ -916,8 +905,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/Component/ReservationDAOComponent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25630254" vertical-offset="1925" max-vertical-offset="2822">
-          <caret line="124" column="52" selection-start-line="124" selection-start-column="52" selection-end-line="124" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1925" max-vertical-offset="2822">
+          <caret line="134" column="35" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webroot/js/trolleyplanung.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1436" max-vertical-offset="2176">
+          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Reservations/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="2142">
+          <caret line="84" column="126" selection-start-line="84" selection-start-column="126" selection-end-line="84" selection-end-column="126" />
           <folding />
         </state>
       </provider>
