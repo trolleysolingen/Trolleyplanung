@@ -27,7 +27,7 @@ class ReservationsController extends AppController {
 
 		$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"]);
 
-		$timeslots = $this->TimeslotDAO->getAll();
+		$timeslots = $this->TimeslotDAO->getAll($publisher);
 
 		$this->set("publisher", $this->Session->read('publisher'));
 		$this->set("mondayThisWeek", $mondayThisWeek);

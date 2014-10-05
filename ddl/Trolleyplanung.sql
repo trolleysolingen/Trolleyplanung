@@ -47,6 +47,7 @@ DROP TABLE IF EXISTS `publishers` ;
 CREATE TABLE IF NOT EXISTS `publishers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(100) NULL,
+  `password` VARCHAR(100) NULL,
   `prename` VARCHAR(50) NOT NULL,
   `surname` VARCHAR(50) NOT NULL,
   `congregation_id` INT NULL,
@@ -76,9 +77,16 @@ DROP TABLE IF EXISTS `timeslots` ;
 
 CREATE TABLE IF NOT EXISTS `timeslots` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `congregation_id` INT NULL,
   `start` VARCHAR(5) NOT NULL,
   `end` VARCHAR(5) NOT NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  INDEX `fk_timeslots_congregation_idx` (`congregation_id` ASC),
+  CONSTRAINT `fk_timeslots_congregations`
+    FOREIGN KEY (`congregation_id`)
+    REFERENCES `congregations` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -133,7 +141,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `trolleyplanung`;
-INSERT INTO `congregations` (`id`, `name`, `path`) VALUES (1, 'Solingen Mitte + Nord', 'Solingen');
+INSERT INTO `congregations` (`id`, `name`, `path`) VALUES (1, 'Demo', 'Demo');
+INSERT INTO `congregations` (`id`, `name`, `path`) VALUES (2, 'Solingen Mitte + Nord', 'Solingen');
 
 COMMIT;
 
@@ -146,6 +155,7 @@ USE `trolleyplanung`;
 INSERT INTO `roles` (`id`, `name`) VALUES (1, 'publisher');
 INSERT INTO `roles` (`id`, `name`) VALUES (2, 'admin');
 INSERT INTO `roles` (`id`, `name`) VALUES (3, 'guest');
+INSERT INTO `roles` (`id`, `name`) VALUES (4, 'congregation admin');
 
 COMMIT;
 
@@ -156,9 +166,10 @@ COMMIT;
 START TRANSACTION;
 USE `trolleyplanung`;
 INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (1, '', 'Gast', 'Verkuendiger', NULL, 3, NULL, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (2, 'j.ankenbrand@gmx.de', 'Juergen', 'Ankenbrand', 1, 2, NULL, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (3, 'flixmix.bornmann@me.com', 'Felix', 'Bornmann', 1, 2, NULL, NULL);
-
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (2, 'j.ankenbrand@gmx.de', 'Juergen', 'Ankenbrand', 2, 2, NULL, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (3, 'flixmix.bornmann@me.com', 'Felix', 'Bornmann', 2, 2, NULL, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (4, 'test1@demo.de', 'Test1', 'Verkuendiger', 1, 2, NULL, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (5, 'test2@demo.de', 'Test2', 'Verkuendiger', 1, 2, NULL, NULL);
 COMMIT;
 
 
@@ -167,10 +178,13 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `trolleyplanung`;
-INSERT INTO `timeslots` (`id`, `start`, `end`) VALUES (1, '07:00', '10:00');
-INSERT INTO `timeslots` (`id`, `start`, `end`) VALUES (2, '10:00', '13:00');
-INSERT INTO `timeslots` (`id`, `start`, `end`) VALUES (3, '13:00', '16:00');
-INSERT INTO `timeslots` (`id`, `start`, `end`) VALUES (4, '16:00', '19:00');
+INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (1, 1, '09:00', '13:00');
+INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (2, 1, '13:00', '16:00');
+INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (3, 1, '16:00', '19:00');
+INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (4, 2, '07:00', '10:00');
+INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (5, 2, '10:00', '13:00');
+INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (6, 2, '13:00', '16:00');
+INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (7, 2, '16:00', '19:00');
 
 COMMIT;
 
