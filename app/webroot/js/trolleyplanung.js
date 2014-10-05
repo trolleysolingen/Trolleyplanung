@@ -81,12 +81,12 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
                 html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>" +
                           "<a href='javascript:void(0)' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Partner eintragen</a></div>";
             } else {
-                html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Eintragen</a><br/>";
+                html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a><br/>";
             }
 
         }
     } else {
-        html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Eintragen</a>" + "<br/>";
+        html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a>" + "<br/>";
     }
 
     $('#td_' + reservationDay + '_' + reservationTimeslot).html(html);
