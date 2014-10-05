@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d810980-12a3-4bf9-861f-7fccbcce417b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/webroot/js/bootstrap-typeahead.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Reservations/index.ctp" afterPath="$PROJECT_DIR$/app/View/Reservations/index.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Trolleyplanung.iws" />
@@ -524,7 +522,13 @@
       <option name="project" value="LOCAL" />
       <updated>1412520738092</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Merged">
+      <created>1412520835307</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1412520835307</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
