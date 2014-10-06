@@ -49,6 +49,7 @@ function addGuest(reservationDay, reservationTimeslot) {
         var data = {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, guestname: guestname};
         ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addGuest.json", data);
     }
+	$('#guestModal').modal('hide');
 }
 
 function displayReservation(reservationDay, reservationTimeslot, reservation, publisher) {
@@ -88,15 +89,38 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
     } else {
         html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a>" + "<br/>";
     }
+	
+	if (reservation && reservation.Reservation) {
+		if (reservation.Reservation.publisher1_id) {
+			$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
+		}
+		if (reservation.Reservation.publisher2_id) {
+			$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
+		}
+		if ((reservation.Reservation.publisher1_id == publisher.Publisher.id) || (reservation.Reservation.publisher2_id == publisher.Publisher.id)) {
+			$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
+		}
+	}
+	else {
+		$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
+	}
 
     $('#td_' + reservationDay + '_' + reservationTimeslot).html(html);
 }
 
 function displayGuestField(reservationDay, reservationTimeslot) {
-    html = '<input type="text" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '" autocomplete="off"/>';
-    html += "<a href='javascript:void(0)' onclick='addGuest(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Speichern</a>";
+	html = '<div class="form-group">';
+    html += '<label for="guestname_' + reservationDay + '_' + reservationTimeslot + '">Name:</label>';
+    html += '<input type="text" class="form-control" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '" autocomplete="off"/>';
+	html += '</div>';
+	
+	body = '<div class="btn-group">';
+	body += '<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>';
+	body += "<a href='javascript:void(0)' class='btn btn-primary' onclick='addGuest(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Eintragen</a>";
+    body += '</div>';
 
-    $('#guestDiv_' + reservationDay + '_' + reservationTimeslot).html(html);
+    $('#guestModalDiv').html(html);
+	$('#guestModalBody').html(body);
 
     $('#guestname_' + reservationDay + '_' + reservationTimeslot).typeahead({
         ajax: {
@@ -120,4 +144,6 @@ function displayGuestField(reservationDay, reservationTimeslot) {
         }
 
     });
+	
+	$('#guestModal').modal('show');
 }

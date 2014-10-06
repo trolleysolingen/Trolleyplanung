@@ -40,13 +40,11 @@
     <?php echo $this->Element('navigation'); ?>
 
     <div class="container-fluid">
-		<div class="col-lg-10 col-lg-offset-1">
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 			
-		</div>
     </div><!-- /.container-fluid -->
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
