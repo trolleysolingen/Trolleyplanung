@@ -15,19 +15,35 @@ class PublisherDAOComponent extends Component {
     public function getByAutocomplete($query, $publisher) {
         $model = ClassRegistry::init('Publisher');
         $result = $model->find('all', array(
-            'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname'),
-            'recursive' => -1,
-            'conditions' => array(
-                'Publisher.id !=' => $publisher['Publisher']['id'],
-                'Publisher.congregation_id' => $publisher['Congregation']['id'],
-                'Publisher.role_id !=' => '3',
-                'OR' => array('Publisher.prename LIKE' => $query . '%', 'Publisher.surname LIKE' => $query . '%'))
+                'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname'),
+                'recursive' => -1,
+                'conditions' => array(
+                    'Publisher.id !=' => $publisher['Publisher']['id'],
+                    'Publisher.congregation_id' => $publisher['Congregation']['id'],
+                    'Publisher.role_id !=' => '3',
+                    'OR' => array('Publisher.prename LIKE' => $query . '%', 'Publisher.surname LIKE' => $query . '%')
+                )
             )
         );
 
         return $result;
     }
 
+    public function getForAutocompletion($publisher) {
+        $model = ClassRegistry::init('Publisher');
+        $result = $model->find('all', array(
+                'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname'),
+                'recursive' => -1,
+                'conditions' => array(
+                    'Publisher.id !=' => $publisher['Publisher']['id'],
+                    'Publisher.congregation_id' => $publisher['Congregation']['id'],
+                    'Publisher.role_id !=' => '3'
+                )
+            )
+        );
+
+        return $result;
+    }
 
     public function getByName($name, $publisher) {
         $model = ClassRegistry::init('Publisher');

@@ -1301,3 +1301,13 @@ Stack Trace:
 #3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-10-07 20:38:21 Error: Fatal Error (1): Call to a member function getForAutocompletion() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php, line 32]
+2014-10-07 20:38:21 Error: [FatalErrorException] Call to a member function getForAutocompletion() on a non-object
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 32)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 32, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 32, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
