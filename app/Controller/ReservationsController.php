@@ -6,7 +6,7 @@ App::uses('AppController', 'Controller');
  */
 class ReservationsController extends AppController {
 
-	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'RequestHandler');
+	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'PublisherDAO', 'RequestHandler');
 
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
@@ -29,10 +29,13 @@ class ReservationsController extends AppController {
 
 		$timeslots = $this->TimeslotDAO->getAll($publisher);
 
+		$publisherList = $this->PublisherDAO->getForAutocompletion($publisher);
+
 		$this->set("publisher", $this->Session->read('publisher'));
 		$this->set("mondayThisWeek", $mondayThisWeek);
 		$this->set("timeslots", $timeslots);
 		$this->set("reservations", $reservations);
+		$this->set("publisherList", $publisherList);
 	}
 
 

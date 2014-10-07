@@ -1,4 +1,14 @@
-﻿<?php
+﻿<script>
+	var publisherList = [
+		<?php
+			foreach ($publisherList as $publisherItem) {
+				echo "{id:" . $publisherItem['Publisher']['id']. ", name: '" . $publisherItem['Publisher']['prename'] . " " . $publisherItem['Publisher']['surname'] . "'},";
+			}
+		?>
+		];
+</script>
+
+<?php
     $dateCounter = $mondayThisWeek;
 
     $weekDays  = array('Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag');

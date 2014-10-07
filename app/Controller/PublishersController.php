@@ -19,7 +19,7 @@ class PublishersController extends AppController {
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
-		} else if ($publisher['Role']['name'] != 'admin') {
+		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin') {
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		}
 	}
@@ -30,8 +30,12 @@ class PublishersController extends AppController {
  * @return void
  */
 	public function index() {
+		$publisher = $this->Session->read('publisher');
+
 		$this->Publisher->recursive = 0;
-		$this->set('publishers', $this->Paginator->paginate());
+		$this->set('publishers',
+			$this->Paginator->paginate('Publisher', array('Publisher.congregation_id' => $publisher['Congregation']['id'])));
+		$this->set('publisher', $publisher);
 	}
 
 /**
@@ -55,6 +59,8 @@ class PublishersController extends AppController {
  * @return void
  */
 	public function add() {
+		$publisher = $this->Session->read('publisher');
+
 		if ($this->request->is('post')) {
 			$this->Publisher->create();
 			if ($this->Publisher->save($this->request->data)) {
@@ -64,9 +70,9 @@ class PublishersController extends AppController {
 				$this->Session->setFlash(__('The publisher could not be saved. Please, try again.'));
 			}
 		}
-		$congregations = $this->Publisher->Congregation->find('list');
-		$roles = $this->Publisher->Role->find('list');
+		$roles = $this->Publisher->Role->find('list', array('conditions' => array('name not in' => array('admin', 'guest'))));
 		$this->set(compact('congregations', 'roles'));
+		$this->set('publisher', $publisher);
 	}
 
 /**
@@ -77,6 +83,8 @@ class PublishersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$publisher = $this->Session->read('publisher');
+
 		if (!$this->Publisher->exists($id)) {
 			throw new NotFoundException(__('Invalid publisher'));
 		}
@@ -91,9 +99,11 @@ class PublishersController extends AppController {
 			$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
 			$this->request->data = $this->Publisher->find('first', $options);
 		}
-		$congregations = $this->Publisher->Congregation->find('list');
-		$roles = $this->Publisher->Role->find('list');
+
+		$roles = $this->Publisher->Role->find('list', array('conditions' => array('name not in' => array('guest',
+			($this->request->data && $this->request->data['Role']['name'] == 'admin' ? '' : 'admin')))));
 		$this->set(compact('congregations', 'roles'));
+		$this->set('publisher', $publisher);
 	}
 
 /**

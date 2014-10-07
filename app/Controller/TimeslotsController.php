@@ -19,7 +19,7 @@ class TimeslotsController extends AppController {
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
-		} else if ($publisher['Role']['name'] != 'admin') {
+		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin') {
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		}
 	}
@@ -30,8 +30,11 @@ class TimeslotsController extends AppController {
  * @return void
  */
 	public function index() {
+		$publisher = $this->Session->read('publisher');
+
 		$this->Timeslot->recursive = 0;
-		$this->set('timeslots', $this->Paginator->paginate());
+		$this->set('timeslots',
+			$this->Paginator->paginate('Timeslot', array('Timeslot.congregation_id' => $publisher['Congregation']['id'])));
 	}
 
 /**
@@ -55,6 +58,7 @@ class TimeslotsController extends AppController {
  * @return void
  */
 	public function add() {
+		$publisher = $this->Session->read('publisher');
 		if ($this->request->is('post')) {
 			$this->Timeslot->create();
 			if ($this->Timeslot->save($this->request->data)) {
@@ -64,6 +68,7 @@ class TimeslotsController extends AppController {
 				$this->Session->setFlash(__('The timeslot could not be saved. Please, try again.'));
 			}
 		}
+		$this->set('publisher', $publisher);
 	}
 
 /**
@@ -74,6 +79,7 @@ class TimeslotsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$publisher = $this->Session->read('publisher');
 		if (!$this->Timeslot->exists($id)) {
 			throw new NotFoundException(__('Invalid timeslot'));
 		}
@@ -88,6 +94,7 @@ class TimeslotsController extends AppController {
 			$options = array('conditions' => array('Timeslot.' . $this->Timeslot->primaryKey => $id));
 			$this->request->data = $this->Timeslot->find('first', $options);
 		}
+		$this->set('publisher', $publisher);
 	}
 
 /**

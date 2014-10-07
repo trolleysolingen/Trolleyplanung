@@ -116,6 +116,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
     $('#td_' + reservationDay + '_' + reservationTimeslot).html(html);
 }
 
+
 function displayGuestField(reservationDay, reservationTimeslot) {
 	html = '<div class="form-group">';
     html += '<label for="guestname_' + reservationDay + '_' + reservationTimeslot + '">Name:</label>';
@@ -131,27 +132,9 @@ function displayGuestField(reservationDay, reservationTimeslot) {
 	$('#guestModalBody').html(body);
 
     $('#guestname_' + reservationDay + '_' + reservationTimeslot).typeahead({
-        ajax: {
-            url: "/publishers/autocomplete.json",
-            timeout: 1000,
-            displayField: "name",
-            valueField: "id",
-            triggerLength: 1,
-            preProcess: function (data) {
-                //showLoadingMask(false);
-                if (data.success === false) {
-                    // Hide the list, there was some error
-                    return false;
-                }
-                // We good!
-                return data.publishers;
-            }
-        },
-        matcher: function (obj) {
-            return true;
-        }
-
+        source: publisherList
     });
 	
 	$('#guestModal').modal('show');
 }
+
