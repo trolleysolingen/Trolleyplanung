@@ -82,9 +82,15 @@
 								echo $reservationTmp['Publisher1']['prename'] . ' ' . $reservationTmp['Publisher1']['surname'];
 							}
 							if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
-								echo " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
+								echo " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" .
 									$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-									", " . ($reservationTmp['Reservation']['publisher2_id'] != null ? "true" : "false") . ");'>X</a>";
+									", " . ($reservationTmp['Reservation']['publisher2_id'] != null ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>";
+							}
+							else { 
+								if($reservationTmp['Publisher1']['phone'] != null) {
+									echo " <a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top'" . 
+									"data-content='" . $reservationTmp['Publisher1']['phone'] . "'><span class='glyphicon glyphicon-iphone'></span></a>";
+								}
 							}
 							echo '<br/>';
 						}
@@ -96,17 +102,23 @@
 								echo $reservationTmp['Publisher2']['prename'] . ' ' . $reservationTmp['Publisher2']['surname'];
 							}
 							if ($reservationTmp['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
-								echo " <a href='javascript:void(0)' onclick='deletePublisher(\"" .
+								echo " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" .
 									$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-									", true);'>X</a>";
+									", true);'><span class='glyphicon glyphicon-remove'></span></a>";
+							}
+							else { 
+								if($reservationTmp['Publisher2']['phone'] != null) {
+									echo " <a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top'" . 
+									"data-content='" . $reservationTmp['Publisher2']['phone'] . "'><span class='glyphicon glyphicon-iphone'></span></a>";
+								}
 							}
 							echo '<br/>';
 						} else {
 							if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
 								echo "<div id='guestDiv_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>".
-									   "<a href='javascript:void(0)' onclick='displayGuestField(\"" .
+									   "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" .
 									$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-									");'>Partner eintragen</a>" . '</div>';
+									");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;' ></span> Partner</a>" . '</div>';
 							} else {
 								echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
 									$dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
@@ -151,3 +163,6 @@
     </div>
   </div>
 </div>
+
+<a tabindex="0" class="btn btn-lg btn-danger" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+
