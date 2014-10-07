@@ -21,9 +21,7 @@ DROP TABLE IF EXISTS `congregations` ;
 CREATE TABLE IF NOT EXISTS `congregations` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
-  `path` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `path_UNIQUE` (`path` ASC))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -53,10 +51,9 @@ CREATE TABLE IF NOT EXISTS `publishers` (
   `congregation_id` INT NULL,
   `role_id` INT NOT NULL,
   `phone` VARCHAR(20) NULL,
-  `mobile` VARCHAR(20) NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_user_congregation_idx` (`congregation_id` ASC),
-  INDEX `fk_user_role_idx` (`role_id` ASC),
+  INDEX `fk_publisher_congregation_idx` (`congregation_id` ASC),
+  INDEX `fk_publisher_role_idx` (`role_id` ASC),
   CONSTRAINT `fk_publishers_congregations`
     FOREIGN KEY (`congregation_id`)
     REFERENCES `congregations` (`id`)
@@ -107,8 +104,8 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   modified datetime NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_reservation_timeslot_idx` (`timeslot_id` ASC),
-  INDEX `fk_reservation_user1_idx` (`publisher1_id` ASC),
-  INDEX `fk_reservation_user2_idx` (`publisher2_id` ASC),
+  INDEX `fk_reservation_publisher1_idx` (`publisher1_id` ASC),
+  INDEX `fk_reservation_publisher2_idx` (`publisher2_id` ASC),
   INDEX `fk_reservations_congregations_idx` (`congregation_id` ASC),
   CONSTRAINT `fk_reservations_timeslots`
     FOREIGN KEY (`timeslot_id`)
@@ -141,8 +138,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `trolleyplanung`;
-INSERT INTO `congregations` (`id`, `name`, `path`) VALUES (1, 'Demo', 'Demo');
-INSERT INTO `congregations` (`id`, `name`, `path`) VALUES (2, 'Solingen Mitte + Nord', 'Solingen');
+INSERT INTO `congregations` (`id`, `name`) VALUES (1, 'Demo');
+INSERT INTO `congregations` (`id`, `name`) VALUES (2, 'Solingen Mitte + Nord');
 
 COMMIT;
 
@@ -165,11 +162,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `trolleyplanung`;
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (1, '', 'Gast', 'Verkuendiger', NULL, 3, NULL, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (2, 'j.ankenbrand@gmx.de', 'Juergen', 'Ankenbrand', 2, 2, NULL, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (3, 'flixmix.bornmann@me.com', 'Felix', 'Bornmann', 2, 2, NULL, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (4, 'test1@demo.de', 'Test1', 'Verkuendiger', 1, 2, NULL, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`, `mobile`) VALUES (5, 'test2@demo.de', 'Test2', 'Verkuendiger', 1, 2, NULL, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (1, '', 'Gast', 'Verkuendiger', NULL, 3, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (2, 'j.ankenbrand@gmx.de', 'Juergen', 'Ankenbrand', 2, 2, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (3, 'flixmix.bornmann@me.com', 'Felix', 'Bornmann', 2, 2, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (4, 'test1@demo.de', 'Test1', 'Verkuendiger', 1, 1, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (5, 'test2@demo.de', 'Test2', 'Verkuendiger', 1, 4, NULL);
 COMMIT;
 
 

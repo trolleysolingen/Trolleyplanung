@@ -1,13 +1,20 @@
 <?php
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$linkarray = explode("/", $actual_link);
-	
-	/* CHECK if Link Mitarbeiter is active */
-	if(in_array("reservations", $linkarray)) {
-		$reservations = "active";
-	}
-	else {
-		$reservations = "";
+
+	$highlightReservations = "";
+	$highlightPublishers = "";
+	$highlightTimeslots = "";
+	$highlightCongregations = "";
+
+	if (in_array("reservations", $linkarray)) {
+		$highlightReservations = "active";
+	} else if (in_array("publishers", $linkarray)) {
+		$highlightPublishers = "active";
+	} else if (in_array("timeslots", $linkarray)) {
+		$highlightTimeslots = "active";
+	} else if (in_array("congregations", $linkarray)) {
+		$highlightCongregations = "active";
 	}
 	
 ?>
@@ -32,9 +39,28 @@
 				$publisher = $this->Session->read('publisher');
 				if ($publisher) { ?>
 					<ul class="nav navbar-nav">
-						<li class="<?php echo $reservations ?>">
-							<?php echo $this->Html->link('Schichten', array('controller' => 'reservations', 'action' => 'index')); ?>				
+						<li class="<?php echo $highlightReservations ?>">
+							<?php echo $this->Html->link('Schichten', array('controller' => 'reservations', 'action' => 'index')); ?>
 						</li>
+						<?php
+							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+						?>
+								<li class="<?php echo $highlightPublishers ?>">
+									<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
+								</li>
+								<li class="<?php echo $highlightTimeslots ?>">
+									<?php echo $this->Html->link('Schichtzeiten', array('controller' => 'timeslots', 'action' => 'index')); ?>
+								</li>
+						<?php
+							}
+							if ($publisher['Role']['name'] == 'admin') {
+						?>
+							<li class="<?php echo $highlightCongregations ?>">
+								<?php echo $this->Html->link('Versammlungen', array('controller' => 'congregations', 'action' => 'index')); ?>
+							</li>
+						<?php
+							}
+						?>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
 						<p class="navbar-text hidden-xs">

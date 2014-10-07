@@ -10,7 +10,7 @@ class TimeslotDAOComponent extends Component {
         $result= $model->find('all',
             array(
                 'conditions' => array('Timeslot.congregation_id' => $publisher['Congregation']['id']),
-                'order' => array('Timeslot.id'),
+                'order' => array('Timeslot.start'),
                 'recursive' => 0));
 
         return $result;
