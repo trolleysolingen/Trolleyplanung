@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d810980-12a3-4bf9-861f-7fccbcce417b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\work\PhpstormProjects\Trolleyplanung\app\tmp\cache\models\myapp_cake_model_default_trolleyplanung_roles" afterPath="" />
-      <change type="DELETED" beforePath="C:\work\PhpstormProjects\Trolleyplanung\app\tmp\cache\persistent\myapp_cake_core_cake_de" afterPath="" />
-      <change type="DELETED" beforePath="C:\work\PhpstormProjects\Trolleyplanung\app\tmp\cache\persistent\myapp_cake_core_cake_dev_de-de" afterPath="" />
-      <change type="DELETED" beforePath="C:\work\PhpstormProjects\Trolleyplanung\app\tmp\cache\persistent\myapp_cake_core_default_de" afterPath="" />
-      <change type="DELETED" beforePath="C:\work\PhpstormProjects\Trolleyplanung\app\tmp\cache\persistent\myapp_cake_core_default_de-de" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php" afterPath="$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/ReservationsController.php" afterPath="$PROJECT_DIR$/app/Controller/ReservationsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/logs/error.log" afterPath="$PROJECT_DIR$/app/tmp/logs/error.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Reservations/index.ctp" afterPath="$PROJECT_DIR$/app/View/Reservations/index.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_dev_de" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_dev_de" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_congregations" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_congregations" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_list" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_publishers" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_publishers" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_reservations" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_reservations" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_timeslots" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_timeslots" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/js/trolleyplanung.js" afterPath="$PROJECT_DIR$/app/webroot/js/trolleyplanung.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="0d810980-12a3-4bf9-861f-7fccbcce417b" name="Default" comment="" />
     <ignored path="Trolleyplanung.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -48,17 +28,20 @@
       <file leaf-file-name="navigation.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Elements/navigation.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3076925" vertical-offset="218" max-vertical-offset="1326">
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1768">
               <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="trolleyplanung.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/webroot/js/trolleyplanung.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1626898" vertical-offset="1606" max-vertical-offset="2346">
+            <state vertical-scroll-proportion="0.42857143" vertical-offset="1887" max-vertical-offset="2482">
               <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
               <folding />
             </state>
@@ -68,7 +51,7 @@
       <file leaf-file-name="ReservationsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/ReservationsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="1649">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1649">
               <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
               <folding />
             </state>
@@ -78,7 +61,7 @@
       <file leaf-file-name="PublisherDAOComponent.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.76923" vertical-offset="142" max-vertical-offset="1411">
+            <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1411">
               <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
               <folding />
             </state>
@@ -88,17 +71,13 @@
       <file leaf-file-name="index.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Reservations/index.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="2856">
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3468">
               <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#h4#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1412707097001" expanded="true" signature="773:866" placeholder="..." />
-                <marker date="1412707097001" expanded="true" signature="804:866" placeholder="..." />
-                <marker date="1412707097001" expanded="true" signature="833:866" placeholder="..." />
-                <marker date="1412707097001" expanded="false" signature="1436:1456" placeholder="..." />
-                <marker date="1412707097001" expanded="false" signature="1585:1596" placeholder="..." />
-              </folding>
+              <folding />
             </state>
+          </provider>
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -119,8 +98,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -390,6 +369,7 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -399,17 +379,18 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <BehatRunner />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
-      <pass-parent-envs>true</pass-parent-envs>
+      <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -510,7 +491,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -518,22 +499,30 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.215959" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34635416" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34635416" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294271" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294271" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -541,6 +530,9 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <MESSAGE value="added AUTO_INCREMENT" />
     <MESSAGE value="added ajax call addPublisher" />
@@ -558,8 +550,20 @@
     <breakpoint-manager>
       <option name="time" value="1" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/View/Reservations/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3468">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ddl/Trolleyplanung.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
@@ -585,7 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
           <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
           <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="527">
           <caret line="13" column="97" selection-start-line="13" selection-start-column="97" selection-end-line="13" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,29 +884,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.9365942" vertical-offset="105" max-vertical-offset="2822">
           <caret line="134" column="35" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tmp/cache/models/n">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Elements/navigation.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3076925" vertical-offset="218" max-vertical-offset="1326">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1768">
           <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/Component/PublisherDAOComponent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.76923" vertical-offset="142" max-vertical-offset="1411">
+        <state vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1411">
           <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
           <folding />
         </state>
@@ -913,22 +908,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Reservations/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="2856">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3468">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h4#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1412707097001" expanded="true" signature="773:866" placeholder="..." />
-            <marker date="1412707097001" expanded="true" signature="804:866" placeholder="..." />
-            <marker date="1412707097001" expanded="true" signature="833:866" placeholder="..." />
-            <marker date="1412707097001" expanded="false" signature="1436:1456" placeholder="..." />
-            <marker date="1412707097001" expanded="false" signature="1585:1596" placeholder="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/ReservationsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="1649">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1649">
           <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
           <folding />
         </state>
@@ -936,7 +927,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/webroot/js/trolleyplanung.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1626898" vertical-offset="1606" max-vertical-offset="2346">
+        <state vertical-scroll-proportion="0.42857143" vertical-offset="1887" max-vertical-offset="2482">
           <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
           <folding />
         </state>

@@ -53,15 +53,22 @@ function addGuest(reservationDay, reservationTimeslot) {
 }
 
 function displayReservation(reservationDay, reservationTimeslot, reservation, publisher) {
-    html = '';
+    html = "<div class='row'>";
+	html += "<div style='padding-right: 5px;' class='col-lg-10 cut-div-text'>";
 
-    if (reservation && reservation.Reservation) {
+    if (!reservation || !reservation.Reservation) {
+		html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a>";
+	} else {
         if (reservation.Reservation.publisher1_id) {
             if (reservation.Publisher1.role_id == 3) {
                 html += reservation.Reservation.guestname;
             } else {
                 html += reservation.Publisher1.prename + ' ' + reservation.Publisher1.surname;
             }
+		}
+		html += "</div>";
+		html += "<div class='col-lg-2' style='padding-right: 10px;'>";
+		if (reservation.Reservation.publisher1_id) {
             if (reservation.Reservation.publisher1_id == publisher.Publisher.id) {
                 html += " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", " +  (reservation.Reservation.publisher2_id ? "true" : "false") + ");'><span class='glyphicon glyphicon-remove'></span></a>";
             } else {
@@ -69,23 +76,20 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 					html += " <a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top' data-content='" + reservation.Publisher1.phone + "'><span class='glyphicon glyphicon-iphone'></span></a>";
 				}
 			}
-            html += "<br/>";
         }
+
+		html += "</div>";
+		html += "</div>";
+		html += "<div class='row'>";
+		html += "<div style='padding-right: 5px;' class='col-lg-10 cut-div-text'>";
+		
         if (reservation.Reservation.publisher2_id) {
             if (reservation.Publisher2.role_id == 3) {
                 html += reservation.Reservation.guestname;
             } else {
                 html += reservation.Publisher2.prename + ' ' + reservation.Publisher2.surname
             }
-            if (reservation.Reservation.publisher2_id == publisher.Publisher.id) {
-                html += " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", true);'><span class='glyphicon glyphicon-remove'></span></a>";
-            } else {
-				if(reservation.Publisher2.phone) {
-					html += " <a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top' data-content='" + reservation.Publisher2.phone + "'><span class='glyphicon glyphicon-iphone'></span></a>";
-				}
-			}
-            html += "<br/>";
-        } else {
+		} else {
             if (reservation.Reservation.publisher1_id == publisher.Publisher.id) {
                 html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>" +
                           "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;'></span> Partner</a></div>";
@@ -94,8 +98,19 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
             }
 
         }
-    } else {
-        html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a>" + "<br/>";
+		html += "</div>";
+		html += "<div class='col-lg-2' style='padding-right: 10px;'>";
+		 if (reservation.Reservation.publisher2_id) {
+            if (reservation.Reservation.publisher2_id == publisher.Publisher.id) {
+                html += " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", true);'><span class='glyphicon glyphicon-remove'></span></a>";
+            } else {
+				if(reservation.Publisher2.phone) {
+					html += " <a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top' data-content='" + reservation.Publisher2.phone + "'><span class='glyphicon glyphicon-iphone'></span></a>";
+				}
+			}
+        }
+		html += "</div>";
+		html += "</div>";
     }
 	
 	if (reservation && reservation.Reservation) {
