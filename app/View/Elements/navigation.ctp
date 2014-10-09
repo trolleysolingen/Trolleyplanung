@@ -63,7 +63,7 @@
 						?>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
-						<p class="navbar-text hidden-xs">
+						<p class="navbar-text hidden-xs hidden-sm">
 							<?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname'] . ' - ' . $publisher["Congregation"]["name"] ?>
 						</p>
 						
