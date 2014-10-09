@@ -13,6 +13,8 @@ function logError(obj){
 }
 
 function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
+    clearError(reservationDay, reservationTimeslot);
+
     $.ajax({
         type: "POST",
         url: url,
@@ -20,11 +22,18 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
         timeout: 10000,//in ms
         dataType: "json",
         success: function(data) {
-            displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+            if (data.publisher) {
+                displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+            } else {
+                displayError(reservationDay, reservationTimeslot,
+                    "Deine Sitzung ist abgelaufen. Bitte melde dich <a href='/'>hier</a> erneut an.");
+            }
         },
         error: function(request, status, err) {
             logError(status);
             logError(err);
+            displayError(reservationDay, reservationTimeslot,
+                "Der Server ist momentan nicht erreichbar. Bitte überprüfe, ob eine Internetverbindung zur Verfügung steht.");
         }
     });
 }
@@ -138,3 +147,14 @@ function displayGuestField(reservationDay, reservationTimeslot) {
 	$('#guestModal').modal('show');
 }
 
+function clearError(reservationDay, reservationTimeslot) {
+    var nextErrorElement = $('#td_' + reservationDay + '_' + reservationTimeslot).closest('.panel-body').children('.error');
+    nextErrorElement.html("");
+    nextErrorElement.hide();
+}
+
+function displayError(reservationDay, reservationTimeslot, errorMsg) {
+    var nextErrorElement = $('#td_' + reservationDay + '_' + reservationTimeslot).closest('.panel-body').children('.error');
+    nextErrorElement.html(errorMsg);
+    nextErrorElement.show();
+}

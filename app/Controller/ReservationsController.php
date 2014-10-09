@@ -11,7 +11,9 @@ class ReservationsController extends AppController {
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
-			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
+			if (!$this->request->is('ajax')) {
+				return $this->redirect(array('controller' => 'start', 'action' => 'index'));
+			}
 		}
 	}
 
@@ -47,12 +49,15 @@ class ReservationsController extends AppController {
 
 	public function addPublisher() {
 		$publisher = $this->Session->read('publisher');
-		$reservation = $this->ReservationDAO->addPublisher(
-							$publisher['Congregation']['id'],
-							$this->request->data['reservationDay'],
-							$this->request->data['reservationTimeslot'],
-							$this->Session->read('publisher'));
 
+		$reservation = null;
+		if ($publisher) {
+			$reservation = $this->ReservationDAO->addPublisher(
+				$publisher['Congregation']['id'],
+				$this->request->data['reservationDay'],
+				$this->request->data['reservationTimeslot'],
+				$this->Session->read('publisher'));
+		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
 
@@ -61,13 +66,16 @@ class ReservationsController extends AppController {
 
 	public function deletePublisher() {
 		$publisher = $this->Session->read('publisher');
-		$reservation = $this->ReservationDAO->deletePublisher(
-			$publisher['Congregation']['id'],
-			$this->request->data['reservationDay'],
-			$this->request->data['reservationTimeslot'],
-			$publisher,
-			$this->request->data['deleteBoth'] == 'true');
 
+		$reservation = null;
+		if ($publisher) {
+			$reservation = $this->ReservationDAO->deletePublisher(
+				$publisher['Congregation']['id'],
+				$this->request->data['reservationDay'],
+				$this->request->data['reservationTimeslot'],
+				$publisher,
+				$this->request->data['deleteBoth'] == 'true');
+		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
 
@@ -76,13 +84,16 @@ class ReservationsController extends AppController {
 
 	public function addGuest() {
 		$publisher = $this->Session->read('publisher');
-		$reservation = $this->ReservationDAO->addGuest(
-			$publisher['Congregation']['id'],
-			$this->request->data['reservationDay'],
-			$this->request->data['reservationTimeslot'],
-			$publisher,
-			$this->request->data['guestname']);
 
+		$reservation = null;
+		if ($publisher) {
+			$reservation = $this->ReservationDAO->addGuest(
+				$publisher['Congregation']['id'],
+				$this->request->data['reservationDay'],
+				$this->request->data['reservationTimeslot'],
+				$publisher,
+				$this->request->data['guestname']);
+		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
 

@@ -32,7 +32,7 @@
 		<?php
 			echo "<div id='collapse" . $week . "' class='panel-collapse collapse" . ($week >= Configure::read("DISPLAYED_WEEKS_OPEN") ? "" : " in") . "'>";
 			echo "<div class='panel-body'>";
-
+			echo "<div class='error'></div>";
 			echo "<table class='table table-striped table-hover' style='table-layout: fixed;'>";
 			echo "<tr>";
 			echo "<td></td>";
