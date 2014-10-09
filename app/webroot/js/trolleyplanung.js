@@ -12,30 +12,38 @@ function logError(obj){
     }
 }
 
+var preventDoubleClick = false;
+
 function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
     clearError(reservationDay, reservationTimeslot);
 
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: data,
-        timeout: 10000,//in ms
-        dataType: "json",
-        success: function(data) {
-            if (data.publisher) {
-                displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
-            } else {
+    if (!preventDoubleClick) {
+        preventDoubleClick = true;
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            timeout: 10000,//in ms
+            dataType: "json",
+            success: function(data) {
+                preventDoubleClick = false;
+                if (data.publisher) {
+                    displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+                } else {
+                    displayError(reservationDay, reservationTimeslot,
+                        "Deine Sitzung ist abgelaufen. Bitte melde dich <a href='/'>hier</a> erneut an.");
+                }
+            },
+            error: function(request, status, err) {
+                preventDoubleClick = false;
+                logError(status);
+                logError(err);
                 displayError(reservationDay, reservationTimeslot,
-                    "Deine Sitzung ist abgelaufen. Bitte melde dich <a href='/'>hier</a> erneut an.");
+                    "Der Server ist momentan nicht erreichbar. Bitte überprüfe, ob eine Internetverbindung zur Verfügung steht.");
             }
-        },
-        error: function(request, status, err) {
-            logError(status);
-            logError(err);
-            displayError(reservationDay, reservationTimeslot,
-                "Der Server ist momentan nicht erreichbar. Bitte überprüfe, ob eine Internetverbindung zur Verfügung steht.");
-        }
-    });
+        });
+    }
 }
 
 function addPublisher(reservationDay, reservationTimeslot) {
