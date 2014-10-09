@@ -55,6 +55,7 @@ Größe: LG
 			echo "<div class='panel-body'>";
 
 			echo "<table class='table table-striped table-hover'>";
+			echo "<div class='error'></div>";
 			echo "<tr>";
 			echo "<td></td>";
 			for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {

@@ -18,4 +18,10 @@
 	white-space: nowrap;
 	overflow:hidden !important;
 	text-overflow: ellipsis;
+
+.error {
+	display: none;
+	color: red;
+	padding-bottom: 5px;
+	font-weight: bold;
 }
