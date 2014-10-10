@@ -63,7 +63,7 @@ function addGuest(reservationDay, reservationTimeslot) {
 
 function displayReservation(reservationDay, reservationTimeslot, reservation, publisher) {
     html = "<div class='row'>";
-	html += "<div style='padding-right: 5px;' class='col-lg-10 cut-div-text'>";
+	html += "<div style='padding-right: 5px;' class='col-xs-10 cut-div-text'>";
 
     if (!reservation || !reservation.Reservation) {
 		html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a>";
@@ -76,7 +76,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
             }
 		}
 		html += "</div>";
-		html += "<div class='col-lg-2' style='padding-right: 10px;'>";
+		html += "<div class='col-xs-2' style='padding-right: 10px;'>";
 		if (reservation.Reservation.publisher1_id) {
             if (reservation.Reservation.publisher1_id == publisher.Publisher.id) {
                 html += " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", " +  (reservation.Reservation.publisher2_id ? "true" : "false") + ");'><span class='glyphicon glyphicon-remove'></span></a>";
@@ -90,7 +90,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 		html += "</div>";
 		html += "</div>";
 		html += "<div class='row'>";
-		html += "<div style='padding-right: 5px;' class='col-lg-10 cut-div-text'>";
+		html += "<div style='padding-right: 5px;' class='col-xs-10 cut-div-text'>";
 		
         if (reservation.Reservation.publisher2_id) {
             if (reservation.Publisher2.role_id == 3) {
@@ -108,7 +108,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 
         }
 		html += "</div>";
-		html += "<div class='col-lg-2' style='padding-right: 10px;'>";
+		html += "<div class='col-xs-2' style='padding-right: 10px;'>";
 		 if (reservation.Reservation.publisher2_id) {
             if (reservation.Reservation.publisher2_id == publisher.Publisher.id) {
                 html += " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" + reservationDay + "\"," + reservationTimeslot + ", true);'><span class='glyphicon glyphicon-remove'></span></a>";
@@ -124,20 +124,30 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 	
 	if (reservation && reservation.Reservation) {
 		if (reservation.Reservation.publisher1_id) {
-			$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
+			$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
+			$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
+			$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
 		}
 		if (reservation.Reservation.publisher2_id) {
-			$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
+			$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
+			$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
+			$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
 		}
 		if ((reservation.Reservation.publisher1_id == publisher.Publisher.id) || (reservation.Reservation.publisher2_id == publisher.Publisher.id)) {
-			$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
+			$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
+			$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
+			$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
 		}
 	}
 	else {
-		$('#td_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
+		$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
+		$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
+		$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
 	}
 
-    $('#td_' + reservationDay + '_' + reservationTimeslot).html(html);
+    $('#td_lg_' + reservationDay + '_' + reservationTimeslot).html(html);
+	$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).html(html);
+	$('#td_xs_' + reservationDay + '_' + reservationTimeslot).html(html);
 }
 
 
