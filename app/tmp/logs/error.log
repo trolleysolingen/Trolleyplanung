@@ -1343,6 +1343,7 @@ Stack Trace:
 #10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
 #11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+<<<<<<< HEAD
 2014-10-09 23:04:57 Error: Fatal Error (1): Call to undefined function format() in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 65]
 2014-10-09 23:04:57 Error: [FatalErrorException] Call to undefined function format()
 Request URL: /reservations
@@ -1361,5 +1362,15 @@ Stack Trace:
 #1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41, Array)
 #2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41, Array)
 #3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+=======
+2014-10-09 22:42:55 Error: Fatal Error (4): syntax error, unexpected T_OBJECT_OPERATOR, expecting ',' or ';' in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 9]
+2014-10-09 22:42:55 Error: [FatalErrorException] syntax error, unexpected T_OBJECT_OPERATOR, expecting ',' or ';'
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 9, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 9, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+>>>>>>> origin/master
 #4 [internal function]: App::shutdown()
 #5 {main}
