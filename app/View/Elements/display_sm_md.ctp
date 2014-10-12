@@ -1,6 +1,6 @@
 <?php
-echo "<table class='table table-striped table-hover'>";
 echo "<div class='error'></div>";
+echo "<table class='table table-striped table-hover'>";
 echo "<tr>";
 echo "<td></td>";
 for ($slot = 0; $slot < sizeof($timeslots); $slot++) {

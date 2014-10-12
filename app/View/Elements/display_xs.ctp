@@ -1,7 +1,7 @@
 <?php
 for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
-    echo "<table class='table table-striped table-hover'>";
     echo "<div class='error'></div>";
+    echo "<table class='table table-striped table-hover'>";
     echo "<tr>";
     echo "<th colspan='2'>";
     $echoDate->add(new DateInterval('P1D'));

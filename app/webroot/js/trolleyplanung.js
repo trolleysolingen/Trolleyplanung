@@ -13,6 +13,7 @@ function logError(obj){
 }
 
 var preventDoubleClick = false;
+var displaySizes = new Array('lg', 'sm_md', 'xs');
 
 function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
     clearError(reservationDay, reservationTimeslot);
@@ -132,30 +133,30 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 	
 	if (reservation && reservation.Reservation) {
 		if (reservation.Reservation.publisher1_id) {
-			$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
-			$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
-			$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
+            $.each(displaySizes, function( index, displaySize ) {
+                $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
+            });
 		}
 		if (reservation.Reservation.publisher2_id) {
-			$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
-			$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
-			$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
+            $.each(displaySizes, function( index, displaySize ) {
+    			$('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
+            });
 		}
 		if ((reservation.Reservation.publisher1_id == publisher.Publisher.id) || (reservation.Reservation.publisher2_id == publisher.Publisher.id)) {
-			$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
-			$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
-			$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
+            $.each(displaySizes, function( index, displaySize ) {
+                $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).attr('class', 'info');
+            });
 		}
 	}
 	else {
-		$('#td_lg_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
-		$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
-		$('#td_xs_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
+        $.each(displaySizes, function( index, displaySize ) {
+		    $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).attr('class', '');
+        });
 	}
 
-    $('#td_lg_' + reservationDay + '_' + reservationTimeslot).html(html);
-	$('#td_sm_md_' + reservationDay + '_' + reservationTimeslot).html(html);
-	$('#td_xs_' + reservationDay + '_' + reservationTimeslot).html(html);
+    $.each(displaySizes, function( index, displaySize ) {
+        $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html(html);
+    });
 }
 
 
@@ -181,13 +182,17 @@ function displayGuestField(reservationDay, reservationTimeslot) {
 }
 
 function clearError(reservationDay, reservationTimeslot) {
-    var nextErrorElement = $('#td_' + reservationDay + '_' + reservationTimeslot).closest('.panel-body').children('.error');
-    nextErrorElement.html("");
-    nextErrorElement.hide();
+    $.each(displaySizes, function( index, displaySize ){
+        $('.error').html("");
+        $('.error').hide();
+    });
+
 }
 
 function displayError(reservationDay, reservationTimeslot, errorMsg) {
-    var nextErrorElement = $('#td_' + reservationDay + '_' + reservationTimeslot).closest('.panel-body').children('.error');
-    nextErrorElement.html(errorMsg);
-    nextErrorElement.show();
+    $.each(displaySizes, function( index, displaySize ) {
+        var nextErrorElement = $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).closest('.table').prev();
+        nextErrorElement.html(errorMsg);
+        nextErrorElement.show();
+    });
 }
