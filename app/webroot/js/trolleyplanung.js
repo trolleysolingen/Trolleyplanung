@@ -21,6 +21,10 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
     if (!preventDoubleClick) {
         preventDoubleClick = true;
 
+        $.each(displaySizes, function( index, displaySize ) {
+            $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html("<img src='/img/ajax-loader.gif'/>");
+        });
+
         $.ajax({
             type: "POST",
             url: url,
