@@ -49,6 +49,7 @@ class ReservationDAOComponent extends Component {
                 } else if ($reservation['Reservation']['publisher2_id'] == null) {
                     $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
                 }
+                unset($reservation['Reservation']['modified']);
             } else {
                 $reservation['Reservation']['congregation_id'] = $publisher['Publisher']['congregation_id'];
                 $reservation['Reservation']['day'] = $reservationDay;
@@ -100,6 +101,7 @@ class ReservationDAOComponent extends Component {
                 } else if ($reservation['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
                     $reservation['Reservation']['publisher2_id'] = null;
                 }
+                unset($reservation['Reservation']['modified']);
 
                 $reservation = $model->save($reservation);
 
@@ -122,7 +124,7 @@ class ReservationDAOComponent extends Component {
         return $reservation;
     }
 
-    public function addGuest($congregationId, $reservationDay, $reservationTimeslot, $publisher, $guestname) {
+    public function addGuest($congregationId, $reservationDay, $reservationTimeslot, $displayTime, $publisher, $guestname) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
@@ -136,25 +138,32 @@ class ReservationDAOComponent extends Component {
         );
 
         if ($reservation != null) {
-            $guestPublisher = $this->PublisherDAO->getByName($guestname, $publisher);
 
-            if (!$guestPublisher) {
-                $guestPublisher = $this->PublisherDAO->getGuestPublisher();
-                $reservation['Reservation']['guestname'] = $guestname;
+            if ($reservation['Reservation']['modified'] > $displayTime) {
+                // Reservation has been modified -> don't save
+                $reservation['error'] = 'Der Termin wurde zwischenzeitlich verändert. Bitte überprüfe deine Buchung!';
+                return $reservation;
+            } else {
+                $guestPublisher = $this->PublisherDAO->getByName($guestname, $publisher);
+
+                if (!$guestPublisher) {
+                    $guestPublisher = $this->PublisherDAO->getGuestPublisher();
+                    $reservation['Reservation']['guestname'] = $guestname;
+                }
+
+                $reservation['Reservation']['publisher2_id'] = $guestPublisher['Publisher']['id'];
+                unset($reservation['Reservation']['modified']);
+
+                $reservation = $model->save($reservation);
+
+                $reservation = $model->find('first', array(
+                        'conditions' => array(
+                            'Reservation.id' => $reservation['Reservation']['id']
+                        ),
+                        'recursive' => 0
+                    )
+                );
             }
-
-            $reservation['Reservation']['publisher2_id'] = $guestPublisher['Publisher']['id'];
-
-
-            $reservation = $model->save($reservation);
-
-            $reservation = $model->find('first', array(
-                    'conditions' => array(
-                        'Reservation.id' => $reservation['Reservation']['id']
-                    ),
-                    'recursive' => 0
-                )
-            );
         }
 
         // debug($reservation);

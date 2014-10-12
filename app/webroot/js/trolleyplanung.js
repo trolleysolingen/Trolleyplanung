@@ -59,10 +59,10 @@ function deletePublisher(reservationDay, reservationTimeslot, askPartner) {
     ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/deletePublisher.json", data);
 }
 
-function addGuest(reservationDay, reservationTimeslot) {
+function addGuest(reservationDay, reservationTimeslot, displayTime) {
     var guestname = $('#guestname_' + reservationDay + '_' + reservationTimeslot).val();
     if (guestname) {
-        var data = {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, guestname: guestname};
+        var data = {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, displayTime: displayTime, guestname: guestname};
         ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addGuest.json", data);
     }
 	$('#guestModal').modal('hide');
@@ -111,7 +111,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 		} else {
             if (reservation.Reservation.publisher1_id == publisher.Publisher.id) {
                 html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>" +
-                          "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;'></span> Partner</a></div>";
+                          "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;'></span> Partner</a></div>";
             } else {
                 html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-user_add'></span></a><br/>";
             }
@@ -161,7 +161,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 }
 
 
-function displayGuestField(reservationDay, reservationTimeslot) {
+function displayGuestField(reservationDay, reservationTimeslot, displayTime) {
 	html = '<div class="form-group">';
     html += '<label for="guestname_' + reservationDay + '_' + reservationTimeslot + '">Name:</label>';
     html += '<input type="text" class="form-control" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '" autocomplete="off"/>';
@@ -169,7 +169,7 @@ function displayGuestField(reservationDay, reservationTimeslot) {
 	
 	body = '<div class="btn-group">';
 	body += '<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>';
-	body += "<a href='javascript:void(0)' class='btn btn-primary' onclick='addGuest(\"" + reservationDay + "\"," + reservationTimeslot + ");'>Eintragen</a>";
+	body += "<a href='javascript:void(0)' class='btn btn-primary' onclick='addGuest(\"" + reservationDay + "\"," + reservationTimeslot + ", \"" + displayTime + "\");'>Eintragen</a>";
     body += '</div>';
 
     $('#guestModalDiv').html(html);

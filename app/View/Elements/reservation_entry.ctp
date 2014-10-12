@@ -74,8 +74,8 @@ if ($reservationTmp == null) {
         if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
             echo "<div id='guestDiv_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>".
                 "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" .
-                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-                ");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;' ></span> Partner</a>" . '</div>';
+                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime .
+                "\");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;' ></span> Partner</a>" . '</div>';
         } else {
             echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';

@@ -99,6 +99,7 @@ class ReservationsController extends AppController {
 				$publisher['Congregation']['id'],
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
+				$this->request->data['displayTime'],
 				$publisher,
 				$this->request->data['guestname']);
 		}
