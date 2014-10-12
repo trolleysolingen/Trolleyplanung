@@ -23,10 +23,12 @@ class ReservationsController extends AppController {
  * @return void
  */
 	public function index() {
-		$mondayThisWeek = strtotime('monday this week');
+		//$mondayThisWeek = strtotime('monday this week');
+		$mondayThisWeek = strtotime(date('o-\\WW'));
 
 		$publisher = $this->Session->read('publisher');
 
+		$now = new DateTime('now');
 		$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"]);
 
 		$timeslots = $this->TimeslotDAO->getAll($publisher);
@@ -38,6 +40,7 @@ class ReservationsController extends AppController {
 		$this->set("timeslots", $timeslots);
 		$this->set("reservations", $reservations);
 		$this->set("publisherList", $publisherList);
+		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
 	}
 
 
@@ -56,12 +59,15 @@ class ReservationsController extends AppController {
 				$publisher['Congregation']['id'],
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
+				$this->request->data['displayTime'],
 				$this->Session->read('publisher'));
 		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
+		$now = new DateTime('now');
+		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
 
-		$this->set("_serialize", array("reservation", "publisher"));
+		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
 	}
 
 	public function deletePublisher() {
@@ -78,8 +84,10 @@ class ReservationsController extends AppController {
 		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
+		$now = new DateTime('now');
+		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
 
-		$this->set("_serialize", array("reservation", "publisher"));
+		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
 	}
 
 	public function addGuest() {
@@ -96,7 +104,9 @@ class ReservationsController extends AppController {
 		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
+		$now = new DateTime('now');
+		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
 
-		$this->set("_serialize", array("reservation", "publisher"));
+		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
 	}
 }

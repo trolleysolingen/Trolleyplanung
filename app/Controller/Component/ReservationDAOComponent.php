@@ -25,7 +25,7 @@ class ReservationDAOComponent extends Component {
         return $result;
     }
 
-    public function addPublisher($congregationId, $reservationDay, $reservationTimeslot, $publisher) {
+    public function addPublisher($congregationId, $reservationDay, $reservationTimeslot, $displayTime, $publisher) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
@@ -34,36 +34,42 @@ class ReservationDAOComponent extends Component {
                     'Reservation.timeslot_id' => $reservationTimeslot,
                     'Reservation.congregation_id' => $congregationId
                 ),
-            'recursive' => -1
+            'recursive' => 0
             )
         );
 
-        if ($reservation != null) {
-            if ($reservation['Reservation']['publisher1_id'] == null) {
-                $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
-            } else if ($reservation['Reservation']['publisher2_id'] == null) {
-                $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
-            }
+        if ($reservation != null && $reservation['Reservation']['modified'] > $displayTime) {
+            // Reservation has been modified -> don't save
+            $reservation['error'] = 'Der Termin wurde zwischenzeitlich verändert. Bitte überprüfe deine Buchung!';
+            return $reservation;
         } else {
-            $reservation['Reservation']['congregation_id'] = $publisher['Publisher']['congregation_id'];
-            $reservation['Reservation']['day'] = $reservationDay;
-            $reservation['Reservation']['timeslot_id'] = $reservationTimeslot;
-            $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
+            if ($reservation != null) {
+                if ($reservation['Reservation']['publisher1_id'] == null) {
+                    $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
+                } else if ($reservation['Reservation']['publisher2_id'] == null) {
+                    $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
+                }
+            } else {
+                $reservation['Reservation']['congregation_id'] = $publisher['Publisher']['congregation_id'];
+                $reservation['Reservation']['day'] = $reservationDay;
+                $reservation['Reservation']['timeslot_id'] = $reservationTimeslot;
+                $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
+            }
+
+            $reservation = $model->save($reservation);
+
+            $reservation = $model->find('first', array(
+                    'conditions' => array(
+                        'Reservation.id' => $reservation['Reservation']['id']
+                    ),
+                    'recursive' => 0
+                )
+            );
+
+            // debug($reservation);
+
+            return $reservation;
         }
-
-        $reservation = $model->save($reservation);
-
-        $reservation = $model->find('first', array(
-                'conditions' => array(
-                    'Reservation.id' => $reservation['Reservation']['id']
-                ),
-                'recursive' => 0
-            )
-        );
-
-        // debug($reservation);
-
-        return $reservation;
     }
 
 
@@ -125,7 +131,7 @@ class ReservationDAOComponent extends Component {
                     'Reservation.timeslot_id' => $reservationTimeslot,
                     'Reservation.congregation_id' => $congregationId
                 ),
-                'recursive' => -1
+                'recursive' => 0
             )
         );
 

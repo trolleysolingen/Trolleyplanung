@@ -30,7 +30,7 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
             success: function(data) {
                 preventDoubleClick = false;
                 if (data.publisher) {
-                    displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher);
+                    displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher, data.displayTime);
                 } else {
                     displayError(reservationDay, reservationTimeslot,
                         "Deine Sitzung ist abgelaufen. Bitte melde dich <a href='/'>hier</a> erneut an.");
@@ -38,8 +38,6 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
             },
             error: function(request, status, err) {
                 preventDoubleClick = false;
-                logError(status);
-                logError(err);
                 displayError(reservationDay, reservationTimeslot,
                     "Der Server ist momentan nicht erreichbar. Bitte überprüfe, ob eine Internetverbindung zur Verfügung steht.");
             }
@@ -47,8 +45,8 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
     }
 }
 
-function addPublisher(reservationDay, reservationTimeslot) {
-    var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot };
+function addPublisher(reservationDay, reservationTimeslot, displayTime) {
+    var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, displayTime: displayTime };
     ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addPublisher.json", data);
 }
 
@@ -70,12 +68,15 @@ function addGuest(reservationDay, reservationTimeslot) {
 	$('#guestModal').modal('hide');
 }
 
-function displayReservation(reservationDay, reservationTimeslot, reservation, publisher) {
+function displayReservation(reservationDay, reservationTimeslot, reservation, publisher, displayTime) {
+    if (reservation && reservation.error) {
+        displayError(reservationDay, reservationTimeslot, reservation.error);
+    }
     html = "<div class='row'>";
 	html += "<div style='padding-right: 5px;' class='col-xs-10 cut-div-text'>";
 
     if (!reservation || !reservation.Reservation) {
-		html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a>";
+		html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-user_add'></span></a>";
 	} else {
         if (reservation.Reservation.publisher1_id) {
             if (reservation.Publisher1.role_id == 3) {
@@ -112,7 +113,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
                 html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>" +
                           "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;'></span> Partner</a></div>";
             } else {
-                html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-user_add'></span></a><br/>";
+                html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-user_add'></span></a><br/>";
             }
 
         }

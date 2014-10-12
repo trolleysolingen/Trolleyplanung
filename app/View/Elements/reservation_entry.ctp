@@ -34,7 +34,7 @@ echo "<td id='td_" . $td_id . "_" . $dateTmp->format('Y-m-d') . "_" . $timeslots
 echo "<div style='padding-right: 5px;' class='col-" . $div_class . "-10 cut-div-text'>";
 if ($reservationTmp == null) {
     echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
-        $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'><span class='glyphicon glyphicon-user_add'></span></a>";
+        $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\")'><span class='glyphicon glyphicon-user_add'></span></a>";
 } else {
     if ($reservationTmp['Reservation']['publisher1_id'] != null) {
         if ($reservationTmp['Publisher1']['role_id'] == 3) {
@@ -78,7 +78,7 @@ if ($reservationTmp == null) {
                 ");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;' ></span> Partner</a>" . '</div>';
         } else {
             echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
-                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
+                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
         }
     }
     echo "</div>";

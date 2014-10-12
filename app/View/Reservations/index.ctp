@@ -6,7 +6,6 @@
 			}
 		?>
 		];
-	var displayTime = '<?php $now = new DateTime('now'); echo $now->format('Y-m-d H:i:s'); ?>';
 </script>
 
 <div class="visible-xs-block">
