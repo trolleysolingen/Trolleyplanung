@@ -16,8 +16,9 @@
 
 .cut-div-text {
 	white-space: nowrap;
-	overflow:hidden !important;
+	overflow: hidden !important;
 	text-overflow: ellipsis;
+}
 
 .error {
 	display: none;
