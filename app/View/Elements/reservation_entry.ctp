@@ -48,9 +48,9 @@ if ($reservationTmp == null) {
     echo "<div class='col-" . $div_class . "-2' style='padding-right: 10px;'>";
     if ($reservationTmp['Reservation']['publisher1_id'] != null) {
         if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
-            echo " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" .
+            echo " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" .
                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-                ", " . ($reservationTmp['Reservation']['publisher2_id'] != null ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>";
+                ", " . ($reservationTmp['Reservation']['publisher2_id'] != null ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>"; 
         }
         else {
             if($reservationTmp['Publisher1']['phone'] != null) {
@@ -86,7 +86,7 @@ if ($reservationTmp == null) {
     echo "<div class='col-" . $div_class . "-2' style='padding-right: 10px;'>";
     if ($reservationTmp['Reservation']['publisher2_id'] != null) {
         if ($reservationTmp['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
-            echo " <a href='javascript:void(0)' style='float:right;' onclick='deletePublisher(\"" .
+            echo " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" .
                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
                 ", true);'><span class='glyphicon glyphicon-remove'></span></a>";
         }
