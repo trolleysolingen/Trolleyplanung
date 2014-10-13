@@ -1,6 +1,6 @@
 <?php
 for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
-    echo "<div class='error'></div>";
+    echo "<div class='error alert alert-danger' role='alert'></div>";
     echo "<table class='table table-striped table-hover'>";
     echo "<tr>";
     echo "<th colspan='2'>";

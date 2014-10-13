@@ -1394,3 +1394,84 @@ Stack Trace:
 #3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-10-13 08:42:42 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
