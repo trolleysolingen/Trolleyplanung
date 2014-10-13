@@ -54,8 +54,9 @@ if ($reservationTmp == null) {
         }
         else {
             if($reservationTmp['Publisher1']['phone'] != null) {
-                echo " <a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top'" .
-                    "data-content='" . $reservationTmp['Publisher1']['phone'] . "'><span class='glyphicon glyphicon-iphone'></span></a>";
+				$tel1 = $reservationTmp['Publisher1']['phone'];
+                echo "<a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top'" .
+                     "data-content='<a href=\"tel:" . $tel1 . "\">" . $tel1 . "</a>'><span class='glyphicon glyphicon-iphone'></span></a>";
             }
         }
     }
@@ -91,8 +92,9 @@ if ($reservationTmp == null) {
         }
         else {
             if($reservationTmp['Publisher2']['phone'] != null) {
+				$tel2 = $reservationTmp['Publisher2']['phone'];
                 echo " <a href='javascript:void(0)' style='float:right;' tabindex='0' data-toggle='popover' data-trigger='focus' data-placement='top'" .
-                    "data-content='" . $reservationTmp['Publisher2']['phone'] . "'><span class='glyphicon glyphicon-iphone'></span></a>";
+                    "data-content='<a href=\"tel:" . $tel2 . "\">" . $tel2 . "</a>'><span class='glyphicon glyphicon-iphone'></span></a>";
             }
         }
     }
