@@ -122,7 +122,7 @@ if ($reservationTmp == null) {
 	
 	if ($reservationTmp['Reservation']['publisher2_id'] != null) {
         if ($reservationTmp['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
-            echo " <a href='javascript:void(0)' class='btn btn-primary btn-sm' onclick='showDeleteModal(\"" .
+            echo " <a href='javascript:void(0)' class='btn btn-danger btn-sm' onclick='showDeleteModal(\"" .
                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
                 ", true);'><span class='glyphicon glyphicon-remove'></span></a>";
         }
