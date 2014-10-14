@@ -26,11 +26,19 @@
             <?php
             echo "<div id='collapse_" . $displaySizes_underscore_separated . $week . "' class='panel-collapse collapse" . ($week >= Configure::read("DISPLAYED_WEEKS_OPEN") ? "" : " in") . "'>";
             echo "<div class='panel-body'>";
-            echo $this->element('display_' . $displaySizes_underscore_separated, array(
-                'weekDays' => $weekDays,
-                'echoDate' => $echoDate,
-                'dateStart' => $dateStart
-            ));
+			if(sizeof($timeslots)>4 && ($displaySize == 'sm' || $displaySize == 'md')) {
+				echo $this->element('display_xs', array(
+					'weekDays' => $weekDays,
+					'echoDate' => $echoDate,
+					'dateStart' => $dateStart
+				));
+			} else {
+				echo $this->element('display_' . $displaySizes_underscore_separated, array(
+					'weekDays' => $weekDays,
+					'echoDate' => $echoDate,
+					'dateStart' => $dateStart
+				));
+			}
             echo "</div>";
             echo "</div>";
         echo"</div>";
