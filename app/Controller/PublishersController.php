@@ -64,14 +64,14 @@ class PublishersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Publisher->create();
 			if ($this->Publisher->save($this->request->data)) {
-				$this->Session->setFlash(__('The publisher has been saved.'));
+				$this->Session->setFlash(__('Der Verkündiger wurde gespeichert.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The publisher could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Der Verkündiger konnte nicht gespeichert werden. Bitte versuche es erneut.'));
 			}
 		}
-		$roles = $this->Publisher->Role->find('list', array('conditions' => array('name not in' => array('admin', 'guest'))));
-		$this->set(compact('congregations', 'roles'));
+		$roles = $this->Publisher->Role->find('list', array('fields' => array('id', 'description'), 'conditions' => array('name not in' => array('admin', 'guest'))));
+		$this->set(compact('roles'));
 		$this->set('publisher', $publisher);
 	}
 
@@ -90,19 +90,20 @@ class PublishersController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Publisher->save($this->request->data)) {
-				$this->Session->setFlash(__('The publisher has been saved.'));
+				$this->Session->setFlash(__('Der Verkündiger wurde gespeichert.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The publisher could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Der Verkündiger konnte nicht gespeichert werden. Bitte versuche es erneut.'));
 			}
 		} else {
 			$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
 			$this->request->data = $this->Publisher->find('first', $options);
 		}
 
-		$roles = $this->Publisher->Role->find('list', array('conditions' => array('name not in' => array('guest',
+		$roles = $this->Publisher->Role->find('list', array('fields' => array('id', 'description'), 'conditions' => array('name not in' => array('guest',
 			($this->request->data && $this->request->data['Role']['name'] == 'admin' ? '' : 'admin')))));
-		$this->set(compact('congregations', 'roles'));
+
+		$this->set(compact('roles'));
 		$this->set('publisher', $publisher);
 	}
 

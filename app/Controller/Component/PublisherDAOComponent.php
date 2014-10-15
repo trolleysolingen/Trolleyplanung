@@ -4,10 +4,10 @@ App::uses('Component', 'Controller');
 
 class PublisherDAOComponent extends Component {
 
-    public function getByEmail($email) {
+    public function getByEmail($email, $password) {
         $model = ClassRegistry::init('Publisher');
 
-        $result= $model->find('first', array('conditions' => array('email' => $email), 'recursive' => 1));
+        $result= $model->find('first', array('conditions' => array('email' => $email, 'password' => $password), 'recursive' => 1));
 
         return $result;
     }
