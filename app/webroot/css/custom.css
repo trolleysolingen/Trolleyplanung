@@ -23,3 +23,10 @@
 .error {
 	display: none;
 }
+
+.vert-align {
+  margin-top:150px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

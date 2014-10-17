@@ -8,25 +8,7 @@
 		];
 </script>
 
-<div class="visible-xs-block">
-BILDSCHIRM DEBUG:
-Größe: XS
-</div>
-
-<div class="visible-sm-block">
-BILDSCHIRM DEBUG:
-Größe: SM
-</div>
-
-<div class="visible-md-block">
-BILDSCHIRM DEBUG:
-Größe: MD
-</div>
-
-<div class="visible-lg-block">
-BILDSCHIRM DEBUG:
-Größe: LG
-</div>
+<legend>Schichten</legend>
 
 <?php
 	echo $this->element('week_iteration', array(

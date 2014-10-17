@@ -74,4 +74,20 @@ class PublisherDAOComponent extends Component {
 
         return $result;
     }
+	
+	public function getContactPersons($publisher) {
+		$model = ClassRegistry::init('Publisher');
+		
+		$result = $model->find('all', array(
+                'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname'),
+                'recursive' => -1,
+                'conditions' => array(
+                    'Publisher.congregation_id' => $publisher['Congregation']['id'],
+                    'Publisher.role_id =' => '4'
+                )
+            )
+        );
+
+        return $result;
+	}
 }

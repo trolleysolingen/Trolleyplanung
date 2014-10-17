@@ -1475,3 +1475,311 @@ Request URL: /Trolleyplanung/
 Stack Trace:
 #0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-10-14 17:45:28 Error: [MissingControllerException] Controller class ContactController could not be found.
+Exception Attributes: array (
+  'class' => 'ContactController',
+  'plugin' => NULL,
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-14 17:45:41 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Contact\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Contact\\index.ctp',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-14 17:47:24 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:51:14 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:51:15 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:51:15 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:56:30 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:56:48 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 18:03:58 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 4' at line 1
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Publish...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Publish...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Publish...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Publisher), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\PublisherDAOComponent.php(89): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(24): PublisherDAOComponent->getContactPersons(Array)
+#8 [internal function]: ContactController->index()
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-14 23:50:52 Error: Fatal Error (1): Class 'CakeEmail' not found in [C:\xampp\htdocs\Trolleyplanung\app\View\Contact\index.ctp, line 34]
+2014-10-14 23:50:52 Error: [FatalErrorException] Class 'CakeEmail' not found
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'CakeEmai...', 'C:\\xampp\\htdocs...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'CakeEmai...', 'C:\\xampp\\htdocs...', 34, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'CakeEmai...', 'C:\\xampp\\htdocs...', 34, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-14 23:51:49 Error: [ConfigureException] Unknown email configuration "Smtp".
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1125): CakeEmail->_applyConfig('Smtp')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(348): CakeEmail->config('Smtp')
+#2 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(29): CakeEmail->__construct('Smtp')
+#3 [internal function]: ContactController->index()
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-10-14 23:52:08 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Emails\text\welcome_mail.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Emails\\text\\welcome_mail.ctp',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName('welcome_mail')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1684): View->render('welcome_mail', 'default')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1537): CakeEmail->_renderTemplates('smtp\n')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1148): CakeEmail->_render(Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(35): CakeEmail->send('smtp')
+#5 [internal function]: ContactController->index()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-10-14 23:52:35 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Emails\text\welcome_mail.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Emails\\text\\welcome_mail.ctp',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName('welcome_mail')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1684): View->render('welcome_mail', 'default')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1537): CakeEmail->_renderTemplates('smtp\n')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1148): CakeEmail->_render(Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(35): CakeEmail->send('smtp')
+#5 [internal function]: ContactController->index()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-10-14 23:54:12 Error: [SocketException] Unable to find the socket transport "tls" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-10-14 23:54:36 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-10-14 23:55:29 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-10-14 23:57:05 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
