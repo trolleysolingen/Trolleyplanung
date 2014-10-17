@@ -30,21 +30,44 @@
 			Benutzt bitte für alle anderen <b>Fragen, Anregungen, Fehlermeldungen und Lobgesänge</b> folgendes Kontaktformular.
 		  </div>
 		</div>
-		<form role="form">
-		  <div class="form-group">
-			<label for="exampleInputEmail1">Email  </label>
-			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-		  </div>
-		  <div class="form-group">
-			<label for="exampleInputPassword1">Password</label>
-			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		  </div>
-		  
-		  <button type="submit" class="btn btn-default">Submit</button>
-		</form>
+		<?php $pubName = $publisher['Publisher']['prename'] . " " . $publisher['Publisher']['surname'];
+		echo $this->Form->create(null, array('url' => array('controller' => 'contact'), 'class' => 'form-horizontal'
+		)); ?>
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<?php echo $this->Form->input('name', array('div' => false, 'label'=>false, 'class' => 'form-control', 'id' => 'name', 'value' => $pubName, 'disabled' => 'disabled')); ?>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-10">
+				<?php echo $this->Form->input('email', array('div' => false, 'label'=>false, 'class' => 'form-control', 'id' => 'email', 'value' => $publisher['Publisher']['email'], 'disabled' => 'disabled')); ?>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="subject" class="col-sm-2 control-label">Betreff</label>
+			<div class="col-sm-10">
+				<?php echo $this->Form->input('subject', array('div' => false, 'label'=>false, 'class' => 'form-control', 'id' => 'subject')); ?>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="message" class="col-sm-2 control-label">Nachricht</label>
+			<div class="col-sm-10">
+				<?php echo $this->Form->textarea('message', array('div' => false, 'label'=>false, 'class' => 'form-control', 'id' => 'message', 'rows' => '5')); ?>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<?php echo $this->Form->end(array('div' => false, 'label' => 'Abschicken', 'class' => 'btn btn-primary')); ?>
+			</div>
+		</div>
 	</div>
 
 <?php
-	print_r($contactList);
 }
 ?>

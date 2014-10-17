@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 App::uses('AppController', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 /**
@@ -9,7 +9,6 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class ContactController extends AppController {
 	public $components = array('PublisherDAO');
-	public $uses = array();
 
 	public function beforeFilter() {
 		
@@ -27,11 +26,28 @@ class ContactController extends AppController {
 			$this->set("contactList", $contactList);
 		}
 		
-		//$email    = new CakeEmail('smtp');
-		//$result   = $email->emailFormat('text')
-		//					->to('flixmix.bornmann@me.com')
-		//					->subject('Welcome to my domain name');
-		//$email ->send('smtp');
+		if ($this->request->is('post')) {
+			$useremail = $publisher["Publisher"]["email"];
+			$username = $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"];
+			$subject = $this->request->data["Contact"]["subject"];
+			$message = $this->request->data["Contact"]["message"];
+			
+			$mail    = new CakeEmail();
+			$result   = $mail->emailFormat('text')
+						->from(array($useremail => $username))
+						->to('info@trolley.jw-center.com')
+						->subject($subject);		
+			
+			if ($mail ->send($message)) {
+				$this->Session->setFlash('Deine Nachricht wurde abgeschickt. Es wird sich so schnell es geht jemand darum kümmern.', 'default', array('class' => 'alert alert-success'));
+				print($useremail);
+				print($username);
+				print($subject);
+				print($message);
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('Beim verschicken deiner Nachricht ist ein Fehler aufgetreten. Bitte versuche es später noch einmal', 'default', array('class' => 'alert alert-danger'));
+			}
+		}
 	}
-
 }
