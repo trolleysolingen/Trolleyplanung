@@ -35,6 +35,8 @@ class TimeslotsController extends AppController {
 		$this->Timeslot->recursive = 0;
 		$this->set('timeslots',
 			$this->Paginator->paginate('Timeslot', array('Timeslot.congregation_id' => $publisher['Congregation']['id'])));
+
+		$this->set('publisher', $publisher);
 	}
 
 /**
@@ -109,7 +111,6 @@ class TimeslotsController extends AppController {
 		if (!$this->Timeslot->exists()) {
 			throw new NotFoundException(__('Invalid timeslot'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Timeslot->delete()) {
 			$this->Session->setFlash(__('The timeslot has been deleted.'));
 		} else {

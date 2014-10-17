@@ -1,43 +1,64 @@
+<script type="text/javascript">
+	function confirmDelete(id, name){
+		if (window.confirm('Möchtest du die Schicht ' + name + ' wirklich löschen')) {
+			location.href = '<?php echo $this->Html->url(array('action' => 'delete')); ?>' + '/' + id;
+		}
+	}
+</script>
+
 <div class="timeslots index">
-	<h2><?php echo __('Schichtzeiten'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<thead>
-	<tr>
-			<th><?php echo $this->Paginator->sort('start', 'Startzeit'); ?></th>
-			<th><?php echo $this->Paginator->sort('end', 'Endezeit'); ?></th>
-			<th class="actions"><?php echo __('Aktionen'); ?></th>
-	</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($timeslots as $timeslot): ?>
-	<tr>
-		<td><?php echo h($timeslot['Timeslot']['start']); ?>&nbsp;</td>
-		<td><?php echo h($timeslot['Timeslot']['end']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('Bearbeiten'), array('action' => 'edit', $timeslot['Timeslot']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Löschen'), array('action' => 'delete', $timeslot['Timeslot']['id']), array(), __('Möchtest du wirklich die Schichtzeit %s löschen?', $timeslot['Timeslot']['start'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</tbody>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
+	<h2><?php echo __('Schichtzeiten der Versammlung ' . $publisher['Congregation']['name']); ?></h2>
+
+	<p class="actions">
+		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neue Schichtzeit anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
+	</p>
+
+
+	<div class="table-responsive">
+		<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
+			<thead>
+			<tr>
+				<th width="30%"><?php echo $this->Paginator->sort('start', 'Startzeit'); ?></th>
+				<th width="30%"><?php echo $this->Paginator->sort('end', 'Endezeit'); ?></th>
+				<th width="40%" class="actions"><?php echo __('Aktionen'); ?></th>
+			</tr>
+			</thead>
+
+			<tbody>
+
+			<?php foreach ($timeslots as $timeslot): ?>
+				<tr>
+					<td><?php echo h($timeslot['Timeslot']['start']); ?>&nbsp;</td>
+					<td><?php echo h($timeslot['Timeslot']['end']); ?>&nbsp;</td>
+					<td class="actions">
+						<?php
+						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $timeslot['Timeslot']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
+						echo '<button type="button" title="Löschen" class="btn btn-default btn-xs" onclick="confirmDelete(' . $timeslot['Timeslot']['id'] . ', \'' . $timeslot['Timeslot']['start'] . ' - ' . $timeslot['Timeslot']['end'] . '\')"><span class="glyphicon glyphicon-remove"></span></button>';
+						?>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+
+			</tbody>
+
+
+		</table>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Aktionen'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Neue Schicht'), array('action' => 'add')); ?></li>
+
+	<ul class="pagination pagination-large">
+		<?php
+		echo $this->Paginator->prev(__('Zurück'), array('tag' => 'li'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+		echo $this->Paginator->numbers(array('separator' => '','currentTag' => 'a', 'currentClass' => 'active','tag' => 'li','first' => 1));
+		echo $this->Paginator->next(__('Nächste'), array('tag' => 'li','currentClass' => 'disabled'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+		?>
 	</ul>
+
+	<div>
+		<?php
+		$paginatorParams = $this->Paginator->params();
+		echo "Insgesamt: " . $paginatorParams['count'];
+
+		echo $this->Form->end();
+		?>
+	</div>
 </div>

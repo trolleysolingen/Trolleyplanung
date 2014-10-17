@@ -1,3 +1,11 @@
+<script type="text/javascript">
+	function confirmDelete(id, name){
+		if (window.confirm('Möchtest du den Verkündiger ' + name + ' wirklich löschen')) {
+			location.href = '<?php echo $this->Html->url(array('action' => 'delete')); ?>' + '/' + id;
+		}
+	}
+</script>
+
 <div class="publishers index">
 	<h2><?php echo __('Verkündiger der Versammlung ' . $publisher['Congregation']['name']); ?></h2>
 

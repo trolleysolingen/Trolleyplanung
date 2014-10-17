@@ -119,7 +119,6 @@ class PublishersController extends AppController {
 		if (!$this->Publisher->exists()) {
 			throw new NotFoundException(__('Invalid publisher'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Publisher->delete()) {
 			$this->Session->setFlash(__('The publisher has been deleted.'));
 		} else {

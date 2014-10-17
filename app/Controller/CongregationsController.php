@@ -101,7 +101,6 @@ class CongregationsController extends AppController {
 		if (!$this->Congregation->exists()) {
 			throw new NotFoundException(__('Invalid congregation'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Congregation->delete()) {
 			$this->Session->setFlash(__('The congregation has been deleted.'));
 		} else {
