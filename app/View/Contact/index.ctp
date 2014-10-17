@@ -26,7 +26,7 @@
 	<div class="col-md-6 col-xs-12">
 		<div class="panel panel-default">
 		  <div class="panel-body">
-			Für alle Fragen, die den Trolleydienst deiner Versammlung betreffen, verwende bitte die Kontakte neben/unter dem Kontaktformular.</br>
+			Für alle Fragen, die den Trolleydienst deiner Versammlung betreffen, verwende bitte die Kontakte unter dem Kontaktformular.</br>
 			Benutzt bitte für alle anderen <b>Fragen, Anregungen, Fehlermeldungen und Lobgesänge</b> folgendes Kontaktformular.
 		  </div>
 		</div>
@@ -67,7 +67,40 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	<?php foreach($contactList as $contact) { 
+		$initials = substr($contact['Publisher']['prename'], 0, 1) . substr($contact['Publisher']['surname'], 0, 1)
+	?>
+		<div class="col-xs-12 col-md-6">
+			</br>
+			</br>
+			<div class="row">
+				<div class="text-center">
+					<?php echo "<img src='http://placehold.it/600x600&text=" . $initials . "' class='img-circle col-xs-4' />"; ?>
+				</div>
+				<div class="col-xs-8 vert-align">
+					<blockquote>
+						<?php
+							echo "<b>" . $contact['Publisher']['prename'] . " " . $contact['Publisher']['surname'] . "</b></br>";
+							echo "</br>";
+							if ($contact['Publisher']['phone']) {
+								"<span class='glyphicon glyphicon-phone_alt'></span>&nbsp;&nbsp;<a href='tel:" . $contact['Publisher']['phone'] . "'>" . $contact['Publisher']['phone'] . "</a></br>";
+							}
+							echo "<span class='glyphicon glyphicon-message_new'></span>&nbsp;&nbsp;<a href='mailto:" . $contact['Publisher']['email'] . "'>" . $contact['Publisher']['email'] . "</a></br>";
+							echo "</br>";
+							if($contact['Publisher']['description']) {
+								echo "<b>" . $contact['Publisher']['description'] . "</b>";
+							} else {
+								echo "<b>Ansprechpartner Trolleydienst</b>";
+							}
+						?>
+					</blockquote>
+				</div>
+			</div>
+		</div>
 
 <?php
+	}
 }
 ?>

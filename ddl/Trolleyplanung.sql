@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `publishers` (
   `congregation_id` INT NULL,
   `role_id` INT NOT NULL,
   `phone` VARCHAR(20) NULL,
+  `description` VARCHAR(200) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_publisher_congregation_idx` (`congregation_id` ASC),
   INDEX `fk_publisher_role_idx` (`role_id` ASC),
@@ -163,8 +164,8 @@ COMMIT;
 START TRANSACTION;
 USE `trolleyplanung`;
 INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (1, '', 'Gast', 'Verkuendiger', NULL, 3, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (2, 'j.ankenbrand@gmx.de', 'Juergen', 'Ankenbrand', 2, 2, NULL);
-INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (3, 'flixmix.bornmann@me.com', 'Felix', 'Bornmann', 2, 2, NULL);
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (2, 'j.ankenbrand@gmx.de', 'Juergen', 'Ankenbrand', 2, 2, 015782519474, 'Ansprechpartner: Trolleydienst Solingen-Mitte');
+INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (3, 'flixmix.bornmann@me.com', 'Felix', 'Bornmann', 2, 2, 017642057020);
 INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (4, 'test1@demo.de', 'Test1', 'Verkuendiger', 1, 1, NULL);
 INSERT INTO `publishers` (`id`, `email`, `prename`, `surname`, `congregation_id`, `role_id`, `phone`) VALUES (5, 'test2@demo.de', 'Test2', 'Verkuendiger', 1, 4, NULL);
 COMMIT;

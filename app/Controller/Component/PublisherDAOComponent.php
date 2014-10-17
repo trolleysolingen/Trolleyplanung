@@ -78,8 +78,10 @@ class PublisherDAOComponent extends Component {
 	public function getContactPersons($publisher) {
 		$model = ClassRegistry::init('Publisher');
 		
+		$result = array();
+		
 		$result = $model->find('all', array(
-                'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname'),
+                'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname', 'Publisher.phone', 'Publisher.email', 'Publisher.description'),
                 'recursive' => -1,
                 'conditions' => array(
                     'Publisher.congregation_id' => $publisher['Congregation']['id'],
@@ -87,6 +89,24 @@ class PublisherDAOComponent extends Component {
                 )
             )
         );
+		
+		if(strpos($publisher['Congregation']['name'], "Solingen") !== false) {
+			$result = $model->find('all', array(
+					'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname', 'Publisher.phone', 'Publisher.email', 'Publisher.description'),
+					'recursive' => -1,
+					'conditions' => array(
+						'OR' => array(
+							'Publisher.congregation_id' => $publisher['Congregation']['id'],
+							'Publisher.surname =' => 'Ankenbrand'
+						),
+						'OR' => array(
+							'Publisher.congregation_id' => $publisher['Congregation']['id'],
+							'Publisher.role_id =' => '4'
+						)
+					)
+				)
+			);
+		}
 
         return $result;
 	}
