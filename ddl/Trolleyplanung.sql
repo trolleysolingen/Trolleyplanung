@@ -185,3 +185,16 @@ INSERT INTO `timeslots` (`id`, `congregation_id`, `start`, `end`) VALUES (7, 2, 
 
 COMMIT;
 
+update publishers set password = 'aaaaaa' where id = 2;
+update publishers set password = 'bbbbbb' where id = 3;
+update publishers set password = 'test' where id = 4;
+update publishers set password = 'test' where id = 5;
+
+alter table roles add (
+  description varchar(100)
+);
+
+update roles set description = 'Verkuendiger' where id = 1;
+update roles set description = 'Administrator' where id = 2;
+update roles set description = 'Gast' where id = 3;
+update roles set description = 'Versammlungsadministrator' where id = 4;

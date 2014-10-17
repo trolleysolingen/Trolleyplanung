@@ -23,9 +23,10 @@ class StartController extends AppController {
 	public function index() {
 		if ($this->request->is('post')) {
 			$email = $this->request->data["Start"]["email"];
-			$publisher = $this->PublisherDAO->getByEmail($email);
+			$password = $this->request->data["Start"]["password"];
+			$publisher = $this->PublisherDAO->getByEmail($email, $password);
 			if (sizeof($publisher) == 0) {
-				$this->Session->setFlash(__('Die Emailadresse konnte im System nicht gefunden werden.'));
+				$this->Session->setFlash(__('Der Login war nicht erfolgreich. Bitte überprüfe E-Mail-Adresse und Passwort.'));
 			} else {
 				$this->Session->write('publisher', $publisher);
 				return $this->redirect(array('controller' => '/reservations', 'action' => 'index'));

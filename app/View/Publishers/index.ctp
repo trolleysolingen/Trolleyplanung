@@ -1,51 +1,63 @@
 <div class="publishers index">
 	<h2><?php echo __('Verkündiger der Versammlung ' . $publisher['Congregation']['name']); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<thead>
-	<tr>
-			<th><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
-			<th><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
-			<th><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
-			<th><?php echo $this->Paginator->sort('role_id', 'Rolle'); ?></th>
-			<th><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
-			<th class="actions"><?php echo __('Aktionen'); ?></th>
-	</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($publishers as $publisher): ?>
-	<tr>
-		<td><?php echo h($publisher['Publisher']['email']); ?>&nbsp;</td>
-		<td><?php echo h($publisher['Publisher']['prename']); ?>&nbsp;</td>
-		<td><?php echo h($publisher['Publisher']['surname']); ?>&nbsp;</td>
-		<td>
-			<?php echo h($publisher['Role']['name']); ?>
-		</td>
-		<td><?php echo h($publisher['Publisher']['phone']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('Bearbeiten'), array('action' => 'edit', $publisher['Publisher']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Löschen'), array('action' => 'delete', $publisher['Publisher']['id']), array(), __('Bist du sicher, dass du %s löschen möchtest?', $publisher['Publisher']['surname'] . ' ' .$publisher['Publisher']['surname'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</tbody>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
+
+	<p class="actions">
+		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neuen Verkündiger anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
+	</p>
+
+
+	<div class="table-responsive">
+		<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th width="30%"><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
+					<th width="15%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
+					<th width="15%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
+					<th width="15%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
+					<th width="25%" class="actions"><?php echo __('Aktionen'); ?></th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				<?php foreach ($publishers as $publisherItem): ?>
+					<tr>
+						<td><?php echo h($publisherItem['Publisher']['email']); ?>&nbsp;</td>
+						<td><?php echo h($publisherItem['Publisher']['prename']); ?>&nbsp;</td>
+						<td><?php echo h($publisherItem['Publisher']['surname']); ?>&nbsp;</td>
+						<td><?php echo h($publisherItem['Publisher']['phone']); ?>&nbsp;</td>
+
+						<td class="actions" style="white-space:nowrap;">
+							<?php
+								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
+								echo '<button type="button" title="Löschen" class="btn btn-default btn-xs" onclick="confirmDelete(' . $publisherItem['Publisher']['id'] . ', \'' . $publisherItem['Publisher']['surname'] . ' ' . $publisherItem['Publisher']['prename'] . '\')"><span class="glyphicon glyphicon-remove"></span></button>';
+								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'sendZugang', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Zugangsdaten versenden'));
+							?>
+						</td>
+
+					</tr>
+				<?php endforeach; ?>
+
+			</tbody>
+
+
+		</table>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Aktionen'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Neuer Verkündiger'), array('action' => 'add')); ?></li>
+
+	<ul class="pagination pagination-large">
+		<?php
+		echo $this->Paginator->prev(__('Zurück'), array('tag' => 'li'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+		echo $this->Paginator->numbers(array('separator' => '','currentTag' => 'a', 'currentClass' => 'active','tag' => 'li','first' => 1));
+		echo $this->Paginator->next(__('Nächste'), array('tag' => 'li','currentClass' => 'disabled'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+		?>
 	</ul>
+
+	<div>
+		<?php
+			$paginatorParams = $this->Paginator->params();
+			echo "Insgesamt: " . $paginatorParams['count'];
+
+			echo $this->Form->end();
+		?>
+	</div>
 </div>

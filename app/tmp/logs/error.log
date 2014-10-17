@@ -1475,6 +1475,7 @@ Request URL: /Trolleyplanung/
 Stack Trace:
 #0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+<<<<<<< HEAD
 2014-10-14 17:45:28 Error: [MissingControllerException] Controller class ContactController could not be found.
 Exception Attributes: array (
   'class' => 'ContactController',
@@ -1783,3 +1784,26 @@ Stack Trace:
 #7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
 #8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #9 {main}
+=======
+2014-10-15 14:20:43 Error: Fatal Error (1): Unsupported operand types in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Publishers\edit.ctp, line 40]
+2014-10-15 14:20:44 Error: [FatalErrorException] Unsupported operand types
+Request URL: /publishers/edit/2
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', 'C:\work\Phpstor...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', 'C:\work\Phpstor...', 40, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', 'C:\work\Phpstor...', 40, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-15 15:17:13 Error: [MissingActionException] Action PublishersController::sendZugang() could not be found.
+Exception Attributes: array (
+  'controller' => 'PublishersController',
+  'action' => 'sendZugang',
+)
+Request URL: /publishers/sendZugang/2
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#2 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+>>>>>>> origin/master

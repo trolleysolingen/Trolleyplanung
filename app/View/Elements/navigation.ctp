@@ -90,6 +90,7 @@
 					<div class="form-group">
 						<?php
 							echo $this->Form->input('email', array('div' => false, 'label'=>false, 'class' => 'form-control', 'placeholder' => 'Email', 'id' => 'email'));
+							echo $this->Form->input('password', array('div' => false, 'label'=>false, 'class' => 'form-control', 'placeholder' => 'Passwort', 'id' => 'password'));
 						?>
 					</div>
 					<?php echo $this->Form->end(array('div' => false, 'label' => 'Anmelden', 'class' => 'btn btn-primary')); ?>
