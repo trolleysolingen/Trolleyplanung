@@ -21,8 +21,9 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
     if (!preventDoubleClick) {
         preventDoubleClick = true;
 
+        var htmlOld = $('#td_' + displaySizes[0] + '_' + reservationDay + '_' + reservationTimeslot).html();
         $.each(displaySizes, function( index, displaySize ) {
-            $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html("<img src='/img/ajax-loader.gif'/>");
+            $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html("<img src='/img/ajax-loader.gif' alt='Lädt...'/>");
         });
 
         $.ajax({
@@ -44,6 +45,9 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
                 preventDoubleClick = false;
                 displayError(reservationDay, reservationTimeslot,
                     "Der Server ist momentan nicht erreichbar. Bitte überprüfe, ob eine Internetverbindung zur Verfügung steht.");
+                $.each(displaySizes, function( index, displaySize ) {
+                    $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html(htmlOld);
+                });
             }
         });
     }

@@ -6,6 +6,7 @@
 	$highlightPublishers = "";
 	$highlightTimeslots = "";
 	$highlightCongregations = "";
+	$highlightContact = "";
 
 	if (in_array("reservations", $linkarray)) {
 		$highlightReservations = "active";
@@ -15,6 +16,8 @@
 		$highlightTimeslots = "active";
 	} else if (in_array("congregations", $linkarray)) {
 		$highlightCongregations = "active";
+	} else if (in_array("contact", $linkarray)) {
+		$highlightContact = "active";
 	}
 	
 ?>
@@ -61,6 +64,9 @@
 						<?php
 							}
 						?>
+						<li class="<?php echo $highlightContact ?>">
+							<?php echo $this->Html->link('Kontakt', array('controller' => 'contact', 'action' => 'index')); ?>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
 						<p class="navbar-text hidden-xs hidden-sm">
