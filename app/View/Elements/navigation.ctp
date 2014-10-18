@@ -88,6 +88,12 @@
 			<?php
 				} else { 
 			?>
+			
+				<ul class="nav navbar-nav">
+					<li class="<?php echo $highlightContact ?>">
+						<?php echo $this->Html->link('Impressum', array('controller' => 'contact', 'action' => 'index')); ?>
+					</li>
+				</ul>
 				<div class="hidden-xs">
 					<?php
 					echo $this->Form->create(null, array('class' => 'navbar-form navbar-right', 'style' => 'margin-right: 20px;', 

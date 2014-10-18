@@ -96,12 +96,19 @@ class PublisherDAOComponent extends Component {
 					'recursive' => -1,
 					'conditions' => array(
 						'OR' => array(
-							'Publisher.congregation_id' => $publisher['Congregation']['id'],
-							'Publisher.surname =' => 'Ankenbrand'
-						),
-						'OR' => array(
-							'Publisher.congregation_id' => $publisher['Congregation']['id'],
-							'Publisher.role_id =' => '4'
+							'AND' => array(
+								array('Publisher.congregation_id' => $publisher['Congregation']['id']),
+								array('Publisher.surname =' => 'Ankenbrand'),
+								array('Publisher.role_id =' => '2')
+							),
+							'OR' => array(
+								array(
+									'AND' => array(
+										array('Publisher.congregation_id' => $publisher['Congregation']['id']),
+										array('Publisher.role_id =' => '4')
+									)
+								)
+							)
 						)
 					)
 				)
