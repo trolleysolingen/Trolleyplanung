@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
+
 /**
  * Publishers Controller
  *
@@ -141,5 +143,42 @@ class PublishersController extends AppController {
 		$this->set("publishers", $publishersJson);
 
 		$this->set("_serialize", array("publishers"));
+	}
+
+	public function sendAccount($id) {
+		$publisher = $this->Session->read('publisher');
+
+		if (!$this->Publisher->exists($id)) {
+			throw new NotFoundException(__('Invalid publisher'));
+		}
+		$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
+		$publisherToSendAccount = $this->Publisher->find('first', $options);
+
+		$subject = "Zugangsdaten zur Trolley-Schichtplanung";
+		$message = "Lieber " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
+				. "\n"
+				. "anbei findest Du Deine Zugangsdaten zur Trolley-Schichtplanung Deiner Versammlung.\n"
+				. "Bitte bewahre diese Zugangsdaten gut auf.\n"
+				. "\n"
+				. "http://trolley.jw-center.com \n"
+				. "Login: " . $publisherToSendAccount["Publisher"]["email"] . " / " . $publisherToSendAccount["Publisher"]["password"]
+				. "\n"
+				. "Bei Fragen und Probleme wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n\n"
+				. "Viele Grüße \n"
+				. "Deine Trolley-Schichtplanung \n";
+
+		debug($message);
+		$mail    = new CakeEmail();
+		$result   = $mail->emailFormat('text')
+			->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
+			->to($publisherToSendAccount["Publisher"]["email"])
+			->subject($subject);
+
+		if ($mail->send($message)) {
+			$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
+			$this->redirect(array('action' => 'index'));
+		} else {
+			$this->Session->setFlash('Beim Verschicken der Zugangsdaten ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
+		}
 	}
 }

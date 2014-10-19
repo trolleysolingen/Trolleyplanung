@@ -39,7 +39,9 @@
 							<?php
 								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
 								echo '<button type="button" title="Löschen" class="btn btn-default btn-xs" onclick="confirmDelete(' . $publisherItem['Publisher']['id'] . ', \'' . $publisherItem['Publisher']['surname'] . ' ' . $publisherItem['Publisher']['prename'] . '\')"><span class="glyphicon glyphicon-remove"></span></button>';
-								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'sendZugang', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Zugangsdaten versenden'));
+								if ($publisherItem['Publisher']['email'] && $publisherItem['Publisher']['email'] != "") {
+									echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'sendAccount', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Zugangsdaten versenden'));
+								}
 							?>
 						</td>
 
