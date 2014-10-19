@@ -88,8 +88,6 @@ class PublisherDAOComponent extends Component {
             )
         );
 
-        debug($result);
-
 		if(strpos($publisher['Congregation']['name'], "Solingen") !== false) {
 			$result = $model->find('all', array(
 					'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname', 'Publisher.phone', 'Publisher.email', 'Publisher.description'),
