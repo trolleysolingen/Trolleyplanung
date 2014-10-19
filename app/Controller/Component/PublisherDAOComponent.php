@@ -77,9 +77,7 @@ class PublisherDAOComponent extends Component {
 	
 	public function getContactPersons($publisher) {
 		$model = ClassRegistry::init('Publisher');
-		
-		$result = array();
-		
+
 		$result = $model->find('all', array(
                 'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname', 'Publisher.phone', 'Publisher.email', 'Publisher.description'),
                 'recursive' => -1,
@@ -89,7 +87,9 @@ class PublisherDAOComponent extends Component {
                 )
             )
         );
-		
+
+        debug($result);
+
 		if(strpos($publisher['Congregation']['name'], "Solingen") !== false) {
 			$result = $model->find('all', array(
 					'fields' => array('Publisher.id', 'Publisher.prename', 'Publisher.surname', 'Publisher.phone', 'Publisher.email', 'Publisher.description'),

@@ -155,19 +155,19 @@ class PublishersController extends AppController {
 		$publisherToSendAccount = $this->Publisher->find('first', $options);
 
 		$subject = "Zugangsdaten zur Trolley-Schichtplanung";
-		$message = "Lieber " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
+		$message = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
 				. "\n"
 				. "anbei findest Du Deine Zugangsdaten zur Trolley-Schichtplanung Deiner Versammlung.\n"
 				. "Bitte bewahre diese Zugangsdaten gut auf.\n"
 				. "\n"
 				. "http://trolley.jw-center.com \n"
-				. "Login: " . $publisherToSendAccount["Publisher"]["email"] . " / " . $publisherToSendAccount["Publisher"]["password"]
+				. "Benutzername: " . $publisherToSendAccount["Publisher"]["email"] . "\n"
+				. "Passwort: " . $publisherToSendAccount["Publisher"]["password"] . "\n"
 				. "\n"
 				. "Bei Fragen und Probleme wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n\n"
 				. "Viele Grüße \n"
 				. "Deine Trolley-Schichtplanung \n";
 
-		debug($message);
 		$mail    = new CakeEmail();
 		$result   = $mail->emailFormat('text')
 			->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
