@@ -33,8 +33,7 @@
 		  </div>
 		</div>
 		<?php $pubName = $publisher['Publisher']['prename'] . " " . $publisher['Publisher']['surname'];
-		echo $this->Form->create(null, array('url' => array('controller' => 'contact'), 'class' => 'form-horizontal'
-		)); ?>
+		echo $this->Form->create(null, array('url' => array('controller' => 'contact'), 'class' => 'form-horizontal')); ?>
 		<div class="form-group">
 			<label for="name" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-10">

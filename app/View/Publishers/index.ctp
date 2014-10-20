@@ -7,13 +7,14 @@
 </script>
 
 <div class="publishers index">
-	<h2><?php echo __('Verkündiger der Versammlung ' . $publisher['Congregation']['name']); ?></h2>
+	<legend><?php echo __('Verkündiger der Versammlung ' . $publisher['Congregation']['name']); ?></legend>
 
+	</br>
 	<p class="actions">
 		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neuen Verkündiger anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
 	</p>
 
-
+	</br>
 	<div class="table-responsive">
 		<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
 			<thead>

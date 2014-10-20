@@ -13,10 +13,7 @@ class ContactController extends AppController {
 	public $components = array('PublisherDAO');
 
 	public function beforeFilter() {
-		$publisher = $this->Session->read('publisher');
-		if (!$publisher) {
-			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
-		}
+	
 	}
 
 /**

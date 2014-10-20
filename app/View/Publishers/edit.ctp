@@ -1,5 +1,5 @@
 <div class="publishers form">
-<?php echo $this->Form->create('Publisher'); ?>
+<?php echo $this->Form->create('Publisher', array('class' => 'form-horizontal')); ?>
 	<fieldset>
 		<legend><?php echo __('Verkündiger bearbeiten'); ?></legend>
 		<?php
@@ -10,45 +10,69 @@
 			));
 		?>
 		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
 			<label for="email" class="col-sm-2 control-label">E-Mail-Adresse:</label>
-			<?php
-			echo $this->Form->input('email', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'E-Mail-Adresse', 'style' => 'width:250px', 'id' => 'email'));
-			?>
+			<div class="col-sm-8 col-md-6">
+				<?php
+				echo $this->Form->input('email', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'E-Mail-Adresse', 'id' => 'email'));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
 		</div>
 		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
 			<label for="password" class="col-sm-2 control-label">Passwort:</label>
-			<?php
-			echo $this->Form->input('password', array('type'=> 'text', 'label'=>false, 'class' => 'form-control', 'placeholder' => 'Passwort', 'style' => 'width:250px', 'id' => 'password'));
-			?>
+			<div class="col-sm-8 col-md-6">
+				<?php
+				echo $this->Form->input('password', array('type'=> 'text', 'label'=>false, 'class' => 'form-control', 'placeholder' => 'Passwort', 'id' => 'password'));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
 		</div>
 		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
 			<label for="prename" class="col-sm-2 control-label">Vorname:</label>
-			<?php
-			echo $this->Form->input('prename', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'Vorname', 'style' => 'width:250px', 'id' => 'prename'));
-			?>
+			<div class="col-sm-8 col-md-6">
+				<?php
+				echo $this->Form->input('prename', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'Vorname', 'id' => 'prename'));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
 		</div>
 		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
 			<label for="surname" class="col-sm-2 control-label">Nachname:</label>
-			<?php
-				echo $this->Form->input('surname', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'Nachname', 'style' => 'width:250px', 'id' => 'surname'));
-			?>
+			<div class="col-sm-8 col-md-6">
+				<?php
+					echo $this->Form->input('surname', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'Nachname', 'id' => 'surname'));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
 		</div>
 
 		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
 			<label for="role_id" class="col-sm-2 control-label">Rolle:</label>
-			<?php
-				echo $this->Form->input('role_id', array('label'=>false, 'class' => 'form-control', 'style' => 'width:250px', 'id' => 'role_id', 'options' => array('' => 'Bitte wähle eine Rolle aus') + $roles));
-			?>
+			<div class="col-sm-8 col-md-6">
+				<?php
+					echo $this->Form->input('role_id', array('label'=>false, 'class' => 'form-control', 'id' => 'role_id', 'options' => array('' => 'Bitte wähle eine Rolle aus') + $roles));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
 		</div>
 
 		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
 			<label for="phone" class="col-sm-2 control-label">Telefon:</label>
-			<?php
-			echo $this->Form->input('phone', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'Telefon', 'style' => 'width:250px', 'id' => 'phone'));
-			?>
+			<div class="col-sm-8 col-md-6">
+				<?php
+				echo $this->Form->input('phone', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'Telefon', 'id' => 'phone'));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
 		</div>
 
 	</fieldset>
 
-	<?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary')); ?>
+	<?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary col-sm-offset-3 col-md-offset-4')); ?>
 </div>
