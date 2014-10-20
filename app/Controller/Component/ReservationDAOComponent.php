@@ -89,6 +89,7 @@ class ReservationDAOComponent extends Component {
             )
         );
 
+        $sendMail = false;
 
         if ($reservation != null) {
 
@@ -114,13 +115,14 @@ class ReservationDAOComponent extends Component {
                         'recursive' => 0
                     )
                 );
-
+                $sendMail = true;
             } else {
                 $model->delete($reservation['Reservation']['id']);
                 $reservation = null;
             }
         }
 
+        $reservation['sendMail'] = $sendMail;
         // debug($reservation);
 
         return $reservation;
@@ -139,6 +141,7 @@ class ReservationDAOComponent extends Component {
             )
         );
 
+        $sendMail = false;
         if ($reservation != null) {
 
             if ($reservation['Reservation']['modified'] > $displayTime) {
@@ -151,6 +154,7 @@ class ReservationDAOComponent extends Component {
                 if (!$guestPublisher) {
                     $guestPublisher = $this->PublisherDAO->getGuestPublisher();
                     $reservation['Reservation']['guestname'] = $guestname;
+                    $sendMail = true;
                 }
 
                 $reservation['Reservation']['publisher2_id'] = $guestPublisher['Publisher']['id'];
@@ -168,6 +172,7 @@ class ReservationDAOComponent extends Component {
             }
         }
 
+        $reservation['sendMail'] = $sendMail;
         // debug($reservation);
 
         return $reservation;

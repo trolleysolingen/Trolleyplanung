@@ -66,10 +66,9 @@ class ReservationsController extends AppController {
 
 			if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
 				try {
-					$this->sendReservationMailToPublisher($reservation);
+					$this->sendReservationMailToPublisher($reservation, false);
 				} catch (Exception $e) {
 				}
-
 			}
 		}
 		$this->set("reservation", $reservation);
@@ -91,6 +90,13 @@ class ReservationsController extends AppController {
 				$this->request->data['reservationTimeslot'],
 				$publisher,
 				$this->request->data['deleteBoth'] == 'true');
+
+			if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
+				try {
+					$this->sendReservationMailToPublisher($reservation, true);
+				} catch (Exception $e) {
+				}
+			}
 		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
@@ -112,7 +118,15 @@ class ReservationsController extends AppController {
 				$this->request->data['displayTime'],
 				$publisher,
 				$this->request->data['guestname']);
+
+			if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
+				try {
+					$this->sendGuestAlertMail($reservation, $publisher);
+				} catch (Exception $e) {
+				}
+			}
 		}
+
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
 		$now = new DateTime('now');
@@ -121,17 +135,28 @@ class ReservationsController extends AppController {
 		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
 	}
 
-	public function sendReservationMailToPublisher($reservation) {
+	public function sendReservationMailToPublisher($reservation, $deletion) {
 		$subject = "Trolley-Schichtplanung";
-		$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
-			. "\n"
-			. "am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
-			. " von " . $reservation['Timeslot']['start']
-			. " bis " . $reservation['Timeslot']['end']
-			. " Uhr hat sich " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
-			. " zu Deiner Schicht hinzugebucht.\n\n"
-			. "Viele Grüße \n"
-			. "Deine Trolley-Schichtplanung \n";
+		if ($deletion) {
+			$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
+				. "\n"
+				. "am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
+				. " von " . $reservation['Timeslot']['start']
+				. " bis " . $reservation['Timeslot']['end']
+				. " Uhr hat sich Dein Schichtpartner aus Eurer Schicht gelöscht.\n\n"
+				. "Viele Grüße \n"
+				. "Deine Trolley-Schichtplanung \n";
+		} else {
+			$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
+				. "\n"
+				. "am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
+				. " von " . $reservation['Timeslot']['start']
+				. " bis " . $reservation['Timeslot']['end']
+				. " Uhr hat sich " . $reservation["Publisher2"]["prename"] . " " . $reservation["Publisher2"]["surname"]
+				. " zu Deiner Schicht hinzugebucht.\n\n"
+				. "Viele Grüße \n"
+				. "Deine Trolley-Schichtplanung \n";
+		}
 
 		if (strpos($reservation["Publisher1"]["email"], "@demo.de") === false) {
 			$mail = new CakeEmail();
@@ -142,5 +167,29 @@ class ReservationsController extends AppController {
 
 			$mail->send($message);
 		}
+	}
+
+	public function sendGuestAlertMail($reservation, $publisher) {
+		$congregationAdmins = $this->PublisherDAO->getContactPersons($publisher);
+		$subject = "Trolley-Schichtplanung - Gast-Eintragung";
+
+		$message = "Am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
+			. " von " . $reservation['Timeslot']['start']
+			. " bis " . $reservation['Timeslot']['end']
+			. " Uhr hat " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
+			. " einen Gast-Verkündiger hinzugefügt: " . $reservation["Reservation"]["guestname"];
+
+		$mail = new CakeEmail();
+
+		foreach($congregationAdmins as $congregationAdmin) {
+			$mail->addTo($congregationAdmin['Publisher']['email']);
+		}
+
+		$result = $mail->emailFormat('text')
+			->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
+			->subject($subject);
+
+		$mail->send($message);
+
 	}
 }
