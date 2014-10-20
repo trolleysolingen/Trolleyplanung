@@ -168,17 +168,19 @@ class PublishersController extends AppController {
 				. "Viele Grüße \n"
 				. "Deine Trolley-Schichtplanung \n";
 
-		$mail    = new CakeEmail();
-		$result   = $mail->emailFormat('text')
-			->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
-			->to($publisherToSendAccount["Publisher"]["email"])
-			->subject($subject);
+		if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
+			$mail = new CakeEmail();
+			$result = $mail->emailFormat('text')
+				->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
+				->to($publisherToSendAccount["Publisher"]["email"])
+				->subject($subject);
 
-		if ($mail->send($message)) {
-			$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
-			$this->redirect(array('action' => 'index'));
-		} else {
-			$this->Session->setFlash('Beim Verschicken der Zugangsdaten ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
+			if ($mail->send($message)) {
+				$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('Beim Verschicken der Zugangsdaten ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
+			}
 		}
 	}
 }

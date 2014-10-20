@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
+
 /**
  * Reservations Controller
  *
@@ -61,6 +63,14 @@ class ReservationsController extends AppController {
 				$this->request->data['reservationTimeslot'],
 				$this->request->data['displayTime'],
 				$this->Session->read('publisher'));
+
+			if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
+				try {
+					$this->sendReservationMailToPublisher($reservation);
+				} catch (Exception $e) {
+				}
+
+			}
 		}
 		$this->set("reservation", $reservation);
 		$this->set("publisher", $publisher);
@@ -109,5 +119,28 @@ class ReservationsController extends AppController {
 		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
 
 		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
+	}
+
+	public function sendReservationMailToPublisher($reservation) {
+		$subject = "Trolley-Schichtplanung";
+		$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
+			. "\n"
+			. "am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
+			. " von " . $reservation['Timeslot']['start']
+			. " bis " . $reservation['Timeslot']['end']
+			. " Uhr hat sich " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
+			. " zu Deiner Schicht hinzugebucht.\n\n"
+			. "Viele Grüße \n"
+			. "Deine Trolley-Schichtplanung \n";
+
+		if (strpos($reservation["Publisher1"]["email"], "@demo.de") === false) {
+			$mail = new CakeEmail();
+			$result = $mail->emailFormat('text')
+				->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
+				->to($reservation["Publisher1"]["email"])
+				->subject($subject);
+
+			$mail->send($message);
+		}
 	}
 }

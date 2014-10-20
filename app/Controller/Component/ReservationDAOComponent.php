@@ -4,7 +4,7 @@ App::uses('Component', 'Controller');
 
 class ReservationDAOComponent extends Component {
 
-    public $components = array('PublisherDAO');
+    public $components = array('PublisherDAO', 'MailService');
 
     public function getReservationsInTimeRange($mondayThisWeek, $congregationId) {
         $model = ClassRegistry::init('Reservation');
@@ -38,6 +38,7 @@ class ReservationDAOComponent extends Component {
             )
         );
 
+        $sendMail = false;
         if ($reservation != null && $reservation['Reservation']['modified'] > $displayTime) {
             // Reservation has been modified -> don't save
             $reservation['error'] = 'Der Termin wurde zwischenzeitlich verändert. Bitte überprüfe deine Buchung!';
@@ -48,6 +49,7 @@ class ReservationDAOComponent extends Component {
                     $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
                 } else if ($reservation['Reservation']['publisher2_id'] == null) {
                     $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
+                    $sendMail = true;
                 }
                 unset($reservation['Reservation']['modified']);
             } else {
@@ -66,9 +68,9 @@ class ReservationDAOComponent extends Component {
                     'recursive' => 0
                 )
             );
+            $reservation['sendMail'] = $sendMail;
 
             // debug($reservation);
-
             return $reservation;
         }
     }
@@ -170,6 +172,5 @@ class ReservationDAOComponent extends Component {
 
         return $reservation;
     }
-
 
 }
