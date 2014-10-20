@@ -45,7 +45,7 @@ class ContactController extends AppController {
 				$this->Session->setFlash('Deine Nachricht wurde abgeschickt. Es wird sich so schnell es geht jemand darum kümmern.', 'default', array('class' => 'alert alert-success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash('Beim verschicken deiner Nachricht ist ein Fehler aufgetreten. Bitte versuche es später noch einmal', 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash('Beim Verschicken deiner Nachricht ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
 	}

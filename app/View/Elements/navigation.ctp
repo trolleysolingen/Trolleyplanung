@@ -96,7 +96,7 @@
 				</ul>
 				<div class="hidden-xs">
 					<?php
-					echo $this->Form->create(null, array('class' => 'navbar-form navbar-right', 'style' => 'margin-right: 20px;', 
+					echo $this->Form->create('Start', array('class' => 'navbar-form navbar-right', 'style' => 'margin-right: 20px;',
 						'url' => array('controller' => 'start')
 					)); ?>
 					<div class="form-group">
