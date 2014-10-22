@@ -145,7 +145,7 @@ class ReservationsController extends AppController {
 				. " bis " . $reservation['Timeslot']['end']
 				. " Uhr hat sich Dein Schichtpartner aus Eurer Schicht gelöscht.\n\n"
 				. "Viele Grüße \n"
-				. "Deine Trolley-Schichtplanung \n";
+				. "Deine Trolleyverwaltung \n";
 		} else {
 			$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
 				. "\n"
@@ -155,13 +155,12 @@ class ReservationsController extends AppController {
 				. " Uhr hat sich " . $reservation["Publisher2"]["prename"] . " " . $reservation["Publisher2"]["surname"]
 				. " zu Deiner Schicht hinzugebucht.\n\n"
 				. "Viele Grüße \n"
-				. "Deine Trolley-Schichtplanung \n";
+				. "Deine Trolleyverwaltung \n";
 		}
 
 		if (strpos($reservation["Publisher1"]["email"], "@demo.de") === false) {
-			$mail = new CakeEmail();
+			$mail = new CakeEmail('smtp');
 			$result = $mail->emailFormat('text')
-				->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
 				->to($reservation["Publisher1"]["email"])
 				->subject($subject);
 
@@ -179,14 +178,13 @@ class ReservationsController extends AppController {
 			. " Uhr hat " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
 			. " einen Gast-Verkündiger hinzugefügt: " . $reservation["Reservation"]["guestname"];
 
-		$mail = new CakeEmail();
+		$mail = new CakeEmail('smtp');
 
 		foreach($congregationAdmins as $congregationAdmin) {
 			$mail->addTo($congregationAdmin['Publisher']['email']);
 		}
 
 		$result = $mail->emailFormat('text')
-			->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
 			->subject($subject);
 
 		$mail->send($message);

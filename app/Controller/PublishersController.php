@@ -171,9 +171,8 @@ class PublishersController extends AppController {
 				. "Deine Trolleyverwaltung \n";
 
 		if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
-			$mail = new CakeEmail();
+			$mail = new CakeEmail('smtp');
 			$result = $mail->emailFormat('text')
-				->from(array('info@trolley.jw-center.com' => 'Trolley Schichtplanung'))
 				->to($publisherToSendAccount["Publisher"]["email"])
 				->subject($subject);
 
