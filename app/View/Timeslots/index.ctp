@@ -7,7 +7,8 @@
 </script>
 
 <div class="timeslots index">
-	<h2><?php echo __('Schichtzeiten der Versammlung ' . $publisher['Congregation']['name']); ?></h2>
+	<br/>
+	<legend><?php echo __('Schichtzeiten der Versammlung ' . $publisher['Congregation']['name']); ?></legend>
 
 	<p class="actions">
 		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neue Schichtzeit anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>

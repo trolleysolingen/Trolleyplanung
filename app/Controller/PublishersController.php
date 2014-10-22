@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 App::uses('AppController', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 
@@ -88,14 +88,14 @@ class PublishersController extends AppController {
 		$publisher = $this->Session->read('publisher');
 
 		if (!$this->Publisher->exists($id)) {
-			throw new NotFoundException(__('Invalid publisher'));
+			throw new NotFoundException(__('Ungültiger Verkündiger'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Publisher->save($this->request->data)) {
-				$this->Session->setFlash(__('Der Verkündiger wurde gespeichert.'));
+				$this->Session->setFlash('Der Verkündiger wurde gespeichert.', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('Der Verkündiger konnte nicht gespeichert werden. Bitte versuche es erneut.'));
+				$this->Session->setFlash('Der Verkündiger konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
@@ -119,12 +119,12 @@ class PublishersController extends AppController {
 	public function delete($id = null) {
 		$this->Publisher->id = $id;
 		if (!$this->Publisher->exists()) {
-			throw new NotFoundException(__('Invalid publisher'));
+			throw new NotFoundException(__('Ungültiger Verkündiger'));
 		}
 		if ($this->Publisher->delete()) {
-			$this->Session->setFlash(__('The publisher has been deleted.'));
+			$this->Session->setFlash('Der Verkündiger wurde gelöscht.', 'default', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The publisher could not be deleted. Please, try again.'));
+			$this->Session->setFlash('Der Verkündiger konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
@@ -149,24 +149,26 @@ class PublishersController extends AppController {
 		$publisher = $this->Session->read('publisher');
 
 		if (!$this->Publisher->exists($id)) {
-			throw new NotFoundException(__('Invalid publisher'));
+			throw new NotFoundException(__('Ungültiger Verkündiger'));
 		}
 		$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
 		$publisherToSendAccount = $this->Publisher->find('first', $options);
 
-		$subject = "Zugangsdaten zur Trolley-Schichtplanung";
+		$subject = "Zugangsdaten zur Trolleyverwaltung";
 		$message = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
 				. "\n"
-				. "anbei findest Du Deine Zugangsdaten zur Trolley-Schichtplanung Deiner Versammlung.\n"
+				. "anbei findest Du Deine Zugangsdaten zur Trolleyverwaltung Deiner Versammlung.\n"
 				. "Bitte bewahre diese Zugangsdaten gut auf.\n"
 				. "\n"
 				. "http://trolley.jw-center.com \n"
 				. "Benutzername: " . $publisherToSendAccount["Publisher"]["email"] . "\n"
 				. "Passwort: " . $publisherToSendAccount["Publisher"]["password"] . "\n"
 				. "\n"
-				. "Bei Fragen und Probleme wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n\n"
+				. "Bei Fragen und Probleme wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n"
+				. "Oder nutze alternativ die Kontakt Seite: \n"
+				. "http://trolley.jw-center.com/contact \n\n"
 				. "Viele Grüße \n"
-				. "Deine Trolley-Schichtplanung \n";
+				. "Deine Trolleyverwaltung \n";
 
 		if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
 			$mail = new CakeEmail();

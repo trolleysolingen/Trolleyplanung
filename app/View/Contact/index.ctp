@@ -71,7 +71,8 @@
 	
 	
 	<?php foreach($contactList as $contact) { 
-		$initials = substr($contact['Publisher']['prename'], 0, 1) . substr($contact['Publisher']['surname'], 0, 1)
+		$initials = substr($contact['Publisher']['prename'], 0, 1) . substr($contact['Publisher']['surname'], 0, 1);
+		$initials = mb_strtoupper($initials, 'UTF-8');
 	?>
 		<div class="col-xs-12 col-md-6">
 			</br>

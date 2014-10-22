@@ -7,7 +7,8 @@
 </script>
 
 <div class="congregations index">
-	<h2><?php echo __('Versammlungsverwaltung'); ?></h2>
+	<br/>
+	<legend><?php echo __('Versammlungsverwaltung'); ?></legend>
 
 	<p class="actions">
 		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neue Versammlung anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
@@ -31,7 +32,7 @@
 					<td class="actions">
 						<?php
 						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $congregation['Congregation']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
-						echo '<button type="button" title="Löschen" class="btn btn-default btn-xs" onclick="confirmDelete(' . $congregation['Congregation']['id'] . ', \'' . $congregation['Congregation']['name'] . '\')"><span class="glyphicon glyphicon-remove"></span></button>';
+						echo $this->Html->link('<button type="button" data-data="' . $congregation['Congregation']['name'] . '" class="open-DeleteDialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$congregation['Congregation']['id'])), 'escape' => false), false);
 						?>
 					</td>
 				</tr>
@@ -60,3 +61,36 @@
 		?>
 	</div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Versammlung löschen</h4>
+      </div>
+      <div class="modal-body">
+        Möchtest du die Versammlung <b><div id="data" name="data"></div></b> wirklich löschen?
+      </div>
+      <div class="modal-footer">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
+			<?php
+			echo $this->Form->postLink(
+					'Ja',
+					array('action' => 'delete'),
+					array('class' => 'btn btn-danger'),
+					false
+				);
+			?>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Script to get id to delete -->
+<?php $this->addScript('testscript', "$('#ConfirmDelete').on('show.bs.modal', function(e) {
+    $(this).find('form').attr('action', $(e.relatedTarget).data('action'));
+});"); ?>

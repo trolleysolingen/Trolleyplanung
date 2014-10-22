@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 App::uses('AppController', 'Controller');
 /**
  * Congregations Controller
@@ -42,7 +42,7 @@ class CongregationsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Congregation->exists($id)) {
-			throw new NotFoundException(__('Invalid congregation'));
+			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
 		$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $id));
 		$this->set('congregation', $this->Congregation->find('first', $options));
@@ -57,10 +57,10 @@ class CongregationsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Congregation->create();
 			if ($this->Congregation->save($this->request->data)) {
-				$this->Session->setFlash(__('The congregation has been saved.'));
+				$this->Session->setFlash('Die Versammlung wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The congregation could not be saved. Please, try again.'));
+				$this->Session->setFlash('Die Versammlung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
 	}
@@ -74,14 +74,14 @@ class CongregationsController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Congregation->exists($id)) {
-			throw new NotFoundException(__('Invalid congregation'));
+			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Congregation->save($this->request->data)) {
-				$this->Session->setFlash(__('The congregation has been saved.'));
+				$this->Session->setFlash('Die Versammlung wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The congregation could not be saved. Please, try again.'));
+				$this->Session->setFlash('Die Versammlung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $id));
@@ -99,12 +99,12 @@ class CongregationsController extends AppController {
 	public function delete($id = null) {
 		$this->Congregation->id = $id;
 		if (!$this->Congregation->exists()) {
-			throw new NotFoundException(__('Invalid congregation'));
+			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
 		if ($this->Congregation->delete()) {
-			$this->Session->setFlash(__('The congregation has been deleted.'));
+			$this->Session->setFlash('Die Versammlung wurde gelöscht.', 'default', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The congregation could not be deleted. Please, try again.'));
+			$this->Session->setFlash('Die Versammlung konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

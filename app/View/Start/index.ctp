@@ -10,6 +10,8 @@
 			echo $this->Form->input('password', array('div' => false, 'label'=>false, 'class' => 'form-control', 'placeholder' => 'Passwort', 'id' => 'password'));
 		?>
 	</div>
-	<?php echo $this->Form->end(array('class' => 'col-md-12', 'div' => false, 'label' => 'Anmelden', 'class' => 'btn btn-primary')); 
-?>
+	<div class="row">
+		<?php echo $this->Form->end(array('class' => 'col-md-12', 'div' => false, 'label' => 'Anmelden', 'class' => 'btn btn-primary', 'style' => 'margin-right:15px; margin-left:15px;'));
+		echo $this->Html->link('Impressum/Kontakt', array('controller' => 'contact', 'action' => 'index'), array('class' => 'btn btn-warning')); ?>
+	</div>
 </div>
