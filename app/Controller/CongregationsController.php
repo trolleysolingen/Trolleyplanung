@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 App::uses('AppController', 'Controller');
 /**
  * Congregations Controller
@@ -23,23 +23,23 @@ class CongregationsController extends AppController {
 		}
 	}
 
-/**
- * index method
- *
- * @return void
- */
+	/**
+	 * index method
+	 *
+	 * @return void
+	 */
 	public function index() {
 		$this->Congregation->recursive = 0;
 		$this->set('congregations', $this->Paginator->paginate());
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * view method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function view($id = null) {
 		if (!$this->Congregation->exists($id)) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
@@ -48,11 +48,11 @@ class CongregationsController extends AppController {
 		$this->set('congregation', $this->Congregation->find('first', $options));
 	}
 
-/**
- * add method
- *
- * @return void
- */
+	/**
+	 * add method
+	 *
+	 * @return void
+	 */
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Congregation->create();
@@ -65,13 +65,13 @@ class CongregationsController extends AppController {
 		}
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * edit method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function edit($id = null) {
 		if (!$this->Congregation->exists($id)) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
@@ -89,13 +89,13 @@ class CongregationsController extends AppController {
 		}
 	}
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * delete method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function delete($id = null) {
 		$this->Congregation->id = $id;
 		if (!$this->Congregation->exists()) {

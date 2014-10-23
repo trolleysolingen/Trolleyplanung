@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 App::uses('AppController', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 
@@ -10,11 +10,11 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class PublishersController extends AppController {
 
-/**
- * Components
- *
- * @var array
- */
+	/**
+	 * Components
+	 *
+	 * @var array
+	 */
 	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler');
 
 	public function beforeFilter() {
@@ -26,11 +26,11 @@ class PublishersController extends AppController {
 		}
 	}
 
-/**
- * index method
- *
- * @return void
- */
+	/**
+	 * index method
+	 *
+	 * @return void
+	 */
 	public function index() {
 		$publisher = $this->Session->read('publisher');
 
@@ -40,13 +40,13 @@ class PublishersController extends AppController {
 		$this->set('publisher', $publisher);
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * view method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function view($id = null) {
 		if (!$this->Publisher->exists($id)) {
 			throw new NotFoundException(__('Invalid publisher'));
@@ -55,11 +55,11 @@ class PublishersController extends AppController {
 		$this->set('publisher', $this->Publisher->find('first', $options));
 	}
 
-/**
- * add method
- *
- * @return void
- */
+	/**
+	 * add method
+	 *
+	 * @return void
+	 */
 	public function add() {
 		$publisher = $this->Session->read('publisher');
 
@@ -77,13 +77,13 @@ class PublishersController extends AppController {
 		$this->set('publisher', $publisher);
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * edit method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function edit($id = null) {
 		$publisher = $this->Session->read('publisher');
 
@@ -92,7 +92,7 @@ class PublishersController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Publisher->save($this->request->data)) {
-				$this->Session->setFlash('Der Verkündiger wurde gespeichert.', array('class' => 'alert alert-success'));
+				$this->Session->setFlash('Der Verkündiger wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash('Der Verkündiger konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
@@ -109,13 +109,13 @@ class PublishersController extends AppController {
 		$this->set('publisher', $publisher);
 	}
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+	/**
+	 * delete method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
 	public function delete($id = null) {
 		$this->Publisher->id = $id;
 		if (!$this->Publisher->exists()) {
@@ -156,19 +156,19 @@ class PublishersController extends AppController {
 
 		$subject = "Zugangsdaten zur Trolleyverwaltung";
 		$message = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
-				. "\n"
-				. "anbei findest Du Deine Zugangsdaten zur Trolleyverwaltung Deiner Versammlung.\n"
-				. "Bitte bewahre diese Zugangsdaten gut auf.\n"
-				. "\n"
-				. "http://trolley.jw-center.com \n"
-				. "Benutzername: " . $publisherToSendAccount["Publisher"]["email"] . "\n"
-				. "Passwort: " . $publisherToSendAccount["Publisher"]["password"] . "\n"
-				. "\n"
-				. "Bei Fragen und Probleme wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n"
-				. "Oder nutze alternativ die Kontakt Seite: \n"
-				. "http://trolley.jw-center.com/contact \n\n"
-				. "Viele Grüße \n"
-				. "Deine Trolleyverwaltung \n";
+			. "\n"
+			. "anbei findest Du Deine Zugangsdaten zur Trolleyverwaltung Deiner Versammlung.\n"
+			. "Bitte bewahre diese Zugangsdaten gut auf.\n"
+			. "\n"
+			. "http://trolley.jw-center.com \n"
+			. "Benutzername: " . $publisherToSendAccount["Publisher"]["email"] . "\n"
+			. "Passwort: " . $publisherToSendAccount["Publisher"]["password"] . "\n"
+			. "\n"
+			. "Bei Fragen und Probleme wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n"
+			. "Oder nutze alternativ die Kontakt Seite: \n"
+			. "http://trolley.jw-center.com/contact \n\n"
+			. "Viele Grüße \n"
+			. "Deine Trolleyverwaltung \n";
 
 		if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
 			$mail = new CakeEmail('smtp');
