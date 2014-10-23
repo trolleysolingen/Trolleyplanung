@@ -164,7 +164,7 @@ class PublishersController extends AppController {
 			. "Benutzername: " . $publisherToSendAccount["Publisher"]["email"] . "\n"
 			. "Passwort: " . $publisherToSendAccount["Publisher"]["password"] . "\n"
 			. "\n"
-			. "Bei Fragen und Probleme wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n"
+			. "Bei Fragen und Problemen wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n"
 			. "Oder nutze alternativ die Kontakt Seite: \n"
 			. "http://trolley.jw-center.com/contact \n\n"
 			. "Viele Grüße \n"
