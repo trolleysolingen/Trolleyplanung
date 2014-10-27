@@ -1,0 +1,1944 @@
+2014-09-26 13:57:03 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\eclipse-php\t\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 13:57:22 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen
+Stack Trace:
+#0 C:\work\eclipse-php\t\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:17:44 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /Solingen
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(3): FormHelper->create('Start')
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:18:06 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(3): FormHelper->create('Start')
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:20:33 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(5): FormHelper->create(NULL, Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:20:48 Error: [MissingTableException] Table starts for model Start was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'starts',
+  'class' => 'Start',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('starts')
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Start', 'fields')
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\View\Start\index.ctp(5): FormHelper->create(NULL, Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\work\Phpstor...')
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\work\Phpstor...', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\work\Phpstor...')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-09-26 21:24:20 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /start/login
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:25:57 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/start/login
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:30:56 Error: [MissingControllerException] Controller class CongregationController could not be found.
+Exception Attributes: array (
+  'class' => 'CongregationController',
+  'plugin' => NULL,
+)
+Request URL: /congregation
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-26 21:58:10 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Congregation.1' in 'field list'
+Request URL: /VS-Solingen
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Congreg...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Congreg...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Congreg...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Congregation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('first', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(808): DboSource->query('findByPath', Array, Object(Congregation))
+#8 [internal function]: Model->__call('findByPath', Array)
+#9 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\CongregationDAOComponent.php(10): Congregation->findByPath('Solingen', Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\StartController.php(20): CongregationDAOComponent->getByPath('Solingen')
+#11 [internal function]: StartController->index()
+#12 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(StartController), Array)
+#13 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#14 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#15 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-09-26 22:30:03 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\index.ctp',
+)
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-27 14:38:44 Error: Fatal Error (1): Call to a member function getByPath() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\Controller\CongregationsController.php, line 15]
+2014-09-27 14:38:44 Error: [FatalErrorException] Call to a member function getByPath() on a non-object
+Request URL: /congregations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 15, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 15, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 14:39:20 Error: Fatal Error (64): Cannot redeclare CongregationsController::$components in [C:\work\PhpstormProjects\Trolleyplanung\app\Controller\CongregationsController.php, line 28]
+2014-09-27 14:39:20 Error: [FatalErrorException] Cannot redeclare CongregationsController::$components
+Request URL: /congregations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\work\Phpstor...', 28)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\work\Phpstor...', 28, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\work\Phpstor...', 28, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 15:35:15 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'congregation_id' in where clause is ambiguous
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(20): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(32): ReservationDAOComponent->getReservationsInTimeRange(1411336800, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-27 16:21:35 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Reservation.day' in 'order clause'
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Timeslo...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Timeslo...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Timeslo...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Timeslot), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\TimeslotDAOComponent.php(10): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(33): TimeslotDAOComponent->getAll()
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-27 17:20:48 Error: Fatal Error (4): syntax error, unexpected T_STRING in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 20]
+2014-09-27 17:20:48 Error: [FatalErrorException] syntax error, unexpected T_STRING
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 20, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 20, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:21:37 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 21]
+2014-09-27 17:21:37 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 21, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 21, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:22:36 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 22]
+2014-09-27 17:22:36 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 22, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 22, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:24:12 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 23]
+2014-09-27 17:24:12 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 23, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 23, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 17:24:50 Error: Fatal Error (1): Call to a member function format() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 13]
+2014-09-27 17:24:50 Error: [FatalErrorException] Call to a member function format() on a non-object
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 13)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 13, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 13, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-27 20:49:29 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/Reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-27 20:49:53 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-27 20:50:07 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /VS-Solingen/reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-27 20:51:52 Error: [MissingControllerException] Controller class SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Solingen/reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-27 20:53:46 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-27 21:01:21 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 13:27:17 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 13:32:09 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 13:33:11 Error: [MissingControllerException] Controller class ReservationController could not be found.
+Exception Attributes: array (
+  'class' => 'ReservationController',
+  'plugin' => NULL,
+)
+Request URL: /reservation/addPublisher.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 13:33:45 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\add_publisher.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\add_publisher.ctp',
+)
+Request URL: /reservations/addPublisher
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 14:49:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Request URL: /reservations/addPublisher.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `tr...')
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(1854): DboSource->create(Object(Reservation), Array, Array)
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(54): Model->save(Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(59): ReservationDAOComponent->addPublisher('2014-10-01', '2', Array)
+#6 [internal function]: ReservationsController->addPublisher()
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#10 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-09-29 16:55:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'where clause'
+Request URL: /reservations/deletePublisher.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('DELETE `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\Database\Mysql.php(454): DboSource->execute('DELETE `Reserva...')
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2634): Mysql->delete(Object(Reservation), Array)
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(101): Model->delete(Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(67): ReservationDAOComponent->deletePublisher('2014-09-30', '1', '1')
+#6 [internal function]: ReservationsController->deletePublisher()
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#10 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-09-29 17:05:44 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'where clause'
+Request URL: /reservations/deletePublisher.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('DELETE `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\Database\Mysql.php(454): DboSource->execute('DELETE `Reserva...')
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2634): Mysql->delete(Object(Reservation), Array)
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(103): Model->delete(Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(67): ReservationDAOComponent->deletePublisher('2014-09-30', '1', '1')
+#6 [internal function]: ReservationsController->deletePublisher()
+#7 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#10 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-09-29 18:34:24 Error: [MissingViewException] View file "C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\json\add_guest.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\work\\PhpstormProjects\\Trolleyplanung\\app\\View\\Reservations\\json\\add_guest.ctp',
+)
+Request URL: /reservations/addGuest.json
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#4 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 18:52:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.prename' in 'field list'
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(31): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-29 18:52:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Publisher.prename' in 'field list'
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(31): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-29 18:53:13 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'prename' in field list is ambiguous
+Request URL: /VS-Solingen/reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#7 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php(31): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#8 [internal function]: ReservationsController->index()
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#12 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-09-30 08:25:41 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'trolleyuser\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3524): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1136): Model->setDataSource('default')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('congregations')
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): Model->getDataSource()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('first', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\CongregationDAOComponent.php(10): Model->find('first', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\StartController.php(25): CongregationDAOComponent->getByPath(NULL)
+#9 [internal function]: StartController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(StartController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-09-30 08:39:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:39:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:39:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:39:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:39:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:39:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:39:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:41:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:42:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:42:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:42:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:42:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:42:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:42:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:42:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:57 Error: [MissingControllerException] Controller class VS-SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'VS-SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/Trolleyplanung/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:57 Error: [MissingControllerException] Controller class VS-SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'VS-SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/Trolleyplanung/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:57 Error: [MissingControllerException] Controller class VS-SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'VS-SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/Trolleyplanung/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:43:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:45:35 Error: [MissingControllerException] Controller class VS-SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'VS-SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/Trolleyplanung/css/glyphicons.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:45:35 Error: [MissingControllerException] Controller class VS-SolingenController could not be found.
+Exception Attributes: array (
+  'class' => 'VS-SolingenController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/Trolleyplanung/css/custom.css
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 08:45:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/VS-Solingen/js/bootstrap.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 09:30:46 Error: [MissingControllerException] Controller class PersonalController could not be found.
+Exception Attributes: array (
+  'class' => 'PersonalController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/personal
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 09:33:23 Error: [MissingControllerException] Controller class PersonalController could not be found.
+Exception Attributes: array (
+  'class' => 'PersonalController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/personal
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 09:33:27 Error: [MissingControllerException] Controller class PersonalController could not be found.
+Exception Attributes: array (
+  'class' => 'PersonalController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/personal
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 09:35:48 Error: [MissingControllerException] Controller class PersonalController could not be found.
+Exception Attributes: array (
+  'class' => 'PersonalController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/personal
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 09:40:26 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 30]
+2014-09-30 09:40:26 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 30)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 30, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 30, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-30 09:42:47 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 29]
+2014-09-30 09:42:47 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /Trolleyplanung/VS-Solingen/start
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 29, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 29, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-30 09:43:54 Error: Fatal Error (1): Class 'AuthComponent' not found in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 29]
+2014-09-30 09:43:54 Error: [FatalErrorException] Class 'AuthComponent' not found
+Request URL: /Trolleyplanung/VS-Solingen/start
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'AuthComp...', 'C:\\xampp\\htdocs...', 29)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'AuthComp...', 'C:\\xampp\\htdocs...', 29, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'AuthComp...', 'C:\\xampp\\htdocs...', 29, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-30 09:49:43 Error: Fatal Error (4): syntax error, unexpected '.' in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 31]
+2014-09-30 09:49:43 Error: [FatalErrorException] syntax error, unexpected '.'
+Request URL: /Trolleyplanung/VS-Solingen/reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-30 11:15:13 Error: [MissingControllerException] Controller class PersonalController could not be found.
+Exception Attributes: array (
+  'class' => 'PersonalController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/personal
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 11:15:27 Error: [MissingControllerException] Controller class PersonalController could not be found.
+Exception Attributes: array (
+  'class' => 'PersonalController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/personal
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 11:19:40 Error: Fatal Error (4): syntax error, unexpected end of file in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 66]
+2014-09-30 11:19:40 Error: [FatalErrorException] syntax error, unexpected end of file
+Request URL: /Trolleyplanung/VS-Solingen/start
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 66)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 66, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 66, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-30 18:34:47 Error: [MissingControllerException] Controller class VS-Controller could not be found.
+Exception Attributes: array (
+  'class' => 'VS-Controller',
+  'plugin' => NULL,
+)
+Request URL: /VS-/reservations/logout
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-30 18:38:29 Error: [MissingControllerException] Controller class VS-Controller could not be found.
+Exception Attributes: array (
+  'class' => 'VS-Controller',
+  'plugin' => NULL,
+)
+Request URL: /VS-/reservations/logout
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+<<<<<<< Updated upstream
+=======
+2014-10-04 22:43:40 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat.
+',
+  'enabled' => true,
+)
+Request URL: /Trolleyplanung/reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3524): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1136): Model->setDataSource('default')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('reservations')
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): Model->getDataSource()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(21): Model->find('all', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(28): ReservationDAOComponent->getReservationsInTimeRange(1411941600, '1')
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+>>>>>>> Stashed changes
+2014-10-06 13:47:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-06 14:43:18 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 77]
+2014-10-06 14:43:18 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 77)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 77, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 77, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-06 14:43:35 Error: Fatal Error (4): syntax error, unexpected end of file in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 134]
+2014-10-06 14:43:35 Error: [FatalErrorException] syntax error, unexpected end of file
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 134)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 134, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 134, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-07 20:38:21 Error: Fatal Error (1): Call to a member function getForAutocompletion() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\Controller\ReservationsController.php, line 32]
+2014-10-07 20:38:21 Error: [FatalErrorException] Call to a member function getForAutocompletion() on a non-object
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 32)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 32, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 32, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-07 22:08:14 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= ('guest')' at line 1
+Request URL: /publishers/edit/2
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Role`.`...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Role`.`...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Role`.`...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Role), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('list', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\PublishersController.php(102): Model->find('list', Array)
+#7 [internal function]: PublishersController->edit('2')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-10-07 22:09:08 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= ('guest')' at line 1
+Request URL: /publishers/edit/2
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Role`.`...', Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Role`.`...', Array, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Role`.`...', false)
+#4 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Role), Array)
+#5 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('list', Array)
+#6 C:\work\PhpstormProjects\Trolleyplanung\app\Controller\PublishersController.php(102): Model->find('list', Array)
+#7 [internal function]: PublishersController->edit('2')
+#8 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#9 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#11 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+<<<<<<< HEAD
+2014-10-09 23:04:57 Error: Fatal Error (1): Call to undefined function format() in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 65]
+2014-10-09 23:04:57 Error: [FatalErrorException] Call to undefined function format()
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 65)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 65, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 65, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-09 23:07:38 Error: Fatal Error (1): Call to a member function setTimestamp() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 41]
+2014-10-09 23:07:38 Error: [FatalErrorException] Call to a member function setTimestamp() on a non-object
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+=======
+2014-10-09 22:42:55 Error: Fatal Error (4): syntax error, unexpected T_OBJECT_OPERATOR, expecting ',' or ';' in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Reservations\index.ctp, line 9]
+2014-10-09 22:42:55 Error: [FatalErrorException] syntax error, unexpected T_OBJECT_OPERATOR, expecting ',' or ';'
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\work\Phpstor...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\work\Phpstor...', 9, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\work\Phpstor...', 9, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+>>>>>>> origin/master
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-12 15:18:09 Error: Fatal Error (1): Call to a member function add() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Elements\display_lg.ctp, line 8]
+2014-10-12 15:18:09 Error: [FatalErrorException] Call to a member function add() on a non-object
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 8, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 8, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-12 15:18:56 Error: Fatal Error (1): Call to a member function getTimestamp() on a non-object in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Elements\reservation_entry.ctp, line 3]
+2014-10-12 15:18:57 Error: [FatalErrorException] Call to a member function getTimestamp() on a non-object
+Request URL: /reservations
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\work\Phpstor...', 3)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\work\Phpstor...', 3, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\work\Phpstor...', 3, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-13 08:42:42 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:48 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-13 08:42:49 Error: [MissingControllerException] Controller class TrolleyplanungController could not be found.
+Exception Attributes: array (
+  'class' => 'TrolleyplanungController',
+  'plugin' => NULL,
+)
+Request URL: /Trolleyplanung/
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+<<<<<<< HEAD
+2014-10-14 17:45:28 Error: [MissingControllerException] Controller class ContactController could not be found.
+Exception Attributes: array (
+  'class' => 'ContactController',
+  'plugin' => NULL,
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-14 17:45:41 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Contact\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Contact\\index.ctp',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-14 17:47:24 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:51:14 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:51:15 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:51:15 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:56:30 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 17:56:48 Error: [MissingTableException] Table contacts for model Contact was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'contacts',
+  'class' => 'Contact',
+  'ds' => 'default',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('contacts')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('Contact', 'fields')
+#4 C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp(89): FormHelper->create(NULL, Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(1213): View->_render('C:\\xampp\\htdocs...', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(418): View->_renderElement('C:\\xampp\\htdocs...', Array, Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\View\Layouts\bootstrap.ctp(40): View->element('navigation')
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(542): View->_render('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(479): View->renderLayout('', 'bootstrap')
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2014-10-14 18:03:58 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== 4' at line 1
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Publish...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Publish...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Publish...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Publisher), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\PublisherDAOComponent.php(89): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(24): PublisherDAOComponent->getContactPersons(Array)
+#8 [internal function]: ContactController->index()
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-14 23:50:52 Error: Fatal Error (1): Class 'CakeEmail' not found in [C:\xampp\htdocs\Trolleyplanung\app\View\Contact\index.ctp, line 34]
+2014-10-14 23:50:52 Error: [FatalErrorException] Class 'CakeEmail' not found
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'CakeEmai...', 'C:\\xampp\\htdocs...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'CakeEmai...', 'C:\\xampp\\htdocs...', 34, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'CakeEmai...', 'C:\\xampp\\htdocs...', 34, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-14 23:51:49 Error: [ConfigureException] Unknown email configuration "Smtp".
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1125): CakeEmail->_applyConfig('Smtp')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(348): CakeEmail->config('Smtp')
+#2 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(29): CakeEmail->__construct('Smtp')
+#3 [internal function]: ContactController->index()
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-10-14 23:52:08 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Emails\text\welcome_mail.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Emails\\text\\welcome_mail.ctp',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName('welcome_mail')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1684): View->render('welcome_mail', 'default')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1537): CakeEmail->_renderTemplates('smtp\n')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1148): CakeEmail->_render(Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(35): CakeEmail->send('smtp')
+#5 [internal function]: ContactController->index()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-10-14 23:52:35 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Emails\text\welcome_mail.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Emails\\text\\welcome_mail.ctp',
+)
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName('welcome_mail')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1684): View->render('welcome_mail', 'default')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1537): CakeEmail->_renderTemplates('smtp\n')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1148): CakeEmail->_render(Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(35): CakeEmail->send('smtp')
+#5 [internal function]: ContactController->index()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-10-14 23:54:12 Error: [SocketException] Unable to find the socket transport "tls" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-10-14 23:54:36 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-10-14 23:55:29 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-10-14 23:57:05 Error: [SocketException] Unable to find the socket transport "ssl" - did you forget to enable it when you configured PHP?
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php(34): CakeEmail->send('smtp')
+#4 [internal function]: ContactController->index()
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ContactController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+=======
+2014-10-15 14:20:43 Error: Fatal Error (1): Unsupported operand types in [C:\work\PhpstormProjects\Trolleyplanung\app\View\Publishers\edit.ctp, line 40]
+2014-10-15 14:20:44 Error: [FatalErrorException] Unsupported operand types
+Request URL: /publishers/edit/2
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', 'C:\work\Phpstor...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', 'C:\work\Phpstor...', 40, Array)
+#2 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', 'C:\work\Phpstor...', 40, Array)
+#3 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-15 15:17:13 Error: [MissingActionException] Action PublishersController::sendZugang() could not be found.
+Exception Attributes: array (
+  'controller' => 'PublishersController',
+  'action' => 'sendZugang',
+)
+Request URL: /publishers/sendZugang/2
+Stack Trace:
+#0 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\work\PhpstormProjects\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#2 C:\work\PhpstormProjects\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+>>>>>>> origin/master
+2014-10-17 10:23:51 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\ContactController.php, line 42]
+2014-10-17 10:23:51 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 42, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 42, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-17 11:05:37 Error: Fatal Error (4): syntax error, unexpected ''message'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\xampp\htdocs\Trolleyplanung\app\Model\Contact.php, line 15]
+2014-10-17 11:05:37 Error: [FatalErrorException] syntax error, unexpected ''message'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-17 11:05:49 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\Trolleyplanung\app\Model\Contact.php, line 13]
+2014-10-17 11:05:49 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-17 22:51:48 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\PublisherDAOComponent.php, line 104]
+2014-10-17 22:51:48 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 104)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 104, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 104, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-18 21:23:40 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\Trolleyplanung\app\View\Contact\index.ctp, line 89]
+2014-10-18 21:23:40 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /contact
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 89)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 89, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 89, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-20 10:35:39 Error: [NotFoundException] Invalid publisher
+Request URL: /publishers/delete
+Stack Trace:
+#0 [internal function]: PublishersController->delete()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-20 10:39:19 Error: [NotFoundException] Invalid publisher
+Request URL: /publishers/delete
+Stack Trace:
+#0 [internal function]: PublishersController->delete()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-20 10:39:42 Error: [NotFoundException] Invalid publisher
+Request URL: /publishers/delete
+Stack Trace:
+#0 [internal function]: PublishersController->delete()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-20 10:44:16 Error: [NotFoundException] Invalid publisher
+Request URL: /publishers/delete
+Stack Trace:
+#0 [internal function]: PublishersController->delete()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-20 10:44:36 Error: [NotFoundException] Invalid publisher
+Request URL: /publishers/delete
+Stack Trace:
+#0 [internal function]: PublishersController->delete()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-20 11:08:31 Error: Fatal Error (4): syntax error, unexpected '$publisherItem' (T_VARIABLE) in [C:\xampp\htdocs\Trolleyplanung\app\View\Publishers\index.ctp, line 34]
+2014-10-20 11:08:31 Error: [FatalErrorException] syntax error, unexpected '$publisherItem' (T_VARIABLE)
+Request URL: /publishers
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 34)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 34, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 34, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-20 11:14:05 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php, line 125]
+2014-10-20 11:14:05 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /publishers
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 125)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 125, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 125, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-20 11:14:08 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php, line 125]
+2014-10-20 11:14:08 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /publishers
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 125)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 125, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 125, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-20 13:37:06 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php, line 107]
+2014-10-20 13:37:06 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /congregations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 107)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 107, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 107, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
