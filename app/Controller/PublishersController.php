@@ -100,6 +100,10 @@ class PublishersController extends AppController {
 		} else {
 			$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
 			$this->request->data = $this->Publisher->find('first', $options);
+
+			if ($this->request->data['Publisher']['congregation_id'] != $publisher['Publisher']['congregation_id']) {
+				return $this->redirect(array('controller' => 'publishers', 'action' => 'index'));
+			}
 		}
 
 		$roles = $this->Publisher->Role->find('list', array('fields' => array('id', 'description'), 'conditions' => array('name not in' => array('guest',
@@ -117,7 +121,17 @@ class PublishersController extends AppController {
 	 * @return void
 	 */
 	public function delete($id = null) {
+		$publisher = $this->Session->read('publisher');
+
 		$this->Publisher->id = $id;
+
+		$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
+		$publisherToDelete = $this->Publisher->find('first', $options);
+
+		if ($publisherToDelete['Publisher']['congregation_id'] != $publisher['Publisher']['congregation_id']) {
+			return $this->redirect(array('controller' => 'publishers', 'action' => 'index'));
+		}
+
 		if (!$this->Publisher->exists()) {
 			throw new NotFoundException(__('Ungültiger Verkündiger'));
 		}
