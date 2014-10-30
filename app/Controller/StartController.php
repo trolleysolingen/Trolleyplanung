@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 App::uses('AppController', 'Controller');
 /**
  * Congregations Controller
@@ -26,7 +26,7 @@ class StartController extends AppController {
 			$password = $this->request->data["Start"]["password"];
 			$publisher = $this->PublisherDAO->getByEmail($email, $password);
 			if (sizeof($publisher) == 0) {
-				$this->Session->setFlash(__('Der Login war nicht erfolgreich. Bitte überprüfe E-Mail-Adresse und Passwort.'));
+				$this->Session->setFlash('Der Login war nicht erfolgreich. Bitte überprüfe E-Mail-Adresse und Passwort.', 'default', array('class' => 'alert alert-danger'));
 			} else {
 				$this->Session->write('publisher', $publisher);
 				return $this->redirect(array('controller' => '/reservations', 'action' => 'index'));

@@ -75,10 +75,10 @@ class PublishersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Publisher->create();
 			if ($this->Publisher->save($this->request->data)) {
-				$this->Session->setFlash(__('Der Verkündiger wurde gespeichert.'));
+				$this->Session->setFlash('Der Verkündiger wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('Der Verkündiger konnte nicht gespeichert werden. Bitte versuche es erneut.'));
+				$this->Session->setFlash('Der Verkündiger konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
 		$roles = $this->Publisher->Role->find('list', array('fields' => array('id', 'description'), 'conditions' => array('name not in' => array('admin', 'guest'))));
