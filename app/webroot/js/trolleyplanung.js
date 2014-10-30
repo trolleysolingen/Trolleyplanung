@@ -1,4 +1,4 @@
-var debug = true;
+﻿var debug = true;
 
 function logDebug(obj){
     if (debug) {

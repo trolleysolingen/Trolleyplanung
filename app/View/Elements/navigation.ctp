@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$linkarray = explode("/", $actual_link);
 
@@ -94,7 +94,7 @@
 						<?php echo $this->Html->link('Impressum', array('controller' => 'contact', 'action' => 'index')); ?>
 					</li>
 				</ul>
-				<div class="hidden-xs">
+				<div class="hidden-xs hidden-sm">
 					<?php
 					echo $this->Form->create('Start', array('class' => 'navbar-form navbar-right', 'style' => 'margin-right: 20px;',
 						'url' => array('controller' => 'start')

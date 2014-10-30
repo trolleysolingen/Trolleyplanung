@@ -34,3 +34,7 @@
 .disabled {
 	display: none;
 }
+
+.check {
+	color: #5cb85c;
+}
