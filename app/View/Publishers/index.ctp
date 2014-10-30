@@ -24,7 +24,12 @@
 
 				<?php foreach ($publishers as $publisherItem): ?>
 					<tr>
-						<td><?php echo h($publisherItem['Publisher']['email']); ?>&nbsp;</td>
+						<td><?php
+								echo h($publisherItem['Publisher']['email']);
+								if ($publisherItem['Role']['id'] == 2 || $publisherItem['Role']['id'] == 4) {
+									echo " (Admin)";
+								}
+							?>&nbsp;</td>
 						<td><?php echo h($publisherItem['Publisher']['prename']); ?>&nbsp;</td>
 						<td><?php echo h($publisherItem['Publisher']['surname']); ?>&nbsp;</td>
 						<td><?php echo h($publisherItem['Publisher']['phone']); ?>&nbsp;</td>
