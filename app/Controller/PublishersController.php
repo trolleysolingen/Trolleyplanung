@@ -34,6 +34,13 @@ class PublishersController extends AppController {
 	public function index() {
 		$publisher = $this->Session->read('publisher');
 
+		$this->Paginator->settings = array(
+			'order' => array(
+				'Publisher.surname' => 'asc',
+				'Publisher.prename' => 'asc',
+			)
+		);
+
 		$this->Publisher->recursive = 0;
 		$this->set('publishers',
 			$this->Paginator->paginate('Publisher', array('Publisher.congregation_id' => $publisher['Congregation']['id'])));
