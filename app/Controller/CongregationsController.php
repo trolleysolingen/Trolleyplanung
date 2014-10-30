@@ -31,6 +31,7 @@ class CongregationsController extends AppController {
 	public function index() {
 		$this->Congregation->recursive = 0;
 		$this->set('congregations', $this->Paginator->paginate());
+		$this->set('title_for_layout', 'Versammlungen');
 	}
 
 	/**

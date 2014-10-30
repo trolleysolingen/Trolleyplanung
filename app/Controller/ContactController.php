@@ -48,6 +48,8 @@ class ContactController extends AppController {
 				$this->Session->setFlash('Beim Verschicken deiner Nachricht ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
+		
+		$this->set('title_for_layout', 'Kontakt');
 	}
 
 }
