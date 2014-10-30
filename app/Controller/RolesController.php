@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 App::uses('AppController', 'Controller');
 /**
  * Roles Controller
@@ -44,7 +44,7 @@ class RolesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Role->exists($id)) {
-			throw new NotFoundException(__('Invalid role'));
+			throw new NotFoundException(__('Ungültige Rolle'));
 		}
 		$options = array('conditions' => array('Role.' . $this->Role->primaryKey => $id));
 		$this->set('role', $this->Role->find('first', $options));
@@ -62,7 +62,7 @@ class RolesController extends AppController {
 				$this->Session->setFlash(__('The role has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The role could not be saved. Please, try again.'));
+				$this->Session->setFlash('Die Rolle konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
 	}
@@ -76,14 +76,14 @@ class RolesController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Role->exists($id)) {
-			throw new NotFoundException(__('Invalid role'));
+			throw new NotFoundException(__('Ungültige Rolle'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Role->save($this->request->data)) {
-				$this->Session->setFlash(__('The role has been saved.'));
+				$this->Session->setFlash('Die Rolle wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The role could not be saved. Please, try again.'));
+				$this->Session->setFlash('Die Rolle konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Role.' . $this->Role->primaryKey => $id));
@@ -101,13 +101,13 @@ class RolesController extends AppController {
 	public function delete($id = null) {
 		$this->Role->id = $id;
 		if (!$this->Role->exists()) {
-			throw new NotFoundException(__('Invalid role'));
+			throw new NotFoundException(__('Ungültige Rolle'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Role->delete()) {
-			$this->Session->setFlash(__('The role has been deleted.'));
+			$this->Session->setFlash('Die Rolle wurde gelöscht.', 'default', array('class' => 'alert alert-success'));
 		} else {
-			$this->Session->setFlash(__('The role could not be deleted. Please, try again.'));
+			$this->Session->setFlash('Die Rolle konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
