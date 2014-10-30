@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
   <head>
 	<title>
@@ -41,7 +41,18 @@
 
     <div class="container-fluid">
 
-			<?php echo $this->Session->flash(); ?>
+			<?php
+			
+				echo $this->Session->flash(); 
+				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				if (strpos($actual_link,'trolleydemo') !== false) { ?>
+				
+				<div class="alert alert-info">
+					<strong>ACHTUNG!!</strong> Da dies eine Testversion ist, wurde der Email Versand abgeschaltet. In der richtigen Version werden Emails versendet, wenn man einen Verkündiger angelegt hat und ihm die Zugangsdaten zukommen lässt und sich jemand zu seiner Schicht dazugetragen oder gelöscht hat. Die Versammlungsadmins bekommen Mails, wenn Verkündiger Gäste eintragen, die nicht in der Datenbank stehen um zu überprüfen, wer im Versammlungsgebiet Trolleydienst macht.
+				</div>
+			<?php
+				}
+			?>
 
 			<?php echo $this->fetch('content'); ?>
 			

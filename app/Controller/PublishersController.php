@@ -183,19 +183,24 @@ class PublishersController extends AppController {
 			. "http://trolley.jw-center.com/contact \n\n"
 			. "Viele Grüße \n"
 			. "Deine Trolleyverwaltung \n";
-
-		if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
-			$mail = new CakeEmail('smtp');
-			$result = $mail->emailFormat('text')
-				->to($publisherToSendAccount["Publisher"]["email"])
-				->subject($subject);
-
-			if ($mail->send($message)) {
-				$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash('Beim Verschicken der Zugangsdaten ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
+			
+		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		if (strpos($actual_link,'trolleydemo') === false) {
+			if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
+				$mail = new CakeEmail('smtp');
+				$result = $mail->emailFormat('text')
+					->to($publisherToSendAccount["Publisher"]["email"])
+					->subject($subject);
+				
+				if ($mail->send($message)) {
+					$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash('Beim Verschicken der Zugangsdaten ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
+				}
 			}
+		} else {
+			$this->redirect(array('action' => 'index'));
 		}
 	}
 }

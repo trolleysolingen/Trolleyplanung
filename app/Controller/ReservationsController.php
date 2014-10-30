@@ -63,11 +63,14 @@ class ReservationsController extends AppController {
 				$this->request->data['reservationTimeslot'],
 				$this->request->data['displayTime'],
 				$this->Session->read('publisher'));
-
-			if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
-				try {
-					$this->sendReservationMailToPublisher($reservation, false);
-				} catch (Exception $e) {
+				
+				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				if (strpos($actual_link,'trolleydemo') === false) {
+					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
+						try {
+							$this->sendReservationMailToPublisher($reservation, false);
+						} catch (Exception $e) {
+					}
 				}
 			}
 		}
@@ -90,11 +93,14 @@ class ReservationsController extends AppController {
 				$this->request->data['reservationTimeslot'],
 				$publisher,
 				$this->request->data['deleteBoth'] == 'true');
-
-			if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
-				try {
-					$this->sendReservationMailToPublisher($reservation, true);
-				} catch (Exception $e) {
+				
+				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				if (strpos($actual_link,'trolleydemo') === false) {
+					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
+						try {
+							$this->sendReservationMailToPublisher($reservation, true);
+						} catch (Exception $e) {
+					}
 				}
 			}
 		}
@@ -118,11 +124,14 @@ class ReservationsController extends AppController {
 				$this->request->data['displayTime'],
 				$publisher,
 				$this->request->data['guestname']);
-
-			if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
-				try {
-					$this->sendGuestAlertMail($reservation, $publisher);
-				} catch (Exception $e) {
+				
+				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				if (strpos($actual_link,'trolleydemo') === false) {
+					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
+						try {
+							$this->sendGuestAlertMail($reservation, $publisher);
+						} catch (Exception $e) {
+					}
 				}
 			}
 		}
