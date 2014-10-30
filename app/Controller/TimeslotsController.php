@@ -37,6 +37,7 @@ class TimeslotsController extends AppController {
 			$this->Paginator->paginate('Timeslot', array('Timeslot.congregation_id' => $publisher['Congregation']['id'])));
 
 		$this->set('publisher', $publisher);
+		$this->set('title_for_layout', 'Schichtzeiten');
 	}
 
 /**

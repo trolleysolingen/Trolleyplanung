@@ -32,6 +32,7 @@ class RolesController extends AppController {
 	public function index() {
 		$this->Role->recursive = 0;
 		$this->set('roles', $this->Paginator->paginate());
+		$this->set('title_for_layout', 'Rollen');
 	}
 
 /**

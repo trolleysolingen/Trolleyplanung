@@ -43,6 +43,8 @@ class ReservationsController extends AppController {
 		$this->set("reservations", $reservations);
 		$this->set("publisherList", $publisherList);
 		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
+		
+		$this->set('title_for_layout', 'Schichten');
 	}
 
 

@@ -32,6 +32,7 @@ class StartController extends AppController {
 				return $this->redirect(array('controller' => '/reservations', 'action' => 'index'));
 			}
 		}
+		$this->set('title_for_layout', 'Trolleyverwaltung');
 	}
 
 }

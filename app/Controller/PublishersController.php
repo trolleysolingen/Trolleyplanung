@@ -45,6 +45,8 @@ class PublishersController extends AppController {
 		$this->set('publishers',
 			$this->Paginator->paginate('Publisher', array('Publisher.congregation_id' => $publisher['Congregation']['id'])));
 		$this->set('publisher', $publisher);
+		
+		$this->set('title_for_layout', 'Verkündiger');
 	}
 
 	/**
