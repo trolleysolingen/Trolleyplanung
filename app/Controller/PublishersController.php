@@ -45,7 +45,7 @@ class PublishersController extends AppController {
 		$this->set('publishers',
 			$this->Paginator->paginate('Publisher', array('Publisher.congregation_id' => $publisher['Congregation']['id'])));
 		$this->set('publisher', $publisher);
-		
+
 		$this->set('title_for_layout', 'Verkündiger');
 	}
 
@@ -144,6 +144,18 @@ class PublishersController extends AppController {
 		if (!$this->Publisher->exists()) {
 			throw new NotFoundException(__('Ungültiger Verkündiger'));
 		}
+
+		// delete reservations of publisher
+		$reservations = $this->Reservation->find('all', array('conditions' => array('OR' =>  array('publisher1_id' => $id, 'publisher2_id' => $id))));
+		foreach ($reservations as $reservation) {
+			$this->ReservationDAO->delete(
+				$publisherToDelete['Congregation']['id'],
+				$reservation['reservationDay'],
+				$reservation['reservationTimeslot'],
+				$publisherToDelete,
+				false);
+		}
+
 		if ($this->Publisher->delete()) {
 			$this->Session->setFlash('Der Verkündiger wurde gelöscht.', 'default', array('class' => 'alert alert-success'));
 		} else {

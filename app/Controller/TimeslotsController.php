@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 App::uses('AppController', 'Controller');
 /**
  * Timeslots Controller
@@ -69,7 +69,7 @@ class TimeslotsController extends AppController {
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash('Die Schichtzeit konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
-				
+
 			}
 		}
 		$this->set('publisher', $publisher);

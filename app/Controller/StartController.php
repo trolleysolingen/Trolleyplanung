@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 App::uses('AppController', 'Controller');
 /**
  * Congregations Controller
@@ -10,12 +10,13 @@ class StartController extends AppController {
 	public $components = array('CongregationDAO', 'PublisherDAO');
 
 	public function beforeFilter() {
+
 		$publisher = $this->Session->read('publisher');
 		if ($publisher) {
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		}
 	}
-		/**
+	/**
 	 * index method
 	 *
 	 * @return void
@@ -29,7 +30,7 @@ class StartController extends AppController {
 				$this->Session->setFlash('Der Login war nicht erfolgreich. Bitte überprüfe E-Mail-Adresse und Passwort.', 'default', array('class' => 'alert alert-danger'));
 			} else {
 				$this->Session->write('publisher', $publisher);
-				return $this->redirect(array('controller' => '/reservations', 'action' => 'index'));
+				return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 			}
 		}
 		$this->set('title_for_layout', 'Trolleyverwaltung');
