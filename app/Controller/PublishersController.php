@@ -15,7 +15,8 @@ class PublishersController extends AppController {
 	 *
 	 * @var array
 	 */
-	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler');
+	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler', 'ReservationDAO');
+	public $uses = array('Publisher', 'Reservation');
 
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
@@ -148,10 +149,12 @@ class PublishersController extends AppController {
 		// delete reservations of publisher
 		$reservations = $this->Reservation->find('all', array('conditions' => array('OR' =>  array('publisher1_id' => $id, 'publisher2_id' => $id))));
 		foreach ($reservations as $reservation) {
-			$this->ReservationDAO->delete(
+			//debug($reservation);
+
+			$this->ReservationDAO->deletePublisher(
 				$publisherToDelete['Congregation']['id'],
-				$reservation['reservationDay'],
-				$reservation['reservationTimeslot'],
+				$reservation['Reservation']['day'],
+				$reservation['Reservation']['timeslot_id'],
 				$publisherToDelete,
 				false);
 		}
