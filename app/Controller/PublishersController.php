@@ -202,11 +202,37 @@ class PublishersController extends AppController {
 			. "Benutzername: " . $publisherToSendAccount["Publisher"]["email"] . "\n"
 			. "Passwort: " . $publisherToSendAccount["Publisher"]["password"] . "\n"
 			. "\n"
-			. "Bei Fragen und Problemen wende Dich bitte an: " . $publisher['Publisher']['email'] . "\n"
-			. "Oder nutze alternativ die Kontakt Seite: \n"
-			. "http://trolley.jw-center.com/contact \n\n"
+			. "Unter dem Menüpunkt \"Schichten\", kannst du dich und einen Partner für eine Schicht eintragen, oder dich einfach eintragen und abwarten wer sich noch dazu einträgt. Sobald sich jemand zu deiner Schicht einträgt oder löscht, bekommst du eine Benachrichtigung per E-Mail. \n"
+			. "\n"
+			. "Ganz nach dem Motto aus Römer 12:10 \"Habt in brüderlicher Liebe innige Zuneigung zueinander. In Ehrerbietung komme einer dem anderen zuvor.\", denkt bitte daran, dass natürlich der Grundsatz gilt: Wer zuerst kommt, mahlt zuerst. ABER wir möchten doch darauf achten, dass wir uns nicht überall eintragen nur um für uns etwas reserviert zu haben und zu schauen wo sich jemand dazu einträgt und unseren Schwestern und Brüdern die Schichten damit wegzunehmen. \n"
+			. "\n"
+			. "Wir sind uns sicher, dass Jehova deine Bemühungen am öffentlichen Zeugnisgeben teil zu nehmen, segnen wird. \n"
+			. "\n"
+			. "Für Fragen, aufgefallene Fehler, Verbesserungsvorschläge und Anregungen nutze bitte die Kontakt Seite: \n"
+			. "http://trolley.jw-center.com/contact \n"
+			. "\n"
 			. "Viele Grüße \n"
-			. "Deine Trolleyverwaltung \n";
+			. "Deine Trolleyverwaltung \n"; 
+			
+		$subject2 = "Informationen zum Adminbereich";
+		$message2 = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
+			. "\n"
+			. "Du wurdest als Versammlungsadmin deiner Versammlung angelegt. Wir freuen uns, dass ihr als Versammlung am öffentlichen Zeugnisgeben teilnehmt und auch, dass ihr euch dazu entschlossen habt zur Verwaltung unser Tool zu benutzen. \n"
+			. "Deine Zugangsdaten müsstest du schon in einer gesonderten Mail zugesandt bekommen haben. Anbei aber noch ein paar spezielle Dinge, die den Adminbereich betreffen: \n"
+			. "\n"
+			. "Unter dem Menüpunkt \"Schichtzeiten\", kannst du die Schichtzeiten, deiner Versammlung hinzufügen, ändern und löschen. Bitte achte darauf, dass du keine Schichtzeiten löschen kannst, zu denen sich Verkündiger schon eingetragen haben. Falls du also deinen laufenden Schichtplan ändern willst, musst du einfach nur die Schichtzeiten ändern. Falls du dennoch Schichten löschen musst, schreib uns eine Mail und wir werden uns dann um eine Lösung des Problems bemühen. \n"
+			. "\n"
+			. "Unter dem Menüpunkt \"Verkündiger\" kannst die Verkündiger deiner Versammlung verwalten. Du kannst entweder Verkündiger oder Admins, die die gleichen Berechtigungen wie du haben, anlegen. Bei der Verkündigeranlage wäre es vorteilhaft, wenn du eine Telefonnummer des Verkündigers mit angibst. Diese wird in in der Schichtplanung zu jedem Verkündiger angezeigt. So können die Verkündiger untereinander leichter Kontakt herstellen. Soll ein Verkündiger Trolleydienst machen dürfen, aber dies nur als Partner mit einem etwas erfahrenerem Verkündiger, gib einfach keine e-mail Adresse zu diesem Verkündiger an. So hat er keinen Login zum einloggen, steht aber in eurer Verkündiger Liste. Später gehe ich darauf ein, was das für einen Sinn macht. \n"
+			. "\n"
+			. "Hinter dem Menüpunkt \"Schichten\" verbirgt sich die Schichtverwaltung. Hier können sich Verkündiger und auch du für Schichten, maximal 12 Wochen im voraus eintragen. Wenn sich ein Verkündiger einträgt, hat er die Möglichkeit noch einen Partner zu sich in die Schicht einzutragen. Es öffnet sich ein Fenster, in dem er einen Namen eingeben kann, sobald er anfängt zu tippen, öffnen sich Verkündiger Vorschläge anhand seiner eingegebenen Buchstaben. Hier tauchen dann auch die Verkündiger ohne Login auf. Wenn ein Verkündiger einen Partner einträgt, der ihm nicht vorgeschlagen wird von der Suche (weil er nicht in eurer Verkündiger Liste steht und z.B. aus einer anderen Versammlung kommt) bekommen alle Versammlungsadmins eine Info Mail um zu überprüfen ob der Partner für den Trolleydienst geeignet ist. Wenn sich Verkündiger von einer Schicht löschen möchten, wird er gefragt ob er auch den Partner aus seiner Schicht mitlöschen möchte. So müssen sich nicht beide einloggen und löschen, wenn sie ihren Dienst absagen.  \n"
+			. "\n"
+			. "Natürlich untersteht dieses Tool der ständigen Weiterentwicklung. Wir haben noch einige Ideen und Features, die wir in weiteren Versionen umsetzen wollen. Wenn ihr Verbesserungsvorschläge habt, Fehler findet oder Fragen habt, nutzt bitte das Kontaktformular oder die e-mail Adresse unter: \n"
+			. "http://trolley.jw-center.com/contact \n"
+			. "\n"
+			. "Wir danken euch für eure Mithilfe und Unterstützung und wünschen euch Jehovas Segen für euren Trolleydienst. \n"
+			. "\n"
+			. "Viele Grüße \n"
+			. "Deine Trolleyverwaltung \n"; 
 			
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (strpos($actual_link,'trolleydemo') === false) {
@@ -217,6 +243,13 @@ class PublishersController extends AppController {
 					->subject($subject);
 				
 				if ($mail->send($message)) {
+					if($publisherToSendAccount['Role']['name'] == 'congregation admin') {
+						$mail2 = new CakeEmail('smtp');
+						$result = $mail2->emailFormat('text')
+							->to($publisherToSendAccount["Publisher"]["email"])
+							->subject($subject2);
+						$mail2->send($message2);
+					}
 					$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
 					$this->redirect(array('action' => 'index'));
 				} else {
