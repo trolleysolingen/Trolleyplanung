@@ -39,15 +39,15 @@
 						if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
 					?>
 							<th width="30%"><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
-							<th width="15%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
 							<th width="15%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
+							<th width="15%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
 							<th width="15%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
 							<th width="25%" class="actions"><?php echo __('Aktionen'); ?></th>
 					<?php
 						} else {
 					?>
-							<th width="50%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
 							<th width="50%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
+							<th width="50%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
 					<?php
 						}
 					?>
@@ -71,8 +71,8 @@
 							}
 						?>
 
-						<td><?php echo h($publisherItem['Publisher']['prename']); ?>&nbsp;</td>
 						<td><?php echo h($publisherItem['Publisher']['surname']); ?>&nbsp;</td>
+						<td><?php echo h($publisherItem['Publisher']['prename']); ?>&nbsp;</td>
 
 						<?php
 							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
