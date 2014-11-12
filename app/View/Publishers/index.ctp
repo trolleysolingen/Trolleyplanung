@@ -2,6 +2,22 @@
 	<br/>
 	<legend><?php echo __('Verkündiger der Versammlung ' . $publisher['Congregation']['name']); ?></legend>
 
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" href="#collapse_help">
+					<span style="font-size: 1.5em; margin-top: -5px;" class="glyphicon glyphicon-expand"></span>
+					Hilfe
+				</a>
+			</h4>
+		</div>
+		<div id="collapse_help" class="panel-collapse collapse">
+			<div class="panel-body">
+				Hier findest du alle Verkündiger aufgelistet, mit denen du dich in deiner Versammlung für den Trolleydienst verabreden kannst.
+			</div>
+		</div>
+	</div>
+
 	<br/>
 	<?php
 		if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
