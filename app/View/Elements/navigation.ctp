@@ -45,12 +45,12 @@
 						<li class="<?php echo $highlightReservations ?>">
 							<?php echo $this->Html->link('Schichten', array('controller' => 'reservations', 'action' => 'index')); ?>
 						</li>
+						<li class="<?php echo $highlightPublishers ?>">
+							<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
+						</li>
 						<?php
 							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
 						?>
-								<li class="<?php echo $highlightPublishers ?>">
-									<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
-								</li>
 								<li class="<?php echo $highlightTimeslots ?>">
 									<?php echo $this->Html->link('Schichtzeiten', array('controller' => 'timeslots', 'action' => 'index')); ?>
 								</li>

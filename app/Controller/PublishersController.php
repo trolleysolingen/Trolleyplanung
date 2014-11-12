@@ -22,7 +22,7 @@ class PublishersController extends AppController {
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
-		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin') {
+		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin' && $this->action != "index") {
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		}
 	}

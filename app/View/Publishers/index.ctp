@@ -2,21 +2,39 @@
 	<br/>
 	<legend><?php echo __('Verkündiger der Versammlung ' . $publisher['Congregation']['name']); ?></legend>
 
-	</br>
-	<p class="actions">
-		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neuen Verkündiger anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
-	</p>
+	<br/>
+	<?php
+		if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+	?>
+		<p class="actions">
+			<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neuen Verkündiger anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
+		</p>
+		<br/>
+	<?php
+		}
+	?>
 
-	</br>
+
 	<div class="table-responsive">
 		<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
 			<thead>
 				<tr>
-					<th width="30%"><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
-					<th width="15%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
-					<th width="15%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
-					<th width="15%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
-					<th width="25%" class="actions"><?php echo __('Aktionen'); ?></th>
+					<?php
+						if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+					?>
+							<th width="30%"><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
+							<th width="15%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
+							<th width="15%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
+							<th width="15%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
+							<th width="25%" class="actions"><?php echo __('Aktionen'); ?></th>
+					<?php
+						} else {
+					?>
+							<th width="50%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
+							<th width="50%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
+					<?php
+						}
+					?>
 				</tr>
 			</thead>
 
@@ -24,26 +42,39 @@
 
 				<?php foreach ($publishers as $publisherItem): ?>
 					<tr>
-						<td><?php
-								echo h($publisherItem['Publisher']['email']);
-								if ($publisherItem['Role']['id'] == 2 || $publisherItem['Role']['id'] == 4) {
-									echo " (Admin)";
-								}
-							?>&nbsp;</td>
+						<?php
+							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+						?>
+							<td><?php
+									echo h($publisherItem['Publisher']['email']);
+									if ($publisherItem['Role']['id'] == 2 || $publisherItem['Role']['id'] == 4) {
+										echo " (Admin)";
+									}
+								?>&nbsp;</td>
+						<?php
+							}
+						?>
+
 						<td><?php echo h($publisherItem['Publisher']['prename']); ?>&nbsp;</td>
 						<td><?php echo h($publisherItem['Publisher']['surname']); ?>&nbsp;</td>
-						<td><?php echo h($publisherItem['Publisher']['phone']); ?>&nbsp;</td>
 
-						<td class="actions" style="white-space:nowrap;">
-							<?php
-								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
-								echo $this->Html->link('<button type="button" data-data="' . $publisherItem['Publisher']['prename'] . ' ' . $publisherItem['Publisher']['surname'] . '" class="open-DeleteDialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$publisherItem['Publisher']['id'])), 'escape' => false), false);
-								if ($publisherItem['Publisher']['email'] && $publisherItem['Publisher']['email'] != "") {
-									echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'sendAccount', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Zugangsdaten versenden'));
-								}
-							?>
-						</td>
+						<?php
+							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+						?>
+							<td><?php echo h($publisherItem['Publisher']['phone']); ?>&nbsp;</td>
 
+							<td class="actions" style="white-space:nowrap;">
+								<?php
+									echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
+									echo $this->Html->link('<button type="button" data-data="' . $publisherItem['Publisher']['prename'] . ' ' . $publisherItem['Publisher']['surname'] . '" class="open-DeleteDialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$publisherItem['Publisher']['id'])), 'escape' => false), false);
+									if ($publisherItem['Publisher']['email'] && $publisherItem['Publisher']['email'] != "") {
+										echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'sendAccount', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Zugangsdaten versenden'));
+									}
+								?>
+							</td>
+						<?php
+							}
+						?>
 					</tr>
 				<?php endforeach; ?>
 
