@@ -154,8 +154,8 @@ class ReservationsController extends AppController {
 				. "am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
 				. " von " . $reservation['Timeslot']['start']
 				. " bis " . $reservation['Timeslot']['end']
-				. " Uhr hat sich Dein Schichtpartner aus Eurer Schicht gelöscht.\n\n"
-				. "Viele Grüße \n"
+				. " Uhr hat sich Dein Schichtpartner aus Eurer Schicht gelÃ¶scht.\n\n"
+				. "Viele GrÃ¼ÃŸe \n"
 				. "Deine Trolleyverwaltung \n";
 		} else {
 			$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
@@ -165,7 +165,7 @@ class ReservationsController extends AppController {
 				. " bis " . $reservation['Timeslot']['end']
 				. " Uhr hat sich " . $reservation["Publisher2"]["prename"] . " " . $reservation["Publisher2"]["surname"]
 				. " zu Deiner Schicht hinzugebucht.\n\n"
-				. "Viele Grüße \n"
+				. "Viele GrÃ¼ÃŸe \n"
 				. "Deine Trolleyverwaltung \n";
 		}
 
@@ -187,7 +187,7 @@ class ReservationsController extends AppController {
 			. " von " . $reservation['Timeslot']['start']
 			. " bis " . $reservation['Timeslot']['end']
 			. " Uhr hat " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
-			. " einen Gast-Verkündiger hinzugefügt: " . $reservation["Reservation"]["guestname"];
+			. " einen Gast-VerkÃ¼ndiger hinzugefÃ¼gt: " . $reservation["Reservation"]["guestname"];
 
 		$mail = new CakeEmail('smtp');
 

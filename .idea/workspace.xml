@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d810980-12a3-4bf9-861f-7fccbcce417b" name="Default" comment="Versand von Zugangsdaten">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/PublishersController.php" afterPath="$PROJECT_DIR$/app/Controller/PublishersController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/ReservationsController.php" afterPath="$PROJECT_DIR$/app/Controller/ReservationsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Publishers/index.ctp" afterPath="$PROJECT_DIR$/app/View/Publishers/index.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_list" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_list" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_publishers" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_trolleyplanung_publishers" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Elements/navigation.ctp" afterPath="$PROJECT_DIR$/app/View/Elements/navigation.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Trolleyplanung.iws" />
@@ -39,7 +35,7 @@
       <file leaf-file-name="ReservationsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Controller/ReservationsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7468124" vertical-offset="2480" max-vertical-offset="3570">
+            <state vertical-scroll-proportion="0.5742297" vertical-offset="2480" max-vertical-offset="3570">
               <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
               <folding />
             </state>
@@ -49,7 +45,7 @@
       <file leaf-file-name="PublishersController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/PublishersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="117.73077" vertical-offset="3503" max-vertical-offset="4556">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3503" max-vertical-offset="4556">
               <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
               <folding />
             </state>
@@ -296,15 +292,15 @@
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -575,7 +571,13 @@
       <option name="project" value="LOCAL" />
       <updated>1415133348631</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Zugriff von Verkündigern auf Verkündigerliste">
+      <created>1415802196018</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1415802196018</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -591,17 +593,17 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21484375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19791667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19791667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -611,7 +613,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="timeout handling in ajax" />
     <MESSAGE value="Deletion only possible if user is in reservation" />
     <MESSAGE value="Autocomplete" />
     <MESSAGE value="Merged" />
@@ -636,7 +637,8 @@
     <MESSAGE value="admin-kennzeichnung" />
     <MESSAGE value="Löschen von Verkündigern (und Encoding Probleme)" />
     <MESSAGE value="Löschen von Verkündigern" />
-    <option name="LAST_COMMIT_MESSAGE" value="Löschen von Verkündigern" />
+    <MESSAGE value="Zugriff von Verkündigern auf Verkündigerliste" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zugriff von Verkündigern auf Verkündigerliste" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -972,7 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="994" max-vertical-offset="3179">
           <caret line="78" column="35" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,7 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="2108">
           <caret line="90" column="17" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -988,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2425107" vertical-offset="0" max-vertical-offset="2397">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -996,13 +995,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48320895" vertical-offset="625" max-vertical-offset="1989">
           <caret line="52" column="26" selection-start-line="50" selection-start-column="24" selection-end-line="52" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/PublishersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="117.73077" vertical-offset="3503" max-vertical-offset="4556">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3503" max-vertical-offset="4556">
           <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
           <folding />
         </state>
@@ -1010,7 +1008,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/ReservationsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7468124" vertical-offset="2480" max-vertical-offset="3570">
+        <state vertical-scroll-proportion="0.5742297" vertical-offset="2480" max-vertical-offset="3570">
           <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
           <folding />
         </state>
