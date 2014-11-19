@@ -2,7 +2,29 @@
 <?php
     $displaySizes_underscore_separated = implode("_", $displaySizes);
 
-    $weekDays  = array('Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag');
+    $weekDays  = array();
+
+    if ($publisher['Congregation']['monday'] == 1) {
+        array_push($weekDays, 'Montag');
+    }
+    if ($publisher['Congregation']['tuesday'] == 1) {
+        array_push($weekDays, 'Dienstag');
+    }
+    if ($publisher['Congregation']['wednesday'] == 1) {
+        array_push($weekDays, 'Mittwoch');
+    }
+    if ($publisher['Congregation']['thursday'] == 1) {
+        array_push($weekDays, 'Donnerstag');
+    }
+    if ($publisher['Congregation']['friday'] == 1) {
+        array_push($weekDays, 'Freitag');
+    }
+    if ($publisher['Congregation']['saturday'] == 1) {
+        array_push($weekDays, 'Samstag');
+    }
+    if ($publisher['Congregation']['sunday'] == 1) {
+        array_push($weekDays, 'Sonntag');
+    }
 
     $dateStart = new DateTime();
     $dateEnd = new DateTime();
