@@ -24,6 +24,9 @@
 	?>
 		<p class="actions">
 			<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neuen Verkündiger anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				<span class="glyphicon glyphicon-message_full"></span> Alle Zugangsdaten verschicken
+			</button>
 		</p>
 		<br/>
 	<?php
@@ -137,6 +140,33 @@
 					'Ja',
 					array('action' => 'delete'),
 					array('class' => 'btn btn-danger'),
+					false
+				);
+			?>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel2">Zugangsdaten verschicken</h4>
+      </div>
+      <div class="modal-body">
+        Bist du dir sicher, dass du allen Verkündigern die Zugangsdaten per Mail schicken möchtest?
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
+			<?php
+			echo $this->Form->postLink(
+					'Ja',
+					array('action' => 'sendMultiAccounts'),
+					array('class' => 'btn btn-success'),
 					false
 				);
 			?>

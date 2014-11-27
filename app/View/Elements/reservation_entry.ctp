@@ -102,7 +102,7 @@ if ($reservationTmp == null) {
         }
     }
     echo "</div>";
-	echo "<div class='visible-xs-block' style='margin-top:-15px;'>";
+	echo "<div class='visible-xs-block' style='margin-top:-15px; margin-left: -10px;'>";
 	echo "<div class='btn-group'>";
 	if ($reservationTmp['Reservation']['publisher1_id'] != null) {
         if ($reservationTmp['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {

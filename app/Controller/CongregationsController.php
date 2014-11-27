@@ -12,13 +12,18 @@ class CongregationsController extends AppController {
 	 *
 	 * @var array
 	 */
-	public $components = array('Paginator', 'CongregationDAO');
+	public $components = array('Paginator', 'CongregationDAO', 'PublisherDAO');
 
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
+		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
-		} else if ($publisher['Role']['name'] != 'admin') {
+		} else if (strpos($actual_link,'edit') === false){
+			if ($publisher['Role']['name'] == 'congregation admin') {
+				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
+			}
+		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin'){ 
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		}
 	}
@@ -79,6 +84,9 @@ class CongregationsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Congregation->save($this->request->data)) {
+				$publisher = $this->Session->read('publisher');
+				$publisher2 = $this->PublisherDAO->getById($publisher);
+				$this->Session->write('publisher', $publisher2);
 				$this->Session->setFlash('Die Versammlung wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {

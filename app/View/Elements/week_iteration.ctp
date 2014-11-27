@@ -2,7 +2,7 @@
 <?php
     $displaySizes_underscore_separated = implode("_", $displaySizes);
 
-    $weekDays  = array();
+    $weekDays  = array();	
 
     if ($publisher['Congregation']['monday'] == 1) {
         array_push($weekDays, 'Montag');

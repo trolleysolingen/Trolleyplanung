@@ -11,6 +11,14 @@ class PublisherDAOComponent extends Component {
 
         return $result;
     }
+	
+	public function getById($publisher) {
+        $model = ClassRegistry::init('Publisher');
+
+        $result= $model->find('first', array('conditions' => array('Publisher.id' => $publisher['Publisher']['id']), 'recursive' => 1));
+
+        return $result;
+    }
 
     public function getByAutocomplete($query, $publisher) {
         $model = ClassRegistry::init('Publisher');
@@ -38,6 +46,20 @@ class PublisherDAOComponent extends Component {
                     'Publisher.id !=' => $publisher['Publisher']['id'],
                     'Publisher.congregation_id' => $publisher['Congregation']['id'],
                     'Publisher.role_id !=' => '3'
+                )
+            )
+        );
+
+        return $result;
+    }
+	
+	public function getAllMailAdresses($publisher) {
+        $model = ClassRegistry::init('Publisher');
+        $result = $model->find('all', array(
+                'recursive' => 1,
+                'conditions' => array(
+                    'Publisher.congregation_id' => $publisher['Congregation']['id'],
+                    'Publisher.email !=' => ''
                 )
             )
         );

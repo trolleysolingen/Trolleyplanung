@@ -75,7 +75,10 @@ class PublishersController extends AppController {
 
 		if ($this->request->is('post')) {
 			$this->Publisher->create();
-			if ($this->Publisher->save($this->request->data)) {
+			$newPublisher = $this->request->data;
+			$newPublisher['Publisher']['password'] = $this->randomPassword();
+			
+			if ($this->Publisher->save($newPublisher)) {
 				$this->Session->setFlash('Der Verkündiger wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
@@ -85,6 +88,17 @@ class PublishersController extends AppController {
 		$roles = $this->Publisher->Role->find('list', array('fields' => array('id', 'description'), 'conditions' => array('name not in' => array('admin', 'guest'))));
 		$this->set(compact('roles'));
 		$this->set('publisher', $publisher);
+	}
+	
+	public function randomPassword() {
+		$alphabet = "abcdefghijklmnopqrstuwxyz0123456789";
+		$pass = array(); //remember to declare $pass as an array
+		$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+		for ($i = 0; $i < 5; $i++) {
+			$n = rand(0, $alphaLength);
+			$pass[] = $alphabet[$n];
+		}
+		return implode($pass); //turn the array into a string
 	}
 
 	/**
@@ -182,15 +196,8 @@ class PublishersController extends AppController {
 
 		$this->set("_serialize", array("publishers"));
 	}
-
-	public function sendAccount($id) {
-		$publisher = $this->Session->read('publisher');
-
-		if (!$this->Publisher->exists($id)) {
-			throw new NotFoundException(__('Ungültiger Verkündiger'));
-		}
-		$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
-		$publisherToSendAccount = $this->Publisher->find('first', $options);
+	
+	public function sendMail($publisherToSendAccount) {
 
 		$subject = "Zugangsdaten zur Trolleyverwaltung";
 		$message = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
@@ -220,9 +227,11 @@ class PublishersController extends AppController {
 			. "Du wurdest als Versammlungsadmin deiner Versammlung angelegt. Wir freuen uns, dass ihr als Versammlung am öffentlichen Zeugnisgeben teilnehmt und auch, dass ihr euch dazu entschlossen habt zur Verwaltung unser Tool zu benutzen. \n"
 			. "Deine Zugangsdaten müsstest du schon in einer gesonderten Mail zugesandt bekommen haben. Anbei aber noch ein paar spezielle Dinge, die den Adminbereich betreffen: \n"
 			. "\n"
-			. "Unter dem Menüpunkt \"Schichtzeiten\", kannst du die Schichtzeiten, deiner Versammlung hinzufügen, ändern und löschen. Bitte achte darauf, dass du keine Schichtzeiten löschen kannst, zu denen sich Verkündiger schon eingetragen haben. Falls du also deinen laufenden Schichtplan ändern willst, musst du einfach nur die Schichtzeiten ändern. Falls du dennoch Schichten löschen musst, schreib uns eine Mail und wir werden uns dann um eine Lösung des Problems bemühen. \n"
+			. "Hinter dem Menüpunkt \"Einstellungen\", kannst du deinen Versammlungsnamen ändern und die Tage einstellen, für die in eurem Versammlungsgebiet Trolleyschichten eingetragen werden können. \n"
 			. "\n"
-			. "Unter dem Menüpunkt \"Verkündiger\" kannst die Verkündiger deiner Versammlung verwalten. Du kannst entweder Verkündiger oder Admins, die die gleichen Berechtigungen wie du haben, anlegen. Bei der Verkündigeranlage wäre es vorteilhaft, wenn du eine Telefonnummer des Verkündigers mit angibst. Diese wird in in der Schichtplanung zu jedem Verkündiger angezeigt. So können die Verkündiger untereinander leichter Kontakt herstellen. Soll ein Verkündiger Trolleydienst machen dürfen, aber dies nur als Partner mit einem etwas erfahrenerem Verkündiger, gib einfach keine e-mail Adresse zu diesem Verkündiger an. So hat er keinen Login zum einloggen, steht aber in eurer Verkündiger Liste. Später gehe ich darauf ein, was das für einen Sinn macht. \n"
+			. "Unter dem Menüpunkt \"Verkündiger\" kannst die Verkündiger deiner Versammlung verwalten. Du kannst entweder Verkündiger oder Admins, die die gleichen Berechtigungen wie du haben, anlegen. Bei der Verkündigeranlage wäre es vorteilhaft, wenn du eine Telefonnummer des Verkündigers mit angibst. Diese wird in in der Schichtplanung zu jedem Verkündiger angezeigt. So können die Verkündiger untereinander leichter Kontakt herstellen. Soll ein Verkündiger Trolleydienst machen dürfen, aber dies nur als Partner mit einem etwas erfahrenerem Verkündiger, gib einfach keine E-mail Adresse zu diesem Verkündiger an. So hat er keinen Login zum einloggen, steht aber in eurer Verkündiger Liste. Später gehe ich darauf ein, was das für einen Sinn macht. Die Passwörter für die Verkündiger werden automatisch generiert. Mit einem Klick auf den Button \"Alle Zugangsdaten verschicken\", versendest du eine Mail an jeden Verkündiger mit einer Email-Adresse in deiner Verkündigerliste.\n Alternativ kannst du auch auf das Brief Symbol neben dem Verkündiger in der Liste klicken. Dann werden die Zugangsdaten nur für diesen Verkündiger an seine Mail-Adresse verschickt.\n"
+			. "\n"
+			. "Unter dem Menüpunkt \"Schichtzeiten\", kannst du die Schichtzeiten, deiner Versammlung hinzufügen, ändern und löschen. Bitte achte darauf, dass du keine Schichtzeiten löschen kannst, zu denen sich Verkündiger schon eingetragen haben. Falls du also deinen laufenden Schichtplan ändern willst, musst du einfach nur die Schichtzeiten ändern. Falls du dennoch Schichten löschen musst, schreib uns eine Mail und wir werden uns dann um eine Lösung des Problems bemühen. \n"
 			. "\n"
 			. "Hinter dem Menüpunkt \"Schichten\" verbirgt sich die Schichtverwaltung. Hier können sich Verkündiger und auch du für Schichten, maximal 12 Wochen im voraus eintragen. Wenn sich ein Verkündiger einträgt, hat er die Möglichkeit noch einen Partner zu sich in die Schicht einzutragen. Es öffnet sich ein Fenster, in dem er einen Namen eingeben kann, sobald er anfängt zu tippen, öffnen sich Verkündiger Vorschläge anhand seiner eingegebenen Buchstaben. Hier tauchen dann auch die Verkündiger ohne Login auf. Wenn ein Verkündiger einen Partner einträgt, der ihm nicht vorgeschlagen wird von der Suche (weil er nicht in eurer Verkündiger Liste steht und z.B. aus einer anderen Versammlung kommt) bekommen alle Versammlungsadmins eine Info Mail um zu überprüfen ob der Partner für den Trolleydienst geeignet ist. Wenn sich Verkündiger von einer Schicht löschen möchten, wird er gefragt ob er auch den Partner aus seiner Schicht mitlöschen möchte. So müssen sich nicht beide einloggen und löschen, wenn sie ihren Dienst absagen.  \n"
 			. "\n"
@@ -234,28 +243,81 @@ class PublishersController extends AppController {
 			. "Viele Grüße \n"
 			. "Deine Trolleyverwaltung \n"; 
 			
+		$code = 0;
+		
+		$mail = new CakeEmail('smtp');
+		$result = $mail->emailFormat('text')
+			->to($publisherToSendAccount["Publisher"]["email"])
+			->subject($subject);
+		if($mail->send($message)) {
+			$code = 0;
+			if($publisherToSendAccount['Role']['name'] == 'congregation admin') {
+				$mail = new CakeEmail('smtp');
+				$result2 = $mail->emailFormat('text')
+					->to($publisherToSendAccount["Publisher"]["email"])
+					->subject($subject2);
+				if($mail->send($message2)) {
+					$code = 0;
+				} else {
+					$code = 2;
+				}
+			}
+		} else {
+			$code = 1;
+		}
+		
+		return $code;
+	}
+
+	public function sendAccount($id) {
+		$publisher = $this->Session->read('publisher');
+
+		if (!$this->Publisher->exists($id)) {
+			throw new NotFoundException(__('Ungültiger Verkündiger'));
+		}
+		
+		$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
+		$publisherToSendAccount = $this->Publisher->find('first', $options);
+		
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (strpos($actual_link,'trolleydemo') === false) {
 			if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
-				$mail = new CakeEmail('smtp');
-				$result = $mail->emailFormat('text')
-					->to($publisherToSendAccount["Publisher"]["email"])
-					->subject($subject);
-				
-				if ($mail->send($message)) {
-					if($publisherToSendAccount['Role']['name'] == 'congregation admin') {
-						$mail2 = new CakeEmail('smtp');
-						$result = $mail2->emailFormat('text')
-							->to($publisherToSendAccount["Publisher"]["email"])
-							->subject($subject2);
-						$mail2->send($message2);
-					}
-					$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
-					$this->redirect(array('action' => 'index'));
+				$code = $this->sendMail($publisherToSendAccount);
+				if($code == 1 || $code ==2) {
+					$this->Session->setFlash('Die Zugangsdaten konnten nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 				} else {
-					$this->Session->setFlash('Beim Verschicken der Zugangsdaten ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
+					$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
 				}
 			}
+			$this->redirect(array('action' => 'index'));
+		} else {
+			$this->redirect(array('action' => 'index'));
+		}
+	}
+	
+	public function sendMultiAccounts() {
+		$publisher = $this->Session->read('publisher');
+		
+		$mailList = $this->PublisherDAO->getAllMailAdresses($publisher);
+		
+		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		if (strpos($actual_link,'trolleydemo') === false) {
+			$error = 0;
+			foreach ($mailList as $publisherToSendAccount) {
+				$code = $this->sendMail($publisherToSendAccount);
+				
+				if($code == 1 || $code ==2) {
+					$error++;
+				}
+			}
+			
+			if($error>0) {
+				$this->Session->setFlash('Die Zugangsdaten konnten nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+			} else {
+				$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
+			}
+			
+			$this->redirect(array('action' => 'index'));
 		} else {
 			$this->redirect(array('action' => 'index'));
 		}

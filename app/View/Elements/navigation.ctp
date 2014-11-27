@@ -5,6 +5,8 @@
 	$highlightReservations = "";
 	$highlightPublishers = "";
 	$highlightTimeslots = "";
+	$highlightMyCongregation = "";
+	$highlightCongregationSettings = "";
 	$highlightCongregations = "";
 	$highlightContact = "";
 
@@ -14,10 +16,16 @@
 		$highlightPublishers = "active";
 	} else if (in_array("timeslots", $linkarray)) {
 		$highlightTimeslots = "active";
+	} else if (in_array("congregations", $linkarray) && in_array("edit", $linkarray)) {
+		$highlightCongregationSettings = "active";
 	} else if (in_array("congregations", $linkarray)) {
 		$highlightCongregations = "active";
 	} else if (in_array("contact", $linkarray)) {
 		$highlightContact = "active";
+	}
+	
+	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightTimeslots == "active" || $highlightCongregations == "active") {
+		$highlightMyCongregation = "active";
 	}
 	
 ?>
@@ -45,22 +53,43 @@
 						<li class="<?php echo $highlightReservations ?>">
 							<?php echo $this->Html->link('Schichten', array('controller' => 'reservations', 'action' => 'index')); ?>
 						</li>
-						<li class="<?php echo $highlightPublishers ?>">
-							<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
-						</li>
 						<?php
-							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+							if ($publisher['Role']['name'] == 'publisher') {
 						?>
-								<li class="<?php echo $highlightTimeslots ?>">
-									<?php echo $this->Html->link('Schichtzeiten', array('controller' => 'timeslots', 'action' => 'index')); ?>
+								<li class="<?php echo $highlightPublishers ?>">
+									<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
 								</li>
 						<?php
 							}
-							if ($publisher['Role']['name'] == 'admin') {
+							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
 						?>
-							<li class="<?php echo $highlightCongregations ?>">
-								<?php echo $this->Html->link('Versammlungen', array('controller' => 'congregations', 'action' => 'index')); ?>
-							</li>
+						
+						<li class="dropdown <?php echo $highlightMyCongregation ?>">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Meine Versammlung 
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="<?php echo $highlightCongregationSettings ?>">
+									<?php echo $this->Html->link('Einstellungen', array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id'])); ?>
+								</li>
+								<li class="<?php echo $highlightPublishers ?>">
+									<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
+								</li>
+								<li class="<?php echo $highlightTimeslots ?>">
+									<?php echo $this->Html->link('Schichtzeiten', array('controller' => 'timeslots', 'action' => 'index')); ?>
+								</li>
+								<?php
+									if ($publisher['Role']['name'] == 'admin') {
+								?>
+									<li class="divider"></li>
+									<li class="<?php echo $highlightCongregations ?>">
+										<?php echo $this->Html->link('Alle Versammlungen', array('controller' => 'congregations', 'action' => 'index')); ?>
+									</li>
+								<?php
+									}
+								?>
+						  </ul>
+						</li>
 						<?php
 							}
 						?>

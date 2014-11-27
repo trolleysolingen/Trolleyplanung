@@ -3,8 +3,12 @@ echo "<div class='error alert alert-danger' role='alert'></div>";
 echo "<table class='table table-striped table-hover'>";
 echo "<tr>";
 echo "<td></td>";
+
+//calc the td width
+$tdWidth = 100 / (sizeof($weekDays) + 1);
+
 for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
-    echo "<th style='width: 13%;'>";
+    echo "<th style='width:" . $tdWidth . "%;'>";
     $echoDate->add(new DateInterval('P1D'));
     echo $weekDays[$weekDay] . " (" . $echoDate->format("d.m.") . ")";
     echo "</th>";
