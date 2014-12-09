@@ -298,7 +298,7 @@ class PublishersController extends AppController {
 	public function sendMultiAccounts() {
 		$publisher = $this->Session->read('publisher');
 		
-		$mailList = $this->PublisherDAO->getAllMailAdresses($publisher);
+		$mailList = $this->PublisherDAO->getAllCongMailAdresses($publisher);
 		
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (strpos($actual_link,'trolleydemo') === false) {

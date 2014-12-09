@@ -3,6 +3,7 @@
 	$linkarray = explode("/", $actual_link);
 
 	$highlightReservations = "";
+	$highlightMessages = "";
 	$highlightPublishers = "";
 	$highlightTimeslots = "";
 	$highlightMyCongregation = "";
@@ -22,9 +23,11 @@
 		$highlightCongregations = "active";
 	} else if (in_array("contact", $linkarray)) {
 		$highlightContact = "active";
+	} else if (in_array("messages", $linkarray)) {
+		$highlightMessages = "active";
 	}
 	
-	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightTimeslots == "active" || $highlightCongregations == "active") {
+	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightTimeslots == "active" || $highlightCongregations == "active" || $highlightMessages == "active") {
 		$highlightMyCongregation = "active";
 	}
 	
@@ -69,6 +72,10 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
+								<li class="<?php echo $highlightMessages ?>">
+									<?php echo $this->Html->link('Neue Nachricht', array('controller' => 'messages', 'action' => 'index')); ?>
+								</li>
+								<li class="divider"></li>
 								<li class="<?php echo $highlightCongregationSettings ?>">
 									<?php echo $this->Html->link('Einstellungen', array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id'])); ?>
 								</li>

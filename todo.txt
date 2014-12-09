@@ -1,0 +1,13 @@
+- Mailversand an seine Versammlung (Mailversand an alle Congregation Admins)
+- Mails werden als Infos in der Datenbank gespeichert und auf Infoseite angezeigt
+- Verkündiger Daten editeren lassen (Handynummer, Name, Email, Passwort?)
+- Hilfe und Kontakt umstrukturieren
+- Meine Schichten auf einen Blick anzeigen
+- Mailversand jede Woche pro Versammlung mit freien Schichten Samstags (Toggle on/off)
+- Bericht online pro Versammlung (Toggle on/off)
+- Dashboard mit allen möglichen Infos nach Login
+- Verkündiger pro Schicht für Versammlung Einstellbar
+- Bei Versammlungsanlage auch den ersten Verkündiger anlegen
+- Kalendar Export
+- Einrichtungs Assistent bei neuer Versammlung
+- Multilanguage

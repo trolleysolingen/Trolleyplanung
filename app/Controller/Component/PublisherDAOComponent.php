@@ -53,7 +53,20 @@ class PublisherDAOComponent extends Component {
         return $result;
     }
 	
-	public function getAllMailAdresses($publisher) {
+	public function getAllMailAdresses() {
+        $model = ClassRegistry::init('Publisher');
+        $result = $model->find('all', array(
+                'recursive' => 1,
+                'conditions' => array(
+                    'Publisher.email !=' => ''
+                )
+            )
+        );
+
+        return $result;
+    }
+	
+	public function getAllCongMailAdresses($publisher) {
         $model = ClassRegistry::init('Publisher');
         $result = $model->find('all', array(
                 'recursive' => 1,
@@ -61,6 +74,60 @@ class PublisherDAOComponent extends Component {
                     'Publisher.congregation_id' => $publisher['Congregation']['id'],
                     'Publisher.email !=' => ''
                 )
+            )
+        );
+
+        return $result;
+    }
+	
+	public function getAllCongAdminMailAdresses($publisher) {
+        $model = ClassRegistry::init('Publisher');
+        $result = $model->find('all', array(
+                'recursive' => 1,
+				'conditions' => array(
+					'OR' => array(
+						'AND' => array(
+							array('Publisher.congregation_id' => $publisher['Congregation']['id']),
+							array('Publisher.email !=' => ''),
+							array('Publisher.role_id =' => 2)
+						),
+						'OR' => array(
+							array(
+								'AND' => array(
+									array('Publisher.congregation_id' => $publisher['Congregation']['id']),
+									array('Publisher.email !=' => ''),
+									array('Publisher.role_id =' => 4)
+								)
+							)
+						)
+					)
+				)
+            )
+        );
+
+        return $result;
+    }
+	
+	public function getAllAdminMailAdresses() {
+        $model = ClassRegistry::init('Publisher');
+        $result = $model->find('all', array(
+                'recursive' => 1,
+				'conditions' => array(
+					'OR' => array(
+						'AND' => array(
+							array('Publisher.email !=' => ''),
+							array('Publisher.role_id =' => 2)
+						),
+						'OR' => array(
+							array(
+								'AND' => array(
+									array('Publisher.email !=' => ''),
+									array('Publisher.role_id =' => 4)
+								)
+							)
+						)
+					)
+				)
             )
         );
 

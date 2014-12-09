@@ -2235,3 +2235,47 @@ Stack Trace:
 #3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
 #4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2014-12-09 08:06:20 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Can\'t connect to local MySQL server through socket \'/tmp/mysql.sock\' (2)',
+  'enabled' => true,
+)
+Request URL: /
+Stack Trace:
+#0 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Model.php(3524): ConnectionManager::getDataSource('default')
+#3 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Model.php(1136): Model->setDataSource('default')
+#4 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Model.php(3551): Model->setSource('publishers')
+#5 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Model.php(2947): Model->getDataSource()
+#6 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Model.php(2919): Model->_readDataSource('first', Array)
+#7 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/app/Controller/Component/PublisherDAOComponent.php(10): Model->find('first', Array)
+#8 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/app/Controller/StartController.php(29): PublisherDAOComponent->getByEmail('flixmix.bornman...', 'bbbbbb')
+#9 [internal function]: StartController->index()
+#10 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(StartController), Array)
+#11 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#13 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-12-09 08:07:52 Error: [MissingTableException] Table messages for model Message was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'messages',
+  'class' => 'Message',
+  'ds' => 'default',
+)
+Request URL: /messages
+Stack Trace:
+#0 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Model.php(3551): Model->setSource('messages')
+#1 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Model/Model.php(1369): Model->getDataSource()
+#2 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/View/Helper/FormHelper.php(215): Model->schema()
+#3 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/View/Helper/FormHelper.php(468): FormHelper->_introspectModel('Message', 'fields')
+#4 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/app/View/Messages/index.ctp(3): FormHelper->create(NULL, Array)
+#5 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/View/View.php(948): include('/mnt/webb/c3/06...')
+#6 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/View/View.php(910): View->_evaluate('/mnt/webb/c3/06...', Array)
+#7 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/View/View.php(471): View->_render('/mnt/webb/c3/06...')
+#8 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#9 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Routing/Dispatcher.php(198): Controller->render()
+#10 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#11 /mnt/webb/c3/06/52604506/htdocs/trolley/trolley-dev/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
