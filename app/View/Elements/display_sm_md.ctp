@@ -11,25 +11,27 @@ for ($slot = 0; $slot < sizeof($timeslots); $slot++) {
 }
 echo "</tr>";
 for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
-    echo "<tr>";
-    echo "<td>";
-    echo "<b>" . substr($weekDays[$weekDay], 0, 2) . "</b>";
-    echo "<br>";
-    $echoDate->add(new DateInterval('P1D'));
-    echo " (" . $echoDate->format("d.") . ")";
-    echo "</td>";
-    for ($slot = 0; $slot < sizeof($timeslots); $slot++) {
-        echo $this->element('reservation_entry', array(
-            'dateStart' => $dateStart,
-            'reservations' => $reservations,
-            'weekDay' => $weekDay,
-            'timeslots' => $timeslots,
-            'publisher' => $publisher,
-            'slot' => $slot,
-            'td_id' => 'sm_md',
-            'div_class' => 'xs'
-        ));
-    }
-    echo "</tr>";
+	$echoDate->add(new DateInterval('P1D'));
+	if($weekDays[$weekDay] != "null") {
+		echo "<tr>";
+		echo "<td>";
+		echo "<b>" . substr($weekDays[$weekDay], 0, 2) . "</b>";
+		echo "<br>";
+		echo " (" . $echoDate->format("d.") . ")";
+		echo "</td>";
+		for ($slot = 0; $slot < sizeof($timeslots); $slot++) {
+			echo $this->element('reservation_entry', array(
+				'dateStart' => $dateStart,
+				'reservations' => $reservations,
+				'weekDay' => $weekDay,
+				'timeslots' => $timeslots,
+				'publisher' => $publisher,
+				'slot' => $slot,
+				'td_id' => 'sm_md',
+				'div_class' => 'xs'
+			));
+		}
+		echo "</tr>";
+	}
 }
 echo "</table>";
