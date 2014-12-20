@@ -30,17 +30,19 @@ for ($slot = 0; $slot < sizeof($timeslots); $slot++) {
     echo "<br>";
     echo $timeslots[$slot]['Timeslot']['end'];
     echo "</td>";
-    for ($weekDay = 0; $weekDay < sizeof($displayedWeekDays); $weekDay++) {
-		echo $this->element('reservation_entry', array(
-			'dateStart' => $dateStart,
-			'reservations' => $reservations,
-			'weekDay' => $weekDay,
-			'timeslots' => $timeslots,
-			'publisher' => $publisher,
-			'slot' => $slot,
-			'td_id' => 'lg',
-			'div_class' => 'lg'
-		));
+    for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
+		if($weekDays[$weekDay] != "null") {
+			echo $this->element('reservation_entry', array(
+				'dateStart' => $dateStart,
+				'reservations' => $reservations,
+				'weekDay' => $weekDay,
+				'timeslots' => $timeslots,
+				'publisher' => $publisher,
+				'slot' => $slot,
+				'td_id' => 'lg',
+				'div_class' => 'lg'
+			));
+		}
     }
     echo "</tr>";
 }
