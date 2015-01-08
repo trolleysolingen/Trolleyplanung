@@ -20,6 +20,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Application Controller
@@ -33,4 +34,17 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
 	public $layout = 'bootstrap';
+	
+	public function sendMail($recieverMail, $subject, $text) {
+		$mail = new CakeEmail('smtp');
+		$result = $mail->emailFormat('text')
+			->to($recieverMail)
+			->subject($subject);
+		if($mail->send($text)) {
+			$success = true;
+		} else {
+			$success = false;
+		}
+		return $success;
+	}
 }

@@ -10,6 +10,8 @@
 	$highlightCongregationSettings = "";
 	$highlightCongregations = "";
 	$highlightContact = "";
+	$highlightTodos = "";
+	$highlightSupport = "";
 
 	if (in_array("reservations", $linkarray)) {
 		$highlightReservations = "active";
@@ -25,11 +27,15 @@
 		$highlightContact = "active";
 	} else if (in_array("messages", $linkarray)) {
 		$highlightMessages = "active";
+	}  else if (in_array("todos", $linkarray)) {
+		$highlightTodos = "active";
 	}
 	
 	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightTimeslots == "active" || $highlightCongregations == "active" || $highlightMessages == "active") {
 		$highlightMyCongregation = "active";
-	}
+	} else if ($highlightTodos == "active" || $highlightContact == "active") {
+		$highlightSupport = "active";
+	} 
 	
 ?>
 	
@@ -54,54 +60,70 @@
 				if ($publisher) { ?>
 					<ul class="nav navbar-nav">
 						<li class="<?php echo $highlightReservations ?>">
-							<?php echo $this->Html->link('Schichten', array('controller' => 'reservations', 'action' => 'index')); ?>
+							<?php
+								echo $this->Html->link(
+									$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-calendar', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Schichten",
+									array('controller' => 'reservations', 'action' => 'index'),
+									array('escape' => false)
+								); 
+							?>
 						</li>
-						<?php
-							if ($publisher['Role']['name'] == 'publisher') {
-						?>
-								<li class="<?php echo $highlightPublishers ?>">
-									<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
-								</li>
-						<?php
-							}
-							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
-						?>
 						
 						<li class="dropdown <?php echo $highlightMyCongregation ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Meine Versammlung 
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span>Meine Versammlung 
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
-								<li class="<?php echo $highlightMessages ?>">
-									<?php echo $this->Html->link('Neue Nachricht', array('controller' => 'messages', 'action' => 'index')); ?>
-								</li>
-								<li class="divider"></li>
-								<li class="<?php echo $highlightCongregationSettings ?>">
-									<?php echo $this->Html->link('Einstellungen', array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id'])); ?>
-								</li>
-								<li class="<?php echo $highlightPublishers ?>">
-									<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
-								</li>
-								<li class="<?php echo $highlightTimeslots ?>">
-									<?php echo $this->Html->link('Schichtzeiten', array('controller' => 'timeslots', 'action' => 'index')); ?>
+								<?php if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') { ?>
+									<li class="<?php echo $highlightMessages ?>">
+										<?php echo $this->Html->link('Neue Nachricht', array('controller' => 'messages', 'action' => 'index')); ?>
+									</li>
+									<li class="divider"></li>
+									<li class="<?php echo $highlightCongregationSettings ?>">
+										<?php echo $this->Html->link('Einstellungen', array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id'])); ?>
+									</li>
+								<?php
+								}
+								?>
+									<li class="<?php echo $highlightPublishers ?>">
+										<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
+									</li>
+								<?php if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') { ?>
+									<li class="<?php echo $highlightTimeslots ?>">
+										<?php echo $this->Html->link('Schichtzeiten', array('controller' => 'timeslots', 'action' => 'index')); ?>
+									</li>
+									<?php
+										if ($publisher['Role']['name'] == 'admin') {
+									?>
+										<li class="divider"></li>
+										<li class="<?php echo $highlightCongregations ?>">
+											<?php echo $this->Html->link('Alle Versammlungen', array('controller' => 'congregations', 'action' => 'index')); ?>
+										</li>
+									<?php
+									}
+								}
+								?>
+						  </ul>
+						</li>
+						<li class="dropdown <?php echo $highlightSupport ?>">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-group" style="margin-right: 10px; margin-top: -6px;"></span>Support 
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="<?php echo $highlightContact ?>">
+									<?php echo $this->Html->link('Kontakt', array('controller' => 'contact', 'action' => 'index')); ?>
 								</li>
 								<?php
-									if ($publisher['Role']['name'] == 'admin') {
+									if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
 								?>
-									<li class="divider"></li>
-									<li class="<?php echo $highlightCongregations ?>">
-										<?php echo $this->Html->link('Alle Versammlungen', array('controller' => 'congregations', 'action' => 'index')); ?>
-									</li>
+								<li class="divider"></li>
+								<li class="<?php echo $highlightTodos ?>">
+									<?php echo $this->Html->link('Todos', array('controller' => 'todos', 'action' => 'index')); ?>
+								</li>
 								<?php
 									}
 								?>
 						  </ul>
-						</li>
-						<?php
-							}
-						?>
-						<li class="<?php echo $highlightContact ?>">
-							<?php echo $this->Html->link('Kontakt', array('controller' => 'contact', 'action' => 'index')); ?>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
@@ -127,7 +149,11 @@
 			
 				<ul class="nav navbar-nav">
 					<li class="<?php echo $highlightContact ?>">
-						<?php echo $this->Html->link('Impressum', array('controller' => 'contact', 'action' => 'index')); ?>
+						<?php echo $this->Html->link(
+								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-group', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Impressum",
+								array('controller' => 'contact', 'action' => 'index'),
+								array('escape' => false)
+						);?>
 					</li>
 				</ul>
 				<div class="hidden-xs hidden-sm">

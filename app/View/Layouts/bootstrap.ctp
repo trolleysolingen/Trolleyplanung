@@ -53,7 +53,8 @@
 				if (strpos($actual_link,'trolleydemo') !== false) { ?>
 				
 				<div class="alert alert-info">
-					<strong>ACHTUNG!!</strong> Da dies eine Testversion ist, wurde der Email Versand abgeschaltet. In der richtigen Version werden Emails versendet, wenn man einen Verkündiger angelegt hat und ihm die Zugangsdaten zukommen lässt und sich jemand zu seiner Schicht dazugetragen oder gelöscht hat. Die Versammlungsadmins bekommen Mails, wenn Verkündiger Gäste eintragen, die nicht in der Datenbank stehen um zu überprüfen, wer im Versammlungsgebiet Trolleydienst macht.
+					<strong>ACHTUNG!!</strong> Da dies eine Testversion ist, wurde der Email Versand abgeschaltet. In der richtigen Version werden Emails versendet, wenn man einen Verkündiger angelegt hat und ihm die Zugangsdaten zukommen lässt und sich jemand zu seiner Schicht dazugetragen oder gelöscht hat. Die Versammlungsadmins bekommen Mails, wenn Verkündiger Gäste eintragen, die nicht in der Datenbank stehen um zu überprüfen, wer im Versammlungsgebiet Trolleydienst macht.<br/>
+					Die Todoliste ist auf den Testsystem inaktiv und kann nur produktiv angesehen werden. Wenn du dennoch sehen willst welche Features für die Zukunft noch geplant sind, schick uns einfach eine Mail.
 				</div>
 			<?php
 				}

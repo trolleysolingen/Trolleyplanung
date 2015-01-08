@@ -2235,3 +2235,370 @@ Stack Trace:
 #3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
 #4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2014-12-28 17:28:20 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Todos\\index.ctp',
+)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(TodosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-12-28 17:28:36 Error: Fatal Error (64): Cannot redeclare class Message in [C:\xampp\htdocs\Trolleyplanung\app\Model\Todo.php, line 104]
+2014-12-28 17:28:36 Error: [FatalErrorException] Cannot redeclare class Message
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\\xampp\\htdocs...', 104)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\\xampp\\htdocs...', 104, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\\xampp\\htdocs...', 104, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:05:19 Error: Fatal Error (1): Call to a member function paginate() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php, line 41]
+2014-12-28 18:05:19 Error: [FatalErrorException] Call to a member function paginate() on a non-object
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 41, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:13:52 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 31]
+2014-12-28 18:13:52 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:13:53 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 31]
+2014-12-28 18:13:53 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:14:05 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 31]
+2014-12-28 18:14:05 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:14:32 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 31]
+2014-12-28 18:14:32 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:14:33 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 31]
+2014-12-28 18:14:33 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:17:09 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF) in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 32]
+2014-12-28 18:17:09 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 32)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 32, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 32, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-12-28 18:17:10 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF) in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 32]
+2014-12-28 18:17:10 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 32)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 32, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 32, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-02 13:19:41 Error: Fatal Error (4): syntax error, unexpected 'i' (T_STRING), expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 7]
+2015-01-02 13:19:41 Error: [FatalErrorException] syntax error, unexpected 'i' (T_STRING), expecting ';'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 7, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 7, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-02 13:20:32 Error: Fatal Error (4): syntax error, unexpected '$i' (T_VARIABLE), expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 7]
+2015-01-02 13:20:32 Error: [FatalErrorException] syntax error, unexpected '$i' (T_VARIABLE), expecting ';'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 7, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 7, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-02 13:55:02 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php, line 43]
+2015-01-02 13:55:02 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /publishers
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-02 13:55:06 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php, line 43]
+2015-01-02 13:55:06 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /publishers
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-02 13:55:09 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php, line 43]
+2015-01-02 13:55:09 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /publishers
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-02 16:52:33 Error: [MissingActionException] Action TodosController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'TodosController',
+  'action' => 'add',
+)
+Request URL: /todos/add
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(TodosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-01-02 17:02:33 Error: [MissingActionException] Action MessagesController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'MessagesController',
+  'action' => 'add',
+)
+Request URL: /messages/add
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-01-02 17:06:13 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 82]
+2015-01-02 17:06:13 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 82, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 82, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-05 08:33:56 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php, line 112]
+2015-01-05 08:33:56 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /todos/edit/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 112)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 112, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 112, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-05 11:53:01 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 120]
+2015-01-05 11:53:01 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-05 11:53:03 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 120]
+2015-01-05 11:53:03 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-05 11:54:07 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 120]
+2015-01-05 11:54:07 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-05 11:54:08 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\Trolleyplanung\app\View\Todos\index.ctp, line 120]
+2015-01-05 11:54:08 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 120, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-06 10:03:54 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php, line 193]
+2015-01-06 10:03:54 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 193)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 193, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 193, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-06 10:04:40 Error: Fatal Error (1): Call to undefined function sendMail() in [C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php, line 178]
+2015-01-06 10:04:40 Error: [FatalErrorException] Call to undefined function sendMail()
+Request URL: /todos/endWork/2/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 178)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 178, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 178, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-06 10:05:06 Error: Fatal Error (1): Call to undefined function sendMail() in [C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php, line 178]
+2015-01-06 10:05:06 Error: [FatalErrorException] Call to undefined function sendMail()
+Request URL: /todos/endWork/2/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 178)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 178, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 178, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-06 10:05:53 Error: [SocketException] Invalid email: ""
+Request URL: /todos/endWork/3/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(571): CakeEmail->_validateEmail('')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(447): CakeEmail->_setEmail('_to', '', NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\app\Controller\AppController.php(41): CakeEmail->to('')
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php(178): AppController->sendMail('', 'Fertigstellung ...', 'Liebe(r) Gast V...')
+#4 [internal function]: TodosController->endWork('3', '1')
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(TodosController), Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(TodosController), Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2015-01-07 09:56:15 Error: [SocketException] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte.
+
+Request URL: /todos/startWork/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\AppController.php(43): CakeEmail->send('Liebe(r) Felix ...')
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php(146): AppController->sendMail('flixmix.bornman...', 'Arbeitsbeginn F...', 'Liebe(r) Felix ...')
+#5 [internal function]: TodosController->startWork('1')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(TodosController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(TodosController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-01-07 09:57:13 Error: [SocketException] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte.
+
+Request URL: /todos/startWork/3
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\AppController.php(43): CakeEmail->send('Liebe(r) Felix ...')
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\TodosController.php(146): AppController->sendMail('flixmix.bornman...', 'Arbeitsbeginn F...', 'Liebe(r) Felix ...')
+#5 [internal function]: TodosController->startWork('3')
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(TodosController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(TodosController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-01-07 11:29:01 Error: Fatal Error (4): syntax error, unexpected '$actual_link' (T_VARIABLE), expecting function (T_FUNCTION) in [C:\xampp\htdocs\Trolleyplanung\app\Model\Todo.php, line 12]
+2015-01-07 11:29:01 Error: [FatalErrorException] syntax error, unexpected '$actual_link' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 12, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 12, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-07 11:29:37 Error: Fatal Error (4): syntax error, unexpected '"' in [C:\xampp\htdocs\Trolleyplanung\app\Model\Todo.php, line 12]
+2015-01-07 11:29:37 Error: [FatalErrorException] syntax error, unexpected '"'
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 12, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 12, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-07 11:29:52 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) in [C:\xampp\htdocs\Trolleyplanung\app\Model\Todo.php, line 13]
+2015-01-07 11:29:52 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-07 11:30:02 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF), expecting variable (T_VARIABLE) in [C:\xampp\htdocs\Trolleyplanung\app\Model\Todo.php, line 13]
+2015-01-07 11:30:02 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF), expecting variable (T_VARIABLE)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-07 11:32:01 Error: Fatal Error (4): syntax error, unexpected 'var' (T_VAR) in [C:\xampp\htdocs\Trolleyplanung\app\Model\Todo.php, line 15]
+2015-01-07 11:32:01 Error: [FatalErrorException] syntax error, unexpected 'var' (T_VAR)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-07 11:33:08 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\xampp\htdocs\Trolleyplanung\app\Model\Todo.php, line 15]
+2015-01-07 11:33:08 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /todos
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

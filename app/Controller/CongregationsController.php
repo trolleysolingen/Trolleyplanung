@@ -22,6 +22,8 @@ class CongregationsController extends AppController {
 		} else if (strpos($actual_link,'edit') === false){
 			if ($publisher['Role']['name'] == 'congregation admin') {
 				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
+			} else {
+				return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 			}
 		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin'){ 
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));

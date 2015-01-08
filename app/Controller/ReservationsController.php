@@ -170,12 +170,7 @@ class ReservationsController extends AppController {
 		}
 
 		if (strpos($reservation["Publisher1"]["email"], "@demo.de") === false) {
-			$mail = new CakeEmail('smtp');
-			$result = $mail->emailFormat('text')
-				->to($reservation["Publisher1"]["email"])
-				->subject($subject);
-
-			$mail->send($message);
+			$this->sendMail($reservation["Publisher1"]["email"], $subject, $message);
 		}
 	}
 
@@ -189,16 +184,8 @@ class ReservationsController extends AppController {
 			. " Uhr hat " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
 			. " einen Gast-Verkündiger hinzugefügt: " . $reservation["Reservation"]["guestname"];
 
-		$mail = new CakeEmail('smtp');
-
 		foreach($congregationAdmins as $congregationAdmin) {
-			$mail->addTo($congregationAdmin['Publisher']['email']);
+			$this->sendMail($congregationAdmin['Publisher']['email'], $subject, $message);
 		}
-
-		$result = $mail->emailFormat('text')
-			->subject($subject);
-
-		$mail->send($message);
-
 	}
 }

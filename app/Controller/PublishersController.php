@@ -119,7 +119,7 @@ class PublishersController extends AppController {
 				$this->Session->setFlash('Der Verkündiger wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash('Der Verkündiger konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash('Der Verkündiger konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
@@ -197,7 +197,7 @@ class PublishersController extends AppController {
 		$this->set("_serialize", array("publishers"));
 	}
 	
-	public function sendMail($publisherToSendAccount) {
+	public function sendMails($publisherToSendAccount) {
 
 		$subject = "Zugangsdaten zur Trolleyverwaltung";
 		$message = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
@@ -242,31 +242,16 @@ class PublishersController extends AppController {
 			. "\n"
 			. "Viele Grüße \n"
 			. "Deine Trolleyverwaltung \n"; 
-			
-		$code = 0;
 		
-		$mail = new CakeEmail('smtp');
-		$result = $mail->emailFormat('text')
-			->to($publisherToSendAccount["Publisher"]["email"])
-			->subject($subject);
-		if($mail->send($message)) {
-			$code = 0;
+		$success = $this->sendMail($publisherToSendAccount["Publisher"]["email"], $subject, $message);
+		
+		if($success) {
 			if($publisherToSendAccount['Role']['name'] == 'congregation admin') {
-				$mail = new CakeEmail('smtp');
-				$result2 = $mail->emailFormat('text')
-					->to($publisherToSendAccount["Publisher"]["email"])
-					->subject($subject2);
-				if($mail->send($message2)) {
-					$code = 0;
-				} else {
-					$code = 2;
-				}
+				$success = $this->sendMail($publisherToSendAccount["Publisher"]["email"], $subject2, $message2);
 			}
-		} else {
-			$code = 1;
 		}
 		
-		return $code;
+		return $success;
 	}
 
 	public function sendAccount($id) {
@@ -282,8 +267,8 @@ class PublishersController extends AppController {
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (strpos($actual_link,'trolleydemo') === false) {
 			if (strpos($publisherToSendAccount["Publisher"]["email"], "@demo.de") === false) {
-				$code = $this->sendMail($publisherToSendAccount);
-				if($code == 1 || $code ==2) {
+				$success = $this->sendMails($publisherToSendAccount);
+				if(!$success) {
 					$this->Session->setFlash('Die Zugangsdaten konnten nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 				} else {
 					$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
@@ -304,9 +289,9 @@ class PublishersController extends AppController {
 		if (strpos($actual_link,'trolleydemo') === false) {
 			$error = 0;
 			foreach ($mailList as $publisherToSendAccount) {
-				$code = $this->sendMail($publisherToSendAccount);
+				$success = $this->sendMails($publisherToSendAccount);
 				
-				if($code == 1 || $code ==2) {
+				if(!$success) {
 					$error++;
 				}
 			}

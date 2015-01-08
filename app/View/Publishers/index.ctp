@@ -23,7 +23,7 @@
 		if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
 	?>
 		<p class="actions">
-			<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neuen Verkündiger anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
+			<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" style="margin-top: -6px;"></span> Neuen Verkündiger anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 				<span class="glyphicon glyphicon-message_full"></span> Alle Zugangsdaten verschicken
 			</button>

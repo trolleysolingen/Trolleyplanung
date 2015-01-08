@@ -3,7 +3,7 @@ App::uses('AppController', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 
 /**
- * Publishers Controller
+ * Messages Controller
  *
  * @property Publisher $Publisher
  * @property PaginatorComponent $Paginator
@@ -15,9 +15,9 @@ class MessagesController extends AppController {
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
-			if (!$this->request->is('ajax')) {
-				return $this->redirect(array('controller' => 'start', 'action' => 'index'));
-			}
+			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
+		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin') {
+			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		} else {
 			$this->set("publisher", $publisher);
 		}
@@ -57,9 +57,9 @@ class MessagesController extends AppController {
 					if (strpos($actual_link,'trolleydemo') === false) {
 						$error = 0;
 						foreach ($mailList as $publisherToSendAccount) {
-							$code = $this->sendMail($publisherToSendAccount);
+							$success = $this->sendMail($publisherToSendAccount["Publisher"]["email"], $this->request->data["Message"]["subject"], $this->request->data["Message"]["text"]);
 							
-							if($code == 1 || $code ==2) {
+							if(!$success) {
 								$error++;
 							}
 						}
@@ -82,22 +82,4 @@ class MessagesController extends AppController {
 			}
 		}
 	}
-	
-		
-	public function sendMail($publisherToSendAccount) {
-		$code = 0;
-		
-		$mail = new CakeEmail('smtp');
-		$result = $mail->emailFormat('text')
-			->to($publisherToSendAccount["Publisher"]["email"])
-			->subject($this->request->data["Message"]["subject"]);
-		if($mail->send($this->request->data["Message"]["text"])) {
-			$code = 0;
-		} else {
-			$code = 1;
-		}
-		
-		return $code;
-	}
-
 }

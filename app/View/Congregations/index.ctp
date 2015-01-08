@@ -1,17 +1,9 @@
-<script type="text/javascript">
-	function confirmDelete(id, name){
-		if (window.confirm('Möchtest du die Versammlung ' + name + ' wirklich löschen')) {
-			location.href = '<?php echo $this->Html->url(array('action' => 'delete')); ?>' + '/' + id;
-		}
-	}
-</script>
-
 <div class="congregations index">
 	<br/>
 	<legend><?php echo __('Versammlungsverwaltung'); ?></legend>
 
 	<p class="actions">
-		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Neue Versammlung anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
+		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" style="margin-top: -6px;"></span> Neue Versammlung anlegen</button>', array('action' => 'add'), array('escape' => false)); ?>
 	</p>
 
 

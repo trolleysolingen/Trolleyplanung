@@ -1,6 +1,4 @@
-- Mailversand an seine Versammlung (Mailversand an alle Congregation Admins)
-- Mails werden als Infos in der Datenbank gespeichert und auf Infoseite angezeigt
-- Verkündiger Daten editeren lassen (Handynummer, Name, Email, Passwort?)
+﻿- Verkündiger Daten editeren lassen (Handynummer, Name, Email, Passwort?)
 - Hilfe und Kontakt umstrukturieren
 - Meine Schichten auf einen Blick anzeigen
 - Mailversand jede Woche pro Versammlung mit freien Schichten Samstags (Toggle on/off)
@@ -11,3 +9,13 @@
 - Kalendar Export
 - Einrichtungs Assistent bei neuer Versammlung
 - Multilanguage
+- Gäste nicht erlauben
+- Benachrichtigungen, wenn man Partner einträgt oder löscht
+- Als Admin fremde Schichten löschen
+- Angabe der Versammlung des Verkündigers
+- Saalschlüsselverwaltung (Toggle on/off)
+- Druckansicht mit Handynummern
+- Killswitch für Versammlung, dass sich Verkündiger nicht mehr einloggen können
+- Nachrichten an einzelne Verkündiger schicken
+- Stats
+- Erfahrungen
