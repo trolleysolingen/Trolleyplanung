@@ -2,7 +2,7 @@
 	var publisherList = [
 		<?php
 			foreach ($publisherList as $publisherItem) {
-				echo "{id:" . $publisherItem['Publisher']['id']. ", name: '" . $publisherItem['Publisher']['prename'] . " " . $publisherItem['Publisher']['surname'] . "'},";
+				echo "'" . $publisherItem['Publisher']['prename'] . " " . $publisherItem['Publisher']['surname'] . "', ";
 			}
 		?>
 		];

@@ -68,7 +68,7 @@
     <?php
       echo $this->Html->script('jquery-1.11.1.min');
 	  echo $this->Html->script('bootstrap.min');
-      echo $this->Html->script('bootstrap-typeahead.min.js');
+      echo $this->Html->script('typeahead');
       echo $this->Html->script('trolleyplanung');
     ?>
 	
@@ -94,8 +94,37 @@
 			 var data = $(this).data('data');
 			 $(".modal-body #data").html( data );
 		});
+		
+		// This entire section makes Bootstrap Modals work with iOS
+		// This entire section makes Bootstrap Modals work with iOS
+		if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
 
-			
+		  $('.modal').on('show.bs.modal', function() {
+			setTimeout(function () {
+			  scrollLocation = $(window).scrollTop();
+			  $('.modal')
+				  .addClass('modal-ios')
+				  .height($(window).height())
+				  .css({'margin-top': scrollLocation + 'px'});
+			}, 0);
+		  });
+
+		  $('input').on('blur', function(){
+			setTimeout(function() {
+			  // This causes iOS to refresh, fixes problems when virtual keyboard closes
+			  $(window).scrollLeft(0);
+
+			  var $focused = $(':focus');
+			  // Needed in case user clicks directly from one input to another
+			  if(!$focused.is('input')) {
+				// Otherwise reset the scoll to the top of the modal
+				$(window).scrollTop(scrollLocation);
+			  }
+			}, 0);
+		  })
+
+		}
+		 			
     });
   </script>
 

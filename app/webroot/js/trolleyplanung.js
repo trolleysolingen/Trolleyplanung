@@ -1,5 +1,29 @@
 ﻿var debug = true;
 
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+	var matches, substrRegex;
+ 
+	// an array that will be populated with substring matches
+	matches = [];
+ 
+	// regex used to determine if a string contains the substring `q`
+	substrRegex = new RegExp(q, 'i');
+ 
+	// iterate through the pool of strings and for any string that
+	// contains the substring `q`, add it to the `matches` array
+	$.each(strs, function(i, str) {
+	  if (substrRegex.test(str)) {
+		// the typeahead jQuery plugin expects suggestions to a
+		// JavaScript object, refer to typeahead docs for more info
+		matches.push({ value: str });
+	  }
+	});
+ 
+	cb(matches);
+  };
+};
+
 function logDebug(obj){
     if (debug) {
         logError(obj);
@@ -188,7 +212,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 function displayGuestField(reservationDay, reservationTimeslot, displayTime) {
 	html = '<div class="form-group">';
     html += '<label for="guestname_' + reservationDay + '_' + reservationTimeslot + '">Name:</label>';
-    html += '<input type="text" class="form-control" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '" autocomplete="off"/>';
+    html += '<input type="text" class="typeahead form-control" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '" placeholder="Verkündiger eingeben"/>';
 	html += '</div>';
 	
 	body = '<div class="btn-group">';
@@ -198,10 +222,17 @@ function displayGuestField(reservationDay, reservationTimeslot, displayTime) {
 
     $('#guestModalDiv').html(html);
 	$('#guestModalBody').html(body);
-
-    $('#guestname_' + reservationDay + '_' + reservationTimeslot).typeahead({
-        source: publisherList
-    });
+	
+	$('#guestname_' + reservationDay + '_' + reservationTimeslot).typeahead({
+	  hint: true,
+	  highlight: true,
+	  minLength: 1
+	},
+	{
+	  name: 'publisherList',
+	  displayKey: 'value',
+	  source: substringMatcher(publisherList)
+	});
 	
 	$('#guestModal').modal('show');
 }
