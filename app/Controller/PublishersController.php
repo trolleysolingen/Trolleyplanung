@@ -227,7 +227,7 @@ class PublishersController extends AppController {
 			. "Du wurdest als Versammlungsadmin deiner Versammlung angelegt. Wir freuen uns, dass ihr als Versammlung am öffentlichen Zeugnisgeben teilnehmt und auch, dass ihr euch dazu entschlossen habt zur Verwaltung unser Tool zu benutzen. \n"
 			. "Deine Zugangsdaten müsstest du schon in einer gesonderten Mail zugesandt bekommen haben. Anbei aber noch ein paar spezielle Dinge, die den Adminbereich betreffen: \n"
 			. "\n"
-			. "Hinter dem Menüpunkt \"Einstellungen\", kannst du deinen Versammlungsnamen ändern und die Tage einstellen, für die in eurem Versammlungsgebiet Trolleyschichten eingetragen werden können. \n"
+			. "Hinter dem Menüpunkt \"Einstellungen\", kannst du deinen Versammlungsnamen ändern und die Tage einstellen, für die in eurem Versammlungsgebiet Trolleyschichten eingetragen werden können. Außerdem können hier auch verschiedene Module zu deiner Versammlung aktiviert werden. Die jeweiligen Informationen dazu kannst du auf dem jeweiligen Info Button links neben dem Modul einsehen.\n"
 			. "\n"
 			. "Unter dem Menüpunkt \"Verkündiger\" kannst die Verkündiger deiner Versammlung verwalten. Du kannst entweder Verkündiger oder Admins, die die gleichen Berechtigungen wie du haben, anlegen. Bei der Verkündigeranlage wäre es vorteilhaft, wenn du eine Telefonnummer des Verkündigers mit angibst. Diese wird in in der Schichtplanung zu jedem Verkündiger angezeigt. So können die Verkündiger untereinander leichter Kontakt herstellen. Soll ein Verkündiger Trolleydienst machen dürfen, aber dies nur als Partner mit einem etwas erfahrenerem Verkündiger, gib einfach keine E-mail Adresse zu diesem Verkündiger an. So hat er keinen Login zum einloggen, steht aber in eurer Verkündiger Liste. Später gehe ich darauf ein, was das für einen Sinn macht. Die Passwörter für die Verkündiger werden automatisch generiert. Mit einem Klick auf den Button \"Alle Zugangsdaten verschicken\", versendest du eine Mail an jeden Verkündiger mit einer Email-Adresse in deiner Verkündigerliste.\n Alternativ kannst du auch auf das Brief Symbol neben dem Verkündiger in der Liste klicken. Dann werden die Zugangsdaten nur für diesen Verkündiger an seine Mail-Adresse verschickt.\n"
 			. "\n"
@@ -235,8 +235,10 @@ class PublishersController extends AppController {
 			. "\n"
 			. "Hinter dem Menüpunkt \"Schichten\" verbirgt sich die Schichtverwaltung. Hier können sich Verkündiger und auch du für Schichten, maximal 12 Wochen im voraus eintragen. Wenn sich ein Verkündiger einträgt, hat er die Möglichkeit noch einen Partner zu sich in die Schicht einzutragen. Es öffnet sich ein Fenster, in dem er einen Namen eingeben kann, sobald er anfängt zu tippen, öffnen sich Verkündiger Vorschläge anhand seiner eingegebenen Buchstaben. Hier tauchen dann auch die Verkündiger ohne Login auf. Wenn ein Verkündiger einen Partner einträgt, der ihm nicht vorgeschlagen wird von der Suche (weil er nicht in eurer Verkündiger Liste steht und z.B. aus einer anderen Versammlung kommt) bekommen alle Versammlungsadmins eine Info Mail um zu überprüfen ob der Partner für den Trolleydienst geeignet ist. Wenn sich Verkündiger von einer Schicht löschen möchten, wird er gefragt ob er auch den Partner aus seiner Schicht mitlöschen möchte. So müssen sich nicht beide einloggen und löschen, wenn sie ihren Dienst absagen.  \n"
 			. "\n"
-			. "Natürlich untersteht dieses Tool der ständigen Weiterentwicklung. Wir haben noch einige Ideen und Features, die wir in weiteren Versionen umsetzen wollen. Wenn ihr Verbesserungsvorschläge habt, Fehler findet oder Fragen habt, nutzt bitte das Kontaktformular oder die e-mail Adresse unter: \n"
+			. "Natürlich untersteht dieses Tool der ständigen Weiterentwicklung. Wir haben noch einige Ideen und Features, die wir in weiteren Versionen umsetzen wollen. Wenn ihr Fragen habt, nutzt bitte das Kontaktformular oder die e-mail Adresse unter: \n"
 			. "http://trolley.jw-center.com/contact \n"
+			. "\n"
+			. "Für alle weiteren Verbesserungsvorschläge und Fehler gibt es den Menüpunkt \"Todos\". Dort könnt ihr am einfachsten Fehler melden und auch Funktionen fordern. Gleichzeitig seht ihr auch den jeweiligen Bearbeitungsstand alles offenen Todos. \n"
 			. "\n"
 			. "Wir danken euch für eure Mithilfe und Unterstützung und wünschen euch Jehovas Segen für euren Trolleydienst. \n"
 			. "\n"
@@ -306,5 +308,28 @@ class PublishersController extends AppController {
 		} else {
 			$this->redirect(array('action' => 'index'));
 		}
+	}
+	
+	public function switchKey($id = null) {
+		$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
+		$dbPublisher = $this->Publisher->find('first', $options);
+		
+		if($dbPublisher['Publisher']['kdhall_key']) {
+			$dbPublisher['Publisher']['kdhall_key'] = 0;
+		} else {
+			$dbPublisher['Publisher']['kdhall_key'] = 1;
+		}
+		
+		if ($this->Publisher->save($dbPublisher)) {
+			$this->Session->setFlash('Deine Änderung wurde gespeichert', 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash('Deine Änderung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+		
+		$publisher = $this->Session->read('publisher');
+		$publisher2 = $this->PublisherDAO->getById($publisher);
+		$this->Session->write('publisher', $publisher2);
+		
+		$this->redirect(array('action' => 'index'));
 	}
 }

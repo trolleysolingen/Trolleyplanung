@@ -74,7 +74,12 @@
 							}
 						?>
 
-						<td><?php echo h($publisherItem['Publisher']['surname']); ?>&nbsp;</td>
+						<td>
+							<?php if($publisher['Congregation']['key_management'] && $publisherItem['Publisher']['kdhall_key']) {
+								echo "<span class='glyphicon glyphicon-keys' style='margin-right:5px; color:#f0ad4e'></span>";
+							}
+							echo h($publisherItem['Publisher']['surname']); ?>&nbsp;
+						</td>
 						<td><?php echo h($publisherItem['Publisher']['prename']); ?>&nbsp;</td>
 
 						<?php
@@ -84,11 +89,26 @@
 
 							<td class="actions" style="white-space:nowrap;">
 								<?php
+									if($publisher['Congregation']['key_management']) {
+										if($publisherItem['Publisher']['kdhall_key']) {
+											echo $this->Html->link('<button type="button" class="btn btn-danger btn-xs">
+												<span class="glyphicon glyphicon-keys"></span>
+											</button>', array('action' => 'switchKey', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Kein Schlüssel'));
+										} else {
+											echo $this->Html->link('<button type="button" class="btn btn-success btn-xs">
+												<span class="glyphicon glyphicon-keys"></span>
+											</button>', array('action' => 'switchKey', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Schlüssel'));
+										}
+									}
+									
 									echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
+									
 									echo $this->Html->link('<button type="button" data-data="' . $publisherItem['Publisher']['prename'] . ' ' . $publisherItem['Publisher']['surname'] . '" class="open-DeleteDialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$publisherItem['Publisher']['id'])), 'escape' => false), false);
+									
 									if ($publisherItem['Publisher']['email'] && $publisherItem['Publisher']['email'] != "") {
 										echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'sendAccount', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Zugangsdaten versenden'));
 									}
+									
 								?>
 							</td>
 						<?php

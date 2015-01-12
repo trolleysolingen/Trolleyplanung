@@ -2662,3 +2662,135 @@ Stack Trace:
 #3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-01-10 15:04:58 Error: Fatal Error (4): syntax error, unexpected ''style'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\edit.ctp, line 76]
+2015-01-10 15:04:58 Error: [FatalErrorException] syntax error, unexpected ''style'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /congregations/edit/2
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-10 18:11:13 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\edit.ctp, line 93]
+2015-01-10 18:11:13 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /congregations/edit/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 93)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 93, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 93, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-10 21:41:19 Error: [NotFoundException] Ungültige Versammlung
+Request URL: /congregations/switchKey
+Stack Trace:
+#0 [internal function]: CongregationsController->switchKey()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-10 21:42:56 Error: [NotFoundException] Ungültige Versammlung
+Request URL: /congregations/switchKey
+Stack Trace:
+#0 [internal function]: CongregationsController->switchKey()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-10 21:45:29 Error: [NotFoundException] Ungültige Versammlung
+Request URL: /congregations/switchKey
+Stack Trace:
+#0 [internal function]: CongregationsController->switchKey()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-10 21:45:37 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\switch_key.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\switch_key.ctp',
+)
+Request URL: /congregations/switchKey/2
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-10 21:48:07 Error: [NotFoundException] Ungültige Versammlung
+Request URL: /congregations/switchKey
+Stack Trace:
+#0 [internal function]: CongregationsController->switchKey()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-10 22:43:28 Error: Fatal Error (4): syntax error, unexpected '}', expecting ',' or ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\reservation_entry.ctp, line 42]
+2015-01-10 22:43:28 Error: [FatalErrorException] syntax error, unexpected '}', expecting ',' or ';'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 42, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 42, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-10 23:31:24 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php, line 313]
+2015-01-10 23:31:24 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /publishers/switchKey/2
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 313)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 313, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 313, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-10 23:32:00 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Publishers\switch_key.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Publishers\\switch_key.ctp',
+)
+Request URL: /publishers/switchKey/2
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-10 23:32:28 Error: [SocketException] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte.
+
+Request URL: /publishers/sendAccount/2
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\AppController.php(43): CakeEmail->send('Liebe(r) Juerge...')
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php(246): AppController->sendMail('j.ankenbrand@gm...', 'Zugangsdaten zu...', 'Liebe(r) Juerge...')
+#5 C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php(270): PublishersController->sendMails(Array)
+#6 [internal function]: PublishersController->sendAccount('2')
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-10 23:32:36 Error: [SocketException] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte.
+
+Request URL: /publishers/sendAccount/2
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(154): CakeSocket->connect()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\SmtpTransport.php(95): SmtpTransport->_connect()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Network\Email\CakeEmail.php(1150): SmtpTransport->send(Object(CakeEmail))
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\AppController.php(43): CakeEmail->send('Liebe(r) Juerge...')
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php(246): AppController->sendMail('j.ankenbrand@gm...', 'Zugangsdaten zu...', 'Liebe(r) Juerge...')
+#5 C:\xampp\htdocs\Trolleyplanung\app\Controller\PublishersController.php(270): PublishersController->sendMails(Array)
+#6 [internal function]: PublishersController->sendAccount('2')
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PublishersController), Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PublishersController), Object(CakeRequest))
+#10 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}

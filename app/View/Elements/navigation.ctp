@@ -128,7 +128,12 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
 						<p class="navbar-text hidden-xs hidden-sm">
-							<?php echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname'] ?>
+							<?php 
+								if($publisher['Congregation']['key_management'] && $publisher['Publisher']['kdhall_key']) {
+									echo "<span class='glyphicon glyphicon-keys' style='margin-right:10px; margin-top:-5px; color:#f0ad4e'></span>";
+								}
+								echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname'] 
+							?>
 						</p>
 						
 						<li class="hidden-xs">

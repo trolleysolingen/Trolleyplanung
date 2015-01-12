@@ -61,7 +61,17 @@
 			</div>
 			<div class="col-sm-1 col-md-2"></div>
 		</div>
-
+		<?php if($publisher['Congregation']['key_management']) { ?>
+			<div class="form-group">
+				<div class="col-sm-1 col-md-2"></div>
+				<label for="start" class="col-sm-2 control-label">Schlüssel:</label>
+				<div class="col-sm-8 col-md-6">
+					<?php
+					echo $this->Form->input('kdhall_key', array('type' => 'checkbox', 'label'=>false, 'id' => 'kdhall_key', 'style' => 'margin-left:0px;'));
+					?>
+				</div>
+			</div>
+		<?php } ?>
 	</fieldset>
 	</br>
 	<?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary col-sm-offset-3 col-md-offset-4')); ?>

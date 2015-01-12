@@ -26,6 +26,7 @@ class CongregationsController extends AppController {
 		} else if ($publisher['Role']['name'] != 'admin' && $publisher['Role']['name'] != 'congregation admin'){ 
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		}
+		$this->set('publisher', $publisher);
 	}
 
 	/**
@@ -88,7 +89,7 @@ class CongregationsController extends AppController {
 				$publisher2 = $this->PublisherDAO->getById($publisher);
 				$this->Session->write('publisher', $publisher2);
 				$this->Session->setFlash('Die Versammlung wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			} else {
 				$this->Session->setFlash('Die Versammlung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
@@ -116,5 +117,31 @@ class CongregationsController extends AppController {
 			$this->Session->setFlash('Die Versammlung konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+	
+	public function switchKey($id = null) {
+		if (!$this->Congregation->exists($id)) {
+			throw new NotFoundException(__('Ungültige Versammlung'));
+		}
+		
+		$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $id));
+		$congregation = $this->Congregation->find('first', $options);
+		
+		if($congregation['Congregation']['key_management']) {
+			$congregation['Congregation']['key_management'] = 0;
+		} else {
+			$congregation['Congregation']['key_management'] = 1;
+		}
+		
+		if ($this->Congregation->save($congregation)) {
+			$this->Session->setFlash('Deine Änderung wurde gespeichert', 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash('Deine Änderung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+		
+		$publisher = $this->Session->read('publisher');
+		$publisher2 = $this->PublisherDAO->getById($publisher);
+		$this->Session->write('publisher', $publisher2);
+		return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 	}
 }

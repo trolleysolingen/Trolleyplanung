@@ -37,6 +37,9 @@ if ($reservationTmp == null) {
         $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\")'><span class='glyphicon glyphicon-user_add'></span></a>";
 } else {
     if ($reservationTmp['Reservation']['publisher1_id'] != null) {
+		if($publisher['Congregation']['key_management'] && $reservationTmp['Publisher1']['kdhall_key']) {
+			echo "<span class='glyphicon glyphicon-keys' style='margin-right:5px; margin-top:-5px; color:#f0ad4e'></span>";
+		}
         if ($reservationTmp['Publisher1']['role_id'] == 3) {
             // guest publisher
             echo $reservationTmp['Reservation']['guestname'];
@@ -67,6 +70,9 @@ if ($reservationTmp == null) {
     echo "<div class='row'>";
     echo "<div style='padding-right: 5px;' class='col-sm-10 col-xs-8 cut-div-text pull-left'>";
     if ($reservationTmp['Reservation']['publisher2_id'] != null) {
+		if($publisher['Congregation']['key_management'] && $reservationTmp['Publisher2']['kdhall_key']) {
+			echo "<span class='glyphicon glyphicon-keys' style='margin-right:5px; margin-top:-5px; color:#f0ad4e'></span>";
+		}
         if ($reservationTmp['Publisher2']['role_id'] == 3) {
             // guest publisher
             echo $reservationTmp['Reservation']['guestname'];

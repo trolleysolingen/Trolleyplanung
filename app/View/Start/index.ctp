@@ -1,4 +1,4 @@
-﻿<div class="visible-xs-block visible-sm-block">
+<div class="visible-xs-block visible-sm-block">
 <legend>Anmelden</legend>
 <?php
 	echo $this->Form->create(null, array('url' => array('controller' => 'start')
@@ -77,8 +77,10 @@
 	<span class="glyphicon glyphicon-ok_2 check"></span> Leichte Administration:<br/>
 	<ul>
 		<li>Schichtzeiten selber definieren</li>
+		<li>Definiere die Tage an denen Trolleydienst durchgeführt werden soll</li>
 		<li>Verkündiger eintragen und Zugangsmails verschicken</li>
 		<li>Bekomme Benachrichtungen, wenn ein Verkündiger deiner Versammlung einen Partner einträgt, der nicht zu deinen eingetragenen Verkündigern gehört</li>
+		<li>Schlüsselverwaltung: Gib an welche Verkündiger Zugang zum Trolley besitzen</li>
 	</ul>
 	<span class="glyphicon glyphicon-ok_2 check"></span> Ständige Weiterentwicklung der Software basierend auf Wünschen der Benutzer<br/>
 	<br>
