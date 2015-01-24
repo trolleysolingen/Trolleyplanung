@@ -7,6 +7,7 @@
 		?>
 		];
 </script>
+<input type="hidden" id="guestsNotAllowed" name="guestsNotAllowed" value="<?php echo $publisher['Congregation']['guests_not_allowed'] ?>"/>
 
 <legend>Schichten</legend>
 

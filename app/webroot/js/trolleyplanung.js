@@ -97,10 +97,22 @@ function deletePublisher() {
 function addGuest(reservationDay, reservationTimeslot, displayTime) {
     var guestname = $('#guestname_' + reservationDay + '_' + reservationTimeslot).val();
     if (guestname) {
-        var data = {reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, displayTime: displayTime, guestname: guestname};
-        ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addGuest.json", data);
+        var guestsNotAllowed = $('#guestsNotAllowed').val();
+        if (guestsNotAllowed != 1 || $.inArray(guestname, publisherList) >= 0) {
+            var data = {
+                reservationDay: reservationDay,
+                reservationTimeslot: reservationTimeslot,
+                displayTime: displayTime,
+                guestname: guestname
+            };
+            ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addGuest.json", data);
+            $('#guestModal').modal('hide');
+        } else {
+            $('#guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg').html('Bitte wähle einen zugelassenen Verkündiger aus. Die automatische Vorschlagsliste hilft dir dabei.');
+            $('#guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg').show();
+        }
     }
-	$('#guestModal').modal('hide');
+
 }
 
 function displayReservation(reservationDay, reservationTimeslot, reservation, publisher, displayTime) {
@@ -217,6 +229,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 
 function displayGuestField(reservationDay, reservationTimeslot, displayTime) {
 	html = '<div class="form-group">';
+    html += '<div id="guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg" class="error alert alert-danger"></div>';
     html += '<label for="guestname_' + reservationDay + '_' + reservationTimeslot + '">Name:</label>';
     html += '<input type="text" class="typeahead form-control" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '" placeholder="Verkündiger eingeben"/>';
 	html += '</div>';
