@@ -7,7 +7,7 @@
 		?>
 		];
 </script>
-<input type="hidden" id="guestsNotAllowed" name="guestsNotAllowed" value="<?php echo $publisher['Congregation']['guests_not_allowed'] ?>"/>
+<input type="hidden" id="guestsNotAllowed" name="guestsNotAllowed" value="<?php echo array_key_exists('guests_not_allowed', $publisher['Congregation']) ? $publisher['Congregation']['guests_not_allowed'] : 0 ?>"/>
 
 <legend>Schichten</legend>
 
