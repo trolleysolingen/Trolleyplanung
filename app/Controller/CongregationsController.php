@@ -160,4 +160,30 @@ class CongregationsController extends AppController {
 		
 		$this->switchModuleStatus($publisher['Congregation']['id'], "report");
 	}
+
+	public function switchGuestsNotAllowed($id = null) {
+		if (!$this->Congregation->exists($id)) {
+			throw new NotFoundException(__('Ungültige Versammlung'));
+		}
+
+		$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $id));
+		$congregation = $this->Congregation->find('first', $options);
+
+		if($congregation['Congregation']['guests_not_allowed']) {
+			$congregation['Congregation']['guests_not_allowed'] = 0;
+		} else {
+			$congregation['Congregation']['guests_not_allowed'] = 1;
+		}
+
+		if ($this->Congregation->save($congregation)) {
+			$this->Session->setFlash('Deine Änderung wurde gespeichert', 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash('Deine Änderung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+
+		$publisher = $this->Session->read('publisher');
+		$publisher2 = $this->PublisherDAO->getById($publisher);
+		$this->Session->write('publisher', $publisher2);
+		return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
+	}
 }
