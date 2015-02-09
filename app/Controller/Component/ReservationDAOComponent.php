@@ -177,5 +177,52 @@ class ReservationDAOComponent extends Component {
 
         return $reservation;
     }
+	
+	public function getMissingReports($publisher) {
+		$model = ClassRegistry::init('Reservation');
 
+        $result= $model->find('all', array(
+			'conditions' => array(
+					'OR' => array(
+						'AND' => array(
+							array('Reservation.publisher1_id' => $publisher['Publisher']['id']),
+							array('Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\''),
+							array('Reservation.report_necessary' => 1),
+							array('Reservation.books' => null)
+						),
+						'OR' => array(
+							array(
+								'AND' => array(
+									array('Reservation.publisher2_id' => $publisher['Publisher']['id']),
+									array('Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\''),
+									array('Reservation.report_necessary' => 1),
+									array('Reservation.books' => null)
+								)
+							)
+						)
+					)
+				),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getGivenReports($publisher) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\'',
+                    'Reservation.reporter_id' => $publisher['Publisher']['id'],
+					'Reservation.report_necessary' => 1,
+					'Reservation.minutes !=' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
 }

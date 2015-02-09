@@ -24,7 +24,7 @@
 					<td class="actions">
 						<?php
 						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $congregation['Congregation']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
-						echo $this->Html->link('<button type="button" data-data="' . $congregation['Congregation']['name'] . '" class="open-DeleteDialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$congregation['Congregation']['id'])), 'escape' => false), false);
+						echo $this->Html->link('<button type="button" data-data="' . $congregation['Congregation']['name'] . '" class="open-Dialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$congregation['Congregation']['id'])), 'escape' => false), false);
 						?>
 					</td>
 				</tr>

@@ -16,6 +16,7 @@
 						?>
 					</div>
 				</div>
+				<legend></legend>
 				<div class="form-group">
 					<label for="start" class="col-xs-4 control-label">Montag:</label>
 					<div class="col-xs-8">
@@ -73,7 +74,7 @@
 					</div>
 				</div>
 			  </div>
-			  <?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary btn-block')); ?>
+			  <?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary btn-block', 'name' => 'editSubmit')); ?>
 			</div>
 		</div>
 		
@@ -96,9 +97,46 @@
 				<div class="col-sm-6 col-xs-12" style="padding:10px;">
 					<?php
 						if($publisher['Congregation']['key_management']) {
-							echo $this->Html->link('<button type="button" class="btn btn-danger btn-block" style="margin-top:-15px;">Deaktivieren</button>', array('action' => 'switchKey', $publisher['Congregation']['id']), array('escape' => false, 'style' => 'text-decoration: none;'));
+							echo $this->Html->link('<button type="button" class="btn btn-danger btn-block" style="margin-top:-15px;">Deaktivieren</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'key_management'), array('escape' => false, 'style' => 'text-decoration: none;'));
 						} else {
-							echo $this->Html->link('<button type="button" class="btn btn-success btn-block" style="margin-top:-15px;">Aktivieren</button>', array('action' => 'switchKey', $publisher['Congregation']['id']), array('escape' => false, 'style' => 'text-decoration: none;'));
+							echo $this->Html->link('<button type="button" class="btn btn-success btn-block" style="margin-top:-15px;">Aktivieren</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'key_management'), array('escape' => false, 'style' => 'text-decoration: none;'));
+						}
+					?>
+				</div>
+				
+				<legend></legend>
+				
+				<div class="col-sm-6 col-xs-12" style="margin-bottom:10px;">
+					<a href='javascript:void(0)' style="margin-right:10px;" data-toggle="modal" data-target="#myKeyModal"><span style="margin-top:-5px;" class='glyphicon glyphicon-circle_info'></span></a>
+					Bericht: 
+					<?php
+						if($publisher['Congregation']['report']) {
+							echo "<span style='color:#5cb85c'>aktiv</span><br/> Beginn: " . date("d.m.Y", strtotime($publisher['Congregation']['report_start_date']));
+						} else {
+							echo "<span style='color:#d9534f'>inaktiv</span>";
+						}
+					?>
+				</div>
+				
+				<div class="col-sm-6 col-xs-12" style="padding:10px;">
+					<?php
+						if($publisher['Congregation']['report']) {
+							echo $this->Html->link('<button type="button" class="btn btn-danger btn-block" style="margin-top:-15px;">Deaktivieren</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'report'), array('escape' => false, 'style' => 'text-decoration: none;'));
+						} else { ?>
+								<div class='input-group date' style="margin-top:-15px;">
+									<span class="input-group-addon datepickerbutton">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+									<?php 
+										echo $this->Form->input('reportDate', array('div' => false, 'label'=>false, 'class' => 'form-control', 'id' => 'reportDate', 'type' => 'text', 'placeholder' => 'Ab dem')); 
+									?>
+									<span class="input-group-addon" style="background-color: #5cb85c">
+										<?php 
+											echo "<a href='javascript:void(0)' onclick='setReportDate(\"" . $publisher['Congregation']['id'] . "\")' style='text-decoration: none; color: white'>Aktivieren</a>";
+										?>
+									</span>
+								</div>
+						<?php
 						}
 					?>
 				</div>

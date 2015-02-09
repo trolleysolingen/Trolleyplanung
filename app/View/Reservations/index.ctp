@@ -8,6 +8,55 @@
 		];
 </script>
 
+<?php if($publisher['Congregation']['report'] && !empty($missingReports)) { ?>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">Fehlende Berichte</h3>
+  </div>
+  <div class="panel-body">
+	<?php
+		foreach($missingReports as $missingReport) { ?>
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 btn-group" style="margin-bottom: 10px;">
+			<?php
+				$start_date = new DateTime('2014-01-01 ' . $missingReport['Timeslot']['start'] . ':00');
+				$since_start = $start_date->diff(new DateTime('2014-01-01 ' . $missingReport['Timeslot']['end'] . ':00'));
+				$calcHours = $since_start->h;
+				$calcMinutes =  $since_start->i;
+			
+				if($missingReport['Reservation']['publisher1_id'] == $publisher['Publisher']['id'] && $missingReport['Reservation']['publisher2_id'] != null) {
+					$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
+				} else if($missingReport['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
+					$partner = $missingReport['Publisher1']['prename'] . " " . $missingReport['Publisher1']['surname'];
+				} else {
+					$partner = "-";
+				}
+				
+				$buttonclass = "btn-default";
+				
+				if($missingReport['Reservation']['report_necessary'] && $missingReport['Reservation']['no_report_reason'] != null) {
+					$adminReason = "<b>Dein Versammlungsadmin sagt:</b><br/><br/>" . $missingReport['Reservation']['no_report_reason'];
+					$buttonclass = "btn-warning";
+				} else {
+					$adminReason = "";
+				}
+				
+				$date = date("d.m.Y", strtotime($missingReport['Reservation']['day'])) . ": " . $missingReport['Timeslot']['start'] . " - " . $missingReport['Timeslot']['end'];
+			
+				echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" data-partner="' . $partner . '" class="open-ReportDialog btn ' . $buttonclass . ' col-xs-10 cut-div-text" style="margin-bottom: 10px;">'.
+					$date . "<br/>".
+					"Partner: " . $partner.
+				'</button>';
+				
+				echo '<button onclick="openReportDismiss(' . $missingReport['Reservation']['id'] . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" data-partner="' . $partner . '" class="open-ReportDialog btn btn-danger col-xs-2" style="margin-bottom: 10px;">'.
+				"<br/><span class='glyphicon glyphicon-remove' style='margin-top: -25px;'></span>".
+				'</button>';
+			?>
+	</div>
+	<?php } ?>
+  </div>
+</div>
+<?php } ?>
+
 <legend>Schichten</legend>
 
 <div class="panel panel-primary">
@@ -97,3 +146,7 @@
     </div>
   </div>
 </div>
+
+<?php echo $this->element('report_modal', array('controller' => 'reservations'));?>
+
+<?php echo $this->element('report_necessary_modal', array('controller' => 'reservations'));?>

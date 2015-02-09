@@ -3,6 +3,7 @@
 	$linkarray = explode("/", $actual_link);
 
 	$highlightReservations = "";
+	$highlightReports = "";
 	$highlightMessages = "";
 	$highlightPublishers = "";
 	$highlightTimeslots = "";
@@ -12,9 +13,12 @@
 	$highlightContact = "";
 	$highlightTodos = "";
 	$highlightSupport = "";
+	$highlightMyTrolley = "";
 
 	if (in_array("reservations", $linkarray)) {
 		$highlightReservations = "active";
+	} else if (in_array("reports", $linkarray)) {
+		$highlightReports = "active";
 	} else if (in_array("publishers", $linkarray)) {
 		$highlightPublishers = "active";
 	} else if (in_array("timeslots", $linkarray)) {
@@ -35,7 +39,9 @@
 		$highlightMyCongregation = "active";
 	} else if ($highlightTodos == "active" || $highlightContact == "active") {
 		$highlightSupport = "active";
-	} 
+	} else if ($highlightReservations == "active" || $highlightReports == "active") {
+		$highlightMyTrolley = "active";
+	}
 	
 ?>
 	
@@ -59,14 +65,22 @@
 				$publisher = $this->Session->read('publisher');
 				if ($publisher) { ?>
 					<ul class="nav navbar-nav">
-						<li class="<?php echo $highlightReservations ?>">
-							<?php
-								echo $this->Html->link(
-									$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-calendar', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Schichten",
-									array('controller' => 'reservations', 'action' => 'index'),
-									array('escape' => false)
-								); 
-							?>
+						<li class="dropdown <?php echo $highlightMyTrolley ?>">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-calendar" style="margin-right: 10px; margin-top: -6px;"></span>Mein Trolleydienst 
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li class="<?php echo $highlightReservations ?>">
+									<?php echo $this->Html->link('Schichten', array('controller' => 'reservations', 'action' => 'index')); ?>
+								</li>
+								<?php if ($publisher['Congregation']['report'] == 1 && $publisher['Congregation']['report_start_date'] <= date("Y-m-d")) { ?>
+									<li class="<?php echo $highlightReports ?>">
+										<?php echo $this->Html->link('Bericht', array('controller' => 'reports', 'action' => 'index'), array('escape' =>false)); ?>
+									</li>
+								<?php
+								}
+								?>
+						  </ul>
 						</li>
 						
 						<li class="dropdown <?php echo $highlightMyCongregation ?>">

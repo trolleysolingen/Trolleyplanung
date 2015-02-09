@@ -61,3 +61,7 @@
 		<?php echo $this->Form->end(array('div' => false, 'label' => 'Abschicken', 'class' => 'btn btn-primary')); ?>
 	</div>
 </div>
+
+<div class="col-lg-3">
+	<?php echo $this->Form->input('test', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'demo1', 'type' => 'text')); ?>
+</div>

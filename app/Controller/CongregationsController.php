@@ -12,7 +12,7 @@ class CongregationsController extends AppController {
 	 *
 	 * @var array
 	 */
-	public $components = array('Paginator', 'CongregationDAO', 'PublisherDAO');
+	public $components = array('Paginator', 'CongregationDAO', 'PublisherDAO', 'RequestHandler');
 
 	public function beforeFilter() {
 		$publisher = $this->Session->read('publisher');
@@ -83,7 +83,7 @@ class CongregationsController extends AppController {
 		if (!$this->Congregation->exists($id)) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is(array('post', 'put')) && isset($this->request->data['editSubmit'])) {
 			if ($this->Congregation->save($this->request->data)) {
 				$publisher = $this->Session->read('publisher');
 				$publisher2 = $this->PublisherDAO->getById($publisher);
@@ -119,7 +119,7 @@ class CongregationsController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 	
-	public function switchKey($id = null) {
+	public function switchModuleStatus($id = null, $module) {
 		if (!$this->Congregation->exists($id)) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
@@ -127,10 +127,13 @@ class CongregationsController extends AppController {
 		$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $id));
 		$congregation = $this->Congregation->find('first', $options);
 		
-		if($congregation['Congregation']['key_management']) {
-			$congregation['Congregation']['key_management'] = 0;
+		if($congregation['Congregation'][$module]) {
+			$congregation['Congregation'][$module] = 0;
+			if($module == "report") {
+				$congregation['Congregation']['report_start_date'] = null;
+			}
 		} else {
-			$congregation['Congregation']['key_management'] = 1;
+			$congregation['Congregation'][$module] = 1;
 		}
 		
 		if ($this->Congregation->save($congregation)) {
@@ -143,5 +146,18 @@ class CongregationsController extends AppController {
 		$publisher2 = $this->PublisherDAO->getById($publisher);
 		$this->Session->write('publisher', $publisher2);
 		return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
+	}
+	
+	public function changeReportDate() {
+		$publisher = $this->Session->read('publisher');
+		
+		$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $publisher['Congregation']['id']));
+		$congregation = $this->Congregation->find('first', $options);
+		
+		$congregation['Congregation']['report_start_date'] = date("Y-m-d", strtotime($this->request->data['reportDate']));
+
+		$this->Congregation->save($congregation);
+		
+		$this->switchModuleStatus($publisher['Congregation']['id'], "report");
 	}
 }

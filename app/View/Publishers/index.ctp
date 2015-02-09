@@ -103,7 +103,7 @@
 									
 									echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
 									
-									echo $this->Html->link('<button type="button" data-data="' . $publisherItem['Publisher']['prename'] . ' ' . $publisherItem['Publisher']['surname'] . '" class="open-DeleteDialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$publisherItem['Publisher']['id'])), 'escape' => false), false);
+									echo $this->Html->link('<button type="button" data-data="' . $publisherItem['Publisher']['prename'] . ' ' . $publisherItem['Publisher']['surname'] . '" class="open-Dialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'delete',$publisherItem['Publisher']['id'])), 'escape' => false), false);
 									
 									if ($publisherItem['Publisher']['email'] && $publisherItem['Publisher']['email'] != "") {
 										echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'sendAccount', $publisherItem['Publisher']['id']), array('escape' => false, 'title' => 'Zugangsdaten versenden'));
@@ -195,8 +195,3 @@
     </div>
   </div>
 </div>
-
-<!-- Confirmation Script to get id to delete -->
-<?php $this->addScript('testscript', "$('#ConfirmDelete').on('show.bs.modal', function(e) {
-    $(this).find('form').attr('action', $(e.relatedTarget).data('action'));
-});"); ?>

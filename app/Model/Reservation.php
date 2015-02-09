@@ -104,5 +104,12 @@ class Reservation extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
+		'Reporter' => array(
+			'className' => 'Publisher',
+			'foreignKey' => 'reporter_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 	);
 }

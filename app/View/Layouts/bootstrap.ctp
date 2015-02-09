@@ -17,7 +17,9 @@
 		echo $this->Html->meta('icon');
 		
 		echo $this->Html->css('bootstrap.min');
+		echo $this->Html->css('jquery.bootstrap-touchspin.min');
 		echo $this->Html->css('glyphicons');
+		echo $this->Html->css('bootstrap-datetimepicker.min');
 		echo $this->Html->css('custom');
 
 		echo $this->fetch('meta');
@@ -35,7 +37,9 @@
 	<link href="//fonts.googleapis.com/css?family=Stalemate:400" rel="stylesheet" type="text/css">
 
     <style type="text/css">
-    	body{ padding-top: 70px; }
+    	body{
+			padding-top: 70px;
+		}
     </style>
 
   </head>
@@ -68,6 +72,9 @@
     <?php
       echo $this->Html->script('jquery-1.11.1.min');
 	  echo $this->Html->script('bootstrap.min');
+	  echo $this->Html->script('jquery.bootstrap-touchspin.min');
+	  echo $this->Html->script('moment');
+	  echo $this->Html->script('bootstrap-datetimepicker.min');
       echo $this->Html->script('typeahead');
       echo $this->Html->script('trolleyplanung');
     ?>
@@ -90,12 +97,23 @@
 			$(this).find('form').attr('action', $(e.relatedTarget).data('action'));
 		});
 		
-		$(document).on("click", ".open-DeleteDialog", function () {
+		$(document).on("click", ".open-Dialog", function () {
 			 var data = $(this).data('data');
 			 $(".modal-body #data").html( data );
 		});
 		
-		// This entire section makes Bootstrap Modals work with iOS
+		$('#reportModal').on('show.bs.modal', function(e) {
+			$(this).find('form').attr('action', $(e.relatedTarget).data('action'));
+		});
+		
+		$(document).on("click", ".open-ReportDialog", function () {
+			 var data = $(this).data('date');
+			 $(".modal-body #date").html( data );
+			 
+			 var data = $(this).data('partner');
+			 $(".modal-body #partner").html( data );
+		});
+		
 		// This entire section makes Bootstrap Modals work with iOS
 		if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
 
@@ -124,6 +142,27 @@
 		  })
 
 		}
+		
+		$("div[class='input-group date']").datetimepicker({
+			language: 'de',
+			pickTime: false 
+		});
+		
+		$("input[id='hours']").TouchSpin({
+			min: 0,
+			max: 100
+		});
+		
+		$("input[id='minutes']").TouchSpin({
+			min: 0,
+			max: 59
+		});
+		
+		$("input[class='touch-spin']").TouchSpin({
+			min: 0,
+			max: 100,
+			initval: 0
+		});
 		 			
     });
   </script>

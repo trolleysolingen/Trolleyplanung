@@ -272,3 +272,33 @@ function showDeleteModal(reservationDay, reservationTimeslot, showCheckbox) {
 	
 	$('#deleteModal').modal('show');
 }
+
+function setReportDate(congregationId) {
+	var reportDate = $("#reportDate").val();
+	
+    var data = { reportDate: reportDate };
+    ajaxCallCongregationReportDate(congregationId, "/congregations/changeReportDate.json", data);
+}
+
+function ajaxCallCongregationReportDate(congregationId, url, data) {
+
+    if (!preventDoubleClick) {
+        preventDoubleClick = true;
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            timeout: 10000,//in ms
+            dataType: "json",
+            success: function(response){
+				preventDoubleClick = false;
+                window.location.href = '/congregations/edit/' + congregationId;
+            },
+            error: function(response) {
+                preventDoubleClick = false;
+				window.location.href = '/congregations/edit/' + congregationId;
+            }
+        });
+    }
+}

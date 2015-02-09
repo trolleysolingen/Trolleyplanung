@@ -43,7 +43,9 @@ class ReservationsController extends AppController {
 		$this->set("reservations", $reservations);
 		$this->set("publisherList", $publisherList);
 		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
-
+		if($publisher['Congregation']['report']) {
+			$this->getMissingReports($publisher);
+		}
 		$this->set('title_for_layout', 'Schichten');
 	}
 
@@ -186,6 +188,54 @@ class ReservationsController extends AppController {
 
 		foreach($congregationAdmins as $congregationAdmin) {
 			$this->sendMail($congregationAdmin['Publisher']['email'], $subject, $message);
+		}
+	}
+	
+	public function getMissingReports($publisher) {
+		$missingReports = $this->ReservationDAO->getMissingReports($publisher);
+		$this->set("missingReports", $missingReports);
+	}
+	
+	public function saveReport() {
+		$this->Reservation->id = $this->request->data['Reservation']['id'];
+		if (!$this->Reservation->exists()) {
+			throw new NotFoundException(__('Ungültige Schicht'));
+		}
+		
+		$reservation = $this->request->data;
+		$publisher = $this->Session->read('publisher');
+		
+		$reservation['Reservation']['minutes'] = $this->request->data['Reservation']['hours'] * 60 + $this->request->data['Reservation']['minutes'];
+		$reservation['Reservation']['report_necessary'] = 1;
+		$reservation['Reservation']['no_report_reason'] = null;
+		$reservation['Reservation']['reporter_id'] = $publisher['Publisher']['id'];
+		$reservation['Reservation']['report_date'] = date("Y-m-d");
+		
+		if ($this->Reservation->save($reservation)) {
+			$this->Session->setFlash('Dein Bericht wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
+			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
+		} else {
+			$this->Session->setFlash('Dein Bericht konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+	}
+	
+	public function markReportUnnecessary() {
+		$this->Reservation->id = $this->request->data['Reservation']['id'];
+		if (!$this->Reservation->exists()) {
+			throw new NotFoundException(__('Ungültige Schicht'));
+		}
+		
+		$reservation = $this->request->data;
+		
+		$reservation['Reservation']['report_necessary'] = 0;
+		$reservation['Reservation']['reporter_id'] = $publisher['Publisher']['id'];
+		$reservation['Reservation']['report_date'] = date("Y-m-d");
+		
+		if ($this->Reservation->save($reservation)) {
+			$this->Session->setFlash('Dein Bericht wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
+			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
+		} else {
+			$this->Session->setFlash('Dein Bericht konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 	}
 }
