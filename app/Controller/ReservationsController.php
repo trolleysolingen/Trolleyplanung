@@ -84,6 +84,25 @@ class ReservationsController extends AppController {
 		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
 
 		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
+		
+		if($publisher['Congregation']['report']) {
+			$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);
+			$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
+			$adminReportNumber = count($missingCongregationReportList) + count($declinedReportList);
+			if($adminReportNumber > 0) {
+				$this->Session->write('adminReportNumber', $adminReportNumber);
+			} else {
+				$this->Session->write('adminReportNumber', "");
+			}
+			
+			$missingReports = $this->ReservationDAO->getMissingReports($publisher);
+			$publisherReports = count($missingReports);
+			if($publisherReports > 0) {
+				$this->Session->write('publisherReports', $publisherReports);
+			} else {
+				$this->Session->write('publisherReports', "");
+			}
+		}
 	}
 
 	public function deletePublisher() {
@@ -114,6 +133,25 @@ class ReservationsController extends AppController {
 		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
 
 		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
+		
+		if($publisher['Congregation']['report']) {
+			$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);
+			$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
+			$adminReportNumber = count($missingCongregationReportList) + count($declinedReportList);
+			if($adminReportNumber > 0) {
+				$this->Session->write('adminReportNumber', $adminReportNumber);
+			} else {
+				$this->Session->write('adminReportNumber', "");
+			}
+			
+			$missingReports = $this->ReservationDAO->getMissingReports($publisher);
+			$publisherReports = count($missingReports);
+			if($publisherReports > 0) {
+				$this->Session->write('publisherReports', $publisherReports);
+			} else {
+				$this->Session->write('publisherReports', "");
+			}
+		}
 	}
 
 	public function addGuest() {
@@ -213,6 +251,24 @@ class ReservationsController extends AppController {
 		
 		if ($this->Reservation->save($reservation)) {
 			$this->Session->setFlash('Dein Bericht wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
+			if($publisher['Congregation']['report']) {
+				$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);
+				$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
+				$adminReportNumber = count($missingCongregationReportList) + count($declinedReportList);
+				if($adminReportNumber > 0) {
+					$this->Session->write('adminReportNumber', $adminReportNumber);
+				} else {
+					$this->Session->write('adminReportNumber', "");
+				}
+				
+				$missingReports = $this->ReservationDAO->getMissingReports($publisher);
+				$publisherReports = count($missingReports);
+				if($publisherReports > 0) {
+					$this->Session->write('publisherReports', $publisherReports);
+				} else {
+					$this->Session->write('publisherReports', "");
+				}
+			}
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		} else {
 			$this->Session->setFlash('Dein Bericht konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
@@ -226,6 +282,7 @@ class ReservationsController extends AppController {
 		}
 		
 		$reservation = $this->request->data;
+		$publisher = $this->Session->read('publisher');
 		
 		$reservation['Reservation']['report_necessary'] = 0;
 		$reservation['Reservation']['reporter_id'] = $publisher['Publisher']['id'];
@@ -233,6 +290,24 @@ class ReservationsController extends AppController {
 		
 		if ($this->Reservation->save($reservation)) {
 			$this->Session->setFlash('Dein Bericht wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
+			if($publisher['Congregation']['report']) {
+				$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);
+				$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
+				$adminReportNumber = count($missingCongregationReportList) + count($declinedReportList);
+				if($adminReportNumber > 0) {
+					$this->Session->write('adminReportNumber', $adminReportNumber);
+				} else {
+					$this->Session->write('adminReportNumber', "");
+				}
+				
+				$missingReports = $this->ReservationDAO->getMissingReports($publisher);
+				$publisherReports = count($missingReports);
+				if($publisherReports > 0) {
+					$this->Session->write('publisherReports', $publisherReports);
+				} else {
+					$this->Session->write('publisherReports', "");
+				}
+			}
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 		} else {
 			$this->Session->setFlash('Dein Bericht konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));

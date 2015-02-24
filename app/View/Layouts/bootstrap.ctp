@@ -21,10 +21,14 @@
 		echo $this->Html->css('glyphicons');
 		echo $this->Html->css('bootstrap-datetimepicker.min');
 		echo $this->Html->css('custom');
+		
+		echo $this->Html->script('jquery-1.11.1.min');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+		
+		setlocale(LC_TIME, "de_DE");
 	?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -70,7 +74,6 @@
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <?php
-      echo $this->Html->script('jquery-1.11.1.min');
 	  echo $this->Html->script('bootstrap.min');
 	  echo $this->Html->script('jquery.bootstrap-touchspin.min');
 	  echo $this->Html->script('moment');
@@ -146,7 +149,7 @@
 		$("div[class='input-group date']").datetimepicker({
 			language: 'de',
 			pickTime: false 
-		});
+		}); 
 		
 		$("input[id='hours']").TouchSpin({
 			min: 0,

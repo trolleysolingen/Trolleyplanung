@@ -5,6 +5,14 @@ App::uses('Component', 'Controller');
 class ReservationDAOComponent extends Component {
 
     public $components = array('PublisherDAO', 'MailService');
+	
+	public function getByRealId($id) {
+        $model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('first', array('conditions' => array('Reservation.id' => $id), 'recursive' => 1));
+
+        return $result;
+    }
 
     public function getReservationsInTimeRange($mondayThisWeek, $congregationId) {
         $model = ClassRegistry::init('Reservation');
@@ -218,6 +226,123 @@ class ReservationDAOComponent extends Component {
                     'Reservation.reporter_id' => $publisher['Publisher']['id'],
 					'Reservation.report_necessary' => 1,
 					'Reservation.minutes !=' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getMissingCongregationReports($publisher) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\'',
+                    'Reservation.congregation_id' => $publisher['Congregation']['id'],
+					'Reservation.report_necessary' => 1,
+					'Reservation.minutes' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getDeclinedCongregationReports($publisher) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\'',
+                    'Reservation.congregation_id' => $publisher['Congregation']['id'],
+					'Reservation.report_necessary' => 0,
+					'Reservation.no_report_reason !=' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getGivenCongregationReports($publisher) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\'',
+                    'Reservation.congregation_id' => $publisher['Congregation']['id'],
+					'Reservation.report_necessary' => 1,
+					'Reservation.minutes !=' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getGivenCongregationReportsPerMonth($publisher, $date) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $date . '\' and \'' . date('Y-m-t') . '\'',
+                    'Reservation.congregation_id' => $publisher['Congregation']['id'],
+					'Reservation.report_necessary' => 1,
+					'Reservation.minutes !=' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getMissingCongregationReportsPerMonth($publisher, $date) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t") . '\'',
+                    'Reservation.congregation_id' => $publisher['Congregation']['id'],
+					'Reservation.report_necessary' => 1,
+					'Reservation.minutes' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getDeclinedCongregationReportsPerMonth($publisher, $date) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t") . '\'',
+                    'Reservation.congregation_id' => $publisher['Congregation']['id'],
+					'Reservation.report_necessary' => 0,
+					'Reservation.no_report_reason' => null
+                ),
+            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+            'recursive' => 0
+            )
+        );
+		return $result;
+	}
+	
+	public function getAllReservationsPerMonth($publisher, $date) {
+		$model = ClassRegistry::init('Reservation');
+
+        $result= $model->find('all', array(
+			'conditions' => array(
+                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t") . '\'',
+                    'Reservation.congregation_id' => $publisher['Congregation']['id']
                 ),
             'order' => array('Reservation.day', 'Reservation.timeslot_id'),
             'recursive' => 0

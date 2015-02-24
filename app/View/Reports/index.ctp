@@ -27,7 +27,11 @@
 			$calcMinutes =  $since_start->i;
 				
 			if($missingReport['Reservation']['publisher1_id'] == $publisher['Publisher']['id'] && $missingReport['Reservation']['publisher2_id'] != null) {
-				$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
+				if($missingReport['Reservation']['publisher2_id'] == 1) {
+					$partner = $missingReport['Reservation']['guestname'];
+				} else {
+					$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
+				}
 			} else if($missingReport['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
 				$partner = $missingReport['Publisher1']['prename'] . " " . $missingReport['Publisher1']['surname'];
 			} else {
@@ -104,12 +108,7 @@
 
 					<tbody>
 
-					<?php foreach ($givenReportList as $givenReport): 
-						$start_date = new DateTime('2014-01-01 ' . $givenReport['Timeslot']['start'] . ':00');
-						$since_start = $start_date->diff(new DateTime('2014-01-01 ' . $givenReport['Timeslot']['end'] . ':00'));
-						$calcHours = $since_start->h;
-						$calcMinutes =  $since_start->i;
-							
+					<?php foreach ($givenReportList as $givenReport): 							
 						if($givenReport['Reservation']['publisher1_id'] == $publisher['Publisher']['id'] && $givenReport['Reservation']['publisher2_id'] != null) {
 							$partner = $givenReport['Publisher2']['prename'] . " " . $givenReport['Publisher2']['surname'];
 						} else if($givenReport['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
@@ -126,10 +125,16 @@
 							$hours = 0;
 							$minutes = 0;
 						}
+						
+						if($givenReport['Reservation']['timeslot_id'] == null) {
+							$timespan = "Manuell eingefügt";
+						} else {
+							$timespan = $givenReport['Timeslot']['start'] . " - " . $givenReport['Timeslot']['end'];
+						}
 					?>
 						<tr>
 							<td><?php echo date("d.m.Y", strtotime($givenReport['Reservation']['day'])); ?>&nbsp;</td>
-							<td><?php echo $givenReport['Timeslot']['start'] . " - " . $givenReport['Timeslot']['end']; ?>&nbsp;</td>
+							<td><?php echo $timespan; ?>&nbsp;</td>
 							<td><?php echo $partner; ?>&nbsp;</td>
 							<td><?php echo date("d.m.Y", strtotime($givenReport['Reservation']['report_date'])); ?>&nbsp;</td>
 							<td><?php echo $hours; ?>&nbsp;</td>

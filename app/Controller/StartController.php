@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class StartController extends AppController {
-	public $components = array('CongregationDAO', 'PublisherDAO');
+	public $components = array('CongregationDAO', 'PublisherDAO', 'ReservationDAO');
 
 	public function beforeFilter() {
 
@@ -30,6 +30,28 @@ class StartController extends AppController {
 				if (sizeof($publisher) == 0) {
 					$this->Session->setFlash('Der Login war nicht erfolgreich. Bitte überprüfe E-Mail-Adresse und Passwort.', 'default', array('class' => 'alert alert-danger'));
 				} else {
+					$this->Session->write('publisher', $publisher);
+					if($publisher['Congregation']['report']) {
+						$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);
+						$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
+						$adminReportNumber = count($missingCongregationReportList) + count($declinedReportList);
+						if($adminReportNumber > 0) {
+							$this->Session->write('adminReportNumber', $adminReportNumber);
+						} else {
+							$this->Session->write('adminReportNumber', "");
+						}
+						
+						$missingReports = $this->ReservationDAO->getMissingReports($publisher);
+						$publisherReports = count($missingReports);
+						if($publisherReports > 0) {
+							$this->Session->write('publisherReports', $publisherReports);
+						} else {
+							$this->Session->write('publisherReports', "");
+						}
+					} else {
+						$this->Session->write('adminReportNumber', "");
+						$this->Session->write('publisherReports', "");			
+					}
 					$this->Session->write('publisher', $publisher);
 					return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 				}

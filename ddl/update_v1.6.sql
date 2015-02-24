@@ -14,7 +14,6 @@ alter table reservations add (
   magazines int(3) default NULL,
   brochures int(3) default NULL,
   tracts int(3) default NULL,
-  books int(3) default NULL,
   conversations int(3) default NULL,
   reporter_id int(11)
 );

@@ -4359,3 +4359,763 @@ Stack Trace:
 #16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
 #17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #18 {main}
+2015-02-10 11:50:36 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(148): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(161): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-02-10 13:34:41 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\admin.ctp(29): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-10 13:39:38 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\admin.ctp(25): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-10 13:42:36 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\admin.ctp(26): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-10 13:43:24 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\admin.ctp(27): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-10 13:43:44 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\admin.ctp(26): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-10 14:46:54 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Reports\mark_report_unnecessary.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Reports\\mark_report_unnecessary.ctp',
+)
+Request URL: /reports/markReportUnnecessary
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-02-10 14:48:21 Error: [NotFoundException] Ungültiger Bericht
+Request URL: /reports/markReportUnnecessary
+Stack Trace:
+#0 [internal function]: ReportsController->markReportUnnecessary()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-02-10 15:08:28 Error: [NotFoundException] Ungültiger Bericht
+Request URL: /reports/markReportUnnecessary
+Stack Trace:
+#0 [internal function]: ReportsController->markReportUnnecessary()
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-02-11 15:12:47 Error: Fatal Error (4): syntax error, unexpected '.' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php, line 155]
+2015-02-11 15:12:47 Error: [FatalErrorException] syntax error, unexpected '.'
+Request URL: /reports/edit/10
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-11 15:12:55 Error: [MissingActionException] Action StartController::edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'StartController',
+  'action' => 'edit',
+)
+Request URL: /start/edit
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StartController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-11 15:13:03 Error: Fatal Error (4): syntax error, unexpected '.' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php, line 155]
+2015-02-11 15:13:03 Error: [FatalErrorException] syntax error, unexpected '.'
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-11 15:16:41 Error: Fatal Error (4): syntax error, unexpected '.' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php, line 155]
+2015-02-11 15:16:41 Error: [FatalErrorException] syntax error, unexpected '.'
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 155, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-11 15:17:22 Error: Fatal Error (4): syntax error, unexpected '.' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php, line 172]
+2015-02-11 15:17:22 Error: [FatalErrorException] syntax error, unexpected '.'
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 172)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 172, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 172, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-12 11:00:37 Error: [MissingControllerException] Controller class ReportController could not be found.
+Exception Attributes: array (
+  'class' => 'ReportController',
+  'plugin' => NULL,
+)
+Request URL: /report/saveManualReport
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-02-12 11:01:58 Error: [MissingControllerException] Controller class ReportController could not be found.
+Exception Attributes: array (
+  'class' => 'ReportController',
+  'plugin' => NULL,
+)
+Request URL: /report/saveManualReport
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-02-12 11:02:48 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`trolleyplanung`.`reservations`, CONSTRAINT `fk_reservations_congregations` FOREIGN KEY (`congregation_id`) REFERENCES `congregations` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /reports/saveManualReport
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `tr...')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1854): DboSource->create(Object(Report), Array, Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php(241): Model->save(Array)
+#5 [internal function]: ReportsController->saveManualReport()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-02-12 11:05:08 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`trolleyplanung`.`reservations`, CONSTRAINT `fk_reservations_congregations` FOREIGN KEY (`congregation_id`) REFERENCES `congregations` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /reports/saveManualReport
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `tr...')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1854): DboSource->create(Object(Report), Array, Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php(243): Model->save(Array)
+#5 [internal function]: ReportsController->saveManualReport()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-02-12 11:07:35 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\index.ctp(112): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-12 11:07:42 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\index.ctp(112): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-12 11:07:43 Error: [Exception] DateTime::__construct(): Failed to parse time string (2014-01-01 :00) at position 11 (:): Unexpected character
+Request URL: /reports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\View\Reports\index.ctp(112): DateTime->__construct('2014-01-01 :00')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#7 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2015-02-13 10:27:41 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF) in [C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php, line 266]
+2015-02-13 10:27:41 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF)
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 266)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 266, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 266, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-13 10:48:48 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Reports\accept_multiple_declined_reports.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Reports\\accept_multiple_declined_reports.ctp',
+)
+Request URL: /reports/acceptMultipleDeclinedReports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-02-13 10:51:32 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`trolleyplanung`.`reservations`, CONSTRAINT `fk_reservations_congregations` FOREIGN KEY (`congregation_id`) REFERENCES `congregations` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /reports/acceptMultipleDeclinedReports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `tr...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO `tr...')
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(1854): DboSource->create(Object(Report), Array, Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php(207): Model->save(Array)
+#5 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php(289): ReportsController->acceptDeclinedReport(NULL, false)
+#6 [internal function]: ReportsController->acceptMultipleDeclinedReports()
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-02-19 14:44:23 Error: Fatal Error (4): syntax error, unexpected '.' in [C:\xampp\htdocs\Trolleyplanung\app\View\Stats\index.ctp, line 2]
+2015-02-19 14:44:23 Error: [FatalErrorException] syntax error, unexpected '.'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 2)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 2, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 2, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-20 18:07:04 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Stats\index.ctp, line 21]
+2015-02-20 18:07:04 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-20 18:07:04 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Stats\index.ctp, line 21]
+2015-02-20 18:07:04 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-20 18:08:38 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Stats\index.ctp, line 21]
+2015-02-20 18:08:38 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-20 18:13:02 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Stats\index.ctp, line 21]
+2015-02-20 18:13:02 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 13:08:06 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\StatsController.php, line 27]
+2015-02-23 13:08:06 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 13:08:59 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\StatsController.php, line 27]
+2015-02-23 13:08:59 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 13:09:18 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\StatsController.php, line 27]
+2015-02-23 13:09:18 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 13:10:10 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Stats\index.ctp, line 21]
+2015-02-23 13:10:10 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 13:10:25 Error: Fatal Error (4): syntax error, unexpected ')', expecting ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Stats\index.ctp, line 21]
+2015-02-23 13:10:25 Error: [FatalErrorException] syntax error, unexpected ')', expecting ';'
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 16:39:31 Error: [MissingControllerException] Controller class MonthController could not be found.
+Exception Attributes: array (
+  'class' => 'MonthController',
+  'plugin' => NULL,
+)
+Request URL: /month/2015-02-01
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-02-23 16:39:41 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Stats\month.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Stats\\month.ctp',
+)
+Request URL: /stats/month/2015-02-01
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-02-23 16:42:41 Error: [MissingActionException] Action StatsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'StatsController',
+  'action' => 'js',
+)
+Request URL: /stats/js/highcharts/highcharts.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-23 16:42:41 Error: [MissingActionException] Action StatsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'StatsController',
+  'action' => 'js',
+)
+Request URL: /stats/js/highcharts/modules/data.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-23 16:42:41 Error: [MissingActionException] Action StatsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'StatsController',
+  'action' => 'js',
+)
+Request URL: /stats/js/highcharts/modules/drilldown.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-23 16:43:00 Error: [MissingActionException] Action StatsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'StatsController',
+  'action' => 'js',
+)
+Request URL: /stats/js/highcharts/highcharts.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-23 16:43:00 Error: [MissingActionException] Action StatsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'StatsController',
+  'action' => 'js',
+)
+Request URL: /stats/js/highcharts/modules/drilldown.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-23 16:43:00 Error: [MissingActionException] Action StatsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'StatsController',
+  'action' => 'js',
+)
+Request URL: /stats/js/highcharts/modules/data.js
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-23 16:43:44 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Stats\month.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Stats\\month.ctp',
+)
+Request URL: /stats/month
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-02-23 16:43:47 Error: [MissingActionException] Action StatsController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'StatsController',
+  'action' => 'index',
+)
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(StatsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-23 17:30:36 Error: Fatal Error (64): Cannot redeclare class Report in [C:\xampp\htdocs\Trolleyplanung\app\Model\Stat.php, line 6]
+2015-02-23 17:30:36 Error: [FatalErrorException] Cannot redeclare class Report
+Request URL: /stats
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\\xampp\\htdocs...', 6)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\\xampp\\htdocs...', 6, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\\xampp\\htdocs...', 6, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 20:52:57 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(148): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(161): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-02-23 20:53:14 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(148): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(161): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-02-23 21:12:58 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 119]
+2015-02-23 21:12:58 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 119)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 119, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 119, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 21:13:08 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 119]
+2015-02-23 21:13:08 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 119)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 119, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 119, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 21:35:27 Error: Fatal Error (4): syntax error, unexpected '', array('' (T_CONSTANT_ENCAPSED_STRING) in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 86]
+2015-02-23 21:35:27 Error: [FatalErrorException] syntax error, unexpected '', array('' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /reports/admin
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 21:35:33 Error: Fatal Error (4): syntax error, unexpected '', array('' (T_CONSTANT_ENCAPSED_STRING) in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 86]
+2015-02-23 21:35:33 Error: [FatalErrorException] syntax error, unexpected '', array('' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-23 21:35:35 Error: Fatal Error (4): syntax error, unexpected '', array('' (T_CONSTANT_ENCAPSED_STRING) in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\navigation.ctp, line 86]
+2015-02-23 21:35:35 Error: [FatalErrorException] syntax error, unexpected '', array('' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-24 14:03:49 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(148): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(161): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-02-24 14:04:29 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(148): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(161): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-02-24 14:04:36 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(148): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(161): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-02-24 14:07:28 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(148): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(161): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-02-24 14:11:37 Error: Fatal Error (1): Call to a member function getMissingCongregationReports() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php, line 150]
+2015-02-24 14:11:37 Error: [FatalErrorException] Call to a member function getMissingCongregationReports() on a non-object
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 150)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 150, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 150, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-24 14:13:02 Error: Fatal Error (1): Call to a member function getMissingCongregationReports() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php, line 150]
+2015-02-24 14:13:02 Error: [FatalErrorException] Call to a member function getMissingCongregationReports() on a non-object
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 150)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 150, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 150, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-24 14:15:59 Error: Fatal Error (1): Call to a member function getMissingCongregationReports() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php, line 151]
+2015-02-24 14:15:59 Error: [FatalErrorException] Call to a member function getMissingCongregationReports() on a non-object
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 151)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 151, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 151, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-24 14:18:39 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(149): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(162): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}

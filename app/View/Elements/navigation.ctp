@@ -10,6 +10,8 @@
 	$highlightMyCongregation = "";
 	$highlightCongregationSettings = "";
 	$highlightCongregations = "";
+	$highlightCongregationReports = "";
+	$highlightCongregationStats = "";
 	$highlightContact = "";
 	$highlightTodos = "";
 	$highlightSupport = "";
@@ -17,8 +19,12 @@
 
 	if (in_array("reservations", $linkarray)) {
 		$highlightReservations = "active";
-	} else if (in_array("reports", $linkarray)) {
+	} else if (in_array("reports", $linkarray) && !in_array("admin", $linkarray)) {
 		$highlightReports = "active";
+	} else if (in_array("reports", $linkarray) && in_array("admin", $linkarray)) {
+		$highlightCongregationReports = "active";
+	} else if (in_array("stats", $linkarray)) {
+		$highlightCongregationStats = "active";
 	} else if (in_array("publishers", $linkarray)) {
 		$highlightPublishers = "active";
 	} else if (in_array("timeslots", $linkarray)) {
@@ -35,7 +41,7 @@
 		$highlightTodos = "active";
 	}
 	
-	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightTimeslots == "active" || $highlightCongregations == "active" || $highlightMessages == "active") {
+	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightTimeslots == "active" || $highlightCongregations == "active" || $highlightMessages == "active" || $highlightCongregationReports == "active" || $highlightCongregationStats == "active") {
 		$highlightMyCongregation = "active";
 	} else if ($highlightTodos == "active" || $highlightContact == "active") {
 		$highlightSupport = "active";
@@ -63,10 +69,12 @@
 		<div class="collapse navbar-collapse">
 			<?php
 				$publisher = $this->Session->read('publisher');
+				$adminReportNumber = $this->Session->read('adminReportNumber');
+				$publisherReports = $this->Session->read('publisherReports');
 				if ($publisher) { ?>
 					<ul class="nav navbar-nav">
 						<li class="dropdown <?php echo $highlightMyTrolley ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-calendar" style="margin-right: 10px; margin-top: -6px;"></span>Mein Trolleydienst 
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-calendar" style="margin-right: 10px; margin-top: -6px;"></span>Mein Trolleydienst <span class="badge"><?php echo $publisherReports; ?></span>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -75,7 +83,7 @@
 								</li>
 								<?php if ($publisher['Congregation']['report'] == 1 && $publisher['Congregation']['report_start_date'] <= date("Y-m-d")) { ?>
 									<li class="<?php echo $highlightReports ?>">
-										<?php echo $this->Html->link('Bericht', array('controller' => 'reports', 'action' => 'index'), array('escape' =>false)); ?>
+										<?php echo $this->Html->link('Bericht <span class="badge">' . $publisherReports . '</span>', array('controller' => 'reports', 'action' => 'index'), array('escape' =>false)); ?>
 									</li>
 								<?php
 								}
@@ -84,7 +92,7 @@
 						</li>
 						
 						<li class="dropdown <?php echo $highlightMyCongregation ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span>Meine Versammlung 
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span>Meine Versammlung <span class="badge"><?php echo $adminReportNumber; ?></span>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -106,6 +114,17 @@
 									<li class="<?php echo $highlightTimeslots ?>">
 										<?php echo $this->Html->link('Schichtzeiten', array('controller' => 'timeslots', 'action' => 'index')); ?>
 									</li>
+									<?php if ($publisher['Congregation']['report'] == 1 && $publisher['Congregation']['report_start_date'] <= date("Y-m-d")) { ?>
+										<li class="divider"></li>
+										<li class="<?php echo $highlightCongregationReports ?>">
+											<?php echo $this->Html->link('Bericht <span class="badge">' . $adminReportNumber . '</span>', array('controller' => 'reports', 'action' => 'admin'), array('escape' =>false)); ?>
+										</li>
+										<li class="<?php echo $highlightCongregationStats ?>">
+											<?php echo $this->Html->link('Statistik', array('controller' => 'stats', 'action' => 'index'), array('escape' =>false)); ?>
+										</li>
+									<?php
+									}
+									?>
 									<?php
 										if ($publisher['Role']['name'] == 'admin') {
 									?>
@@ -120,8 +139,7 @@
 						  </ul>
 						</li>
 						<li class="dropdown <?php echo $highlightSupport ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-group" style="margin-right: 10px; margin-top: -6px;"></span>Support 
-								<span class="caret"></span>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-group" style="margin-right: 10px; margin-top: -6px;"></span>Support <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li class="<?php echo $highlightContact ?>">

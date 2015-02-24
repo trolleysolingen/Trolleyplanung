@@ -19,6 +19,14 @@ class PublisherDAOComponent extends Component {
 
         return $result;
     }
+	
+	public function getByRealId($id) {
+        $model = ClassRegistry::init('Publisher');
+
+        $result= $model->find('first', array('conditions' => array('Publisher.id' => $id), 'recursive' => 1));
+
+        return $result;
+    }
 
     public function getByAutocomplete($query, $publisher) {
         $model = ClassRegistry::init('Publisher');

@@ -25,7 +25,11 @@
 				$calcMinutes =  $since_start->i;
 			
 				if($missingReport['Reservation']['publisher1_id'] == $publisher['Publisher']['id'] && $missingReport['Reservation']['publisher2_id'] != null) {
-					$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
+					if($missingReport['Reservation']['publisher2_id'] == 1) {
+						$partner = $missingReport['Reservation']['guestname'];
+					} else {
+						$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
+					}
 				} else if($missingReport['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
 					$partner = $missingReport['Publisher1']['prename'] . " " . $missingReport['Publisher1']['surname'];
 				} else {
