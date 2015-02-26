@@ -19,7 +19,8 @@ class CongregationsController extends AppController {
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
-		} else if (strpos($actual_link,'edit') === false){
+		} //declare in following else if ALL methods that the congregation admin can call from edit!!!
+		else if (strpos($actual_link,'edit') === false && strpos($actual_link,'switchModuleStatus') === false && strpos($actual_link,'changeReportDate') === false){
 			if ($publisher['Role']['name'] == 'congregation admin') {
 				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			}
