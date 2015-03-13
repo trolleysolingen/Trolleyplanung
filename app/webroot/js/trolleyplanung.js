@@ -126,7 +126,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 		html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-user_add'></span></a>";
 	} else {
         if (reservation.Reservation.publisher1_id) {
-			if(publisher.Congregation.key_management && reservation.Publisher1.kdhall_key == 1) {
+			if(publisher.Congregation.key_management == 1 && reservation.Publisher1.kdhall_key == 1) {
 				html += "<span class='glyphicon glyphicon-keys' style='margin-right:5px; margin-top:-5px; color:#f0ad4e'></span>";
 			}
             if (reservation.Publisher1.role_id == 3) {
@@ -151,7 +151,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 		html += "<div style='padding-right: 5px;' class='col-sm-10 col-xs-8 cut-div-text pull-left'>";
 		
         if (reservation.Reservation.publisher2_id) {
-			if(publisher.Congregation.key_management && reservation.Publisher2.kdhall_key == 1) {
+			if(publisher.Congregation.key_management == 1 && reservation.Publisher2.kdhall_key == 1) {
 				html += "<span class='glyphicon glyphicon-keys' style='margin-right:5px; margin-top:-5px; color:#f0ad4e'></span>";
 			}
             if (reservation.Publisher2.role_id == 3) {

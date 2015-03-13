@@ -150,6 +150,7 @@ class ReservationDAOComponent extends Component {
         );
 
         $sendMail = false;
+		$send_mail_when_partner = false;
         if ($reservation != null) {
 
             if ($reservation['Reservation']['modified'] > $displayTime) {
@@ -163,7 +164,9 @@ class ReservationDAOComponent extends Component {
                     $guestPublisher = $this->PublisherDAO->getGuestPublisher();
                     $reservation['Reservation']['guestname'] = $guestname;
                     $sendMail = true;
-                }
+                } else if($guestPublisher['Publisher']['send_mail_when_partner']) {
+					$send_mail_when_partner = true;
+				}
 
                 $reservation['Reservation']['publisher2_id'] = $guestPublisher['Publisher']['id'];
                 unset($reservation['Reservation']['modified']);
@@ -181,6 +184,7 @@ class ReservationDAOComponent extends Component {
         }
 
         $reservation['sendMail'] = $sendMail;
+		$reservation['send_mail_when_partner'] = $send_mail_when_partner;
         // debug($reservation);
 
         return $reservation;

@@ -10,10 +10,14 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class ContactController extends AppController {
 
-	public $components = array('PublisherDAO');
+	public $components = array('PublisherDAO', 'CongregationDAO');
 
 	public function beforeFilter() {
-	
+		$publisher = $this->Session->read('publisher');
+		if($publisher) {
+			parent::checkLoginPermission();
+			parent::checkActiveKillswitch();
+		}
 	}
 
 /**

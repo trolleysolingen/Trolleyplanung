@@ -15,6 +15,8 @@ class CongregationsController extends AppController {
 	public $components = array('Paginator', 'CongregationDAO', 'PublisherDAO', 'RequestHandler');
 
 	public function beforeFilter() {
+		parent::checkLoginPermission();
+		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (!$publisher) {

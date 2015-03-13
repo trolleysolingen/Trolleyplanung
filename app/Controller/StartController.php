@@ -30,6 +30,9 @@ class StartController extends AppController {
 				if (sizeof($publisher) == 0) {
 					$this->Session->setFlash('Der Login war nicht erfolgreich. Bitte überprüfe E-Mail-Adresse und Passwort.', 'default', array('class' => 'alert alert-danger'));
 				} else {
+					$this->checkKillswitch($publisher);
+					$this->PublisherDAO->setLoginPermission($publisher);
+					$publisher = $this->PublisherDAO->getByEmail($email, $password);
 					$this->Session->write('publisher', $publisher);
 					if($publisher['Congregation']['report']) {
 						$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);

@@ -10,9 +10,11 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class MessagesController extends AppController {
 
-	public $components = array('PublisherDAO');
+	public $components = array('PublisherDAO', 'CongregationDAO');
 
 	public function beforeFilter() {
+		parent::checkLoginPermission();
+		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));

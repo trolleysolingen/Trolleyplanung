@@ -7,9 +7,11 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class StatsController extends AppController {
-	public $components = array('CongregationDAO', 'PublisherDAO', 'ReservationDAO');
+	public $components = array('CongregationDAO', 'PublisherDAO', 'ReservationDAO', 'CongregationDAO');
 
 	public function beforeFilter() {
+		parent::checkLoginPermission();
+		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));

@@ -16,6 +16,8 @@
 	$highlightTodos = "";
 	$highlightSupport = "";
 	$highlightMyTrolley = "";
+	$highlightProfile = "";
+	$highlightAdmin = "";
 
 	if (in_array("reservations", $linkarray)) {
 		$highlightReservations = "active";
@@ -37,9 +39,13 @@
 		$highlightContact = "active";
 	} else if (in_array("messages", $linkarray)) {
 		$highlightMessages = "active";
-	}  else if (in_array("todos", $linkarray)) {
+	} else if (in_array("todos", $linkarray)) {
 		$highlightTodos = "active";
-	}
+	} else if (in_array("profile", $linkarray)) {
+		$highlightProfile = "active";
+	} else if (in_array("admin", $linkarray)) {
+		$highlightAdmin = "active";
+	} 
 	
 	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightTimeslots == "active" || $highlightCongregations == "active" || $highlightMessages == "active" || $highlightCongregationReports == "active" || $highlightCongregationStats == "active") {
 		$highlightMyCongregation = "active";
@@ -74,7 +80,7 @@
 				if ($publisher) { ?>
 					<ul class="nav navbar-nav">
 						<li class="dropdown <?php echo $highlightMyTrolley ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-calendar" style="margin-right: 10px; margin-top: -6px;"></span>Mein Trolleydienst <span class="badge"><?php echo $publisherReports; ?></span>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-calendar" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Mein Trolleydienst </span><span class="badge"><?php echo $publisherReports; ?></span>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -92,7 +98,7 @@
 						</li>
 						
 						<li class="dropdown <?php echo $highlightMyCongregation ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span>Meine Versammlung <span class="badge"><?php echo $adminReportNumber; ?></span>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Meine Versammlung </span><span class="badge"><?php echo $adminReportNumber; ?></span>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -139,7 +145,7 @@
 						  </ul>
 						</li>
 						<li class="dropdown <?php echo $highlightSupport ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-group" style="margin-right: 10px; margin-top: -6px;"></span>Support <span class="caret"></span>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-group" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Support </span><span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li class="<?php echo $highlightContact ?>">
@@ -157,16 +163,17 @@
 								?>
 						  </ul>
 						</li>
+						<?php if ($publisher['Role']['name'] == 'admin') { ?>
+							<li class="<?php echo $highlightAdmin ?>">
+								<?php echo $this->Html->link("<span class='glyphicon glyphicon-warning_sign' style='margin-right:10px; margin-top:-5px;'></span><span class='hidden-sm hidden-md'> Admin</span>", array('controller' => 'admin', 'action' => 'index'), array('escape' =>false)); ?>
+							</li>
+						<?php } ?>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
-						<p class="navbar-text hidden-xs hidden-sm">
-							<?php 
-								if($publisher['Congregation']['key_management'] && $publisher['Publisher']['kdhall_key']) {
-									echo "<span class='glyphicon glyphicon-keys' style='margin-right:10px; margin-top:-5px; color:#f0ad4e'></span>";
-								}
-								echo $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname'] 
-							?>
-						</p>
+						<li class="<?php echo $highlightProfile ?>">
+							<?php echo $this->Html->link("<span class='glyphicon glyphicon-wrench' style='margin-right:10px; margin-top:-5px;'></span><span class='hidden-sm hidden-md'>" . $publisher['Publisher']['prename'] . ' '. $publisher['Publisher']['surname'] . "</span><span class='visible-md-inline'>" . $publisher['Publisher']['prename'][0] . $publisher['Publisher']['surname'][0] . "</span>", array('controller' => 'profile', 'action' => 'index'), array('escape' =>false)); ?>
+						</li>
+						
 						
 						<li class="hidden-xs">
 							<?php echo $this->Html->link('<span class="glyphicon glyphicon-exit"></span>', array('controller' => 'reservations', 'action' => 'logout'), array('escape' =>false)); ?>

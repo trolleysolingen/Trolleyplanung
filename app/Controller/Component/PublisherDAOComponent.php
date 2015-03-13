@@ -4,6 +4,31 @@ App::uses('Component', 'Controller');
 
 class PublisherDAOComponent extends Component {
 
+	public function getLoginPermission($publisher) {
+        $model = ClassRegistry::init('Publisher');
+        $result = $model->find('first', array(
+                'fields' => array('Publisher.log_out'),
+                'recursive' => -1,
+                'conditions' => array(
+                    'Publisher.id' => $publisher['Publisher']['id']
+                )
+            )
+        );
+
+        return $result;
+    }
+	
+	public function setLoginPermission($publisher) {
+		$now = new DateTime('now');
+		$db = ConnectionManager::getDataSource('default');
+		$db->rawQuery('UPDATE publishers SET log_out=0, last_login=\'' . $now->format('Y-m-d H:i:s') . '\' WHERE id=' . $publisher['Publisher']['id']);
+	}
+	
+	public function logoutAllUsers() {
+		$db = ConnectionManager::getDataSource('default');
+		$db->rawQuery('UPDATE publishers SET log_out=1');
+	}
+
     public function getByEmail($email, $password) {
         $model = ClassRegistry::init('Publisher');
 

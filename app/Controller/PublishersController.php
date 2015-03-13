@@ -15,10 +15,12 @@ class PublishersController extends AppController {
 	 *
 	 * @var array
 	 */
-	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler', 'ReservationDAO');
+	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler', 'ReservationDAO', 'CongregationDAO');
 	public $uses = array('Publisher', 'Reservation');
 
 	public function beforeFilter() {
+		parent::checkLoginPermission();
+		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));

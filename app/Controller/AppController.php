@@ -20,6 +20,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('Component', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 
 /**
@@ -34,6 +35,39 @@ App::uses('CakeEmail', 'Network/Email');
 class AppController extends Controller {
 
 	public $layout = 'bootstrap';
+	public $uses = array('PublisherDAO', 'CongregationDAO');
+	
+	public function checkLoginPermission() {
+		$publisher = $this->Session->read('publisher');
+		$logout = $this->PublisherDAO->getLoginPermission($publisher);
+		if($logout != null) {
+			if($logout['Publisher']['log_out']) {
+				$this->Session->setFlash('Du wurdest vom Admin ausgeloggt. Bitte melde dich erneut an.', 'default', array('class' => 'alert alert-warning'));
+				$this->globalLogout();
+			}
+		}
+	}
+	
+	public function globalLogout() {
+		$this->Session->delete('publisher');
+		return $this->redirect(array('controller' => 'start', 'action' => 'index'));
+	}
+	
+	public function checkKillswitch($publisher) {
+		$killswitch = $this->CongregationDAO->getKillswitchState($publisher);
+		if($killswitch['Congregation']['killswitch'] && $publisher['Role']['name'] != 'admin') {
+			$this->Session->setFlash('Im Moment finden Wartungsarbeiten statt. Zur Zeit kannst du dich daher leider nicht einloggen.', 'default', array('class' => 'alert alert-warning'));
+			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
+		}
+	}
+	
+	public function checkActiveKillswitch() {
+		$oneActive = $this->CongregationDAO->getAllKillswitchStates();
+		$publisher = $this->Session->read('publisher');
+		if($oneActive && $publisher['Role']['name'] == 'admin') {
+			$this->Session->setFlash('<strong>ACHTUNG!!!</strong> Mindestens eine Versammlung hat den Killswitch noch aktiviert!!!', 'default', array('class' => 'alert alert-warning'));
+		}
+	}
 	
 	public function sendMail($recieverMail, $subject, $text) {
 		$mail = new CakeEmail('smtp');

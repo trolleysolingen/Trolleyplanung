@@ -10,9 +10,11 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class TodosController extends AppController {
 
-	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler');
+	public $components = array('Paginator', 'PublisherDAO', 'RequestHandler', 'CongregationDAO');
 
 	public function beforeFilter() {
+		parent::checkLoginPermission();
+		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));

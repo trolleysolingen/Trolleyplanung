@@ -16,6 +16,8 @@ class TimeslotsController extends AppController {
 	public $components = array('Paginator', 'CongregationDAO');
 
 	public function beforeFilter() {
+		parent::checkLoginPermission();
+		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));

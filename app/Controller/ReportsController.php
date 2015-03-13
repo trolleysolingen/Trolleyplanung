@@ -10,6 +10,8 @@ class ReportsController extends AppController {
 	public $components = array('CongregationDAO', 'PublisherDAO', 'ReservationDAO', 'RequestHandler');
 
 	public function beforeFilter() {
+		parent::checkLoginPermission();
+		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
 		if ($publisher['Congregation']['report'] == 0 || $publisher['Congregation']['report_start_date'] > date("Y-m-d")) {
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
