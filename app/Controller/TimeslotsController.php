@@ -13,7 +13,7 @@ class TimeslotsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'CongregationDAO');
+	public $components = array('Paginator', 'PublisherDAO', 'CongregationDAO');
 
 	public function beforeFilter() {
 		parent::checkLoginPermission();
