@@ -8,6 +8,7 @@
 			'type' => 'hidden',
 			'value' => $publisher['Congregation']['id']
 		));
+		echo $this->Form->input('route_id', array('type' => 'hidden'));
 	?>
 	<div class="form-group">
 		<div class="col-sm-1 col-md-2"></div>

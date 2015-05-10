@@ -2,45 +2,45 @@
 <?php
     $displaySizes_underscore_separated = implode("_", $displaySizes);
 
-    $weekDays  = array();	
+    $weekDays  = array();
 
-    if ($publisher['Congregation']['monday'] == 1) {
+    if (sizeof($dayslot) > 0 && $dayslot['Dayslot']['monday'] == 1) {
         array_push($weekDays, 'Montag');
     } else {
 		array_push($weekDays, 'null');
 	}
 	
-    if ($publisher['Congregation']['tuesday'] == 1) {
+    if (sizeof($dayslot) > 0 && $dayslot['Dayslot']['tuesday'] == 1) {
         array_push($weekDays, 'Dienstag');
     } else {
 		array_push($weekDays, 'null');
 	}
 	
-    if ($publisher['Congregation']['wednesday'] == 1) {
+    if (sizeof($dayslot) > 0 && $dayslot['Dayslot']['wednesday'] == 1) {
         array_push($weekDays, 'Mittwoch');
     } else {
 		array_push($weekDays, 'null');
 	}
 	
-    if ($publisher['Congregation']['thursday'] == 1) {
+    if (sizeof($dayslot) > 0 && $dayslot['Dayslot']['thursday'] == 1) {
         array_push($weekDays, 'Donnerstag');
     } else {
 		array_push($weekDays, 'null');
 	}
 	
-    if ($publisher['Congregation']['friday'] == 1) {
+    if (sizeof($dayslot) > 0 && $dayslot['Dayslot']['friday'] == 1) {
         array_push($weekDays, 'Freitag');
     } else {
 		array_push($weekDays, 'null');
 	}
 	
-    if ($publisher['Congregation']['saturday'] == 1) {
+    if (sizeof($dayslot) > 0 && $dayslot['Dayslot']['saturday'] == 1) {
         array_push($weekDays, 'Samstag');
     } else {
 		array_push($weekDays, 'null');
 	}
 	
-    if ($publisher['Congregation']['sunday'] == 1) {
+    if (sizeof($dayslot) > 0 && $dayslot['Dayslot']['sunday'] == 1) {
         array_push($weekDays, 'Sonntag');
     } else {
 		array_push($weekDays, 'null');

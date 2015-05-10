@@ -8,7 +8,7 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class ReservationsController extends AppController {
 
-	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'PublisherDAO', 'RequestHandler');
+	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'RequestHandler');
 
 	public function beforeFilter() {
 		parent::checkLoginPermission();
@@ -26,31 +26,61 @@ class ReservationsController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($routeId = null) {
 		//$mondayThisWeek = strtotime('monday this week');
 		$mondayThisWeek = strtotime(date('o-\\WW'));
 
 		$publisher = $this->Session->read('publisher');
+		$routes = $this->CongregationDAO->getRoutes($publisher["Congregation"]["id"]);
+
+		$reservations = null;
+		$timeslots = null;
+		$dayslot = null;
+		if (sizeof($routes) >= 2) {
+			// überprüfe, ob gültige Route
+			if (!empty($routeId) && !$this->isValidRouteId($routes, $routeId)) {
+				$routeId = null;
+			}
+		} else if (sizeof($routes) == 1) {
+			// nur eine Route für die Versammlung vorhanden
+			$routeId = $routes[0]['Routes']['id'];
+		}
+
+		if (!empty($routeId)) {
+			$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"], $routeId);
+			$timeslots = $this->TimeslotDAO->getAll($publisher['Congregation']['id'], $routeId);
+			$dayslot = $this->DayslotDAO->getDayslot($publisher['Congregation']['id'], $routeId);
+		}
 
 		$now = new DateTime('now');
-		$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"]);
-
-		$timeslots = $this->TimeslotDAO->getAll($publisher);
 
 		$publisherList = $this->PublisherDAO->getForAutocompletion($publisher);
 
+		$this->Session->write('routeId', $routeId);
 		$this->set("publisher", $this->Session->read('publisher'));
 		$this->set("mondayThisWeek", $mondayThisWeek);
 		$this->set("timeslots", $timeslots);
+		$this->set("dayslot", $dayslot);
+		$this->set("routes", $routes);
+		$this->set("routeId", $routeId);
 		$this->set("reservations", $reservations);
 		$this->set("publisherList", $publisherList);
 		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
+
 		if($publisher['Congregation']['report']) {
 			$this->getMissingReports($publisher);
 		}
 		$this->set('title_for_layout', 'Schichten');
 	}
 
+	private function isValidRouteId($routes, $routeId) {
+		foreach ($routes as $route) {
+			if ($route['Routes']['id'] == $routeId) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public function logout() {
 		$this->globalLogout();
@@ -59,11 +89,13 @@ class ReservationsController extends AppController {
 
 	public function addPublisher() {
 		$publisher = $this->Session->read('publisher');
+		$routeId = $this->Session->read('routeId');
 
 		$reservation = null;
 		if ($publisher) {
 			$reservation = $this->ReservationDAO->addPublisher(
 				$publisher['Congregation']['id'],
+				$routeId,
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
 				$this->request->data['displayTime'],
@@ -108,11 +140,13 @@ class ReservationsController extends AppController {
 
 	public function deletePublisher() {
 		$publisher = $this->Session->read('publisher');
+		$routeId = $this->Session->read('routeId');
 
 		$reservation = null;
 		if ($publisher) {
 			$reservation = $this->ReservationDAO->deletePublisher(
 				$publisher['Congregation']['id'],
+				$routeId,
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
 				$publisher,
@@ -157,11 +191,13 @@ class ReservationsController extends AppController {
 
 	public function addGuest() {
 		$publisher = $this->Session->read('publisher');
+		$routeId = $this->Session->read('routeId');
 
 		$reservation = null;
 		if ($publisher) {
 			$reservation = $this->ReservationDAO->addGuest(
 				$publisher['Congregation']['id'],
+				$routeId,
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
 				$this->request->data['displayTime'],

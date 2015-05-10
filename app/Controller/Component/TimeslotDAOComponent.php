@@ -4,12 +4,15 @@ App::uses('Component', 'Controller');
 
 class TimeslotDAOComponent extends Component {
 
-    public function getAll($publisher) {
+    public function getAll($congregationId, $routeId) {
         $model = ClassRegistry::init('Timeslot');
 
         $result= $model->find('all',
             array(
-                'conditions' => array('Timeslot.congregation_id' => $publisher['Congregation']['id']),
+                'conditions' => array(
+                    'Timeslot.congregation_id' => $congregationId,
+                    'Timeslot.route_id' => $routeId
+                ),
                 'order' => array('Timeslot.start'),
                 'recursive' => 0));
 

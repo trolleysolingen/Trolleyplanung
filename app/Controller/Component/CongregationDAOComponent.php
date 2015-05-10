@@ -4,18 +4,16 @@ App::uses('Component', 'Controller');
 
 class CongregationDAOComponent extends Component {
 
-    public function getByPath($path) {
-        $model = ClassRegistry::init('Congregation');
+    public function getRoutes($congregationId) {
+        $model = ClassRegistry::init('Routes');
 
-        $result= $model->find('first', array('conditions' => array('path' => $path), 'recursive' => 0));
+        $result= $model->find('all', array('conditions' => array('congregation_id' => $congregationId), 'recursive' => 0));
 
-        if (sizeof($result) == 0) {
-            // find default congregation (== Solingen)
-            $result= $model->find('first', array('conditions' => array('path' => 'Solingen'), 'recursive' => 0));
-        }
         return $result;
     }
-	
+
+
+
 	public function killswitchAllCongregations() {
 		$db = ConnectionManager::getDataSource('default');
 		$db->rawQuery('UPDATE congregations SET killswitch=1');

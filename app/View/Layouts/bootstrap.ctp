@@ -79,6 +79,7 @@
 	  echo $this->Html->script('moment');
 	  echo $this->Html->script('bootstrap-datetimepicker.min');
       echo $this->Html->script('typeahead');
+      echo $this->Html->script('responsive-tabs');
       echo $this->Html->script('trolleyplanung');
     ?>
 	

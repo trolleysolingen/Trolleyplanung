@@ -66,96 +66,159 @@
 </div>
 <?php } ?>
 
-<legend>Schichten</legend>
+<h4>Trolleyverwaltung <?php echo $publisher['Congregation']['name'] ?></h4>
 
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h4 class="panel-title">
-			<a data-toggle="collapse" href="#collapse_help">
-			<span style="font-size: 1.5em; margin-top: -5px;" class="glyphicon glyphicon-expand"></span>
-			Hilfe
-			</a>
-		</h4>
-	</div>
-	<div id="collapse_help" class="panel-collapse collapse">
-		<div class="panel-body">
-			Um dich in eine Schicht einzutragen, drücke bitte auf <a href="javascript:void(0)"><span style="margin-left: 10px;" class="glyphicon glyphicon-user_add"></span></a></br>
-			Zusätzlich kannst du noch einen Partner zu deiner Schicht eintragen.</br>
-			<br/>
-			Um an Kontaktinformationen der Verkündiger zu kommen, drücke auf das <a href="javascript:void(0)"><span style="margin-left: 5px;" class="glyphicon glyphicon-iphone"></span></a> neben dem Namen, um dich z.B. mit der Schicht vor und nach dir oder mit deinem Partner absprechen zu können.</br>
-			<br/>
-			Deine Schicht kannst durch drücken auf <a href="javascript:void(0)"><span style="margin-left: 5px;" class="glyphicon glyphicon-remove"></span></a> wieder löschen. Du hast dann die Option nur dich oder auch deinen Partner in der Schicht mitzulöschen. Bitte tu dies nur, wenn das auch mit deinem Partner abgesprochen ist.<br/>
-			<br/>
-			Bei Fragen, nutze bitte das <?php echo $this->Html->link('Kontaktformular', array('controller' => 'contact', 'action' => 'index')); ?>
-		</div>
-	</div>
-</div>
-			
 <?php
-	echo $this->element('week_iteration', array(
-		'displaySizes' => array('lg')
-	));
-
-	echo $this->element('week_iteration', array(
-		'displaySizes' => array('sm', 'md')
-	));
-
-	echo $this->element('week_iteration', array(
-		'displaySizes' => array('xs')
-	));
+	if (!empty($routes) && sizeof($routes) >= 2) {
+?>
+		<!-- http://openam.github.io/bootstrap-responsive-tabs/ -->
+		<ul class="nav nav-tabs responsive" id="myTab">
+			<li <?php echo empty($routeId) ? 'class="active"' : '' ?> ><a href="/reservations/index">Übersicht</a></li>
+			<?php
+				foreach ($routes as $route) {
+					echo '<li ' . (!empty($routeId) && $routeId == $route['Routes']['id'] ? 'class="active"' : '') . '><a href="/reservations/index/' . $route['Routes']['id'] . '">' . $route['Routes']['name'] . '</a></li>';
+				}
+			?>
+		</ul>
+		<br/><br/>
+<?php
+	}
 ?>
 
-<!-- Guest Modal -->
-<div class="modal fade" id="guestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Partner eintragen</h4>
-      </div>
-      <div class="modal-body" id="guestModalDiv">
-        
-      </div>
-      <div class="modal-footer" id="guestModalBody">
-		<div class="btn-group">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
+<?php
+	if (empty($routeId)) {
+?>
+		<div class="tab-content responsive">
+			Bitte wähle eine Route aus, für die du dich eintragen möchtest. Über das Untermenu kannst du zu einer anderen Route wechseln.<br/><br/>
+			<ul>
+				<?php
+					foreach ($routes as $route) {
+				?>
+						<li>
+							<div>
+								<a href="/reservations/index/<?php echo $route['Routes']['id'] ?>"><?php echo $route['Routes']['name'] ?></a><br/>
+								Beschreibung:<br/>
+								<?php echo $route['Routes']['description'] ?><br/><br/>
+								<?php if ($route['Routes']['map']) { ?>
+									<a href="/downloads/maps/route_<?php echo $route['Routes']['id'] ?>.png" target="_blank">Karte ansehen</a>
+								<?php } ?>
+								<br/><br/>
+							</div>
+						</li>
+				<?php
+					}
+				?>
+			</ul>
 		</div>
-      </div>
-    </div>
-  </div>
-</div>
+<?php
+	} else {
+?>
+		<legend>Schichten</legend>
 
-
-<!-- Delete Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Schicht löschen</h4>
-      </div>
-      <div class="modal-body" id="deleteModalDiv">
-		 Möchtest du wirklich diese Schicht löschen?
-		 <div id="hiddenParams">
-		 
-		 </div>
-         <div class="checkbox" id="partnerCheckbox">
-			<label>
-				<input id="deletePartner" type="checkbox"> Meinen Parter ebenfalls aus der Schicht löschen 
-			</label>
-		 </div>
-      </div>
-      <div class="modal-footer" id="deleteModalBody">
-		<div class="btn-group">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-			<a href="javascript:void(0)" class="btn btn-danger" onclick="deletePublisher();">Löschen</a>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" href="#collapse_help">
+						<span style="font-size: 1.5em; margin-top: -5px;" class="glyphicon glyphicon-expand"></span>
+						Hilfe
+					</a>
+				</h4>
+			</div>
+			<div id="collapse_help" class="panel-collapse collapse">
+				<div class="panel-body">
+					Um dich in eine Schicht einzutragen, drücke bitte auf <a href="javascript:void(0)"><span
+							style="margin-left: 10px;" class="glyphicon glyphicon-user_add"></span></a></br>
+					Zusätzlich kannst du noch einen Partner zu deiner Schicht eintragen.</br>
+					<br/>
+					Um an Kontaktinformationen der Verkündiger zu kommen, drücke auf das <a
+						href="javascript:void(0)"><span style="margin-left: 5px;"
+														class="glyphicon glyphicon-iphone"></span></a> neben dem Namen,
+					um dich z.B. mit der Schicht vor und nach dir oder mit deinem Partner absprechen zu können.</br>
+					<br/>
+					Deine Schicht kannst durch drücken auf <a href="javascript:void(0)"><span style="margin-left: 5px;"
+																							  class="glyphicon glyphicon-remove"></span></a>
+					wieder löschen. Du hast dann die Option nur dich oder auch deinen Partner in der Schicht
+					mitzulöschen. Bitte tu dies nur, wenn das auch mit deinem Partner abgesprochen ist.<br/>
+					<br/>
+					Bei Fragen, nutze bitte
+					das <?php echo $this->Html->link('Kontaktformular', array('controller' => 'contact', 'action' => 'index')); ?>
+				</div>
+			</div>
 		</div>
-      </div>
-    </div>
-  </div>
-</div>
 
+		<?php
+		echo $this->element('week_iteration', array(
+			'displaySizes' => array('lg')
+		));
+
+		echo $this->element('week_iteration', array(
+			'displaySizes' => array('sm', 'md')
+		));
+
+		echo $this->element('week_iteration', array(
+			'displaySizes' => array('xs')
+		));
+		?>
+
+		<!-- Guest Modal -->
+		<div class="modal fade" id="guestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			 aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+								class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">Partner eintragen</h4>
+					</div>
+					<div class="modal-body" id="guestModalDiv">
+
+					</div>
+					<div class="modal-footer" id="guestModalBody">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Delete Modal -->
+		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			 aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+								class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">Schicht löschen</h4>
+					</div>
+					<div class="modal-body" id="deleteModalDiv">
+						Möchtest du wirklich diese Schicht löschen?
+						<div id="hiddenParams">
+
+						</div>
+						<div class="checkbox" id="partnerCheckbox">
+							<label>
+								<input id="deletePartner" type="checkbox"> Meinen Parter ebenfalls aus der Schicht
+								löschen
+							</label>
+						</div>
+					</div>
+					<div class="modal-footer" id="deleteModalBody">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+							<a href="javascript:void(0)" class="btn btn-danger" onclick="deletePublisher();">Löschen</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<?php
+	}
+?>
 <?php echo $this->element('report_modal', array('controller' => 'reservations'));?>
 
 <?php echo $this->element('report_necessary_modal', array('controller' => 'reservations'));?>

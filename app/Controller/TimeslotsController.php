@@ -31,13 +31,17 @@ class TimeslotsController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($routeId = null) {
+		if (!$routeId) {
+			return $this->redirect(array('controller' => 'routes', 'action' => 'index'));
+		}
 		$publisher = $this->Session->read('publisher');
 
 		$this->Timeslot->recursive = 0;
 		$this->set('timeslots',
-			$this->Paginator->paginate('Timeslot', array('Timeslot.congregation_id' => $publisher['Congregation']['id'])));
+			$this->Paginator->paginate('Timeslot', array('Timeslot.congregation_id' => $publisher['Congregation']['id'], 'Timeslot.route_id' => $routeId)));
 
+		$this->set('routeId', $routeId);
 		$this->set('publisher', $publisher);
 		$this->set('title_for_layout', 'Schichtzeiten');
 	}
@@ -62,18 +66,24 @@ class TimeslotsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($routeId = null) {
+
 		$publisher = $this->Session->read('publisher');
 		if ($this->request->is('post')) {
 			$this->Timeslot->create();
 			if ($this->Timeslot->save($this->request->data)) {
 				$this->Session->setFlash('Die Schichtzeit wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index', $this->request->data['Timeslot']['route_id']));
 			} else {
 				$this->Session->setFlash('Die Schichtzeit konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 
 			}
+		} else {
+			if (!$routeId) {
+				return $this->redirect(array('controller' => 'routes', 'action' => 'index'));
+			}
 		}
+		$this->set('routeId', $routeId);
 		$this->set('publisher', $publisher);
 	}
 
@@ -115,11 +125,13 @@ class TimeslotsController extends AppController {
 		if (!$this->Timeslot->exists()) {
 			throw new NotFoundException(__('Ungültige Schichtzeit'));
 		}
+		$options = array('conditions' => array('Timeslot.' . $this->Timeslot->primaryKey => $id));
+		$timeslot = $this->Timeslot->find('first', $options);
 		if ($this->Timeslot->delete()) {
 			$this->Session->setFlash('Die Schichtzeit wurde gelöscht.', 'default', array('class' => 'alert alert-success'));
 		} else {
 			$this->Session->setFlash('Die Schichtzeit konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index', $timeslot['Timeslot']['route_id']));
 	}
 }

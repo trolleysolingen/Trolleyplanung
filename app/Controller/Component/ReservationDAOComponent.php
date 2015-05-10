@@ -14,7 +14,7 @@ class ReservationDAOComponent extends Component {
         return $result;
     }
 
-    public function getReservationsInTimeRange($mondayThisWeek, $congregationId) {
+    public function getReservationsInTimeRange($mondayThisWeek, $congregationId, $routeId) {
         $model = ClassRegistry::init('Reservation');
 
         $lastDateOnView = strtotime('monday this week +' . Configure::read('DISPLAYED_WEEKS'). ' week');
@@ -23,7 +23,8 @@ class ReservationDAOComponent extends Component {
             'conditions' => array(
                 'Reservation.day between STR_TO_DATE(?, \'%d.%m.%Y\') and STR_TO_DATE(?, \'%d.%m.%Y\')' =>
                     array(date("d.m.Y", $mondayThisWeek), date("d.m.Y", $lastDateOnView)),
-                'Reservation.congregation_id' => $congregationId
+                'Reservation.congregation_id' => $congregationId,
+                'Reservation.route_id' => $routeId
             ),
             'order' => array('Reservation.day', 'Reservation.timeslot_id'),
             'recursive' => 1
@@ -33,14 +34,15 @@ class ReservationDAOComponent extends Component {
         return $result;
     }
 
-    public function addPublisher($congregationId, $reservationDay, $reservationTimeslot, $displayTime, $publisher) {
+    public function addPublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $displayTime, $publisher) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
                     'Reservation.day' => $reservationDay,
                     'Reservation.timeslot_id' => $reservationTimeslot,
-                    'Reservation.congregation_id' => $congregationId
+                    'Reservation.congregation_id' => $congregationId,
+                    'Reservation.route_id' => $routeId
                 ),
             'recursive' => 0
             )
@@ -62,6 +64,7 @@ class ReservationDAOComponent extends Component {
                 unset($reservation['Reservation']['modified']);
             } else {
                 $reservation['Reservation']['congregation_id'] = $publisher['Publisher']['congregation_id'];
+                $reservation['Reservation']['route_id'] = $routeId;
                 $reservation['Reservation']['day'] = $reservationDay;
                 $reservation['Reservation']['timeslot_id'] = $reservationTimeslot;
                 $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
@@ -84,14 +87,15 @@ class ReservationDAOComponent extends Component {
     }
 
 
-    public function deletePublisher($congregationId, $reservationDay, $reservationTimeslot, $publisher, $deleteBoth) {
+    public function deletePublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $publisher, $deleteBoth) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
                     'Reservation.day' => $reservationDay,
                     'Reservation.timeslot_id' => $reservationTimeslot,
-                    'Reservation.congregation_id' => $congregationId
+                    'Reservation.congregation_id' => $congregationId,
+                    'Reservation.route_id' => $routeId
                 ),
                 'recursive' => -1
             )
@@ -136,14 +140,15 @@ class ReservationDAOComponent extends Component {
         return $reservation;
     }
 
-    public function addGuest($congregationId, $reservationDay, $reservationTimeslot, $displayTime, $publisher, $guestname) {
+    public function addGuest($congregationId, $routeId, $reservationDay, $reservationTimeslot, $displayTime, $publisher, $guestname) {
         $model = ClassRegistry::init('Reservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
                     'Reservation.day' => $reservationDay,
                     'Reservation.timeslot_id' => $reservationTimeslot,
-                    'Reservation.congregation_id' => $congregationId
+                    'Reservation.congregation_id' => $congregationId,
+                    'Reservation.route_id' => $routeId
                 ),
                 'recursive' => 0
             )

@@ -3,10 +3,14 @@
 	<fieldset>
 		<legend><?php echo __('Schicht anlegen '); ?></legend>
 		<?php
-		echo $this->Form->input('congregation_id', array(
-			'type' => 'hidden',
-			'value' => $publisher['Congregation']['id']
-		));
+			echo $this->Form->input('congregation_id', array(
+				'type' => 'hidden',
+				'value' => $publisher['Congregation']['id']
+			));
+			echo $this->Form->input('route_id', array(
+				'type' => 'hidden',
+				'value' => $routeId
+			));
 		?>
 		<div class="form-group">
 			<div class="col-sm-1 col-md-2"></div>

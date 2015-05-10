@@ -83,6 +83,13 @@ class Reservation extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
+		'Route' => array(
+			'className' => 'Route',
+			'foreignKey' => 'route_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 		'Timeslot' => array(
 			'className' => 'Timeslot',
 			'foreignKey' => 'timeslot_id',
