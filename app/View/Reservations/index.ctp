@@ -66,13 +66,11 @@
 </div>
 <?php } ?>
 
-<h4>Trolleyverwaltung <?php echo $publisher['Congregation']['name'] ?></h4>
-
 <?php
 	if (!empty($routes) && sizeof($routes) >= 2) {
 ?>
 		<!-- http://openam.github.io/bootstrap-responsive-tabs/ -->
-		<ul class="nav nav-tabs responsive" id="myTab">
+		<ul class="nav nav-tabs responsive" id="myTab" style="margin-top:-20px;">
 			<li <?php echo empty($routeId) ? 'class="active"' : '' ?> ><a href="/reservations/index">Übersicht</a></li>
 			<?php
 				foreach ($routes as $route) {
@@ -87,28 +85,40 @@
 
 <?php
 	if (empty($routeId)) {
+	$i=1;
 ?>
 		<div class="tab-content responsive">
-			Bitte wähle eine Route aus, für die du dich eintragen möchtest. Über das Untermenu kannst du zu einer anderen Route wechseln.<br/><br/>
-			<ul>
-				<?php
-					foreach ($routes as $route) {
-				?>
-						<li>
-							<div>
-								<a href="/reservations/index/<?php echo $route['Routes']['id'] ?>"><?php echo $route['Routes']['name'] ?></a><br/>
-								Beschreibung:<br/>
-								<?php echo $route['Routes']['description'] ?><br/><br/>
-								<?php if ($route['Routes']['map']) { ?>
-									<a href="/downloads/maps/route_<?php echo $route['Routes']['id'] ?>.png" target="_blank">Karte ansehen</a>
-								<?php } ?>
-								<br/><br/>
-							</div>
-						</li>
-				<?php
-					}
-				?>
-			</ul>
+			<div class="row">
+			<?php
+				foreach ($routes as $route) {
+			?>						
+					
+				  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+					<div class="iconbox">
+					  <div class="iconbox-icon">
+						<span style="padding-top:25px; font-family: 'Stalemate', serif;"><b><?php echo $i; ?></b></span>
+					  </div>
+					  <div class="featureinfo">
+						<h4 class="text-center"><?php echo $route['Routes']['name'] ?></h4>
+						<p>
+						  <?php echo nl2br($route['Routes']['description']); ?>
+						</p>
+						<?php if (glob("img/routes/route_" . $route['Routes']['id'] . ".*")) { 
+							$file = glob('img/routes/route_' . $route['Routes']['id'] . '.*');
+							echo '<button data-toggle="modal" data-target="#routeModal" type="button" data-data="' . $file[0] . '" class="open-RouteDialog btn btn-warning">';
+							echo 'Karte';
+							echo '</button>';
+							} 
+						?>
+						<a class="btn btn-success" href="/reservations/index/<?php echo $route['Routes']['id'] ?>">Planung zeigen</a>
+					  </div>
+					</div>
+				  </div>
+			<?php
+					$i++;
+				}
+			?>
+			</div>
 		</div>
 <?php
 	} else {
@@ -145,8 +155,39 @@
 				</div>
 			</div>
 		</div>
-
 		<?php
+			foreach ($routes as $route) {
+				if($routeId == $route['Routes']['id']) {
+					if($route['Routes']['description'] || glob("img/routes/route_" . $route['Routes']['id'] . ".*")) {
+		?>
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" href="#collapse_route">
+						<span style="font-size: 1.5em; margin-top: -5px;" class="glyphicon glyphicon-expand"></span>
+						Beschreibung & Karte der Route
+					</a>
+				</h4>
+			</div>
+			<div id="collapse_route" class="panel-collapse collapse">
+				<div class="panel-body">
+					<?php
+						echo nl2br($route['Routes']['description']) . "<br/><br/>";
+						if (glob("img/routes/route_" . $route['Routes']['id'] . ".*")) { 
+							$file = glob('img/routes/route_' . $route['Routes']['id'] . '.*');
+							echo '<button data-toggle="modal" data-target="#routeModal" type="button" data-data="/' . $file[0] . '" class="open-RouteDialog btn btn-warning">';
+							echo 'Karte';
+							echo '</button>';
+						}	
+					?>
+				</div>
+			</div>
+		</div>
+		<?php
+					}
+				}
+			}
+		
 		echo $this->element('week_iteration', array(
 			'displaySizes' => array('lg')
 		));
@@ -219,6 +260,29 @@
 	<?php
 	}
 ?>
+
+	<!-- Routes Modal -->
+	<div class="modal fade" id="routeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		 aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+							class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel">Karte der Route</h4>
+				</div>
+				<div class="modal-body">
+					<img src="" id="route" alt="Map" class="img-rounded col-xs-12"><br/>
+				</div>
+				<div class="modal-footer">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
 <?php echo $this->element('report_modal', array('controller' => 'reservations'));?>
 
 <?php echo $this->element('report_necessary_modal', array('controller' => 'reservations'));?>

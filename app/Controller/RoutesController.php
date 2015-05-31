@@ -36,8 +36,7 @@ class RoutesController extends AppController {
 		$publisher = $this->Session->read('publisher');
 
 		$this->Route->recursive = 0;
-		$this->set('routes',
-			$this->Paginator->paginate('Route', array('Route.congregation_id' => $publisher['Congregation']['id'])));
+		$this->set('routes', $this->Paginator->paginate('Route', array('Route.congregation_id' => $publisher['Congregation']['id'])));
 
 		$this->set('publisher', $publisher);
 		$this->set('title_for_layout', 'Routen');
@@ -110,6 +109,47 @@ class RoutesController extends AppController {
 		}
 
 		$this->set('publisher', $publisher);
+	}
+	
+	public function deleteMap($id = null) {
+		
+		$file = glob('img/routes/route_' . $id . '.*');
+		
+		if (unlink($file[0])) {
+			$success = true;
+		} else {
+			$success = false;
+		}
+
+		if ($success) {
+			$this->Session->setFlash('Die Karte wurde gelöscht.', 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash('Die Karte konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+		return $this->redirect(array('action' => 'index'));
+	}
+	
+	public function uploadMap() {
+		$filename = "route_" . $this->data['Files']['id'];
+		$formdata = $this->data['Files']['upload'];
+		if($formdata['type'] == "image/gif") {
+			$filename .= ".gif";
+		} else if($formdata['type'] == "image/jpeg") {
+			$filename .= ".jpg";
+		} else if($formdata['type'] == "image/pjpeg") {
+			$filename .= ".jpeg";
+		} else {
+			$filename .= ".png";
+		}
+		
+		$result = $this->uploadFiles('img/routes', $formdata, $filename);
+		
+		if (empty($result)) {
+			$this->Session->setFlash('Die Karte wurde hochgeladen.', 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash('Die Karte konnte nicht hochgeladen werden. Bitte versuche es später nochmal. Akzeptierte Dateitypen sind: jpg, png, gif.', 'default', array('class' => 'alert alert-danger'));
+		}
+		return $this->redirect(array('action' => 'index'));
 	}
 
 }

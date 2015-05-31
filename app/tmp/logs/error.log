@@ -5452,3 +5452,168 @@ Stack Trace:
 #9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ProfileController), Object(CakeRequest))
 #10 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #11 {main}
+2015-05-15 10:17:22 Error: [MissingTableException] Table routes for model Routes was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'routes',
+  'class' => 'Routes',
+  'ds' => 'default',
+)
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(3551): Model->setSource('routes')
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): Model->getDataSource()
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#3 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\CongregationDAOComponent.php(10): Model->find('all', Array)
+#4 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(34): CongregationDAOComponent->getRoutes('2')
+#5 [internal function]: ReservationsController->index()
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#9 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-05-15 11:09:28 Error: [MissingControllerException] Controller class DownloadsController could not be found.
+Exception Attributes: array (
+  'class' => 'DownloadsController',
+  'plugin' => NULL,
+)
+Request URL: /downloads/maps/route_2.png
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-15 11:21:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bck.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-15 11:21:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bck.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-15 11:22:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bck.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-15 11:22:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bck.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-15 11:24:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bck.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-05-15 16:10:54 Error: Fatal Error (4): syntax error, unexpected ''</button>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 109]
+2015-05-15 16:10:54 Error: [FatalErrorException] syntax error, unexpected ''</button>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 109)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 109, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 109, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-15 16:23:50 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 244]
+2015-05-15 16:23:50 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /reservations/index
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 244)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 244, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 244, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-26 15:55:30 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 175]
+2015-05-26 15:55:30 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-26 15:55:31 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 175]
+2015-05-26 15:55:31 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-26 15:55:34 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 175]
+2015-05-26 15:55:34 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 175, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-29 11:58:51 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Routes\upload_map.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Routes\\upload_map.ctp',
+)
+Request URL: /routes/uploadMap
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RoutesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-29 14:21:20 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\RoutesController.php, line 141]
+2015-05-29 14:21:20 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /routes
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-29 14:21:22 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\RoutesController.php, line 141]
+2015-05-29 14:21:22 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /routes
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-05-29 14:21:23 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\Trolleyplanung\app\Controller\RoutesController.php, line 141]
+2015-05-29 14:21:23 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /routes
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 141, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

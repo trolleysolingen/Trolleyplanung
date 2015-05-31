@@ -97,6 +97,16 @@
 			}
 		});
 		
+		$(document).on("click", ".open-RouteDialog", function () {
+			data = $(this).data('data');
+			$('img[id="route"]').attr("src", data)
+		});
+		
+		$(document).on("click", ".open-UploadDialog", function () {
+			data = $(this).data('data');
+			$('input[id="id"]').attr("value", data)
+		});
+		
 		$('#ConfirmDelete').on('show.bs.modal', function(e) {
 			$(this).find('form').attr('action', $(e.relatedTarget).data('action'));
 		});

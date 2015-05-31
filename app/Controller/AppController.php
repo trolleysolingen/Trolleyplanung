@@ -81,4 +81,88 @@ class AppController extends Controller {
 		}
 		return $success;
 	}
+	
+	/**
+	 * uploads files to the server
+	 * @params:
+	 *    $folder  = the folder to upload the files e.g. 'img/files'
+	 *    $formdata   = the array containing the form files
+	 *    $itemId  = id of the item (optional) will create a new sub folder
+	 * @return:
+	 *    will return an array with the success of each file upload
+	 */
+	function uploadFiles($folder, $formdata, $filename, $itemId = null)
+	{
+	   // setup dir names absolute and relative
+	   $folder_url = WWW_ROOT.$folder;
+	   $rel_url = $folder;
+		
+	   // create the folder if it does not exist
+	   if(!is_dir($folder_url)) {
+		  mkdir($folder_url);
+	   }
+		   
+	   // if itemId is set create an item folder
+	   if($itemId)
+	   {
+		  // set new absolute folder
+		  $folder_url = WWW_ROOT.$folder.'/'.$itemId; 
+		  // set new relative folder
+		  $rel_url = $folder.'/'.$itemId;
+		  // create directory
+		  if(!is_dir($folder_url)) {
+			 mkdir($folder_url);
+		  }
+	   }
+		
+	   // list of permitted file types, this is only images but documents can be added
+	   $permitted = array('image/gif','image/jpeg','image/pjpeg','image/png');
+		
+	  // assume filetype is false
+	  $typeOK = false;
+	  // check filetype is ok
+	  foreach($permitted as $type)
+	  {
+		 if($type == $formdata['type']) {
+			$typeOK = true;
+			break;
+		 }
+	  }
+	  
+	  $result[] = array();
+	   
+	  // if file type ok upload the file
+	  if($typeOK) {
+		 // switch based on error code
+		 switch($formdata['error']) {
+			case 0:
+				// create full filename
+				$full_url = $folder_url.'/'.$filename;
+				$url = $rel_url.'/'.$filename;
+				// upload the file
+				$success = move_uploaded_file($formdata['tmp_name'], $url);
+			   
+			   // if upload was successful
+			   if(!$success) {
+				  $result['errors'][] = "Ein Fehler beim hochladen ist aufgetreten. Bitte versuchen Sie es später noch einmal.";
+			   }
+			   break;
+			case 3:
+			   // an error occured
+			   $result['errors'][] = "Ein Fehler beim hochladen ist aufgetreten. Bitte versuchen Sie es später noch einmal.";
+			   break;
+			default:
+			   // an error occured
+			   $result['errors'][] = "Ein Fehler beim hochladen ist aufgetreten. Bitte versuchen Sie es später noch einmal.";
+			   break;
+		 }
+	  } elseif($formdata['error'] == 4) {
+		 // no file was selected for upload
+		 $result['errors'][] = "Es wurde keine Datei ausgewählt.";
+	  } else {
+		 // unacceptable file type
+		 $result['errors'][] = "Ein Fehler beim hochladen ist aufgetreten. Akzeptierte Dateitypen: gif, jpg, png.";
+	  }
+	return $result;
+	}
 }

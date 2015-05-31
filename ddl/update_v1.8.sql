@@ -122,13 +122,13 @@ from congregations c, routes r
 where c.id = r.congregation_id;
 
 update dayslots set
-monday = (select monday from congregations where name = like '%Solingen Ohligs%'),
-tuesday = (select tuesday from congregations where name = like '%Solingen Ohligs%'),
-wednesday = (select wednesday from congregations where name = like '%Solingen Ohligs%'),
-thursday = (select thursday from congregations where name = like '%Solingen Ohligs%'),
-friday = (select friday from congregations where name = like '%Solingen Ohligs%'),
-saturday = (select saturday from congregations where name = like '%Solingen Ohligs%'),
-sunday = (select sunday from congregations where name = like '%Solingen Ohligs%')
+monday = (select monday from congregations where name like '%Solingen Ohligs%'),
+tuesday = (select tuesday from congregations where name like '%Solingen Ohligs%'),
+wednesday = (select wednesday from congregations where name like '%Solingen Ohligs%'),
+thursday = (select thursday from congregations where name like '%Solingen Ohligs%'),
+friday = (select friday from congregations where name like '%Solingen Ohligs%'),
+saturday = (select saturday from congregations where name like '%Solingen Ohligs%'),
+sunday = (select sunday from congregations where name like '%Solingen Ohligs%')
 where
 route_id = (select id from routes where name = 'Route Ohligs') and
 congregation_id = (select id from congregations where name = 'Solingen');
@@ -149,13 +149,12 @@ delete from messages where congregation_id =
 delete from congregations where name like '%Solingen Ohligs';
 
 alter table routes add (
-   description text,
-   map int(1)
+   description text
 );
 
 update routes set description = 'Zugangscode fuer Schluesseltresor in Solingen Mitte: 1935\n
 Das Gartenhaeuschen mit dem Tresor befindet sich hinter dem Saal.\n\n
 Die Route beginnt am Saal, geht ueber die Haltestelle Rathausplatz und dann in die Innenstadt.\n
-Dann koennen mehrere Stationen auf der Hauptstrasse gemacht werden.' , map = 1 where name = 'Route Mitte';
+Dann koennen mehrere Stationen auf der Hauptstrasse gemacht werden.' where name = 'Route Mitte';
 
-update routes set description = 'Zugangscode fuer Schluesseltresor in Solingen Ohligs: 3576\n' , map = 1 where name = 'Route Ohligs';
+update routes set description = 'Zugangscode fuer Schluesseltresor in Solingen Ohligs: 3576\n' where name = 'Route Ohligs';

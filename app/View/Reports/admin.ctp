@@ -77,7 +77,7 @@
 							'<span class="glyphicon glyphicon-pencil" ></span>'.
 						'</button>';
 						
-						echo '<button onclick="openReportAdminDismiss(' . $missingReport['Reservation']['id'] . ');" type="button" class="open-ReportDialog btn btn-danger btn-xs">'.
+						echo '<button onclick="openReportAdminDismiss(' . $missingReport['Reservation']['id'] . ');" type="button" class="btn btn-danger btn-xs">'.
 						'<span class="glyphicon glyphicon-remove" ></span>'.
 						'</button>';
 					?>
@@ -172,7 +172,7 @@ echo $this->element('report_modal', array('controller' => 'reports'));?>
         Bist du sicher, dass dieser Bericht <b>nicht abgegeben</b> werden muss? Der Verkündiger und du haben dann keine Möglichkeit mehr das nachzuholen.
 		<br/>
 		<br/>
-		<?php echo $this->Form->input('id', array('id' => 'reservationId1')); ?>
+		<?php echo $this->Form->input('id', array('id' => 'reservationId1', 'value' => '')); ?>
 		
       </div>
       <div class="modal-footer">
@@ -187,7 +187,7 @@ echo $this->element('report_modal', array('controller' => 'reports'));?>
 
 <script>
 	function openReportAdminDismiss(id) {
-		$("#reservationId1").val(id);
+		$('input[id="reservationId1"]').attr("value", id);
 		$('#reportDismissAdminModal').modal('show');
 	}
 </script>
