@@ -69,4 +69,21 @@ class Publisher extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	public $hasAndBelongsToMany = array(
+			'Reservation' =>
+			array(
+					'className' => 'Reservation',
+					'joinTable' => 'publisher_reservations',
+					'foreignKey' => 'reservation_id',
+					'associationForeignKey' => 'publisher_id',
+					'unique' => false,
+					'conditions' => '',
+					'fields' => '',
+					'order' => '',
+					'limit' => '',
+					'offset' => '',
+					'finderQuery' => ''
+			)
+	);
 }

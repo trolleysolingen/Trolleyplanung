@@ -172,6 +172,11 @@
 			max: 59
 		});
 		
+		$("input[id='publishers']").TouchSpin({
+			min: 1,
+			max: 50
+		});
+		
 		$("input[class='touch-spin']").TouchSpin({
 			min: 0,
 			max: 100,

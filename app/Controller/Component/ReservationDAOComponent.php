@@ -36,6 +36,7 @@ class ReservationDAOComponent extends Component {
 
     public function addPublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $displayTime, $publisher) {
         $model = ClassRegistry::init('Reservation');
+		$model2 = ClassRegistry::init('PublisherReservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
@@ -44,7 +45,7 @@ class ReservationDAOComponent extends Component {
                     'Reservation.congregation_id' => $congregationId,
                     'Reservation.route_id' => $routeId
                 ),
-            'recursive' => 0
+            'recursive' => 2
             )
         );
 
@@ -55,28 +56,27 @@ class ReservationDAOComponent extends Component {
             return $reservation;
         } else {
             if ($reservation != null) {
-                if ($reservation['Reservation']['publisher1_id'] == null) {
-                    $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
-                } else if ($reservation['Reservation']['publisher2_id'] == null) {
-                    $reservation['Reservation']['publisher2_id'] = $publisher['Publisher']['id'];
-                    $sendMail = true;
-                }
+                $publisherReservation['PublisherReservation']['publisher_id'] = $publisher['Publisher']['id'];
                 unset($reservation['Reservation']['modified']);
             } else {
                 $reservation['Reservation']['congregation_id'] = $publisher['Publisher']['congregation_id'];
                 $reservation['Reservation']['route_id'] = $routeId;
                 $reservation['Reservation']['day'] = $reservationDay;
                 $reservation['Reservation']['timeslot_id'] = $reservationTimeslot;
-                $reservation['Reservation']['publisher1_id'] = $publisher['Publisher']['id'];
+                $publisherReservation['PublisherReservation']['publisher_id'] = $publisher['Publisher']['id'];
             }
 
             $reservation = $model->save($reservation);
+            
+            $publisherReservation['PublisherReservation']['reservation_id'] = $reservation['Reservation']['id'];
+            $model2->create();
+            $model2->save($publisherReservation);
 
             $reservation = $model->find('first', array(
                     'conditions' => array(
                         'Reservation.id' => $reservation['Reservation']['id']
                     ),
-                    'recursive' => 0
+                    'recursive' => 2
                 )
             );
             $reservation['sendMail'] = $sendMail;
@@ -142,6 +142,7 @@ class ReservationDAOComponent extends Component {
 
     public function addGuest($congregationId, $routeId, $reservationDay, $reservationTimeslot, $displayTime, $publisher, $guestname) {
         $model = ClassRegistry::init('Reservation');
+        $model2 = ClassRegistry::init('PublisherReservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
@@ -150,7 +151,7 @@ class ReservationDAOComponent extends Component {
                     'Reservation.congregation_id' => $congregationId,
                     'Reservation.route_id' => $routeId
                 ),
-                'recursive' => 0
+                'recursive' => 2
             )
         );
 
@@ -167,22 +168,26 @@ class ReservationDAOComponent extends Component {
 
                 if (!$guestPublisher) {
                     $guestPublisher = $this->PublisherDAO->getGuestPublisher();
-                    $reservation['Reservation']['guestname'] = $guestname;
+                    $publisherReservation['PublisherReservation']['guestname'] = $guestname;
                     $sendMail = true;
                 } else if($guestPublisher['Publisher']['send_mail_when_partner']) {
 					$send_mail_when_partner = true;
 				}
 
-                $reservation['Reservation']['publisher2_id'] = $guestPublisher['Publisher']['id'];
+                $publisherReservation['PublisherReservation']['publisher_id'] = $guestPublisher['Publisher']['id'];
                 unset($reservation['Reservation']['modified']);
 
                 $reservation = $model->save($reservation);
+                
+                $publisherReservation['PublisherReservation']['reservation_id'] = $reservation['Reservation']['id'];
+                $model2->create();
+                $model2->save($publisherReservation);
 
                 $reservation = $model->find('first', array(
                         'conditions' => array(
                             'Reservation.id' => $reservation['Reservation']['id']
                         ),
-                        'recursive' => 0
+                        'recursive' => 2
                     )
                 );
             }

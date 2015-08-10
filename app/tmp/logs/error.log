@@ -5617,3 +5617,112 @@ Stack Trace:
 #3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-07-20 11:35:41 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\Trolleyplanung\app\Controller\RoutesController.php, line 106]
+2015-07-20 11:35:41 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /routes/edit/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 106)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 106, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 106, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-24 11:33:26 Error: Fatal Error (1): Call to a member function schema() on a non-object in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php, line 3627]
+2015-07-24 11:33:26 Error: [FatalErrorException] Call to a member function schema() on a non-object
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 3627)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 3627, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 3627, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-24 14:51:58 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [C:\xampp\htdocs\Trolleyplanung\app\View\Reservations\index.ctp, line 192]
+2015-07-24 14:51:58 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 192)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 192, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 192, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-10 14:16:00 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 43094051 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-10 14:16:00 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 43094051 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-10 14:17:20 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 52648322 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-10 14:17:20 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 52648322 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-10 14:34:27 Error: Fatal Error (4): syntax error, unexpected 'i' (T_STRING) in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\reservation_entry.ctp, line 51]
+2015-08-10 14:34:27 Error: [FatalErrorException] syntax error, unexpected 'i' (T_STRING)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 51)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 51, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 51, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-10 14:35:30 Error: Fatal Error (4): syntax error, unexpected 'i' (T_STRING) in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\reservation_entry.ctp, line 51]
+2015-08-10 14:35:30 Error: [FatalErrorException] syntax error, unexpected 'i' (T_STRING)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 51)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 51, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 51, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-10 14:36:06 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 43780092 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-10 14:36:06 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 43780092 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-10 14:39:13 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\Trolleyplanung\app\View\Elements\reservation_entry.ctp, line 38]
+2015-08-10 14:39:13 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 38, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 38, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-10 14:48:18 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Publish...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Publish...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1441): DboSource->fetchAll('SELECT `Publish...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1292): DboSource->_fetchHasAndBelongsToMany(Object(Reservation), 'SELECT `Publish...', Array, 'Publisher')
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1137): DboSource->queryAssociation(Object(Reservation), Object(Publisher), 'hasAndBelongsTo...', 'Publisher', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(32): Model->find('all', Array)
+#9 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(50): ReservationDAOComponent->getReservationsInTimeRange(1439157600, '2', '1')
+#10 [internal function]: ReservationsController->index('1')
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#14 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}

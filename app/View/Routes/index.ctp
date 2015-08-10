@@ -29,6 +29,10 @@
 								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs">Tage festlegen</span></button>', array('controller' => 'dayslots', 'action' => 'index', $route['Route']['id']), array('escape' => false, 'title' => 'Tage festlegen'));
 								echo "&nbsp;&nbsp;";
 								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs">Schichtzeiten festlegen</span></button>', array('controller' => 'timeslots', 'action' => 'index', $route['Route']['id']), array('escape' => false, 'title' => 'Schichtzeiten festlegen'));
+								echo "&nbsp;&nbsp;";
+								echo '<button data-toggle="modal" data-target="#publisherModal" type="button" data-data="' . $route['Route']['id'] . '" class="open-Dialog btn btn-default btn-xs">';
+								echo 'Karte hinzufügen';
+								echo '</button>';
 								if(glob("img/routes/route_" . $route['Route']['id'] . ".*")) { 
 									echo "&nbsp;&nbsp;";
 									$file = glob('img/routes/route_' . $route['Route']['id'] . '.*');
@@ -140,23 +144,23 @@
 </div>
 
 <!-- Routes Modal -->
-	<div class="modal fade" id="routeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-		 aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-							class="sr-only">Close</span></button>
-					<h4 class="modal-title" id="myModalLabel">Karte der Route</h4>
-				</div>
-				<div class="modal-body">
-					<img src="" id="route" alt="Map" class="img-rounded col-xs-12"><br/>
-				</div>
-				<div class="modal-footer">
-					<div class="btn-group">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-					</div>
+<div class="modal fade" id="routeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	 aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+						class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">Karte der Route</h4>
+			</div>
+			<div class="modal-body">
+				<img src="" id="route" alt="Map" class="img-rounded col-xs-12"><br/>
+			</div>
+			<div class="modal-footer">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>

@@ -14,6 +14,7 @@ class HelpController extends AppController {
 		if (!$publisher) {
 			return $this->redirect(array('controller' => 'start', 'action' => 'index'));
 		}
+		$this->set("publisher", $publisher);
 	}
 	/**
 	 * index method
