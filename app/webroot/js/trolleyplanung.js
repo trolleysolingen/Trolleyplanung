@@ -87,13 +87,19 @@ function addPublisher(reservationDay, reservationTimeslot, displayTime) {
 function deletePublisher() {
 	var reservationDay = $("#deleteReservationDay").val(); 
 	var reservationTimeslot = $("#deleteReservationTimeslot").val(); 
-    var deleteBoth = $("#deletePartner").is(":checked");
 	
-    var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, deleteBoth: deleteBoth };
+	var checkboxes = document.querySelectorAll('input[name="partner"]:checked'), values = [];
+    Array.prototype.forEach.call(checkboxes, function(el) {
+        values.push(el.value);
+    });
+    
+    values.push($("#deletePublisherId").val());
+    console.log(values);
+	
+    var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, deletePartners: values };
     ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/deletePublisher.json", data);
 	
 	$('#deleteModal').modal('hide');
-	$('#deletePartner').prop('checked', false);
 }
 
 function addGuest(reservationDay, reservationTimeslot, displayTime) {
@@ -170,7 +176,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 			html += "<div class='hidden-xs'>";
 			
 			if (reservation.Publisher[i].id == publisher.Publisher.id) {
-				html += " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" + reservationDay + "\"," + reservationTimeslot + ", " +  (reservation.Publisher.length > 1 ? "true" : "false") + ");'><span class='glyphicon glyphicon-remove'></span></a>";
+				html += " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-remove'></span></a>";
 			}
 			
 			html += "</div>";
@@ -178,7 +184,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 			html += "<div class='btn-group'>";
 			
 	        if (me) {
-	            html += " <a href='javascript:void(0)' class='btn btn-danger btn-sm' onclick='showDeleteModal(\"" + reservationDay + "\"," + reservationTimeslot + ", " +  (reservation.Publisher.length > 1 ? "true" : "false") + ");'><span class='glyphicon glyphicon-remove'></span></a>";
+	            html += " <a href='javascript:void(0)' class='btn btn-danger btn-sm' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-remove'></span></a>";
 	        }
 	        
 			html += "</div>";
@@ -195,7 +201,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
                 $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).attr('class', 'warning');
             });
 		}
-		if(reservation.Route.publishers == reservation.Publisher.length) {
+		if(reservation.Route.publishers <= reservation.Publisher.length) {
 			$.each(displaySizes, function( index, displaySize ) {
     			$('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).attr('class', 'danger');
             });
@@ -262,15 +268,51 @@ function displayError(reservationDay, reservationTimeslot, errorMsg) {
     });
 }
 
-function showDeleteModal(reservationDay, reservationTimeslot, showCheckbox) {
+function showDeleteModal(reservation, publisherId, reservationDay, reservationTimeslot) {
 	html = '<input type="hidden" id="deleteReservationDay" value=' + reservationDay + '></input>';
 	html += '<input type="hidden" id="deleteReservationTimeslot" value=' + reservationTimeslot + '></input>';
 	
+	reservation = JSON.parse(reservation);
+	
 	$('#hiddenParams').html(html);
-	if(showCheckbox) {
-		$("#partnerCheckbox").attr('style', '');
-	} else {
-		$("#partnerCheckbox").attr('style', 'display:none');
+	$("#partnerCheckboxes").html('');
+	
+	if(reservation.Publisher.length > 1) {
+		html = 'Falls du auch <b>Partner löschen</b> willst, wähle diese bitte aus um mit zu löschen.';
+		html += '</br>';
+		html += '</br>';
+	}
+	
+	$("#partnerCheckboxes").html(html);
+	
+	for(i = 0; i < reservation.Publisher.length; ++i) {
+		if(reservation.Publisher[i].id != publisherId) {
+			// create the necessary elements
+			var label= document.createElement("label");
+			var desc;
+			
+			if (reservation.Publisher[i].role_id == 3) {
+				desc = reservation.PublisherReservation[i].guestname;
+			} else {
+				desc = reservation.Publisher[i].prename + ' ' + reservation.Publisher[i].surname;
+			}
+			var description = document.createTextNode(desc);
+			var checkbox = document.createElement("input");
+			var br = document.createElement('br');
+
+			checkbox.type = "checkbox";    // make the element a checkbox
+			checkbox.name = "partner";      // give it a name we can check on the server side
+			checkbox.value = reservation.PublisherReservation[i].id;         // make its value "pair"
+
+			label.appendChild(checkbox);   // add the box to the element
+			label.appendChild(description);// add the description to the element
+
+			// add the label element to your div
+			document.getElementById('partnerCheckboxes').appendChild(label);
+			document.getElementById('partnerCheckboxes').appendChild(br);
+		} else {
+			$('#hiddenParams').append('<input type="hidden" id="deletePublisherId" value=' + reservation.PublisherReservation[i].id + '></input>')
+		}
 	}
 	
 	$('#deleteModal').modal('show');
@@ -304,4 +346,8 @@ function ajaxCallCongregationReportDate(congregationId, url, data) {
             }
         });
     }
+}
+
+function addslashes( str ) {
+    return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 }

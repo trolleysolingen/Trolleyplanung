@@ -29,7 +29,7 @@ if ($reservationTmp != null) {
     if (count($reservationTmp['Publisher']) > 0 && count($reservationTmp['Publisher']) < $reservationTmp['Route']['publishers']) {
         $tdstyle = "warning";
     }
-    if (count($reservationTmp['Publisher']) == $reservationTmp['Route']['publishers']) {
+    if (count($reservationTmp['Publisher']) >= $reservationTmp['Route']['publishers']) {
         $tdstyle = "danger";
     }
     if ($me) {
@@ -63,14 +63,14 @@ if ($reservationTmp == null) {
             echo $reservationPublisher['prename'] . ' ' . $reservationPublisher['surname'];
         }
 		
-		if(count($reservationPublisher) == $i+1 && $reservationTmp['Route']['publishers'] > count($reservationPublisher)) {
+		if(count($reservationTmp['Publisher']) == $i+1 && $reservationTmp['Route']['publishers'] > count($reservationTmp['Publisher'])) {
 			if($me) {
 				echo "<div id='guestDiv_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>".
                 "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" .
                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime .
                 "\");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;' ></span> Partner</a>" . '</div>';
 			} else {
-				echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
+				echo "<br/><a href='javascript:void(0)' onclick='addPublisher(\"" .
                 $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
 			}
 		}
@@ -81,8 +81,11 @@ if ($reservationTmp == null) {
 		
 		if($reservationPublisher['id'] == $publisher['Publisher']['id']) {
 			 echo " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" .
-                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-                ", " . (count($reservationPublisher) > 1 ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>";
+                addslashes (json_encode($reservationTmp)) . "\", \"" . 
+                $publisher['Publisher']['id'] . "\", \"" .
+                $dateTmp->format('Y-m-d') . "\", " . 
+                $timeslots[$slot]['Timeslot']['id'] .
+                ", " . (count($reservationTmp['Publisher']) > 1 ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>";
 		} else {
 			if($reservationPublisher['phone'] != null) {
 				$tel = $reservationPublisher['phone'];
@@ -97,8 +100,11 @@ if ($reservationTmp == null) {
 		
 		if($me) {
 			echo " <a href='javascript:void(0)' class='btn btn-danger btn-sm' onclick='showDeleteModal(\"" .
-                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] .
-                ", " . (count($reservationPublisher) > 1 ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>"; 
+                addslashes (json_encode($reservationTmp)) . "\", \"" . 
+                $publisher['Publisher']['id'] . "\", \"" .
+                $dateTmp->format('Y-m-d') . "\", " . 
+                $timeslots[$slot]['Timeslot']['id'] .
+                ", " . (count($reservationTmp['Publisher']) > 1 ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>"; 
 		}
 		
 		echo "</div>";

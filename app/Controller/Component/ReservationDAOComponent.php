@@ -87,8 +87,9 @@ class ReservationDAOComponent extends Component {
     }
 
 
-    public function deletePublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $publisher, $deleteBoth) {
+    public function deletePublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $publisher, $deletePartners) {
         $model = ClassRegistry::init('Reservation');
+        $model2 = ClassRegistry::init('PublisherReservation');
 
         $reservation = $model->find('first', array(
                 'conditions' => array(
@@ -97,42 +98,37 @@ class ReservationDAOComponent extends Component {
                     'Reservation.congregation_id' => $congregationId,
                     'Reservation.route_id' => $routeId
                 ),
-                'recursive' => -1
+                'recursive' => 2
             )
         );
 
         $sendMail = false;
 
         if ($reservation != null) {
-
-            if (!$deleteBoth &&
-                $reservation['Reservation']['publisher1_id'] != null &&
-                $reservation['Reservation']['publisher2_id'] != null ) {
-
-                if ($reservation['Reservation']['publisher1_id'] == $publisher['Publisher']['id']) {
-                    // delete publisher1 and put publisher2 to publisher1
-                    $reservation['Reservation']['publisher1_id'] = $reservation['Reservation']['publisher2_id'];
-                    $reservation['Reservation']['publisher2_id'] = null;
-                } else if ($reservation['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
-                    $reservation['Reservation']['publisher2_id'] = null;
-                }
-                unset($reservation['Reservation']['modified']);
-
-                $reservation = $model->save($reservation);
-
-                $reservation = $model->find('first', array(
-                        'conditions' => array(
-                            'Reservation.id' => $reservation['Reservation']['id']
-                        ),
-                        'recursive' => 0
-                    )
-                );
-                $sendMail = true;
-            } else {
-                $model->delete($reservation['Reservation']['id']);
-                $reservation = null;
-            }
-        }
+        	foreach($deletePartners as $deleteId) {
+        		$model2->delete($deleteId);
+        	}
+        	
+        	$leftReservations = $model2->find('all', array(
+        			'conditions' => array(
+        				'PublisherReservation.reservation_id' => $reservation['Reservation']['id']
+        			),
+        		)
+        	);
+        	
+        	if(empty($leftReservations)) {
+	            $model->delete($reservation['Reservation']['id']);
+	            $reservation = null;
+        	} else {
+        		$reservation = $model->find('first', array(
+        				'conditions' => array(
+        						'Reservation.id' => $reservation['Reservation']['id']
+        				),
+        				'recursive' => 2
+        			)
+        		);
+        	}
+		}
 
         $reservation['sendMail'] = $sendMail;
         // debug($reservation);

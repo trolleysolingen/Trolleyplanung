@@ -150,7 +150,7 @@ class ReservationsController extends AppController {
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
 				$publisher,
-				$this->request->data['deleteBoth'] == 'true');
+				$this->request->data['deletePartners']);
 				
 				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				if (strpos($actual_link,'trolleydemo') === false) {

@@ -6,9 +6,7 @@ create table publisher_reservations (
   `id` INT NOT NULL AUTO_INCREMENT,
   `publisher_id` INT NOT NULL,
   `reservation_id` INT NOT NULL,
-  `guestname` VARCHAR(100) NULL,
-  created datetime NULL,
-  modified datetime NULL,
+  `guestname` VARCHAR(100) NULL
   PRIMARY KEY (`id`),
   INDEX `fk_publisher_reservations_idx` (`publisher_id` ASC),
   CONSTRAINT `fk_publisher_reservations`

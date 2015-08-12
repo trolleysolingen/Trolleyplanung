@@ -240,11 +240,8 @@
 						<div id="hiddenParams">
 
 						</div>
-						<div class="checkbox" id="partnerCheckbox">
-							<label>
-								<input id="deletePartner" type="checkbox"> Meinen Parter ebenfalls aus der Schicht
-								löschen
-							</label>
+						<div class="checkbox" id="partnerCheckboxes">
+
 						</div>
 					</div>
 					<div class="modal-footer" id="deleteModalBody">
