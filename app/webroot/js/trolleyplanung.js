@@ -94,7 +94,6 @@ function deletePublisher() {
     });
     
     values.push($("#deletePublisherId").val());
-    console.log(values);
 	
     var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, deletePartners: values };
     ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/deletePublisher.json", data);
