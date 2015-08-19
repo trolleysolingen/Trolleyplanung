@@ -197,34 +197,24 @@ class ReservationDAOComponent extends Component {
     }
 	
 	public function getMissingReports($publisher) {
-		$model = ClassRegistry::init('Reservation');
-
-        $result= $model->find('all', array(
-			'conditions' => array(
-					'OR' => array(
-						'AND' => array(
-							array('Reservation.publisher1_id' => $publisher['Publisher']['id']),
-							array('Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\''),
-							array('Reservation.report_necessary' => 1),
-							array('Reservation.books' => null)
-						),
-						'OR' => array(
-							array(
-								'AND' => array(
-									array('Reservation.publisher2_id' => $publisher['Publisher']['id']),
-									array('Reservation.day between \'' . $publisher['Congregation']['report_start_date'] . '\' and \'' . date("Y-m-d") . '\''),
-									array('Reservation.report_necessary' => 1),
-									array('Reservation.books' => null)
-								)
-							)
-						)
-					)
-				),
-            'order' => array('Reservation.day', 'Reservation.timeslot_id'),
-            'recursive' => 0
-            )
-        );
-		return $result;
+		$model = ClassRegistry::init('PublisherReservation');
+		
+		$allReports = $this->getMissingCongregationReports($publisher);
+		
+		foreach($allReports as $key => $reservation) {
+			$publisherReservation = $model->find('first', array(
+					'conditions' => array(
+						'PublisherReservation.reservation_id' => $reservation['Reservation']['id'],
+						'PublisherReservation.publisher_id' => $publisher['Publisher']['id']
+					),
+				)
+			);
+			
+			if(empty($publisherReservation)) {
+				unset($allReports[$key]);
+			}
+		}
+		return $allReports;
 	}
 	
 	public function getGivenReports($publisher) {
@@ -238,7 +228,7 @@ class ReservationDAOComponent extends Component {
 					'Reservation.minutes !=' => null
                 ),
             'order' => array('Reservation.day', 'Reservation.timeslot_id'),
-            'recursive' => 0
+            'recursive' => 2
             )
         );
 		return $result;
@@ -255,7 +245,7 @@ class ReservationDAOComponent extends Component {
 					'Reservation.minutes' => null
                 ),
             'order' => array('Reservation.day', 'Reservation.timeslot_id'),
-            'recursive' => 0
+            'recursive' => 2
             )
         );
 		return $result;

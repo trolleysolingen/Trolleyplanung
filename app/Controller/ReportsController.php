@@ -216,46 +216,31 @@ class ReportsController extends AppController {
 		}
 	}
 	
-	public function remindPublisher($id1, $id2, $reservationId, $oneTime) {
+	public function remindPublisher($publishers, $reservationId, $oneTime) {
 	
+		if($oneTime) {
+			$publishers = unserialize($publishers);
+		}
 		$success = true;
-	
-		$publisher = $this->Session->read('publisher');
-		
-		$publisher1 = $this->PublisherDAO->getByRealId($id1);
-		
 		$reservation = $this->ReservationDAO->getByRealId($reservationId);
 		
-		$subject = "Fehlender Bericht";
-		$message1 = "Liebe(r) " . $publisher1["Publisher"]["prename"] . " " . $publisher1["Publisher"]["surname"] . ",\n"
-		."\n"
-		."Bitte gib einen Bericht für deine Trolleyschicht am " . date("d.m.Y", strtotime($reservation['Reservation']['day'])) . " von " . $reservation['Timeslot']['start'] . " - " . $reservation['Timeslot']['end'] . " Uhr ab. Bitte sprecht euch untereinander ab, ob du oder dein Partner den Bericht abgibt. Weitere Informationen findest du, wenn du dich in die Trolleyverwaltung unter: http://trolley.jw-center.com/ einloggst.\n"
-		."Vielen Dank!\n"
-		."\n"
-		."Deine Trolleyverwaltung";
-		
-		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		if (strpos($actual_link,'trolleydemo') === false) {
-			if (strpos($publisher1["Publisher"]["email"], "@demo.de") === false) {
-				$success = $this->sendMail($publisher1["Publisher"]["email"], $subject, $message1);
-			}
+		foreach ($publishers as $reservationPublisher) {
+			$subject = "Fehlender Bericht";
+			$message = "Liebe(r) " . $reservationPublisher["prename"] . " " . $reservationPublisher["surname"] . ",\n"
+					."\n"
+					."Bitte gib einen Bericht für deine Trolleyschicht am " . date("d.m.Y", strtotime($reservation['Reservation']['day'])) . " von " . $reservation['Timeslot']['start'] . " - " . $reservation['Timeslot']['end'] . " Uhr ab. Bitte sprecht euch untereinander ab, ob du oder dein Partner den Bericht abgibt. Weitere Informationen findest du, wenn du dich in die Trolleyverwaltung unter: http://trolley.jw-center.com/ einloggst.\n"
+							."Vielen Dank!\n"
+									."\n"
+											."Deine Trolleyverwaltung";
 			
-			$publisher2 = $this->PublisherDAO->getByRealId($id2);
-			
-			if($id2 != 0 && $id2 != 1 && !empty($publisher2["Publisher"]["email"])) {
-				
-				$message2 = "Liebe(r) " . $publisher2["Publisher"]["prename"] . " " . $publisher2["Publisher"]["surname"] . ",\n"
-				."\n"
-				."Bitte gib einen Bericht für deine Trolleyschicht am " . date("d.m.Y", strtotime($reservation['Reservation']['day'])) . " von " . $reservation['Timeslot']['start'] . " - " . $reservation['Timeslot']['end'] . " Uhr ab. Bitte sprecht euch untereinander ab, ob du oder dein Partner den Bericht abgibt. Weitere Informationen findest du, wenn du dich in die Trolleyverwaltung unter: http://trolley.jw-center.com/ einloggst.\n"
-				."Vielen Dank!\n"
-				."\n"
-				."Deine Trolleyverwaltung";
-				
-				if (strpos($publisher2["Publisher"]["email"], "@demo.de") === false) {
-					$success = $this->sendMail($publisher2["Publisher"]["email"], $subject, $message2);
+			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			if (strpos($actual_link,'trolleydemo') === false) {
+				if (strpos($reservationPublisher["email"], "@demo.de") === false) {
+					$success = $this->sendMail($reservationPublisher["email"], $subject, $message1);
 				}
 			}
 		}
+		
 		if($oneTime) {
 			if(!$success) {
 				$this->Session->setFlash('Die Erinnerung konnte nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
@@ -393,13 +378,7 @@ class ReportsController extends AppController {
 		if (strpos($actual_link,'trolleydemo') === false) {
 			$error = 0;
 			foreach ($missingCongregationReportList as $reportToSendAccount) {
-				if($reportToSendAccount['Reservation']['publisher2_id'] == null) {
-					$id2 = 0;
-				} else {
-					$id2 = $reportToSendAccount['Reservation']['publisher2_id'];
-				}
-				$success = $this->remindPublisher($reportToSendAccount['Reservation']['publisher1_id'], $id2, $reportToSendAccount['Reservation']['id'], false);
-				
+				$success = $this->remindPublisher($reportToSendAccount['Publisher'], $reportToSendAccount['Reservation']['id'], false);
 				if(!$success) {
 					$error++;
 				}

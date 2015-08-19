@@ -37,7 +37,7 @@ if ($reservationTmp != null) {
     }
 }
 
-echo "<td id='td_" . $td_id . "_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "' class='" . $tdstyle . "'>";
+echo "<td id='td_" . $td_id . "_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "' class='" . $tdstyle . "' style='max-width:0'>";
 
 if ($reservationTmp == null) {
 	echo "<div class='row'>";
@@ -76,7 +76,6 @@ if ($reservationTmp == null) {
 		}
 		
 		echo "</div>";
-		echo "<div class='hidden-xs'>";
 		echo "<div class='col-sm-2' style='padding-right: 10px;'>";
 		
 		if($reservationPublisher['id'] == $publisher['Publisher']['id']) {
@@ -94,21 +93,6 @@ if ($reservationTmp == null) {
             }
 		}
 		
-		echo "</div>";
-		echo "<div class='visible-xs-block' style='margin-top:-15px; margin-left: -10px;'>";
-		echo "<div class='btn-group'>";
-		
-		if($me) {
-			echo " <a href='javascript:void(0)' class='btn btn-danger btn-sm' onclick='showDeleteModal(\"" .
-                addslashes (json_encode($reservationTmp)) . "\", \"" . 
-                $publisher['Publisher']['id'] . "\", \"" .
-                $dateTmp->format('Y-m-d') . "\", " . 
-                $timeslots[$slot]['Timeslot']['id'] .
-                ", " . (count($reservationTmp['Publisher']) > 1 ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>"; 
-		}
-		
-		echo "</div>";
-		echo "</div>";
 		echo "</div>";
 		echo "</div>";
 		echo "</div>";

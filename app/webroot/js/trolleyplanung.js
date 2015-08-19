@@ -94,7 +94,6 @@ function deletePublisher() {
     });
     
     values.push($("#deletePublisherId").val());
-    console.log(values);
 	
     var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, deletePartners: values };
     ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/deletePublisher.json", data);
@@ -173,22 +172,11 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 			
 			html += "</div>";
 			html += "<div class='col-sm-2' style='padding-right: 10px;'>";
-			html += "<div class='hidden-xs'>";
 			
 			if (reservation.Publisher[i].id == publisher.Publisher.id) {
 				html += " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-remove'></span></a>";
 			}
 			
-			html += "</div>";
-			html += "<div class='visible-xs-block' style='margin-top:-15px;'>";
-			html += "<div class='btn-group'>";
-			
-	        if (me) {
-	            html += " <a href='javascript:void(0)' class='btn btn-danger btn-sm' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-remove'></span></a>";
-	        }
-	        
-			html += "</div>";
-			html += "</div>";
 			html += "</div>";
 			html += "</div>";
 			html += "</div>";

@@ -123,9 +123,6 @@
 		$(document).on("click", ".open-ReportDialog", function () {
 			 var data = $(this).data('date');
 			 $(".modal-body #date").html( data );
-			 
-			 var data = $(this).data('partner');
-			 $(".modal-body #partner").html( data );
 		});
 		
 		// This entire section makes Bootstrap Modals work with iOS

@@ -27,17 +27,20 @@
 				$since_start = $start_date->diff(new DateTime('2014-01-01 ' . $missingReport['Timeslot']['end'] . ':00'));
 				$calcHours = $since_start->h;
 				$calcMinutes =  $since_start->i;
-			
-				if($missingReport['Reservation']['publisher1_id'] == $publisher['Publisher']['id'] && $missingReport['Reservation']['publisher2_id'] != null) {
-					if($missingReport['Reservation']['publisher2_id'] == 1) {
-						$partner = $missingReport['Reservation']['guestname'];
-					} else {
-						$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
-					}
-				} else if($missingReport['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
-					$partner = $missingReport['Publisher1']['prename'] . " " . $missingReport['Publisher1']['surname'];
+				$partner = array();
+				
+				if(count($missingReport['Publisher']) <= 1) {
+					$partner[] = "-";
 				} else {
-					$partner = "-";
+					foreach($missingReport['Publisher'] as $reservationPublisher) {
+						if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
+							if($reservationPublisher['id'] == 1) {
+								$partner[] = $reservationPublisher['PublisherReservation']['guestname'];
+							} else {
+								$partner[] = $reservationPublisher['prename'] . " " . $reservationPublisher['surname'];
+							}
+						}
+					}
 				}
 				
 				$buttonclass = "btn-default";
@@ -51,14 +54,19 @@
 				
 				$date = date("d.m.Y", strtotime($missingReport['Reservation']['day'])) . ": " . $missingReport['Timeslot']['start'] . " - " . $missingReport['Timeslot']['end'];
 			
-				echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" data-partner="' . $partner . '" class="open-ReportDialog btn ' . $buttonclass . ' col-xs-10 cut-div-text" style="margin-bottom: 10px;">'.
-					$date . "<br/>".
-					"Partner: " . $partner.
-				'</button>';
+				echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" class="open-ReportDialog btn ' . $buttonclass . ' col-xs-10 cut-div-text" style="margin-bottom: 10px;">'.
+					$date;
+				foreach($partner as $partnerPublisher) {
+					echo "<br/>Partner: " . $partnerPublisher;
+				}
+				echo '</button>';
 				
-				echo '<button onclick="openReportDismiss(' . $missingReport['Reservation']['id'] . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" data-partner="' . $partner . '" class="open-ReportDialog btn btn-danger col-xs-2" style="margin-bottom: 10px;">'.
-				"<br/><span class='glyphicon glyphicon-remove' style='margin-top: -25px;'></span>".
-				'</button>';
+				echo '<button onclick="openReportDismiss(' . $missingReport['Reservation']['id'] . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" class="open-ReportDialog btn btn-danger col-xs-2" style="margin-bottom: 10px;">';
+				echo "<span class='glyphicon glyphicon-remove'></span><br/>";
+				foreach($partner as $partnerPublisher) {
+					echo "<br/>";
+				}
+				echo '</button>';
 			?>
 	</div>
 	<?php } ?>

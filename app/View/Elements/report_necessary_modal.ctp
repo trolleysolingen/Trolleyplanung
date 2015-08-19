@@ -11,7 +11,7 @@
 		<div class="error alert alert-danger" role="alert" id="reportDismissInfo">
 			
 		</div>
-        Kannst du deinen Bericht für den <b><span id="date" name="date"></span> Uhr</b> mit dem Partner: <b><span id="partner" name="partner"></span></b> aus irgendeinem Grund nicht abgeben, weil du z.B. die Schicht nicht wahrgenommen hast, schreibe eine kurze Begründung und der Versammlungsadmin bekommt eine Info darüber.
+        Kannst du deinen Bericht für den <b><span id="date" name="date"></span> Uhr</b> aus irgendeinem Grund nicht abgeben, weil du z.B. die Schicht nicht wahrgenommen hast, schreibe eine kurze Begründung und der Versammlungsadmin bekommt eine Info darüber.
 		<br/>
 		<br/>
 		<?php echo $this->Form->input('id', array('id' => 'reservationId2')); ?>

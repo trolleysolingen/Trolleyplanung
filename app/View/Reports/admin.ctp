@@ -31,7 +31,6 @@
 			<th>Datum</th>
 			<th>Schicht</th>
 			<th>Verkündiger</th>
-			<th>Partner</th>
 			<th>Aktionen</th>
 		</tr>
 		</thead>
@@ -44,15 +43,14 @@
 			$since_start = $start_date->diff(new DateTime('2014-01-01 ' . $missingReport['Timeslot']['end'] . ':00'));
 			$calcHours = $since_start->h;
 			$calcMinutes =  $since_start->i;
-				
-			if($missingReport['Reservation']['publisher2_id'] != null) {
-				if($missingReport['Reservation']['publisher2_id'] == 1) {
-					$partner = $missingReport['Reservation']['guestname'];
+			$partner = array();
+			
+			foreach($missingReport['Publisher'] as $reservationPublisher) {
+				if($reservationPublisher['id'] == 1) {
+					$partner[] = $reservationPublisher['PublisherReservation']['guestname'];
 				} else {
-					$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
+					$partner[] = $reservationPublisher['prename'] . " " . $reservationPublisher['surname'];
 				}
-			} else {
-				$partner = "-";
 			}
 			
 			$date = date("d.m.Y", strtotime($missingReport['Reservation']['day'])) . ": " . $missingReport['Timeslot']['start'] . " - " . $missingReport['Timeslot']['end'];
@@ -67,13 +65,18 @@
 			<tr>
 				<td><?php echo date("d.m.Y", strtotime($missingReport['Reservation']['day'])); ?>&nbsp;</td>
 				<td><?php echo $missingReport['Timeslot']['start'] . " - " . $missingReport['Timeslot']['end']; ?>&nbsp;</td>
-				<td><?php echo $missingReport['Publisher1']['prename'] . " " . $missingReport['Publisher1']['surname']; ?>&nbsp;</td>
-				<td><?php echo $partner; ?>&nbsp;</td>
+				<td>
+					<?php 
+						foreach ($partner as $reservationPartner) {
+							echo $reservationPartner . "<br/>";
+						} 
+					?>
+				</td>
 				<td class="actions">
 					<?php
-						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs" style="margin-right: 5px;"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'remindPublisher', $missingReport['Reservation']['publisher1_id'], $id2, $missingReport['Reservation']['id'], true), array('escape' => false, 'title' => 'Verkündiger erinnern'));
+						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs" style="margin-right: 5px;"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'remindPublisher', serialize($missingReport['Publisher']), $missingReport['Reservation']['id'], true), array('escape' => false, 'title' => 'Verkündiger erinnern'));
 					
-						echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" data-partner="' . $partner . '" class="open-ReportDialog btn btn-xs btn-success" style="margin-right: 5px;">'.
+						echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" class="open-ReportDialog btn btn-xs btn-success" style="margin-right: 5px;">'.
 							'<span class="glyphicon glyphicon-pencil" ></span>'.
 						'</button>';
 						

@@ -1,9 +1,4 @@
 <?php
-echo "<div class='error alert alert-danger' role='alert'></div>";
-echo "<table class='table table-striped table-hover'>";
-echo "<tr>";
-echo "<td></td>";
-
 $displayedWeekDays = array();
 foreach ($weekDays as $weekDay) {
 	if($weekDay != "null"){
@@ -13,6 +8,11 @@ foreach ($weekDays as $weekDay) {
 
 //calc the td width
 $tdWidth = 100 / (sizeof($displayedWeekDays) + 1);
+
+echo "<div class='error alert alert-danger' role='alert'></div>";
+echo "<table class='table table-striped table-hover'>";
+echo "<tr>";
+echo "<td style='width:" . $tdWidth . "%;'></td>";
 
 for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
 	$echoDate->add(new DateInterval('P1D'));

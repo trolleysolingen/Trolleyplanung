@@ -11,7 +11,7 @@
 		<div class="error alert alert-danger" role="alert" id="reportInfo">
 			
 		</div>
-        Dein Bericht für den <b><span id="date" name="date"></span> Uhr</b> mit dem Partner: <b><span id="partner" name="partner"></span></b>
+        Dein Bericht für den <b><span id="date" name="date"></span> Uhr</b>
 		<br/>
 		<br/>
 		<?php echo $this->Form->input('id', array('id' => 'reservationId1')); ?>

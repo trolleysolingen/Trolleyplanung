@@ -25,17 +25,20 @@
 			$since_start = $start_date->diff(new DateTime('2014-01-01 ' . $missingReport['Timeslot']['end'] . ':00'));
 			$calcHours = $since_start->h;
 			$calcMinutes =  $since_start->i;
-				
-			if($missingReport['Reservation']['publisher1_id'] == $publisher['Publisher']['id'] && $missingReport['Reservation']['publisher2_id'] != null) {
-				if($missingReport['Reservation']['publisher2_id'] == 1) {
-					$partner = $missingReport['Reservation']['guestname'];
-				} else {
-					$partner = $missingReport['Publisher2']['prename'] . " " . $missingReport['Publisher2']['surname'];
-				}
-			} else if($missingReport['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
-				$partner = $missingReport['Publisher1']['prename'] . " " . $missingReport['Publisher1']['surname'];
+			
+			$partner = array();
+			if(count($missingReport['Publisher']) <= 1) {
+				$partner[] = "-";
 			} else {
-				$partner = "-";
+				foreach($missingReport['Publisher'] as $reservationPublisher) {
+					if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
+						if($reservationPublisher['id'] == 1) {
+							$partner[] = $reservationPublisher['PublisherReservation']['guestname'];
+						} else {
+							$partner[] = $reservationPublisher['prename'] . " " . $reservationPublisher['surname'];
+						}
+					}
+				}
 			}
 				
 			if($missingReport['Reservation']['report_necessary'] && $missingReport['Reservation']['no_report_reason'] != null) {
@@ -51,14 +54,19 @@
 			<tr class="<?php echo $rowClass; ?>">
 				<td><?php echo date("d.m.Y", strtotime($missingReport['Reservation']['day'])); ?>&nbsp;</td>
 				<td><?php echo $missingReport['Timeslot']['start'] . " - " . $missingReport['Timeslot']['end']; ?>&nbsp;</td>
-				<td><?php echo $partner; ?>&nbsp;</td>
+				<td><?php 
+						foreach ($partner as $reservationPartner) {
+							echo $reservationPartner . "<br/>";
+						} 
+					?>
+				</td>
 				<td class="actions">
 					<?php
-						echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" data-partner="' . $partner . '" class="open-ReportDialog btn btn-xs btn-success" style="margin-right: 10px;">'.
+						echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" class="open-ReportDialog btn btn-xs btn-success" style="margin-right: 10px;">'.
 							'<span class="glyphicon glyphicon-pencil" ></span>'.
 						'</button>';
 						
-						echo '<button onclick="openReportDismiss(' . $missingReport['Reservation']['id'] . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" data-partner="' . $partner . '" class="open-ReportDialog btn btn-danger btn-xs">'.
+						echo '<button onclick="openReportDismiss(' . $missingReport['Reservation']['id'] . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" class="open-ReportDialog btn btn-danger btn-xs">'.
 						'<span class="glyphicon glyphicon-remove" ></span>'.
 						'</button>';
 					?>
@@ -108,13 +116,20 @@
 
 					<tbody>
 
-					<?php foreach ($givenReportList as $givenReport): 							
-						if($givenReport['Reservation']['publisher1_id'] == $publisher['Publisher']['id'] && $givenReport['Reservation']['publisher2_id'] != null) {
-							$partner = $givenReport['Publisher2']['prename'] . " " . $givenReport['Publisher2']['surname'];
-						} else if($givenReport['Reservation']['publisher2_id'] == $publisher['Publisher']['id']) {
-							$partner = $givenReport['Publisher1']['prename'] . " " . $givenReport['Publisher1']['surname'];
+					<?php foreach ($givenReportList as $givenReport): 
+						$partner = array();
+						if(count($givenReport['Publisher']) <= 1) {
+							$partner[] = "-";
 						} else {
-							$partner = "-";
+							foreach($givenReport['Publisher'] as $reservationPublisher) {
+								if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
+									if($reservationPublisher['id'] == 1) {
+										$partner[] = $reservationPublisher['PublisherReservation']['guestname'];
+									} else {
+										$partner[] = $reservationPublisher['prename'] . " " . $reservationPublisher['surname'];
+									}
+								}
+							}
 						}
 						
 						settype($givenReport['Reservation']['minutes'], 'integer');
@@ -135,7 +150,13 @@
 						<tr>
 							<td><?php echo date("d.m.Y", strtotime($givenReport['Reservation']['day'])); ?>&nbsp;</td>
 							<td><?php echo $timespan; ?>&nbsp;</td>
-							<td><?php echo $partner; ?>&nbsp;</td>
+							<td>
+								<?php 
+									foreach ($partner as $reservationPartner) {
+										echo $reservationPartner . "<br/>";
+									} 
+								?>
+							</td>
 							<td><?php echo date("d.m.Y", strtotime($givenReport['Reservation']['report_date'])); ?>&nbsp;</td>
 							<td><?php echo $hours; ?>&nbsp;</td>
 							<td><?php echo $minutes; ?>&nbsp;</td>
