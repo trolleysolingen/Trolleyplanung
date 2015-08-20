@@ -176,7 +176,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 			if (reservation.Publisher[i].id == publisher.Publisher.id) {
 				html += " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-remove'></span></a>";
 			}
-			
+
 			html += "</div>";
 			html += "</div>";
 			html += "</div>";

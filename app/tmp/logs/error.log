@@ -5919,3 +5919,864 @@ Request URL: /img/phone.jpg
 Stack Trace:
 #0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-08-19 11:03:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/lap.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:03:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/tab.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:03:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/phone.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:04:10 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/help/stats.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:22:38 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/help/stats.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:22:43 Error: [MissingViewException] View file "C:\xampp\htdocs\Trolleyplanung\app\View\Congregations\json\edit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\Trolleyplanung\\app\\View\\Congregations\\json\\edit.ctp',
+)
+Request URL: /congregations/changeReportDate.json
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\JsonView.php(107): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(954): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\Object.php(106): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Component\RequestHandlerComponent.php(271): Object->requestAction('/congregations/...', Array)
+#6 [internal function]: RequestHandlerComponent->beforeRedirect(Object(CongregationsController), Array, NULL, true)
+#7 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\ObjectCollection.php(128): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(765): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(152): Controller->redirect(Array)
+#12 C:\xampp\htdocs\Trolleyplanung\app\Controller\CongregationsController.php(165): CongregationsController->switchModuleStatus('2', 'report')
+#13 [internal function]: CongregationsController->changeReportDate()
+#14 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(CongregationsController), Array)
+#15 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#16 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(CongregationsController), Object(CakeRequest))
+#17 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#18 {main}
+2015-08-19 11:22:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/help/stats.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:23:04 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/help/stats.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:26:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/help/stats.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 11:26:17 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(227): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:27:37 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(227): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:27:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(227): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:27:53 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(227): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReportsController.php(28): ReservationDAOComponent->getMissingReports(Array)
+#8 [internal function]: ReportsController->index()
+#9 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReportsController), Array)
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReportsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-08-19 11:27:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(227): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:28:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:31:34 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php, line 216]
+2015-08-19 11:31:34 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 216)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 216, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 216, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 11:32:18 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:48 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:49 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:49 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:56 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:56 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:56 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:32:56 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:33:07 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:33:43 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:35:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('first', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('first', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:35:58 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('first', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(217): Model->find('first', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:37:01 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(213): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:37:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(213): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:37:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(213): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:37:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(213): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:37:03 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(213): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 11:37:03 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PublisherReservation.reservation_id' in 'where clause'
+Request URL: /reservations
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Reserva...', Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `Reserva...', Array, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `Reserva...', false)
+#4 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2947): DboSource->read(Object(Reservation), Array)
+#5 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\Trolleyplanung\app\Controller\Component\ReservationDAOComponent.php(213): Model->find('all', Array)
+#7 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(290): ReservationDAOComponent->getMissingReports(Array)
+#8 C:\xampp\htdocs\Trolleyplanung\app\Controller\ReservationsController.php(71): ReservationsController->getMissingReports(Array)
+#9 [internal function]: ReservationsController->index()
+#10 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ReservationsController), Array)
+#11 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ReservationsController), Object(CakeRequest))
+#13 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-08-19 13:47:57 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55257446 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-19 13:47:57 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55257446 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:48:28 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55262246 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-19 13:48:28 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55262246 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:49:20 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55262726 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-19 13:49:20 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55262726 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:49:31 Error: Fatal Error (1): Maximum execution time of 30 seconds exceeded in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\Utility\Debugger.php, line 494]
+2015-08-19 13:49:31 Error: [FatalErrorException] Maximum execution time of 30 seconds exceeded
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 494)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 494, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum executi...', 'C:\\xampp\\htdocs...', 494, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:50:27 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55263206 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-19 13:50:27 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55263206 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:50:47 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 55263206 bytes) in [C:\xampp\htdocs\Trolleyplanung\lib\Cake\View\View.php, line 951]
+2015-08-19 13:50:47 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 55263206 bytes)
+Request URL: /reservations/index/1
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', 'C:\\xampp\\htdocs...', 951, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:59:17 Error: Fatal Error (4): syntax error, unexpected ')', expecting '(' in [C:\xampp\htdocs\Trolleyplanung\app\View\Reports\index.ctp, line 143]
+2015-08-19 13:59:17 Error: [FatalErrorException] syntax error, unexpected ')', expecting '('
+Request URL: /reports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 143)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 143, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 143, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 13:59:18 Error: Fatal Error (4): syntax error, unexpected ')', expecting '(' in [C:\xampp\htdocs\Trolleyplanung\app\View\Reports\index.ctp, line 143]
+2015-08-19 13:59:18 Error: [FatalErrorException] syntax error, unexpected ')', expecting '('
+Request URL: /reports
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 143)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 143, Array)
+#2 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 143, Array)
+#3 C:\xampp\htdocs\Trolleyplanung\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-08-19 15:08:04 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/tab.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 15:08:04 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/lap.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-08-19 15:08:04 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/phone.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\Trolleyplanung\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
