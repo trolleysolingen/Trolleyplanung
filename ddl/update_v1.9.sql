@@ -21,3 +21,13 @@ create table publisher_reservations (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
+
+insert into publisher_reservations (publisher_id, reservation_id, guestname)
+select publisher1_id, id, if (publisher1_id=1, guestname, null)
+from reservations
+where publisher1_id is not null;
+
+insert into publisher_reservations (publisher_id, reservation_id, guestname)
+select publisher2_id, id, if (publisher2_id=1, guestname, null)
+from reservations
+where publisher2_id is not null;
