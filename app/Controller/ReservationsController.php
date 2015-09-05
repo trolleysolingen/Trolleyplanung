@@ -271,7 +271,7 @@ class ReservationsController extends AppController {
 			. " von " . $reservation['Timeslot']['start']
 			. " bis " . $reservation['Timeslot']['end']
 			. " Uhr hat " . $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]
-			. " einen Gast-Verkündiger hinzugefügt: " . $reservation["Reservation"]["guestname"];
+			. " einen Gast-Verkündiger hinzugefügt: " . $reservation["guestName"];
 
 		foreach($congregationAdmins as $congregationAdmin) {
 			$this->sendMail($congregationAdmin['Publisher']['email'], $subject, $message);

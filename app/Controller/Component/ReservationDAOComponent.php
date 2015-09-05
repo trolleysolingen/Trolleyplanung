@@ -190,6 +190,10 @@ class ReservationDAOComponent extends Component {
         }
 
         $reservation['sendMail'] = $sendMail;
+        if($sendMail) {
+        	$reservation['guestName'] = $guestname;
+        }
+        
 		$reservation['send_mail_when_partner'] = $send_mail_when_partner;
 		if($send_mail_when_partner) {
 			$reservation['GuestPublisher'] = $guestPublisher['Publisher'];
