@@ -55,12 +55,6 @@
 			
 			$date = date("d.m.Y", strtotime($missingReport['Reservation']['day'])) . ": " . $missingReport['Timeslot']['start'] . " - " . $missingReport['Timeslot']['end'];
 			$adminReason = "";
-			
-			if($missingReport['Reservation']['publisher2_id'] == null) {
-				$id2 = 0;
-			} else {
-				$id2 = $missingReport['Reservation']['publisher2_id'];
-			}
 		?>
 			<tr>
 				<td><?php echo date("d.m.Y", strtotime($missingReport['Reservation']['day'])); ?>&nbsp;</td>

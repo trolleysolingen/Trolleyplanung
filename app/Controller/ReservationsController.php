@@ -105,7 +105,11 @@ class ReservationsController extends AppController {
 				if (strpos($actual_link,'trolleydemo') === false) {
 					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
 						try {
-							$this->sendReservationMailToPublisher($reservation, false);
+							foreach($reservation['Publisher'] as $reservationPublisher) {
+								if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
+									$this->sendReservationMailToPublisher($reservationPublisher, $reservation, false);
+								}
+							}
 						} catch (Exception $e) {
 					}
 				}
@@ -149,14 +153,17 @@ class ReservationsController extends AppController {
 				$routeId,
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
-				$publisher,
 				$this->request->data['deletePartners']);
 				
 				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				if (strpos($actual_link,'trolleydemo') === false) {
 					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
 						try {
-							$this->sendReservationMailToPublisher($reservation, true);
+							foreach($reservation['Publisher'] as $reservationPublisher) {
+								if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
+									$this->sendReservationMailToPublisher($reservationPublisher, $reservation, false);
+								}
+							}
 						} catch (Exception $e) {
 					}
 				}
@@ -208,7 +215,7 @@ class ReservationsController extends AppController {
 			if (strpos($actual_link,'trolleydemo') === false) {
 				if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
 					try {
-						$this->sendGuestAlertMail($reservation, $publisher);
+						$this->sendGuestAlertMail($reservation);
 					} catch (Exception $e) {
 					
 					}
@@ -226,42 +233,44 @@ class ReservationsController extends AppController {
 		$this->set("_serialize", array("reservation", "publisher", "displayTime"));
 	}
 
-	public function sendReservationMailToPublisher($reservation, $deletion) {
+	public function sendReservationMailToPublisher($reservationPublisher, $reservation, $deletion) {
+		$publisher = $this->Session->read('publisher');
 		$subject = "Trolley-Schichtplanung";
 		if ($deletion) {
-			$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
+			$message = "Liebe(r) " . $reservationPublisher["prename"] . " " . $reservationPublisher["surname"] . ",\n"
 				. "\n"
 				. "am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
 				. " von " . $reservation['Timeslot']['start']
 				. " bis " . $reservation['Timeslot']['end']
-				. " Uhr hat sich Dein Schichtpartner aus Eurer Schicht gelöscht.\n\n"
+				. " Uhr hat sich einer deiner Schichtpartner aus Eurer Schicht gelöscht.\n\n"
 				. "Viele Grüße \n"
 				. "Deine Trolleyverwaltung \n";
 		} else {
-			$message = "Liebe(r) " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"] . ",\n"
+			$message = "Liebe(r) " . $reservationPublisher["prename"] . " " . $reservationPublisher["surname"] . ",\n"
 				. "\n"
 				. "am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
 				. " von " . $reservation['Timeslot']['start']
 				. " bis " . $reservation['Timeslot']['end']
-				. " Uhr hat sich " . $reservation["Publisher2"]["prename"] . " " . $reservation["Publisher2"]["surname"]
+				. " Uhr hat sich " . $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]
 				. " zu Deiner Schicht hinzugebucht.\n\n"
 				. "Viele Grüße \n"
 				. "Deine Trolleyverwaltung \n";
 		}
 
-		if (strpos($reservation["Publisher1"]["email"], "@demo.de") === false) {
-			$this->sendMail($reservation["Publisher1"]["email"], $subject, $message);
+		if (strpos($reservationPublisher["email"], "@demo.de") === false) {
+			$this->sendMail($reservationPublisher["email"], $subject, $message);
 		}
 	}
 
-	public function sendGuestAlertMail($reservation, $publisher) {
+	public function sendGuestAlertMail($reservation) {
+		$publisher = $this->Session->read('publisher');
 		$congregationAdmins = $this->PublisherDAO->getContactPersons($publisher);
 		$subject = "Trolley-Schichtplanung - Gast-Eintragung";
 
 		$message = "Am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
 			. " von " . $reservation['Timeslot']['start']
 			. " bis " . $reservation['Timeslot']['end']
-			. " Uhr hat " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
+			. " Uhr hat " . $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]
 			. " einen Gast-Verkündiger hinzugefügt: " . $reservation["Reservation"]["guestname"];
 
 		foreach($congregationAdmins as $congregationAdmin) {
@@ -273,17 +282,17 @@ class ReservationsController extends AppController {
 		$publisher = $this->Session->read('publisher');
 		$subject = "Trolley-Schichtplanung - Partner-Eintragung";
 		
-		$message = "Liebe(r) " . $reservation["Publisher2"]["prename"] . " " . $reservation["Publisher2"]["surname"] . ",\n"
+		$message = "Liebe(r) " . $reservation["GuestPublisher"]["prename"] . " " . $reservation["GuestPublisher"]["surname"] . ",\n"
 			. "\n"
 			. "Am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
 			. " von " . $reservation['Timeslot']['start']
 			. " bis " . $reservation['Timeslot']['end']
-			. " Uhr hat dich " . $reservation["Publisher1"]["prename"] . " " . $reservation["Publisher1"]["surname"]
+			. " Uhr hat dich " . $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]
 			. " als Partner eingetragen.\n\n"
 			. "Viele Grüße \n"
 			. "Deine Trolleyverwaltung \n";
 			
-		$this->sendMail($reservation['Publisher2']['email'], $subject, $message);
+		$this->sendMail($reservation['GuestPublisher']['email'], $subject, $message);
 	}
 	
 	public function getMissingReports($publisher) {

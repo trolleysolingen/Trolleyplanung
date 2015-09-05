@@ -162,17 +162,23 @@ class PublishersController extends AppController {
 			throw new NotFoundException(__('Ungültiger Verkündiger'));
 		}
 
+		$this->loadModel('PublisherReservation');
 		// delete reservations of publisher
-		$reservations = $this->Reservation->find('all', array('conditions' => array('OR' =>  array('publisher1_id' => $id, 'publisher2_id' => $id))));
+		$reservations = $this->PublisherReservation->find('all', array('conditions' => array( 'PublisherReservation.publisher_id' => $publisherToDelete['Publisher']['id'])));
+		
 		foreach ($reservations as $reservation) {
 			//debug($reservation);
-
+			
+			$realReservation = $this->Reservation->find('first', array('conditions' => array( 'Reservation.id' => $reservation['PublisherReservation']['reservation_id'])));
+			$deleteReservation = array();
+			$deleteReservation[] = $reservation['PublisherReservation']['id'];
+ 
 			$this->ReservationDAO->deletePublisher(
 				$publisherToDelete['Congregation']['id'],
-				$reservation['Reservation']['day'],
-				$reservation['Reservation']['timeslot_id'],
-				$publisherToDelete,
-				false);
+				$realReservation['Reservation']['route_id'],
+				$realReservation['Reservation']['day'],
+				$realReservation['Reservation']['timeslot_id'],
+				$deleteReservation);
 		}
 
 		if ($this->Publisher->delete()) {
@@ -180,7 +186,7 @@ class PublishersController extends AppController {
 		} else {
 			$this->Session->setFlash('Der Verkündiger konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+ 		return $this->redirect(array('action' => 'index'));
 	}
 
 

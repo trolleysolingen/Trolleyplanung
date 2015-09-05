@@ -87,7 +87,7 @@ class ReservationDAOComponent extends Component {
     }
 
 
-    public function deletePublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $publisher, $deletePartners) {
+    public function deletePublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $deletePartners) {
         $model = ClassRegistry::init('Reservation');
         $model2 = ClassRegistry::init('PublisherReservation');
 
@@ -191,6 +191,9 @@ class ReservationDAOComponent extends Component {
 
         $reservation['sendMail'] = $sendMail;
 		$reservation['send_mail_when_partner'] = $send_mail_when_partner;
+		if($send_mail_when_partner) {
+			$reservation['GuestPublisher'] = $guestPublisher['Publisher'];
+		}
         // debug($reservation);
 
         return $reservation;
