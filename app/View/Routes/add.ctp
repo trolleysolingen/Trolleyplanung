@@ -30,6 +30,17 @@ echo $this->Form->create('Route', array('class' => 'form-horizontal')); ?>
 			</div>
 			<div class="col-sm-1 col-md-2"></div>
 		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
+			<label for="surname" class="col-sm-2 control-label">Mögliche Verkündiger:</label>
+			<div class="col-sm-8 col-md-6">
+				<?php
+					echo $this->Form->input('publishers', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'publishers', 'type' => 'text', 'value' => 2));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
+		</div>
 	</fieldset>
 
 	<?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary col-sm-offset-3 col-md-offset-4')); ?>

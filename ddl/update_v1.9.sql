@@ -31,3 +31,10 @@ insert into publisher_reservations (publisher_id, reservation_id, guestname)
 select publisher2_id, id, if (publisher2_id=1, guestname, null)
 from reservations
 where publisher2_id is not null;
+
+
+ALTER TABLE `reservations` DROP FOREIGN KEY `fk_reservations_publishers1`;
+ALTER TABLE `reservations` DROP FOREIGN KEY `fk_reservations_publishers2`;
+ALTER TABLE `reservations` DROP `publisher1_id`, DROP `publisher2_id`;
+
+fk_reservation_publisher1_idx

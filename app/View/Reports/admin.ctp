@@ -68,7 +68,7 @@
 				</td>
 				<td class="actions">
 					<?php
-						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs" style="margin-right: 5px;"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'remindPublisher', serialize($missingReport['Publisher']), $missingReport['Reservation']['id'], true), array('escape' => false, 'title' => 'Verkündiger erinnern'));
+						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs" style="margin-right: 5px;"><span class="glyphicon glyphicon-message_out"></span></button>', array('action' => 'remindPublisher', $missingReport['Reservation']['id'], true), array('escape' => false, 'title' => 'Verkündiger erinnern'));
 					
 						echo '<button onclick="openReportModal(' . $missingReport['Reservation']['id'] . ', ' . $calcHours . ', ' . $calcMinutes . ', \'' . $adminReason . '\');" type="button" data-date="' . $date . '" class="open-ReportDialog btn btn-xs btn-success" style="margin-right: 5px;">'.
 							'<span class="glyphicon glyphicon-pencil" ></span>'.
