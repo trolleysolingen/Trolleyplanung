@@ -297,7 +297,7 @@ class ReservationDAOComponent extends Component {
 
         $result= $model->find('all', array(
 			'conditions' => array(
-                    'Reservation.day between \'' . $date . '\' and \'' . date('Y-m-t') . '\'',
+                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t", strtotime($date)) . '\'',
                     'Reservation.congregation_id' => $publisher['Congregation']['id'],
 					'Reservation.report_necessary' => 1,
 					'Reservation.minutes !=' => null
@@ -314,7 +314,7 @@ class ReservationDAOComponent extends Component {
 
         $result= $model->find('all', array(
 			'conditions' => array(
-                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t") . '\'',
+                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t", strtotime($date)) . '\'',
                     'Reservation.congregation_id' => $publisher['Congregation']['id'],
 					'Reservation.report_necessary' => 1,
 					'Reservation.minutes' => null
@@ -331,7 +331,7 @@ class ReservationDAOComponent extends Component {
 
         $result= $model->find('all', array(
 			'conditions' => array(
-                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t") . '\'',
+                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t", strtotime($date)) . '\'',
                     'Reservation.congregation_id' => $publisher['Congregation']['id'],
 					'Reservation.report_necessary' => 0,
 					'Reservation.no_report_reason' => null
@@ -348,7 +348,7 @@ class ReservationDAOComponent extends Component {
 
         $result= $model->find('all', array(
 			'conditions' => array(
-                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t") . '\'',
+                    'Reservation.day between \'' . $date . '\' and \'' . date("Y-m-t", strtotime($date)) . '\'',
                     'Reservation.congregation_id' => $publisher['Congregation']['id']
                 ),
             'order' => array('Reservation.day', 'Reservation.timeslot_id'),
