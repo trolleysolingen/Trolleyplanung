@@ -29,9 +29,7 @@
 		$highlightCongregationStats = "active";
 	} else if (in_array("publishers", $linkarray)) {
 		$highlightPublishers = "active";
-	} else if (in_array("routes", $linkarray) || in_array("dayslots", $linkarray) || in_array("timeslots", $linkarray)) {
-		$highlightRoutes = "active";
-	} else if (in_array("congregations", $linkarray) && in_array("edit", $linkarray)) {
+	}else if ((in_array("congregations", $linkarray) && in_array("edit", $linkarray)) || in_array("routes", $linkarray) || in_array("dayslots", $linkarray) || in_array("timeslots", $linkarray)) {
 		$highlightCongregationSettings = "active";
 	} else if (in_array("congregations", $linkarray)) {
 		$highlightCongregations = "active";
@@ -47,7 +45,7 @@
 		$highlightAdmin = "active";
 	} 
 	
-	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightRoutes == "active" || $highlightCongregations == "active" || $highlightMessages == "active" || $highlightCongregationReports == "active" || $highlightCongregationStats == "active") {
+	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightCongregations == "active" || $highlightMessages == "active" || $highlightCongregationReports == "active" || $highlightCongregationStats == "active") {
 		$highlightMyCongregation = "active";
 	} else if ($highlightTodos == "active" || $highlightContact == "active") {
 		$highlightSupport = "active";
@@ -117,9 +115,6 @@
 										<?php echo $this->Html->link('Verkündiger', array('controller' => 'publishers', 'action' => 'index')); ?>
 									</li>
 								<?php if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') { ?>
-									<li class="<?php echo $highlightRoutes ?>">
-										<?php echo $this->Html->link('Routen', array('controller' => 'routes', 'action' => 'index')); ?>
-									</li>
 									<?php if ($publisher['Congregation']['report'] == 1 && $publisher['Congregation']['report_start_date'] <= date("Y-m-d")) { ?>
 										<li class="divider"></li>
 										<li class="<?php echo $highlightCongregationReports ?>">

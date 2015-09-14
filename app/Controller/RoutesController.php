@@ -28,21 +28,6 @@ class RoutesController extends AppController {
 	}
 
 	/**
-	 * index method
-	 *
-	 * @return void
-	 */
-	public function index() {
-		$publisher = $this->Session->read('publisher');
-
-		$this->Route->recursive = 0;
-		$this->set('routes', $this->Paginator->paginate('Route', array('Route.congregation_id' => $publisher['Congregation']['id'])));
-
-		$this->set('publisher', $publisher);
-		$this->set('title_for_layout', 'Routen');
-	}
-
-	/**
 	 * view method
 	 *
 	 * @throws NotFoundException
@@ -70,7 +55,7 @@ class RoutesController extends AppController {
 
 			if ($this->Route->save($this->request->data)) {
 				$this->Session->setFlash('Die Route wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			} else {
 				$this->Session->setFlash('Die Route konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
@@ -95,7 +80,7 @@ class RoutesController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Route->save($this->request->data)) {
 				$this->Session->setFlash('Die Route wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			} else {
 				$this->Session->setFlash('Die Route konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
@@ -104,7 +89,7 @@ class RoutesController extends AppController {
 			$this->request->data = $this->Route->find('first', $options);
 
 			if ($this->request->data['Route']['congregation_id'] != $publisher['Publisher']['congregation_id']) {
-				return $this->redirect(array('controller' => 'route', 'action' => 'index'));
+				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			}
 		}
 
@@ -126,7 +111,7 @@ class RoutesController extends AppController {
 		} else {
 			$this->Session->setFlash('Die Karte konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 	}
 	
 	public function uploadMap() {
@@ -149,7 +134,7 @@ class RoutesController extends AppController {
 		} else {
 			$this->Session->setFlash('Die Karte konnte nicht hochgeladen werden. Bitte versuche es später nochmal. Akzeptierte Dateitypen sind: jpg, png, gif.', 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 	}
 
 }

@@ -86,9 +86,13 @@ class CongregationsController extends AppController {
 		if (!$this->Congregation->exists($id)) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
+		$publisher = $this->Session->read('publisher');
+		$this->loadModel('Route');
+		$this->Route->recursive = 0;
+		$this->set('routes', $this->Paginator->paginate('Route', array('Route.congregation_id' => $publisher['Congregation']['id'])));
+		
 		if ($this->request->is(array('post', 'put')) && isset($this->request->data['editSubmit'])) {
 			if ($this->Congregation->save($this->request->data)) {
-				$publisher = $this->Session->read('publisher');
 				$publisher2 = $this->PublisherDAO->getById($publisher);
 				$this->Session->write('publisher', $publisher2);
 				$this->Session->setFlash('Die Versammlung wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
