@@ -163,7 +163,39 @@
 				</div>
 			</div>
 		</div>
+		
+		<?php if($publisher['Publisher']['role_id'] == 4 || $publisher['Publisher']['role_id'] == 2) { ?>
+		
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" href="#collapse_admin">
+						<span style="font-size: 1.5em; margin-top: -5px;" class="glyphicon glyphicon-expand"></span>
+						Admin Tools
+					</a>
+				</h4>
+			</div>
+			<div id="collapse_admin" class="panel-collapse collapse">
+				<div class="panel-body">
+					Die Admin Tools bieten dir verschiedenste Möglichkeiten den Schichtplan zu manipulieren.<br/>
+					Sobald du die Admin Tools aktivierst, hast du an jeder einzelnen Schicht die Möglichkeit Veränderungen vorzunehmen.<br/>
+					Vorerst wird das sein:<br/>
+					<br/>
+					<ul>
+						<li>Löschen von Verkündigern aus einer Schicht</li>
+						<li>Eintragen von Verkündigern in eine Schicht</li>		
+					</ul>
+					<br/>
+					<?php if(!$admintools) {?>
+					<a href="../toggleAdminTools" class="btn btn-success">Admin Tools aktivieren</a>
+					<?php } else {?>
+					<a href="../toggleAdminTools" class="btn btn-warning">Admin Tools deaktivieren</a>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
 		<?php
+		}
 			foreach ($routes as $route) {
 				if($routeId == $route['Routes']['id']) {
 					if($route['Routes']['description'] || glob("img/routes/route_" . $route['Routes']['id'] . ".*")) {
@@ -217,7 +249,7 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
 								class="sr-only">Close</span></button>
-						<h4 class="modal-title" id="myModalLabel">Partner eintragen</h4>
+						<h4 class="modal-title" id="myModalLabel">Verkündiger eintragen</h4>
 					</div>
 					<div class="modal-body" id="guestModalDiv">
 

@@ -39,11 +39,34 @@ if ($reservationTmp != null) {
 
 echo "<td id='td_" . $td_id . "_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "' class='" . $tdstyle . "' style='max-width:0'>";
 
+if(($publisher['Publisher']['role_id'] == 4 || $publisher['Publisher']['role_id'] == 2) & $admintools) {
+	echo "<div class='row'>";
+		echo "<div style='padding-right: 10px; margin-bottom:2px;' class='col-xs-offset-1 col-xs-10 panel panel-danger'>";
+			echo "<div class='panel-body' style='padding:0px;' >";
+				echo "<div id='guestDiv_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "' style='display:inline-block'>".
+	                "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" .
+	                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime . "\", \"" . $admintools .
+	                "\");'>";
+        			echo "<span class='glyphicon glyphicon-user_add' style='color:red;'></span>";
+        		echo "</a></div>";
+        		if ($reservationTmp != null) {
+	        		echo "<a href='javascript:void(0)' style='margin-left:15px;' onclick='showDeleteModal(\"" .
+		                addslashes (json_encode($reservationTmp)) . "\", \"" . 
+		                $publisher['Publisher']['id'] . "\", \"" .
+		                $dateTmp->format('Y-m-d') . "\", " . 
+		                $timeslots[$slot]['Timeslot']['id'] . ", " . 
+		                $admintools . ");'><span class='glyphicon glyphicon-user_remove' style='color:red;'></span></a>";
+        		}
+			echo "</div>";
+		echo "</div>";
+	echo "</div>";
+}
+
 if ($reservationTmp == null) {
 	echo "<div class='row'>";
 	echo "<div style='padding-right: 5px;' class='col-sm-10 col-xs-8 cut-div-text pull-left'>";
     echo "<a href='javascript:void(0)' onclick='addPublisher(\"" .
-        $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\")'><span class='glyphicon glyphicon-user_add'></span></a>";
+        $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\", \"" . $admintools . "\")'><span class='glyphicon glyphicon-user_add'></span></a>";
 	echo "</div>";
 	echo "</div>";
 } else {
@@ -67,11 +90,11 @@ if ($reservationTmp == null) {
 			if($me) {
 				echo "<div id='guestDiv_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "'>".
                 "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" .
-                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime .
+                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime . "\", \"" . $admintools .
                 "\");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;' ></span> Partner</a>" . '</div>';
 			} else {
 				echo "<br/><a href='javascript:void(0)' onclick='addPublisher(\"" .
-                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
+                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. ", \"" . $admintools . "\")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
 			}
 		}
 		
@@ -83,8 +106,8 @@ if ($reservationTmp == null) {
                 addslashes (json_encode($reservationTmp)) . "\", \"" . 
                 $publisher['Publisher']['id'] . "\", \"" .
                 $dateTmp->format('Y-m-d') . "\", " . 
-                $timeslots[$slot]['Timeslot']['id'] .
-                ", " . (count($reservationTmp['Publisher']) > 1 ? "true" : "false") . ");'><span class='glyphicon glyphicon-remove'></span></a>";
+                $timeslots[$slot]['Timeslot']['id'] . ", " . 
+                $admintools . ");'><span class='glyphicon glyphicon-remove'></span></a>";
 		} else {
 			if($reservationPublisher['phone'] != null) {
 				$tel = $reservationPublisher['phone'];

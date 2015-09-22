@@ -58,6 +58,7 @@ class ReservationsController extends AppController {
 
 		$this->Session->write('routeId', $routeId);
 		$this->set("publisher", $this->Session->read('publisher'));
+		$this->set("admintools", $this->Session->read('admintools'));
 		$this->set("mondayThisWeek", $mondayThisWeek);
 		$this->set("timeslots", $timeslots);
 		$this->set("dayslot", $dayslot);
@@ -378,5 +379,12 @@ class ReservationsController extends AppController {
 		} else {
 			$this->Session->setFlash('Dein Bericht konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
+	}
+	
+	public function toggleAdminTools() {
+		$admintools = $this->Session->read('admintools');
+		$this->Session->write('admintools', !$admintools);
+		$this->Session->setFlash('Der Status wurde geändert', 'default', array('class' => 'alert alert-success'));
+		return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 	}
 }

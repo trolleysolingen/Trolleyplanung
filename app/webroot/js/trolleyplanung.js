@@ -40,7 +40,7 @@ function logError(obj){
 var preventDoubleClick = false;
 var displaySizes = new Array('lg', 'sm_md', 'xs');
 
-function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
+function ajaxCallReservation(reservationDay, reservationTimeslot, url, data, admintools) {
     clearError(reservationDay, reservationTimeslot);
 
     if (!preventDoubleClick) {
@@ -60,7 +60,7 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
             success: function(data) {
                 preventDoubleClick = false;
                 if (data.publisher) {
-                    displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher, data.displayTime);
+                    displayReservation(reservationDay, reservationTimeslot, data.reservation, data.publisher, data.displayTime, admintools);
                 } else {
                     displayError(reservationDay, reservationTimeslot,
                         "Deine Sitzung ist abgelaufen. Bitte melde dich <a href='/'>hier</a> erneut an.");
@@ -78,15 +78,16 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data) {
     }
 }
 
-function addPublisher(reservationDay, reservationTimeslot, displayTime) {
+function addPublisher(reservationDay, reservationTimeslot, displayTime, admintools) {
     var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, displayTime: displayTime };
-    ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addPublisher.json", data);
+    ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addPublisher.json", data, admintools);
     publisherList = fullPublisherList.slice();
 }
 
 function deletePublisher() {
 	var reservationDay = $("#deleteReservationDay").val(); 
 	var reservationTimeslot = $("#deleteReservationTimeslot").val(); 
+	var admintools = $("#admintools").val(); 
 	
 	var checkboxes = document.querySelectorAll('input[name="partner"]:checked'), values = [];
     Array.prototype.forEach.call(checkboxes, function(el) {
@@ -96,12 +97,12 @@ function deletePublisher() {
     values.push($("#deletePublisherId").val());
 	
     var data = { reservationDay: reservationDay, reservationTimeslot: reservationTimeslot, deletePartners: values };
-    ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/deletePublisher.json", data);
+    ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/deletePublisher.json", data, admintools);
 	
 	$('#deleteModal').modal('hide');
 }
 
-function addGuest(reservationDay, reservationTimeslot, displayTime) {
+function addGuest(reservationDay, reservationTimeslot, displayTime, admintools) {
     var guestname = $('#guestname_' + reservationDay + '_' + reservationTimeslot).val();
     if (guestname) {
     	var publisherIndex = $.inArray(guestname, publisherList);
@@ -113,7 +114,7 @@ function addGuest(reservationDay, reservationTimeslot, displayTime) {
                 displayTime: displayTime,
                 guestname: guestname
             };
-            ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addGuest.json", data);
+            ajaxCallReservation(reservationDay, reservationTimeslot, "/reservations/addGuest.json", data, admintools);
             $('#guestModal').modal('hide');
         } else {
             $('#guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg').html('Bitte wähle einen zugelassenen Verkündiger aus. Die automatische Vorschlagsliste hilft dir dabei.');
@@ -127,18 +128,35 @@ function addGuest(reservationDay, reservationTimeslot, displayTime) {
 
 }
 
-function displayReservation(reservationDay, reservationTimeslot, reservation, publisher, displayTime) {
+function displayReservation(reservationDay, reservationTimeslot, reservation, publisher, displayTime, admintools) {
 
     if (reservation && reservation.error) {
         displayError(reservationDay, reservationTimeslot, reservation.error);
     }
 	
 	html = "";
+	
+	if((publisher.Publisher.role_id == 4 || publisher.Publisher.role_id == 2) && admintools) {
+		html += "<div class='row'>";
+		html += "<div style='padding-right: 10px; margin-bottom:2px;' class='col-xs-offset-1 col-xs-10 panel panel-danger'>";
+		html += "<div class='panel-body' style='padding:0px;' >";
+		html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>";
+		html += "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\",\"" + admintools + "\");'>";
+		html += "<span class='glyphicon glyphicon-user_add' style='color:red;'></span>";
+		html += "</a>";
+		if (reservation || reservation.Reservation) {
+			html += " <a href='javascript:void(0)' style='margin-left:15px;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ",\"" + admintools + "\");'><span class='glyphicon glyphicon-user_remove' style='color:red;'></span></a>";
+		}
+		html +=	"</div>";
+		html += "</div>";
+		html += "</div>";
+		html += "</div>";
+	}
 
     if (!reservation || !reservation.Reservation) {
     	html += "<div class='row'>";
     	html += "<div style='padding-right: 5px;' class='col-sm-10 col-xs-8 cut-div-text pull-left'>";
-		html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-user_add'></span></a>";
+		html += "<a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\",\"" + admintools + "\");'><span class='glyphicon glyphicon-user_add'></span></a>";
 		html += "</div>";
 		html += "</div>";
     } else {
@@ -164,9 +182,9 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 			if(reservation.Publisher.length == i+1 && reservation.Route.publishers > reservation.Publisher.length) {
 				if(me) {
 					html += "<div id='guestDiv_" + reservationDay + "_" + reservationTimeslot + "'>" +
-                    "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;'></span> Partner</a></div>";
+                    "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\",\"" + admintools + "\");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;'></span> Partner</a></div>";
 				} else {
-					 html += "<br/><a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\");'><span class='glyphicon glyphicon-user_add'></span></a><br/>";
+					 html += "<br/><a href='javascript:void(0)' onclick='addPublisher(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\",\"" + admintools + "\");'><span class='glyphicon glyphicon-user_add'></span></a><br/>";
 				}
 			}
 			
@@ -174,7 +192,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 			html += "<div class='col-sm-2' style='padding-right: 10px;'>";
 			
 			if (reservation.Publisher[i].id == publisher.Publisher.id) {
-				html += " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ");'><span class='glyphicon glyphicon-remove'></span></a>";
+				html += " <a href='javascript:void(0)' style='float:right;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ",\"" + admintools + "\");'><span class='glyphicon glyphicon-remove'></span></a>";
 			}
 
 			html += "</div>";
@@ -211,7 +229,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 }
 
 
-function displayGuestField(reservationDay, reservationTimeslot, displayTime) {
+function displayGuestField(reservationDay, reservationTimeslot, displayTime, admintools) {
 	html = '<div class="form-group">';
     html += '<div id="guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg" class="error alert alert-danger"></div>';
     html += '<label for="guestname_' + reservationDay + '_' + reservationTimeslot + '">Name:</label>';
@@ -220,7 +238,7 @@ function displayGuestField(reservationDay, reservationTimeslot, displayTime) {
 	
 	body = '<div class="btn-group">';
 	body += '<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>';
-	body += "<a href='javascript:void(0)' class='btn btn-primary' onclick='addGuest(\"" + reservationDay + "\"," + reservationTimeslot + ", \"" + displayTime + "\");'>Eintragen</a>";
+	body += "<a href='javascript:void(0)' class='btn btn-primary' onclick='addGuest(\"" + reservationDay + "\"," + reservationTimeslot + ", \"" + displayTime + "\", \"" + admintools+ "\");'>Eintragen</a>";
     body += '</div>';
 
     $('#guestModalDiv').html(html);
@@ -256,9 +274,10 @@ function displayError(reservationDay, reservationTimeslot, errorMsg) {
     });
 }
 
-function showDeleteModal(reservation, publisherId, reservationDay, reservationTimeslot) {
+function showDeleteModal(reservation, publisherId, reservationDay, reservationTimeslot, admintools) {
 	html = '<input type="hidden" id="deleteReservationDay" value=' + reservationDay + '></input>';
 	html += '<input type="hidden" id="deleteReservationTimeslot" value=' + reservationTimeslot + '></input>';
+	html += '<input type="hidden" id="admintools" value=' + admintools + '></input>';
 	
 	reservation = JSON.parse(reservation);
 	

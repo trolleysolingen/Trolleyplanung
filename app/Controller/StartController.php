@@ -34,6 +34,7 @@ class StartController extends AppController {
 					$this->PublisherDAO->setLoginPermission($publisher);
 					$publisher = $this->PublisherDAO->getByEmail($email, $password);
 					$this->Session->write('publisher', $publisher);
+					$this->Session->write('admintools', false);
 					if($publisher['Congregation']['report']) {
 						$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);
 						$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
