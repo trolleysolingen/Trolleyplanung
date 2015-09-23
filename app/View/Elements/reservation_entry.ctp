@@ -94,7 +94,7 @@ if ($reservationTmp == null) {
                 "\");'><span class='glyphicon glyphicon-plus' style='margin-top:-5px;' ></span> Partner</a>" . '</div>';
 			} else {
 				echo "<br/><a href='javascript:void(0)' onclick='addPublisher(\"" .
-                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. ", \"" . $admintools . "\")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
+                $dateTmp->format('Y-m-d') . "\", " . $timeslots[$slot]['Timeslot']['id'] . ", \"" . $displayTime. "\", \"" . $admintools . "\")'><span class='glyphicon glyphicon-user_add'></span></a>" . '<br/>';
 			}
 		}
 		

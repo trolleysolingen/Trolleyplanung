@@ -144,8 +144,8 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 		html += "<a href='javascript:void(0)' title='Partner eintragen' onclick='displayGuestField(\"" + reservationDay + "\"," + reservationTimeslot + ",\"" + displayTime + "\",\"" + admintools + "\");'>";
 		html += "<span class='glyphicon glyphicon-user_add' style='color:red;'></span>";
 		html += "</a>";
-		if (reservation || reservation.Reservation) {
-			html += " <a href='javascript:void(0)' style='margin-left:15px;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ",\"" + admintools + "\");'><span class='glyphicon glyphicon-user_remove' style='color:red;'></span></a>";
+		if (reservation && reservation.Reservation) {
+			html += " <a href='javascript:void(0)' style='margin-left:10px;' onclick='showDeleteModal(\"" + addslashes(JSON.stringify(reservation)) + "\", \"" + publisher.Publisher.id + "\", \"" +reservationDay + "\"," + reservationTimeslot + ",\"" + admintools + "\");'><span class='glyphicon glyphicon-user_remove' style='color:red;'></span></a>";
 		}
 		html +=	"</div>";
 		html += "</div>";
@@ -293,7 +293,7 @@ function showDeleteModal(reservation, publisherId, reservationDay, reservationTi
 	$("#partnerCheckboxes").html(html);
 	
 	for(i = 0; i < reservation.Publisher.length; ++i) {
-		if(reservation.Publisher[i].id != publisherId) {
+		if(reservation.Publisher[i].id != publisherId || admintools) {
 			// create the necessary elements
 			var label= document.createElement("label");
 			var desc;

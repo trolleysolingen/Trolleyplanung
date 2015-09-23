@@ -289,7 +289,7 @@ class ReservationsController extends AppController {
 			. " von " . $reservation['Timeslot']['start']
 			. " bis " . $reservation['Timeslot']['end']
 			. " Uhr hat dich " . $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]
-			. " als Partner eingetragen.\n\n"
+			. " zu einer Schicht hinzugef�gt.\n\n"
 			. "Viele Grüße \n"
 			. "Deine Trolleyverwaltung \n";
 			

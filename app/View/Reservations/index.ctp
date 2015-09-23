@@ -100,7 +100,7 @@
 				foreach ($routes as $route) {
 			?>						
 					
-				  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="float:right">
+				  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox">
 					  <div class="iconbox-icon">
 						<span style="padding-top:25px; font-family: 'Stalemate', serif;"><b><?php echo $i; ?></b></span>
