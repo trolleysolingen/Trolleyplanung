@@ -98,8 +98,7 @@
 		<div class="tab-content responsive">
 			<?php
 				foreach ($routes as $route) {
-			?>						
-					
+			?>		
 				  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<div class="iconbox">
 					  <div class="iconbox-icon">
@@ -122,6 +121,11 @@
 					</div>
 				  </div>
 			<?php
+					if($i % 3 == 0) {
+						echo "<div class='clearfix visible-lg-block'></div>";
+					} else if($i % 2 == 0) {
+						echo "<div class='clearfix visible-md-block visible-sm-block'></div>";
+					}
 					$i++;
 				}
 			?>
@@ -176,6 +180,10 @@
 			<div id="collapse_admin" class="panel-collapse collapse">
 				<div class="panel-body">
 					Die Admin Tools bieten dir verschiedenste Möglichkeiten den Schichtplan zu manipulieren.<br/>
+					Sie werden durch ein <span style="color:red"><b>rotes</b></span> Icon gekennzeichnet, damit du nicht mit anderen Buttons durcheinander kommst: 
+					<a href='javascript:void(0)'><span class='glyphicon glyphicon-user_add' style='color:red;'></span></a>
+					<a href='javascript:void(0)'><span class='glyphicon glyphicon-user_remove' style='color:red;'></span></a>
+					<br/>
 					Sobald du die Admin Tools aktivierst, hast du an jeder einzelnen Schicht die Möglichkeit Veränderungen vorzunehmen.<br/>
 					Vorerst wird das sein:<br/>
 					<br/>
