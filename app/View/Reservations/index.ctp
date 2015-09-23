@@ -193,9 +193,9 @@
 					</ul>
 					<br/>
 					<?php if(!$admintools) {?>
-					<a href="../toggleAdminTools" class="btn btn-success">Admin Tools aktivieren</a>
+					<a href="../toggleAdminTools/<?php echo $routeId ?>" class="btn btn-success">Admin Tools aktivieren</a>
 					<?php } else {?>
-					<a href="../toggleAdminTools" class="btn btn-warning">Admin Tools deaktivieren</a>
+					<a href="../toggleAdminTools/<?php echo $routeId ?>" class="btn btn-warning">Admin Tools deaktivieren</a>
 					<?php } ?>
 				</div>
 			</div>

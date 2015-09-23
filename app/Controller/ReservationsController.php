@@ -381,10 +381,10 @@ class ReservationsController extends AppController {
 		}
 	}
 	
-	public function toggleAdminTools() {
+	public function toggleAdminTools($adminRouteId) {
 		$admintools = $this->Session->read('admintools');
 		$this->Session->write('admintools', !$admintools);
 		$this->Session->setFlash('Der Status wurde geändert', 'default', array('class' => 'alert alert-success'));
-		return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
+		return $this->redirect(array('controller' => 'reservations', 'action' => 'index', $adminRouteId));
 	}
 }
