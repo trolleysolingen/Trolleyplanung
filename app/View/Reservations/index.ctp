@@ -96,12 +96,11 @@
 	$i=1;
 ?>
 		<div class="tab-content responsive">
-			<div class="row">
 			<?php
 				foreach ($routes as $route) {
 			?>						
 					
-				  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+				  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="float:right">
 					<div class="iconbox">
 					  <div class="iconbox-icon">
 						<span style="padding-top:25px; font-family: 'Stalemate', serif;"><b><?php echo $i; ?></b></span>
@@ -126,7 +125,6 @@
 					$i++;
 				}
 			?>
-			</div>
 		</div>
 <?php
 	} else {
