@@ -49,7 +49,7 @@ if(($publisher['Publisher']['role_id'] == 4 || $publisher['Publisher']['role_id'
 	                "\");'>";
         			echo "<span class='glyphicon glyphicon-user_add' style='color:red;'></span>";
         		echo "</a></div>";
-        		if ($reservationTmp != null) {
+        		if ($reservationTmp != null && !(count($reservationTmp['Publisher']) == 1 && $me)) {
 	        		echo "<a href='javascript:void(0)' style='margin-left:15px;' onclick='showDeleteModal(\"" .
 		                addslashes (json_encode($reservationTmp)) . "\", \"" . 
 		                $publisher['Publisher']['id'] . "\", \"" .
@@ -106,8 +106,8 @@ if ($reservationTmp == null) {
                 addslashes (json_encode($reservationTmp)) . "\", \"" . 
                 $publisher['Publisher']['id'] . "\", \"" .
                 $dateTmp->format('Y-m-d') . "\", " . 
-                $timeslots[$slot]['Timeslot']['id'] . ", " . 
-                $admintools . ");'><span class='glyphicon glyphicon-remove'></span></a>";
+                $timeslots[$slot]['Timeslot']['id'] . ", \"" . 
+                $admintools . "\");'><span class='glyphicon glyphicon-remove'></span></a>";
 		} else {
 			if($reservationPublisher['phone'] != null) {
 				$tel = $reservationPublisher['phone'];
