@@ -49,7 +49,7 @@ class ReservationDAOComponent extends Component {
             )
         );
 
-        $sendMail = false;
+        $sendMail = true;
         if ($reservation != null && $reservation['Reservation']['modified'] > $displayTime) {
             // Reservation has been modified -> don't save
             $reservation['error'] = 'Der Termin wurde zwischenzeitlich verändert. Bitte überprüfe deine Buchung!';
@@ -127,10 +127,10 @@ class ReservationDAOComponent extends Component {
         				'recursive' => 2
         			)
         		);
+        		$sendMail = true;
         	}
+        	$reservation['sendMail'] = $sendMail;
 		}
-
-        $reservation['sendMail'] = $sendMail;
         // debug($reservation);
 
         return $reservation;

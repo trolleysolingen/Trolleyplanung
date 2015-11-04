@@ -162,7 +162,7 @@ class ReservationsController extends AppController {
 						try {
 							foreach($reservation['Publisher'] as $reservationPublisher) {
 								if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
-									$this->sendReservationMailToPublisher($reservationPublisher, $reservation, false);
+									$this->sendReservationMailToPublisher($reservationPublisher, $reservation, true);
 								}
 							}
 						} catch (Exception $e) {
