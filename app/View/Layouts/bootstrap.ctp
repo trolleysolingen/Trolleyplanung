@@ -179,6 +179,15 @@
 			max: 100,
 			initval: 0
 		});
+		
+		$(document).on("click touchend", function (event) {
+			var clickover = $(event.target);
+			var container = $(".nav-inner div.nav-menu, .mobile-nav-button");
+			var _opened = $(".navbar-collapse").hasClass("navbar-collapse collapse in");
+			if (_opened === true && !clickover.hasClass("navbar-toggle") && !clickover.is('input') && clickover.parents('.navbar-collapse').length == 0) {
+				$("button.navbar-toggle").click();
+			}
+		});
 		 			
     });
   </script>

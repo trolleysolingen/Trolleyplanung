@@ -192,11 +192,11 @@
 						<li>Eintragen von Verkündigern in eine Schicht</li>		
 					</ul>
 					<br/>
-					<?php if(!$admintools) {?>
-					<a href="../toggleAdminTools/<?php echo $routeId ?>" class="btn btn-success">Admin Tools aktivieren</a>
-					<?php } else {?>
-					<a href="../toggleAdminTools/<?php echo $routeId ?>" class="btn btn-warning">Admin Tools deaktivieren</a>
-					<?php } ?>
+					<?php if(!$admintools) {
+						echo $this->Html->link('<button type="button" class="btn btn-success">Admin Tools aktivieren</span></button>', array('controller' => 'reservations', 'action' => 'toggleAdminTools', $routeId), array('escape' => false, 'title' => 'Admin Tools aktivieren'));
+					} else {
+						echo $this->Html->link('<button type="button" class="btn btn-warning">Admin Tools deaktivieren</span></button>', array('controller' => 'reservations', 'action' => 'toggleAdminTools', $routeId), array('escape' => false, 'title' => 'Admin Tools deaktivieren'));
+					} ?>
 				</div>
 			</div>
 		</div>

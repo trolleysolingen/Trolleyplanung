@@ -148,11 +148,11 @@
 								if(glob("img/routes/route_" . $route['Route']['id'] . ".*")) { 
 									echo "&nbsp;&nbsp;";
 									$file = glob('img/routes/route_' . $route['Route']['id'] . '.*');
-									echo '<button data-toggle="modal" data-target="#routeModal" type="button" data-data="' . $file[0] . '" class="open-RouteDialog btn btn-warning btn-xs">';
+									echo '<button data-toggle="modal" data-target="#routeModal" type="button" data-data="/' . $file[0] . '" class="open-RouteDialog btn btn-warning btn-xs">';
 									echo 'Karte anzeigen';
 									echo '</button>';
 									echo "&nbsp;&nbsp;";
-									echo $this->Html->link('<button type="button" data-data="' . $route['Route']['name'] . '" class="open-Dialog btn btn-danger btn-xs">Karte löschen</button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('action'=>'deleteMap',$route['Route']['id'])), 'escape' => false), false);
+									echo $this->Html->link('<button type="button" data-data="' . $route['Route']['name'] . '" class="open-Dialog btn btn-danger btn-xs">Karte löschen</button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('controller' => 'routes', 'action'=>'deleteMap',$route['Route']['id'])), 'escape' => false), false);
 								} else {									
 									echo "&nbsp;&nbsp;";
 									echo '<button data-toggle="modal" data-target="#uploadMap" type="button" data-data="' . $route['Route']['id'] . '" class="open-UploadDialog btn btn-default btn-xs">';

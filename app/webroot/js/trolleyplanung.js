@@ -55,7 +55,7 @@ function ajaxCallReservation(reservationDay, reservationTimeslot, url, data, adm
             type: "POST",
             url: url,
             data: data,
-            timeout: 10000,//in ms
+            timeout: 20000,//in ms
             dataType: "json",
             success: function(data) {
                 preventDoubleClick = false;
@@ -341,7 +341,7 @@ function ajaxCallCongregationReportDate(congregationId, url, data) {
             type: "POST",
             url: url,
             data: data,
-            timeout: 10000,//in ms
+            timeout: 20000,//in ms
             dataType: "json",
             success: function(response){
 				preventDoubleClick = false;

@@ -98,6 +98,7 @@ class RoutesController extends AppController {
 	
 	public function deleteMap($id = null) {
 		
+		$publisher = $this->Session->read('publisher');
 		$file = glob('img/routes/route_' . $id . '.*');
 		
 		if (unlink($file[0])) {
@@ -115,6 +116,7 @@ class RoutesController extends AppController {
 	}
 	
 	public function uploadMap() {
+		$publisher = $this->Session->read('publisher');
 		$filename = "route_" . $this->data['Files']['id'];
 		$formdata = $this->data['Files']['upload'];
 		if($formdata['type'] == "image/gif") {
@@ -128,12 +130,6 @@ class RoutesController extends AppController {
 		}
 		
 		$result = $this->uploadFiles('img/routes', $formdata, $filename);
-		
-		if (empty($result)) {
-			$this->Session->setFlash('Die Karte wurde hochgeladen.', 'default', array('class' => 'alert alert-success'));
-		} else {
-			$this->Session->setFlash('Die Karte konnte nicht hochgeladen werden. Bitte versuche es später nochmal. Akzeptierte Dateitypen sind: jpg, png, gif.', 'default', array('class' => 'alert alert-danger'));
-		}
 		return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 	}
 

@@ -127,10 +127,10 @@ class ReservationDAOComponent extends Component {
         				'recursive' => 2
         			)
         		);
-        		$sendMail = true;
+				$sendMail = true;
         	}
-        	$reservation['sendMail'] = $sendMail;
-		}
+			$reservation['sendMail'] = $sendMail;
+		}        
         // debug($reservation);
 
         return $reservation;
