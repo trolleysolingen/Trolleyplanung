@@ -56,7 +56,6 @@ class StartController extends AppController {
 						$this->Session->write('adminReportNumber', "");
 						$this->Session->write('publisherReports', "");			
 					}
-					$this->Session->write('publisher', $publisher);
 					return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 				}
 			} else {

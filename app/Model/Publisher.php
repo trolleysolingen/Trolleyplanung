@@ -70,6 +70,7 @@ class Publisher extends AppModel {
 		)
 	);
 	
+	/*
 	public $hasAndBelongsToMany = array(
 			'Reservation' =>
 			array(
@@ -86,4 +87,6 @@ class Publisher extends AppModel {
 					'finderQuery' => ''
 			)
 	);
+	
+	*/
 }

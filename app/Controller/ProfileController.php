@@ -48,7 +48,7 @@ class ProfileController extends AppController {
 		$this->set('title_for_layout', 'Profil');
 	}
 	
-		public function setNewSetting($state = null, $module) {
+	public function setNewSetting($state = null, $module) {
 		
 		$publisher = $this->Session->read('publisher');
 		$publisher['Publisher'][$module] = $state;
