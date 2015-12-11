@@ -35,9 +35,6 @@ class ReportsController extends AppController {
 		$missingReportList = $this->ReservationDAO->getMissingReports ( $publisher );
 		$this->set ( "missingReportList", $missingReportList );
 		
-		$givenReportList = $this->ReservationDAO->getGivenReports ( $publisher );
-		$this->set ( "givenReportList", $givenReportList );
-		
 		$this->set ( 'title_for_layout', 'Meine Berichte' );
 		$this->set ( "publisher", $this->Session->read ( 'publisher' ) );
 	}
@@ -63,9 +60,9 @@ class ReportsController extends AppController {
 						'class' => 'alert alert-success' 
 				) );
 				if ($publisher ['Congregation'] ['report']) {
-					$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+					$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 					$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-					$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+					$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 					if ($adminReportNumber > 0) {
 						$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 					} else {
@@ -120,9 +117,9 @@ class ReportsController extends AppController {
 					'class' => 'alert alert-success' 
 			) );
 			if ($publisher ['Congregation'] ['report']) {
-				$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+				$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 				$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-				$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+				$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 				if ($adminReportNumber > 0) {
 					$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 				} else {
@@ -162,9 +159,9 @@ class ReportsController extends AppController {
 					'class' => 'alert alert-success' 
 			) );
 			if ($publisher ['Congregation'] ['report']) {
-				$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+				$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 				$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-				$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+				$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 				if ($adminReportNumber > 0) {
 					$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 				} else {
@@ -225,9 +222,9 @@ class ReportsController extends AppController {
 					'class' => 'alert alert-success' 
 			) );
 			if ($publisher ['Congregation'] ['report']) {
-				$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+				$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 				$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-				$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+				$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 				if ($adminReportNumber > 0) {
 					$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 				} else {
@@ -304,9 +301,9 @@ class ReportsController extends AppController {
 						'class' => 'alert alert-success' 
 				) );
 				if ($publisher ['Congregation'] ['report']) {
-					$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+					$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 					$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-					$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+					$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 					if ($adminReportNumber > 0) {
 						$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 					} else {
@@ -349,9 +346,9 @@ class ReportsController extends AppController {
 					'class' => 'alert alert-success' 
 			) );
 			if ($publisher ['Congregation'] ['report']) {
-				$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+				$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 				$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-				$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+				$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 				if ($adminReportNumber > 0) {
 					$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 				} else {
@@ -393,9 +390,9 @@ class ReportsController extends AppController {
 					'class' => 'alert alert-success' 
 			) );
 			if ($publisher ['Congregation'] ['report']) {
-				$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+				$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 				$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-				$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+				$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 				if ($adminReportNumber > 0) {
 					$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 				} else {
@@ -475,9 +472,9 @@ class ReportsController extends AppController {
 			) );
 		}
 		if ($publisher ['Congregation'] ['report']) {
-			$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports ( $publisher );
+			$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount ( $publisher );
 			$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
-			$adminReportNumber = count ( $missingCongregationReportList ) + count ( $declinedReportList );
+			$adminReportNumber = $missingCongregationReportCount + count ( $declinedReportList );
 			if ($adminReportNumber > 0) {
 				$this->Session->write ( 'adminReportNumber', $adminReportNumber );
 			} else {

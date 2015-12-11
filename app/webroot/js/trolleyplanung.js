@@ -120,10 +120,6 @@ function addGuest(reservationDay, reservationTimeslot, displayTime, admintools) 
             $('#guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg').html('Bitte wähle einen zugelassenen Verkündiger aus. Die automatische Vorschlagsliste hilft dir dabei.');
             $('#guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg').show();
         }
-        
-        if(publisherIndex >= 0) {
-        	publisherList.splice(publisherIndex, 1);
-        }
     }
 
 }

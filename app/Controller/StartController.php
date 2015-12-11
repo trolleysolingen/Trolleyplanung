@@ -36,11 +36,15 @@ class StartController extends AppController {
 					$this->Session->write('publisher', $publisher);
 					$this->Session->write('admintools', false);
 					if($publisher['Congregation']['report']) {
-						$missingCongregationReportList = $this->ReservationDAO->getMissingCongregationReports($publisher);
-						$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
-						$adminReportNumber = count($missingCongregationReportList) + count($declinedReportList);
-						if($adminReportNumber > 0) {
-							$this->Session->write('adminReportNumber', $adminReportNumber);
+						if($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+							$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount($publisher);
+							$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports($publisher);
+							$adminReportNumber = $missingCongregationReportCount + count($declinedReportList);
+							if($adminReportNumber > 0) {
+								$this->Session->write('adminReportNumber', $adminReportNumber);
+							} else {
+								$this->Session->write('adminReportNumber', "");
+							}
 						} else {
 							$this->Session->write('adminReportNumber', "");
 						}
