@@ -9,7 +9,7 @@
 </script>
 <input type="hidden" id="guestsNotAllowed" name="guestsNotAllowed" value="<?php echo array_key_exists('guests_not_allowed', $publisher['Congregation']) ? $publisher['Congregation']['guests_not_allowed'] : 0 ?>"/>
 
-<?php if($publisher['Publisher']['send_mail_when_partner'] == null) { ?>
+<?php if($publisher['Publisher']['send_mail_when_partner'] == null || $publisher['Publisher']['send_mail_for_reservation'] == null) { ?>
 	<div class="alert alert-info" role="alert">In deinem Profil gibt es noch unvollständige Angaben. Bitte klicke <?php echo $this->Html->link('HIER', array('controller' => 'profile', 'action' => 'index'), array('class' => 'alert-link')); ?> um diese zu pflegen. Vielen Dank.</div>
 <?php } ?>
 

@@ -107,7 +107,7 @@ class ReservationsController extends AppController {
 					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
 						try {
 							foreach($reservation['Publisher'] as $reservationPublisher) {
-								if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
+								if($reservationPublisher['id'] != $publisher['Publisher']['id'] && ($reservationPublisher['send_mail_for_reservation'] || $reservationPublisher['send_mail_for_reservation'] == null)) {
 									$this->sendReservationMailToPublisher($reservationPublisher, $reservation, false);
 								}
 							}
@@ -161,7 +161,7 @@ class ReservationsController extends AppController {
 					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
 						try {
 							foreach($reservation['Publisher'] as $reservationPublisher) {
-								if($reservationPublisher['id'] != $publisher['Publisher']['id']) {
+								if($reservationPublisher['id'] != $publisher['Publisher']['id'] && ($reservationPublisher['send_mail_for_reservation'] || $reservationPublisher['send_mail_for_reservation'] == null)) {
 									$this->sendReservationMailToPublisher($reservationPublisher, $reservation, true);
 								}
 							}

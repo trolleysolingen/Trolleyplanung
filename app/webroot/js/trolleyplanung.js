@@ -107,7 +107,7 @@ function addGuest(reservationDay, reservationTimeslot, displayTime, admintools) 
     if (guestname) {
     	var publisherIndex = $.inArray(guestname, publisherList);
         var guestsNotAllowed = $('#guestsNotAllowed').val();
-        if (guestsNotAllowed != 1 || publisherIndex >= 0) {
+        if (guestsNotAllowed != 1 || publisherIndex >= 0 || admintools) {
             var data = {
                 reservationDay: reservationDay,
                 reservationTimeslot: reservationTimeslot,
