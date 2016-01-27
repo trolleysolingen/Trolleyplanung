@@ -27,7 +27,7 @@ for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
 				'timeslots' => $timeslots,
 				'publisher' => $publisher,
 				'slot' => $slot,
-				'td_id' => 'sm_md',
+				'td_id' => $display_real_size,
 				'div_class' => 'xs'
 			));
 		}

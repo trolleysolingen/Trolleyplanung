@@ -24,7 +24,7 @@ for ($weekDay = 0; $weekDay < sizeof($weekDays); $weekDay++) {
 				'timeslots' => $timeslots,
 				'publisher' => $publisher,
 				'slot' => $slot,
-				'td_id' => 'xs',
+				'td_id' => $display_real_size,
 				'div_class' => 'xs'
 			));
 			echo "</tr>";

@@ -39,7 +39,7 @@ for ($slot = 0; $slot < sizeof($timeslots); $slot++) {
 				'timeslots' => $timeslots,
 				'publisher' => $publisher,
 				'slot' => $slot,
-				'td_id' => 'lg',
+				'td_id' => $display_real_size,
 				'div_class' => 'lg'
 			));
 		}

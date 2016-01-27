@@ -73,13 +73,15 @@
 				echo $this->element('display_xs', array(
 					'weekDays' => $weekDays,
 					'echoDate' => $echoDate,
-					'dateStart' => $dateStart
+					'dateStart' => $dateStart,
+					'display_real_size' => $displaySizes_underscore_separated
 				));
 			} else {
 				echo $this->element('display_' . $displaySizes_underscore_separated, array(
 					'weekDays' => $weekDays,
 					'echoDate' => $echoDate,
-					'dateStart' => $dateStart
+					'dateStart' => $dateStart,
+					'display_real_size' => $displaySizes_underscore_separated
 				));
 			}
             echo "</div>";
