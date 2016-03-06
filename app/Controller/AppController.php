@@ -82,6 +82,14 @@ class AppController extends Controller {
 		return $success;
 	}
 	
+	public function sendMailBcc($recieverMailArray, $subject, $text) {
+		$mail = new CakeEmail('smtp');
+		$result = $mail->emailFormat('text')
+		->bcc($recieverMailArray)
+		->subject($subject);
+		return $mail->send($text);
+	}
+	
 	/**
 	 * uploads files to the server
 	 * @params:

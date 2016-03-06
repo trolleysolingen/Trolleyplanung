@@ -58,15 +58,14 @@ class MessagesController extends AppController {
 					$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 					if (strpos($actual_link,'trolleydemo') === false) {
 						$error = 0;
+						$emailArray = [];
 						foreach ($mailList as $publisherToSendAccount) {
-							$success = $this->sendMail($publisherToSendAccount["Publisher"]["email"], $this->request->data["Message"]["subject"], $this->request->data["Message"]["text"]);
-							
-							if(!$success) {
-								$error++;
-							}
+							$emailArray[] = $publisherToSendAccount["Publisher"]["email"];
 						}
+						$success = $this->sendMailBcc($emailArray, $this->request->data["Message"]["subject"], $this->request->data["Message"]["text"]);
+
 						
-						if($error>0) {
+						if(!$success) {
 							$this->Session->setFlash('Die Nahrichten konnten nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 						} else {
 							$this->Session->setFlash('Die Nachrichten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
