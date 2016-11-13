@@ -1,5 +1,5 @@
 ﻿var debug = true;
-var fullPublisherList = publisherList.slice();
+var fullPublisherList = (typeof publisherList !== 'undefined') ? publisherList.slice() : null;
 
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
