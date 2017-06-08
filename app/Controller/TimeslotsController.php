@@ -32,10 +32,11 @@ class TimeslotsController extends AppController {
  * @return void
  */
 	public function index($routeId = null) {
-		if (!$routeId) {
-			return $this->redirect(array('controller' => 'routes', 'action' => 'index'));
-		}
 		$publisher = $this->Session->read('publisher');
+		if (!$routeId) {			
+			return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
+		}
+		
 
 		$this->Timeslot->recursive = 0;
 		$this->set('timeslots',
@@ -102,7 +103,7 @@ class TimeslotsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Timeslot->save($this->request->data)) {
 				$this->Session->setFlash('Die Schichtzeit wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index', $this->request->data['Timeslot']['route_id']));
 			} else {
 				$this->Session->setFlash('Die Schichtzeit konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
