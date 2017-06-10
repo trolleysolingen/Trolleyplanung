@@ -11,4 +11,15 @@ alter table routes add (
  	maplink varchar(400)
 );
 
+ALTER TABLE dayslots DROP FOREIGN KEY fk_dayslots_routes;
+ALTER TABLE dayslots 
+  ADD CONSTRAINT `fk_dayslots_routes` FOREIGN KEY (`route_id`) REFERENCES `routes` (`id`) ON DELETE CASCADE;
   
+
+ALTER TABLE reservations DROP FOREIGN KEY fk_reservations_routes;
+ALTER TABLE reservations
+  ADD CONSTRAINT `fk_reservations_routes` FOREIGN KEY (`route_id`) REFERENCES `routes` (`id`) ON DELETE CASCADE;
+  
+ALTER TABLE timeslots DROP FOREIGN KEY fk_timeslotes_routes;
+ALTER TABLE timeslots
+  ADD CONSTRAINT `fk_timeslotes_routes` FOREIGN KEY (`route_id`) REFERENCES `routes` (`id`) ON DELETE CASCADE;

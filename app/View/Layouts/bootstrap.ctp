@@ -111,6 +111,10 @@
 			$(this).find('form').attr('action', $(e.relatedTarget).data('action'));
 		});
 		
+		$('#ConfirmDeleteMap').on('show.bs.modal', function(e) {
+			$(this).find('form').attr('action', $(e.relatedTarget).data('action'));
+		});
+		
 		$(document).on("click", ".open-Dialog", function () {
 			 var data = $(this).data('data');
 			 $(".modal-body #data").html( data );

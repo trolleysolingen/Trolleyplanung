@@ -96,6 +96,27 @@ class RoutesController extends AppController {
 		$this->set('publisher', $publisher);
 	}
 	
+	/**
+	 * delete method
+	 *
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
+	public function delete($id = null) {
+		$this->Route->id = $id;
+		if (!$this->Route->exists()) {
+			throw new NotFoundException(__('Ungültige Route'));
+		}
+		if ($this->Route->delete()) {
+			$this->Session->setFlash('Die Route wurde gelöscht.', 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash('Die Route konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+		$publisher = $this->Session->read('publisher');
+		return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
+	}
+	
 	public function deleteMap($id = null) {
 		
 		$publisher = $this->Session->read('publisher');

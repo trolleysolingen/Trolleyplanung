@@ -142,6 +142,10 @@
 							<?php
 								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('controller' => 'routes', 'action' => 'edit', $route['Route']['id']), array('escape' => false, 'title' => 'Bearbeiten'));
 								echo "&nbsp;&nbsp;";
+								
+								echo $this->Html->link('<button type="button" data-data="' . $route['Route']['name'] . '" class="open-Dialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('controller' => 'routes', 'action'=>'delete',$route['Route']['id'])), 'escape' => false), false);
+								
+								echo "&nbsp;&nbsp;";								
 								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs">Tage festlegen</span></button>', array('controller' => 'dayslots', 'action' => 'index', $route['Route']['id']), array('escape' => false, 'title' => 'Tage festlegen'));
 								echo "&nbsp;&nbsp;";
 								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs">Schichtzeiten festlegen</span></button>', array('controller' => 'timeslots', 'action' => 'index', $route['Route']['id']), array('escape' => false, 'title' => 'Schichtzeiten festlegen'));
@@ -152,13 +156,13 @@
 									echo 'Karte anzeigen';
 									echo '</button>';
 									echo "&nbsp;&nbsp;";
-									echo $this->Html->link('<button type="button" data-data="' . $route['Route']['name'] . '" class="open-Dialog btn btn-danger btn-xs">Karte löschen</button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('controller' => 'routes', 'action'=>'deleteMap',$route['Route']['id'])), 'escape' => false), false);
+									echo $this->Html->link('<button type="button" data-data="' . $route['Route']['name'] . '" class="open-Dialog btn btn-danger btn-xs">Karte löschen</button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDeleteMap', 'data-action'=> Router::url(array('controller' => 'routes', 'action'=>'deleteMap',$route['Route']['id'])), 'escape' => false), false);
 								} else {									
 									echo "&nbsp;&nbsp;";
 									echo '<button data-toggle="modal" data-target="#uploadMap" type="button" data-data="' . $route['Route']['id'] . '" class="open-UploadDialog btn btn-default btn-xs">';
 									echo 'Karte hinzufügen';
 									echo '</button>';
-								}
+								}								
 							?>
 						</td>
 
@@ -191,7 +195,35 @@
 
 
 <!-- Modal -->
+
 <div class="modal fade" id="ConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Karte löschen</h4>
+      </div>
+      <div class="modal-body">
+        Möchtest du die Route <b><div id="data" name="data"></div></b> wirklich löschen?
+      </div>
+      <div class="modal-footer">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
+			<?php
+			echo $this->Form->postLink(
+					'Ja',
+					array('action' => 'delete'),
+					array('class' => 'btn btn-danger'),
+					false
+				);
+			?>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ConfirmDeleteMap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
