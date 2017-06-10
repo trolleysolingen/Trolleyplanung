@@ -64,7 +64,7 @@
 			</button>
 			<?php 
 				echo $this->Html->link(
-					$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-grater jw-tower')) . "Trolleyverwaltung",
+					$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-grater jw-tower')) . $this->Session->read('verwaltungTyp', 'FFD') . "-Verwaltung",
 					array('controller' => 'start', 'action' => 'index'),
 					array('class' => 'navbar-brand', 'escape' => false)
 				);
@@ -78,7 +78,7 @@
 				if ($publisher) { ?>
 					<ul class="nav navbar-nav">
 						<li class="dropdown <?php echo $highlightMyTrolley ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-calendar" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Mein Trolleydienst </span><span class="badge"><?php echo $publisherReports; ?></span>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-calendar" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Mein <?php echo $this->Session->read('verwaltungTyp'); ?>-Dienst </span><span class="badge"><?php echo $publisherReports; ?></span>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -96,7 +96,7 @@
 						</li>
 						
 						<li class="dropdown <?php echo $highlightMyCongregation ?>">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Meine Versammlung </span><span class="badge"><?php echo $adminReportNumber; ?></span>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Verwaltung </span><span class="badge"><?php echo $adminReportNumber; ?></span>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">

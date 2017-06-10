@@ -62,10 +62,10 @@
 <br/>
 </div>
 <div class="col-md-6 panel panel-default">
-	<h3>...die Trolleyverwaltung ist immer mit dabei!</h2>
+	<h3>...die <?php echo $this->Session->read('verwaltungTyp'); ?>-Verwaltung ist immer mit dabei!</h2>
 	<br/>
 	<br/>
-	<span class="glyphicon glyphicon-ok_2 check"></span> Einfache Verwaltung der Trolleyschichten:<br/>
+	<span class="glyphicon glyphicon-ok_2 check"></span> Einfache Verwaltung der <?php echo $this->Session->read('verwaltungTyp'); ?>-Schichten:<br/>
 	<ul>
 		<li>Für eine Schicht eintragen</li>
 		<li>Einen Partner sowohl aus der Versammlung, als auch frei wählbar dazu eintragen</li>
@@ -77,16 +77,16 @@
 	<span class="glyphicon glyphicon-ok_2 check"></span> Leichte Administration:<br/>
 	<ul>
 		<li>Schichtzeiten selber definieren</li>
-		<li>Definiere die Tage an denen Trolleydienst durchgeführt werden soll</li>
+		<li>Definiere die Tage an denen <?php echo $this->Session->read('verwaltungTyp'); ?>-Dienst durchgeführt werden soll</li>
 		<li>Verkündiger eintragen und Zugangsmails verschicken</li>
 		<li>Bekomme Benachrichtungen, wenn ein Verkündiger deiner Versammlung einen Partner einträgt, der nicht zu deinen eingetragenen Verkündigern gehört</li>
-		<li>Schlüsselverwaltung: Gib an welche Verkündiger Zugang zum Trolley besitzen</li>
+		<li>Schlüsselverwaltung: Gib an welche Verkündiger Zugang zum <?php echo $this->Session->read('verwaltungTyp'); ?> besitzen</li>
 	</ul>
 	<span class="glyphicon glyphicon-ok_2 check"></span> Ständige Weiterentwicklung der Software basierend auf Wünschen der Benutzer<br/>
 	<br>
 	Deine Versammlung möchte einen <b>Zugang</b>? Kein Problem!<br/>
 	Schicke uns einfach eine Mail (<a href="mailto:info@trolley.jw-center.com">info@trolley.jw-center.com</a>) und wir werden uns so schnell es geht mit dir in Verbindung setzen.<br/>
 	<br/>
-	<div style="font-family: 'Stalemate', serif; font-size:50px;">Deine Trolleyverwaltung</div><br/>
+	<div style="font-family: 'Stalemate', serif; font-size:50px;">Deine <?php echo $this->Session->read('verwaltungTyp'); ?>-Verwaltung</div><br/>
 	
 </div>

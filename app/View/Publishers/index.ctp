@@ -1,6 +1,6 @@
 <div class="publishers index">
 	<br/>
-	<legend><?php echo __('Verkündiger der Versammlung ' . $publisher['Congregation']['name']); ?></legend>
+	<legend><?php echo __('Verkündiger von "' . $publisher['Congregation']['name']) . '"'; ?></legend>
 
 	<div class="panel panel-primary">
 		<div class="panel-heading">

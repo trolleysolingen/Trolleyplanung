@@ -67,7 +67,15 @@ class StartController extends AppController {
 			}
 
 		}
-		$this->set('title_for_layout', 'Trolleyverwaltung');
+		
+		$hostname = $_SERVER['HTTP_HOST'];
+		if (substr( $hostname, 0, 3 ) === "ffd") {
+			$this->set('title_for_layout', 'FFD-Verwaltung');
+			$this->Session->write('verwaltungTyp', 'FFD');			
+		} else {
+			$this->set('title_for_layout', 'Trolleyverwaltung');
+			$this->Session->write('verwaltungTyp', 'Trolley');			
+		}
 	}
 
 }
