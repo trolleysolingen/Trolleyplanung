@@ -116,6 +116,12 @@
 							echo '</button>';
 							} 
 						?>
+						<?php if ($route['Routes']['maplink'] != "") {
+						?>
+							<a class="btn btn-warning" target="_blank" href="<?php echo $route['Routes']['maplink'] ?>">Karte</a>
+						<?php
+							}
+						?>
 						<a class="btn btn-success" href="/reservations/index/<?php echo $route['Routes']['id'] ?>">Planung zeigen</a>
 					  </div>
 					</div>

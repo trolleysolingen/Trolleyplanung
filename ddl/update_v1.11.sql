@@ -5,5 +5,10 @@ ALTER TABLE `reservations`
 ALTER TABLE publisher_reservations DROP FOREIGN KEY fk_reservation_publishers;
 ALTER TABLE `publisher_reservations`
   ADD CONSTRAINT `fk_reservation_publishers` FOREIGN KEY (`reservation_id`) REFERENCES `reservations` (`id`) ON DELETE CASCADE;
+  
+  
+alter table routes add (
+ 	maplink varchar(400)
+);
 
   
