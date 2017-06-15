@@ -236,7 +236,7 @@ class ReservationsController extends AppController {
 
 	public function sendReservationMailToPublisher($reservationPublisher, $reservation, $deletion) {
 		$publisher = $this->Session->read('publisher');
-		$subject = "Trolley-Schichtplanung";
+		$subject = $this->Session->read('verwaltungTyp') . "-Schichtplanung";
 		if ($deletion) {
 			$message = "Liebe(r) " . $reservationPublisher["prename"] . " " . $reservationPublisher["surname"] . ",\n"
 				. "\n"
@@ -245,7 +245,7 @@ class ReservationsController extends AppController {
 				. " bis " . $reservation['Timeslot']['end']
 				. " Uhr hat sich einer deiner Schichtpartner aus Eurer Schicht gelöscht.\n\n"
 				. "Viele Grüße \n"
-				. "Deine Trolleyverwaltung \n";
+				. "Deine " . $this->Session->read('verwaltungTyp') . "-Verwaltung \n";
 		} else {
 			$message = "Liebe(r) " . $reservationPublisher["prename"] . " " . $reservationPublisher["surname"] . ",\n"
 				. "\n"
@@ -255,9 +255,9 @@ class ReservationsController extends AppController {
 				. " Uhr hat sich " . $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]
 				. " zu Deiner Schicht hinzugebucht.\n\n"
 				. "Viele Grüße \n"
-				. "Deine Trolleyverwaltung \n";
+				. "Deine " . $this->Session->read('verwaltungTyp') . "-Verwaltung \n";
 		}
-
+		
 		if (strpos($reservationPublisher["email"], "@demo.de") === false) {
 			$this->sendMail($reservationPublisher["email"], $subject, $message);
 		}
@@ -266,7 +266,7 @@ class ReservationsController extends AppController {
 	public function sendGuestAlertMail($reservation) {
 		$publisher = $this->Session->read('publisher');
 		$congregationAdmins = $this->PublisherDAO->getContactPersons($publisher);
-		$subject = "Trolley-Schichtplanung - Gast-Eintragung";
+		$subject = $this->Session->read('verwaltungTyp') . "-Schichtplanung - Gast-Eintragung";
 
 		$message = "Am " . date("d.m.Y", strtotime($reservation['Reservation']['day']))
 			. " von " . $reservation['Timeslot']['start']
@@ -281,7 +281,7 @@ class ReservationsController extends AppController {
 	
 	public function sendPartnerMail($reservation) {
 		$publisher = $this->Session->read('publisher');
-		$subject = "Trolley-Schichtplanung - Partner-Eintragung";
+		$subject = $this->Session->read('verwaltungTyp') . "-Schichtplanung - Partner-Eintragung";
 		
 		$message = "Liebe(r) " . $reservation["GuestPublisher"]["prename"] . " " . $reservation["GuestPublisher"]["surname"] . ",\n"
 			. "\n"
@@ -289,10 +289,10 @@ class ReservationsController extends AppController {
 			. " von " . $reservation['Timeslot']['start']
 			. " bis " . $reservation['Timeslot']['end']
 			. " Uhr hat dich " . $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]
-			. " zu einer Schicht hinzugef�gt.\n\n"
+			. " zu einer Schicht hinzugefügt.\n\n"
 			. "Viele Grüße \n"
-			. "Deine Trolleyverwaltung \n";
-			
+			. "Deine " . $this->Session->read('verwaltungTyp') . "-Verwaltung \n";
+		
 		$this->sendMail($reservation['GuestPublisher']['email'], $subject, $message);
 	}
 	

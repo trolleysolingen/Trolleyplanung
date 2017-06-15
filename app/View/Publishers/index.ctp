@@ -13,7 +13,7 @@
 		</div>
 		<div id="collapse_help" class="panel-collapse collapse">
 			<div class="panel-body">
-				Hier findest du alle Verkündiger aufgelistet, mit denen du dich in deiner Versammlung für den Trolleydienst verabreden kannst.
+				Hier findest du alle Verkündiger aufgelistet, mit denen du dich für den <?php echo $this->Session->read('verwaltungTyp') ?>-Dienst verabreden kannst.
 			</div>
 		</div>
 	</div>

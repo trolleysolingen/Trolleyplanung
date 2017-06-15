@@ -207,13 +207,13 @@ class PublishersController extends AppController {
 	
 	public function sendMails($publisherToSendAccount) {
 
-		$subject = "Zugangsdaten zur Trolleyverwaltung";
+		$subject = "Zugangsdaten zur " . $this->Session->read('verwaltungTyp') . "-Verwaltung";
 		$message = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
 			. "\n"
-			. "anbei findest Du Deine Zugangsdaten zur Trolleyverwaltung Deiner Versammlung.\n"
+			. "anbei findest Du Deine Zugangsdaten zur " . $this->Session->read('verwaltungTyp') . "-Verwaltung Deiner Versammlung.\n"
 			. "Bitte bewahre diese Zugangsdaten gut auf.\n"
 			. "\n"
-			. "http://trolley.jw-center.com \n"
+			. "http://" . strtolower($this->Session->read('verwaltungTyp')) . ".jw-center.com \n"
 			. "Benutzername: " . $publisherToSendAccount["Publisher"]["email"] . "\n"
 			. "Passwort: " . $publisherToSendAccount["Publisher"]["password"] . "\n"
 			. "\n"
@@ -224,10 +224,10 @@ class PublishersController extends AppController {
 			. "Wir sind uns sicher, dass Jehova deine Bemühungen am öffentlichen Zeugnisgeben teil zu nehmen, segnen wird. \n"
 			. "\n"
 			. "Für Fragen, aufgefallene Fehler, Verbesserungsvorschläge und Anregungen nutze bitte die Kontakt Seite: \n"
-			. "http://trolley.jw-center.com/contact \n"
+			. "http://" . strtolower($this->Session->read('verwaltungTyp')) . ".jw-center.com/contact \n"
 			. "\n"
 			. "Viele Grüße \n"
-			. "Deine Trolleyverwaltung \n"; 
+			. "Deine " . $this->Session->read('verwaltungTyp') . "-Verwaltung \n"; 
 			
 		$subject2 = "Informationen zum Adminbereich";
 		$message2 = "Liebe(r) " . $publisherToSendAccount["Publisher"]["prename"] . " " . $publisherToSendAccount["Publisher"]["surname"] . ",\n"
@@ -235,23 +235,23 @@ class PublishersController extends AppController {
 			. "Du wurdest als Versammlungsadmin deiner Versammlung angelegt. Wir freuen uns, dass ihr als Versammlung am öffentlichen Zeugnisgeben teilnehmt und auch, dass ihr euch dazu entschlossen habt zur Verwaltung unser Tool zu benutzen. \n"
 			. "Deine Zugangsdaten müsstest du schon in einer gesonderten Mail zugesandt bekommen haben. Anbei aber noch ein paar spezielle Dinge, die den Adminbereich betreffen: \n"
 			. "\n"
-			. "Hinter dem Menüpunkt \"Einstellungen\", kannst du deinen Versammlungsnamen ändern und die Tage einstellen, für die in eurem Versammlungsgebiet Trolleyschichten eingetragen werden können. Außerdem können hier auch verschiedene Module zu deiner Versammlung aktiviert werden. Die jeweiligen Informationen dazu kannst du auf dem jeweiligen Info Button links neben dem Modul einsehen.\n"
+			. "Hinter dem Menüpunkt \"Einstellungen\", kannst du deinen Versammlungsnamen ändern und die Tage einstellen, für die in eurem Versammlungsgebiet " . $this->Session->read('verwaltungTyp') . "-Schichten eingetragen werden können. Außerdem können hier auch verschiedene Module zu deiner Versammlung aktiviert werden. Die jeweiligen Informationen dazu kannst du auf dem jeweiligen Info Button links neben dem Modul einsehen.\n"
 			. "\n"
-			. "Unter dem Menüpunkt \"Verkündiger\" kannst die Verkündiger deiner Versammlung verwalten. Du kannst entweder Verkündiger oder Admins, die die gleichen Berechtigungen wie du haben, anlegen. Bei der Verkündigeranlage wäre es vorteilhaft, wenn du eine Telefonnummer des Verkündigers mit angibst. Diese wird in in der Schichtplanung zu jedem Verkündiger angezeigt. So können die Verkündiger untereinander leichter Kontakt herstellen. Soll ein Verkündiger Trolleydienst machen dürfen, aber dies nur als Partner mit einem etwas erfahrenerem Verkündiger, gib einfach keine E-mail Adresse zu diesem Verkündiger an. So hat er keinen Login zum einloggen, steht aber in eurer Verkündiger Liste. Später gehe ich darauf ein, was das für einen Sinn macht. Die Passwörter für die Verkündiger werden automatisch generiert. Mit einem Klick auf den Button \"Alle Zugangsdaten verschicken\", versendest du eine Mail an jeden Verkündiger mit einer Email-Adresse in deiner Verkündigerliste.\n Alternativ kannst du auch auf das Brief Symbol neben dem Verkündiger in der Liste klicken. Dann werden die Zugangsdaten nur für diesen Verkündiger an seine Mail-Adresse verschickt.\n"
+			. "Unter dem Menüpunkt \"Verkündiger\" kannst die Verkündiger deiner Versammlung verwalten. Du kannst entweder Verkündiger oder Admins, die die gleichen Berechtigungen wie du haben, anlegen. Bei der Verkündigeranlage wäre es vorteilhaft, wenn du eine Telefonnummer des Verkündigers mit angibst. Diese wird in in der Schichtplanung zu jedem Verkündiger angezeigt. So können die Verkündiger untereinander leichter Kontakt herstellen. Soll ein Verkündiger " . $this->Session->read('verwaltungTyp') . "-Dienst machen dürfen, aber dies nur als Partner mit einem etwas erfahrenerem Verkündiger, gib einfach keine E-mail Adresse zu diesem Verkündiger an. So hat er keinen Login zum einloggen, steht aber in eurer Verkündiger Liste. Später gehe ich darauf ein, was das für einen Sinn macht. Die Passwörter für die Verkündiger werden automatisch generiert. Mit einem Klick auf den Button \"Alle Zugangsdaten verschicken\", versendest du eine Mail an jeden Verkündiger mit einer Email-Adresse in deiner Verkündigerliste.\n Alternativ kannst du auch auf das Brief Symbol neben dem Verkündiger in der Liste klicken. Dann werden die Zugangsdaten nur für diesen Verkündiger an seine Mail-Adresse verschickt.\n"
 			. "\n"
 			. "Unter dem Menüpunkt \"Schichtzeiten\", kannst du die Schichtzeiten, deiner Versammlung hinzufügen, ändern und löschen. Bitte achte darauf, dass du keine Schichtzeiten löschen kannst, zu denen sich Verkündiger schon eingetragen haben. Falls du also deinen laufenden Schichtplan ändern willst, musst du einfach nur die Schichtzeiten ändern. Falls du dennoch Schichten löschen musst, schreib uns eine Mail und wir werden uns dann um eine Lösung des Problems bemühen. \n"
 			. "\n"
-			. "Hinter dem Menüpunkt \"Schichten\" verbirgt sich die Schichtverwaltung. Hier können sich Verkündiger und auch du für Schichten, maximal 12 Wochen im voraus eintragen. Wenn sich ein Verkündiger einträgt, hat er die Möglichkeit noch einen Partner zu sich in die Schicht einzutragen. Es öffnet sich ein Fenster, in dem er einen Namen eingeben kann, sobald er anfängt zu tippen, öffnen sich Verkündiger Vorschläge anhand seiner eingegebenen Buchstaben. Hier tauchen dann auch die Verkündiger ohne Login auf. Wenn ein Verkündiger einen Partner einträgt, der ihm nicht vorgeschlagen wird von der Suche (weil er nicht in eurer Verkündiger Liste steht und z.B. aus einer anderen Versammlung kommt) bekommen alle Versammlungsadmins eine Info Mail um zu überprüfen ob der Partner für den Trolleydienst geeignet ist. Wenn sich Verkündiger von einer Schicht löschen möchten, wird er gefragt ob er auch den Partner aus seiner Schicht mitlöschen möchte. So müssen sich nicht beide einloggen und löschen, wenn sie ihren Dienst absagen.  \n"
+			. "Hinter dem Menüpunkt \"Schichten\" verbirgt sich die Schichtverwaltung. Hier können sich Verkündiger und auch du für Schichten, maximal 12 Wochen im voraus eintragen. Wenn sich ein Verkündiger einträgt, hat er die Möglichkeit noch einen Partner zu sich in die Schicht einzutragen. Es öffnet sich ein Fenster, in dem er einen Namen eingeben kann, sobald er anfängt zu tippen, öffnen sich Verkündiger Vorschläge anhand seiner eingegebenen Buchstaben. Hier tauchen dann auch die Verkündiger ohne Login auf. Wenn ein Verkündiger einen Partner einträgt, der ihm nicht vorgeschlagen wird von der Suche (weil er nicht in eurer Verkündiger Liste steht und z.B. aus einer anderen Versammlung kommt) bekommen alle Versammlungsadmins eine Info Mail um zu überprüfen ob der Partner für den " . $this->Session->read('verwaltungTyp') . "-Dienst geeignet ist. Wenn sich Verkündiger von einer Schicht löschen möchten, wird er gefragt ob er auch den Partner aus seiner Schicht mitlöschen möchte. So müssen sich nicht beide einloggen und löschen, wenn sie ihren Dienst absagen.  \n"
 			. "\n"
 			. "Natürlich untersteht dieses Tool der ständigen Weiterentwicklung. Wir haben noch einige Ideen und Features, die wir in weiteren Versionen umsetzen wollen. Wenn ihr Fragen habt, nutzt bitte das Kontaktformular oder die e-mail Adresse unter: \n"
-			. "http://trolley.jw-center.com/contact \n"
+			. "http://" . strtolower($this->Session->read('verwaltungTyp')) . ".jw-center.com/contact \n"
 			. "\n"
 			. "Für alle weiteren Verbesserungsvorschläge und Fehler gibt es den Menüpunkt \"Todos\". Dort könnt ihr am einfachsten Fehler melden und auch Funktionen fordern. Gleichzeitig seht ihr auch den jeweiligen Bearbeitungsstand alles offenen Todos. \n"
 			. "\n"
-			. "Wir danken euch für eure Mithilfe und Unterstützung und wünschen euch Jehovas Segen für euren Trolleydienst. \n"
+			. "Wir danken euch für eure Mithilfe und Unterstützung und wünschen euch Jehovas Segen für euren " . $this->Session->read('verwaltungTyp') . "-Dienst. \n"
 			. "\n"
 			. "Viele Grüße \n"
-			. "Deine Trolleyverwaltung \n"; 
+			. "Deine " . $this->Session->read('verwaltungTyp') . "-Verwaltung \n"; 
 		
 		$success = $this->sendMail($publisherToSendAccount["Publisher"]["email"], $subject, $message);
 		

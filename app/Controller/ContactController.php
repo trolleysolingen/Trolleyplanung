@@ -31,6 +31,15 @@ class ContactController extends AppController {
 		if($publisher) {
 			$contactList = $this->PublisherDAO->getContactPersons($publisher);
 			$this->set("contactList", $contactList);
+			$this->Session->write('verwaltungTyp', $publisher['Congregation']['typ']);
+		} else {
+			// not logged in; decide from hostname if to display trolley or ffd
+			$hostname = $_SERVER['HTTP_HOST'];
+			if (substr( $hostname, 0, 3 ) === "ffd") {
+				$this->Session->write('verwaltungTyp', 'FFD');
+			} else {
+				$this->Session->write('verwaltungTyp', 'Trolley');
+			}
 		}
 
 		if ($this->request->is('post')) {
@@ -51,7 +60,7 @@ class ContactController extends AppController {
 			} else {
 				$this->Session->setFlash('Beim Verschicken deiner Nachricht ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'default', array('class' => 'alert alert-danger'));
 			}
-		}
+		} 
 
 		$this->set('title_for_layout', 'Kontakt');
 	}

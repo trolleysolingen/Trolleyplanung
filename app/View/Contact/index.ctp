@@ -28,7 +28,7 @@
 	<div class="col-md-6 col-xs-12">
 		<div class="panel panel-default">
 		  <div class="panel-body">
-			Für alle Fragen, die den Trolleydienst deiner Versammlung betreffen, verwende bitte die Kontakte unter dem Kontaktformular.</br>
+			Für alle Fragen, die den <?php echo $this->Session->read('verwaltungTyp') ?>-Dienst deiner Versammlung betreffen, verwende bitte die Kontakte unter dem Kontaktformular.</br>
 			Benutzt bitte für alle anderen <b>Fragen, Anregungen, Fehlermeldungen und Lobgesänge</b> folgendes Kontaktformular.
 		  </div>
 		</div>
@@ -96,7 +96,7 @@
 							if($contact['Publisher']['description']) {
 								echo "<b>" . $contact['Publisher']['description'] . "</b>";
 							} else {
-								echo "<b>Ansprechpartner Trolleydienst</b>";
+								echo "<b>Ansprechpartner " . $this->Session->read('verwaltungTyp') . "-Dienst</b>";
 							}
 						?>
 					</blockquote>

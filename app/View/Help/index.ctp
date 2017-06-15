@@ -19,7 +19,7 @@
 						style="margin-left: 10px;" class="glyphicon glyphicon-user_add"></span></a> auf der 
 						<?php echo $this->Html->link('Schichten', array('controller' => 'reservations', 'action' => 'index')); ?>-Seite.</br></br>
 				Zusätzlich kannst du noch einen Partner zu deiner Schicht eintragen. Es öffnet sich ein Fenster in dem du den Namen eintippen kannst.
-				Sobald du anfängst zu schreiben, öffnet sich eine Liste mit Vorschlägen von Verkündiger, die für den Trolleydienst zugelassen sind.</br>
+				Sobald du anfängst zu schreiben, öffnet sich eine Liste mit Vorschlägen von Verkündiger, die für den <?php echo $this->Session->read('verwaltungTyp') ?>-Dienst zugelassen sind.</br>
 				<br/>
 				<?php if($publisher['Congregation']['guests_not_allowed']){ ?>
 				Deine Versammlung hat festgelegt, dass nur die vorgegebenen Verkündiger ausgewählt werden können und keine Gäste eingetragen werden können.

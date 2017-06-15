@@ -253,8 +253,8 @@ class ReportsController extends AppController {
 		foreach ( $reservation['Publisher'] as $reservationPublisher ) {
 			if ($reservationPublisher ['id'] != 1) {
 				$subject = "Fehlender Bericht";
-				$message = "Liebe(r) " . $reservationPublisher ["prename"] . " " . $reservationPublisher ["surname"] . ",\n" . "\n" . "Bitte gib einen Bericht für deine Trolleyschicht am " . date ( "d.m.Y", strtotime ( $reservation ['Reservation'] ['day'] ) ) . " von " . $reservation ['Timeslot'] ['start'] . " - " . $reservation ['Timeslot'] ['end'] . " Uhr ab. Bitte sprecht euch untereinander ab, ob du oder dein Partner den Bericht abgibt. Weitere Informationen findest du, wenn du dich in die Trolleyverwaltung unter: http://trolley.jw-center.com/ einloggst.\n" . "Vielen Dank!\n" . "\n" . "Deine Trolleyverwaltung";
-				
+				$message = "Liebe(r) " . $reservationPublisher ["prename"] . " " . $reservationPublisher ["surname"] . ",\n" . "\n" . "Bitte gib einen Bericht für deine Schicht am " . date ( "d.m.Y", strtotime ( $reservation ['Reservation'] ['day'] ) ) . " von " . $reservation ['Timeslot'] ['start'] . " - " . $reservation ['Timeslot'] ['end'] . " Uhr ab. Bitte sprecht euch untereinander ab, ob du oder dein Partner den Bericht abgibt. Weitere Informationen findest du, wenn du dich in die " . $this->Session->read('verwaltungTyp') . "-Verwaltung unter: http://" . strtolower($this->Session->read('verwaltungTyp')) . ".jw-center.com/ einloggst.\n" . "Vielen Dank!\n" . "\n" . "Deine " . $this->Session->read('verwaltungTyp') . "-Verwaltung";
+							
 				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				if (strpos ( $actual_link, 'trolleydemo' ) === false) {
 					if (strpos ( $reservationPublisher ["email"], "@demo.de" ) === false) {
