@@ -23,3 +23,9 @@ ALTER TABLE reservations
 ALTER TABLE timeslots DROP FOREIGN KEY fk_timeslotes_routes;
 ALTER TABLE timeslots
   ADD CONSTRAINT `fk_timeslotes_routes` FOREIGN KEY (`route_id`) REFERENCES `routes` (`id`) ON DELETE CASCADE;
+  
+alter table congregations add (
+	typ varchar(50)
+);
+
+update congregations set typ = 'Trolley';

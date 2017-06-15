@@ -95,6 +95,7 @@ class CongregationsController extends AppController {
 			if ($this->Congregation->save($this->request->data)) {
 				$publisher2 = $this->PublisherDAO->getById($publisher);
 				$this->Session->write('publisher', $publisher2);
+				$this->Session->write('verwaltungTyp', $publisher2['Congregation']['typ']);
 				$this->Session->setFlash('Die Versammlung wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			} else {

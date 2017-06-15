@@ -34,6 +34,7 @@ class StartController extends AppController {
 					$this->PublisherDAO->setLoginPermission($publisher);
 					$publisher = $this->PublisherDAO->getByEmail($email, $password);
 					$this->Session->write('publisher', $publisher);
+					$this->Session->write('verwaltungTyp', $publisher['Congregation']['typ']);
 					$this->Session->write('admintools', false);
 					if($publisher['Congregation']['report']) {
 						if($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
@@ -59,23 +60,25 @@ class StartController extends AppController {
 					} else {
 						$this->Session->write('adminReportNumber', "");
 						$this->Session->write('publisherReports', "");			
-					}
+					}					
+					
 					return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 				}
 			} else {
 				$this->Session->setFlash('Bitte gib deine E-Mail-Adresse und dein Passwort ein.', 'default', array('class' => 'alert alert-danger'));
 			}
 
-		}
-		
-		$hostname = $_SERVER['HTTP_HOST'];
-		if (substr( $hostname, 0, 3 ) === "ffd") {
-			$this->set('title_for_layout', 'FFD-Verwaltung');
-			$this->Session->write('verwaltungTyp', 'FFD');			
-		} else {
-			$this->set('title_for_layout', 'Trolleyverwaltung');
-			$this->Session->write('verwaltungTyp', 'Trolley');			
-		}
+		} else {			
+			// not logged in; decide from hostname if to display trolley or ffd
+			$hostname = $_SERVER['HTTP_HOST'];
+			if (substr( $hostname, 0, 3 ) === "ffd") {
+				$this->set('title_for_layout', 'FFD-Verwaltung');
+				$this->Session->write('verwaltungTyp', 'FFD');
+			} else {
+				$this->set('title_for_layout', 'Trolleyverwaltung');
+				$this->Session->write('verwaltungTyp', 'Trolley');
+			}
+		}		
 	}
 
 }

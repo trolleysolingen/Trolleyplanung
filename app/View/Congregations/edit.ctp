@@ -9,10 +9,18 @@
 			  ?>
 			  <div class="panel-body">
 				<div class="form-group">
-					<label for="start" class="col-xs-4 control-label">Name:</label>
+					<label for="name" class="col-xs-4 control-label">Name:</label>
 					<div class="col-xs-8">
 						<?php
 						echo $this->Form->input('name', array('label'=>false, 'class' => 'form-control', 'placeholder' => 'Name', 'id' => 'name'));
+						?>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="typ" class="col-xs-4 control-label">Typ:</label>
+					<div class="col-sm-8 col-md-6">
+						<?php
+							echo $this->Form->input('typ', array('label'=>false, 'class' => 'form-control', 'id' => 'typ', 'options' => array('Trolley' => 'Trolley', 'FFD' => 'FFD')));
 						?>
 					</div>
 				</div>
