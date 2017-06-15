@@ -29,3 +29,9 @@ alter table congregations add (
 );
 
 update congregations set typ = 'Trolley';
+
+alter table reservations add (
+  videos int(3) default NULL,
+  jworgcard int(3) default NULL,
+  contacts int(3) default NULL
+);

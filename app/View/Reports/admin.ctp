@@ -286,13 +286,33 @@ echo $this->element('report_modal', array('controller' => 'reports'));?>
 				<?php echo $this->Form->input('tracts', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'tracts', 'type' => 'text')); ?>
 			</div>
 		</div>
-		<legend></legend>
 		<div class="form-group">
-			<label class="col-xs-4 control-label" style="text-align: left">Gespräche:</label>
-			<div class="col-xs-8">
-				<?php echo $this->Form->input('conversations', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'conversations', 'type' => 'text')); ?>
+			<label class="col-xs-6 control-label" style="text-align: left">Videovorführungen:</label>
+			<label class="col-xs-6 control-label" style="text-align: left">Visitenkarten</label>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-6">
+				<?php echo $this->Form->input('videos', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'videos', 'type' => 'text')); ?>
+			</div>
+			<div class="col-xs-6">
+				<?php echo $this->Form->input('jworgcard', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'jworgcard', 'type' => 'text')); ?>
 			</div>
 		</div>
+		
+		<legend></legend>
+		<div class="form-group">
+			<label class="col-xs-6 control-label" style="text-align: left">Gespräche:</label>
+			<label class="col-xs-6 control-label" style="text-align: left">Kontaktdaten erhalten:</label>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-6">
+				<?php echo $this->Form->input('conversations', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'conversations', 'type' => 'text')); ?>
+			</div>
+			<div class="col-xs-6">
+				<?php echo $this->Form->input('contacts', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'contacts', 'type' => 'text')); ?>
+			</div>
+		</div>
+		
       </div>
       <div class="modal-footer">
 		<div class="btn-group">

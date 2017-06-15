@@ -55,7 +55,10 @@ class StatsController extends AppController {
 		$monthMagazines = 0;
 		$monthBrochures = 0;
 		$monthTracts = 0;
+		$monthVideos = 0;
+		$monthJworgcard = 0;
 		$monthConversations = 0;
+		$monthContacts = 0;
 		
 		foreach($givenReportList as $givenReport) {
 			$monthMinutes = $monthMinutes + $givenReport['Reservation']['minutes'];
@@ -63,7 +66,10 @@ class StatsController extends AppController {
 			$monthMagazines = $monthMagazines + $givenReport['Reservation']['magazines'];
 			$monthBrochures = $monthBrochures + $givenReport['Reservation']['brochures'];
 			$monthTracts = $monthTracts + $givenReport['Reservation']['tracts'];
+			$monthVideos = $monthTracts + $givenReport['Reservation']['videos'];
+			$monthJworgcard = $monthTracts + $givenReport['Reservation']['jworgcard'];
 			$monthConversations = $monthConversations + $givenReport['Reservation']['conversations'];
+			$monthContacts = $monthTracts + $givenReport['Reservation']['contacts'];
 		}
 		
 		$report = array();
@@ -72,7 +78,10 @@ class StatsController extends AppController {
 		$report[1] = "Zeitschriften " . $newDate . "\t" .  $monthMagazines;
 		$report[2] = "Broschüren " . $newDate . "\t" .  $monthBrochures;
 		$report[3] = "Traktate " . $newDate . "\t" .  $monthTracts;
-		$report[4] = "Gespräche " . $newDate . "\t" .  $monthConversations;
+		$report[4] = "Videos " . $newDate . "\t" .  $monthVideos;
+		$report[5] = "Visitenkarten " . $newDate . "\t" .  $monthJworgcard;
+		$report[6] = "Gespräche " . $newDate . "\t" .  $monthConversations;
+		$report[7] = "Kontaktdaten erhalten " . $newDate . "\t" .  $monthContacts;
 		
 		settype($monthMinutes, 'integer');
 		$monthHours = floor($monthMinutes / 60);
