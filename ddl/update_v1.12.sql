@@ -22,12 +22,25 @@ insert into timeslots (congregation_id, start, end, route_id, day, old_id)
 select ts.congregation_id, ts.start, ts.end, route_id, td.day, ts.id
 from timeslots ts, temp_days td;
 
+alter table reservations add (
+	weekday INT
+);
+
+alter table timeslots add (
+	INDEX `fk_timeslots_old_idx` (`old_id` ASC),
+);
+
+update reservations set weekday = weekday(day);
+
+
 update reservations r set 
-timeslot_id = (select ts.id from timeslots ts, temp_days td where ts.old_id = r.timeslot_id and ts.day = td.day and td.id = weekday(r.day));
+timeslot_id = (select ts.id from timeslots ts, temp_days td where ts.old_id = r.timeslot_id and ts.day = td.day and td.id = r.weekday);
 
 
 delete from timeslots where day is null;
 
 alter table timeslots drop column old_id;
+
+alter table reservations drop column weekday;
 
 drop table temp_days;
