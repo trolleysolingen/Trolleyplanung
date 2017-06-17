@@ -19,7 +19,52 @@ class ReservationDAOComponent extends Component {
 
         $lastDateOnView = strtotime('monday this week +' . Configure::read('DISPLAYED_WEEKS'). ' week');
 
-        $result= $model->find('all', array(
+        $result= $model->find('all', array(      	
+        	'fields' => array(
+        			'Reservation.id',
+        			'Reservation.congregation_id',
+        			'Reservation.day',
+        			'Reservation.timeslot_id',
+        			'Reservation.modified',
+        			'Reservation.route_id',
+        			'Congregation.id',
+        			'Congregation.guests_not_allowed',
+        			'Route.id',
+        			'Route.congregation_id',
+        			'Route.publishers',
+        			'Timeslot.id',
+        			'Timeslot.congregation_id',
+        			'Timeslot.start',
+        			'Timeslot.end',
+        			'Timeslot.route_id',
+        			'Timeslot.day',        			      			
+        	),
+        	'contain' => array(
+        			'PublisherReservation' => array(
+        					'fields' => array(
+        							'PublisherReservation.id',
+        							'PublisherReservation.publisher_id',
+        							'PublisherReservation.reservation_id',
+        							'PublisherReservation.guestname',
+        					),        					
+        			),
+        			'Publisher' => array(
+        					'fields' => array(
+        							'Publisher.id',
+				        			'Publisher.email',
+				        			'Publisher.prename',
+				        			'Publisher.surname',
+				        			'Publisher.congregation_id',
+				        			'Publisher.role_id',
+				        			'Publisher.phone',
+				        			'Publisher.kdhall_key',
+				        			'Publisher.log_out',
+				        			'Publisher.send_mail_when_partner',
+				        			'Publisher.send_mail_for_reservation',
+        					),
+        			)
+        	),
+        	
             'conditions' => array(
                 'Reservation.day between STR_TO_DATE(?, \'%d.%m.%Y\') and STR_TO_DATE(?, \'%d.%m.%Y\')' =>
                     array(date("d.m.Y", $mondayThisWeek), date("d.m.Y", $lastDateOnView)),
@@ -29,7 +74,7 @@ class ReservationDAOComponent extends Component {
             'order' => array('Reservation.day', 'Reservation.timeslot_id'),
             'recursive' => 1
             )
-        );
+        );        
         
         return $result;
     }
