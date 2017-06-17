@@ -154,9 +154,7 @@
 								echo $this->Html->link('<button type="button" data-data="' . $route['Route']['name'] . '" class="open-Dialog btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></button>', '#', array('data-toggle'=> 'modal', 'data-target' => '#ConfirmDelete', 'data-action'=> Router::url(array('controller' => 'routes', 'action'=>'delete',$route['Route']['id'])), 'escape' => false), false);
 								
 								echo "&nbsp;&nbsp;";								
-								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs">Tage festlegen</span></button>', array('controller' => 'dayslots', 'action' => 'index', $route['Route']['id']), array('escape' => false, 'title' => 'Tage festlegen'));
-								echo "&nbsp;&nbsp;";
-								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs">Schichtzeiten festlegen</span></button>', array('controller' => 'timeslots', 'action' => 'index', $route['Route']['id']), array('escape' => false, 'title' => 'Schichtzeiten festlegen'));
+								echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span>Tage festlegen</span></button>', array('controller' => 'dayslots', 'action' => 'index', $route['Route']['id']), array('escape' => false, 'title' => 'Tage festlegen'));
 								if(glob("img/routes/route_" . $route['Route']['id'] . ".*")) { 
 									echo "&nbsp;&nbsp;";
 									$file = glob('img/routes/route_' . $route['Route']['id'] . '.*');

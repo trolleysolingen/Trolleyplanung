@@ -46,7 +46,7 @@ class DayslotsController extends AppController {
 
 			$this->Dayslot->create();
 			$dayslot = $this->Dayslot->save($dayslot);
-		}
+		}		
 
 		return $this->redirect(array('action' => 'edit', $dayslot['Dayslot']['id']));
 	}
@@ -72,9 +72,23 @@ class DayslotsController extends AppController {
 			}
 		} else {
 			$options = array('conditions' => array('Dayslot.' . $this->Dayslot->primaryKey => $id));
-			$this->request->data = $this->Dayslot->find('first', $options);
+			$this->request->data = $this->Dayslot->find('first', $options);		
+			
+			$routeId = $this->request->data['Dayslot']['route_id'];
+			$this->set('routeId', $routeId);
+			
+			$modelRoute = ClassRegistry::init('Route');
+			$route = $modelRoute->find('first', array(
+					'conditions' => array(
+							'Route.id' => $routeId
+					),
+					'recursive' => -1
+				)
+			);
+			$this->set('route', $route);
 		}
 		$this->set('publisher', $publisher);
+			
 	}
 
 }

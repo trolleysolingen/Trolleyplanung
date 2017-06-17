@@ -13,7 +13,7 @@ class TimeslotDAOComponent extends Component {
                     'Timeslot.congregation_id' => $congregationId,
                     'Timeslot.route_id' => $routeId
                 ),
-                'order' => array('Timeslot.start'),
+                'order' => array('Timeslot.day', 'Timeslot.start'),
                 'recursive' => 0));
 
         return $result;

@@ -14,6 +14,12 @@ class TimeslotsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'PublisherDAO', 'CongregationDAO');
+	
+	public $paginate = array(
+			'order' => array(
+					'Timeslot.start' => 'asc'
+			)
+	);
 
 	public function beforeFilter() {
 		parent::checkLoginPermission();
@@ -33,16 +39,36 @@ class TimeslotsController extends AppController {
  */
 	public function index($routeId = null) {
 		$publisher = $this->Session->read('publisher');
-		if (!$routeId) {			
+		
+		$day = array_key_exists('day', $this->params['named']) ? $this->params['named']['day'] : null;
+		if (!$routeId || !$day) {			
 			return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 		}
 		
 
 		$this->Timeslot->recursive = 0;
-		$this->set('timeslots',
-			$this->Paginator->paginate('Timeslot', array('Timeslot.congregation_id' => $publisher['Congregation']['id'], 'Timeslot.route_id' => $routeId)));
-
+		
+		$this->Paginator->settings = $this->paginate;
+		$this->set('timeslots', $this->Paginator->paginate('Timeslot', array(
+						'Timeslot.congregation_id' => $publisher['Congregation']['id'], 
+						'Timeslot.route_id' => $routeId, 
+						'Timeslot.day' => $day)));
+		
+		$modelRoute = ClassRegistry::init('Route');
+		$route = $modelRoute->find('first', array(
+				'conditions' => array(
+						'Route.id' => $routeId
+				),
+				'recursive' => -1
+		)
+				);
+		$this->set('route', $route);
+		
 		$this->set('routeId', $routeId);
+		$this->set('day', $day);
+		$daysDisplay = array('monday' => 'Montag', 'tuesday' => 'Dienstag', 'wednesday' => 'Mittwoch', 'thursday' => 'Donnerstag', 'friday' => 'Freitag', 'saturday' => 'Samstag', 'sunday' => 'Sonntag');
+		$this->set('dayDisplay', $daysDisplay[$day]);
+		
 		$this->set('publisher', $publisher);
 		$this->set('title_for_layout', 'Schichtzeiten');
 	}
@@ -68,23 +94,25 @@ class TimeslotsController extends AppController {
  * @return void
  */
 	public function add($routeId = null) {
-
+		$day = array_key_exists('day', $this->params['named']) ? $this->params['named']['day'] : null;
+		
 		$publisher = $this->Session->read('publisher');
 		if ($this->request->is('post')) {
 			$this->Timeslot->create();
 			if ($this->Timeslot->save($this->request->data)) {
 				$this->Session->setFlash('Die Schichtzeit wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index', $this->request->data['Timeslot']['route_id']));
+				return $this->redirect(array('action' => 'index', $this->request->data['Timeslot']['route_id'], 'day' =>  $this->request->data['Timeslot']['day']));
 			} else {
 				$this->Session->setFlash('Die Schichtzeit konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 
 			}
 		} else {
-			if (!$routeId) {
+			if (!$routeId || !$day) {			
 				return $this->redirect(array('controller' => 'routes', 'action' => 'index'));
 			}
 		}
 		$this->set('routeId', $routeId);
+		$this->set('day', $day);
 		$this->set('publisher', $publisher);
 	}
 
@@ -103,7 +131,7 @@ class TimeslotsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Timeslot->save($this->request->data)) {
 				$this->Session->setFlash('Die Schichtzeit wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index', $this->request->data['Timeslot']['route_id']));
+				return $this->redirect(array('action' => 'index', $this->request->data['Timeslot']['route_id'], 'day' =>  $this->request->data['Timeslot']['day']));
 			} else {
 				$this->Session->setFlash('Die Schichtzeit konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
@@ -133,6 +161,6 @@ class TimeslotsController extends AppController {
 		} else {
 			$this->Session->setFlash('Die Schichtzeit konnte nicht gelöscht werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index', $timeslot['Timeslot']['route_id']));
+		return $this->redirect(array('action' => 'index', $timeslot['Timeslot']['route_id'], 'day' =>  $timeslot['Timeslot']['day']));
 	}
 }

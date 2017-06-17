@@ -8,12 +8,13 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class ReservationsController extends AppController {
 
-	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'RequestHandler');
+	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'WeekDay', 'RequestHandler');
 
 	public function beforeFilter() {
 		parent::checkLoginPermission();
 		parent::checkActiveKillswitch();
 		$publisher = $this->Session->read('publisher');
+		
 		if (!$publisher) {
 			if (!$this->request->is('ajax')) {
 				return $this->redirect(array('controller' => 'start', 'action' => 'index'));
@@ -49,7 +50,10 @@ class ReservationsController extends AppController {
 		if (!empty($routeId)) {
 			$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"], $routeId);
 			$timeslots = $this->TimeslotDAO->getAll($publisher['Congregation']['id'], $routeId);
-			$dayslot = $this->DayslotDAO->getDayslot($publisher['Congregation']['id'], $routeId);
+			$dayslot = $this->DayslotDAO->getDayslot($publisher['Congregation']['id'], $routeId);	
+			$weekDays = $this->WeekDay->getWeekDays($dayslot, $timeslots);		
+			
+			$this->set("weekDays", $weekDays);
 		}
 
 		$now = new DateTime('now');
@@ -59,9 +63,7 @@ class ReservationsController extends AppController {
 		$this->Session->write('routeId', $routeId);
 		$this->set("publisher", $this->Session->read('publisher'));
 		$this->set("admintools", $this->Session->read('admintools'));
-		$this->set("mondayThisWeek", $mondayThisWeek);
-		$this->set("timeslots", $timeslots);
-		$this->set("dayslot", $dayslot);
+		$this->set("mondayThisWeek", $mondayThisWeek);		
 		$this->set("routes", $routes);
 		$this->set("routeId", $routeId);
 		$this->set("reservations", $reservations);
@@ -100,18 +102,18 @@ class ReservationsController extends AppController {
 				$this->request->data['reservationDay'],
 				$this->request->data['reservationTimeslot'],
 				$this->request->data['displayTime'],
-				$this->Session->read('publisher'));
-				
-				$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-				if (strpos($actual_link,'trolleydemo') === false) {
-					if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
-						try {
-							foreach($reservation['Publisher'] as $reservationPublisher) {
-								if($reservationPublisher['id'] != $publisher['Publisher']['id'] && ($reservationPublisher['send_mail_for_reservation'] || $reservationPublisher['send_mail_for_reservation'] == null)) {
-									$this->sendReservationMailToPublisher($reservationPublisher, $reservation, false);
-								}
+				$this->Session->read('publisher'));		
+			
+			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			if (strpos($actual_link,'trolleydemo') === false) {
+				if (array_key_exists("sendMail", $reservation) && $reservation["sendMail"]) {
+					try {
+						foreach($reservation['Publisher'] as $reservationPublisher) {
+							if($reservationPublisher['id'] != $publisher['Publisher']['id'] && ($reservationPublisher['send_mail_for_reservation'] || $reservationPublisher['send_mail_for_reservation'] == null)) {
+								$this->sendReservationMailToPublisher($reservationPublisher, $reservation, false);
 							}
-						} catch (Exception $e) {
+						}						
+					} catch (Exception $e) {
 					}
 				}
 			}

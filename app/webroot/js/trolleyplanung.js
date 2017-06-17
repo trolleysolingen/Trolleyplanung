@@ -220,7 +220,11 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 	}
 	
 	$.each(displaySizes, function( index, displaySize ) {
-        $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html(html);
+		var htmlDisplay = html;
+		if (displaySize != 'xs') {
+			htmlDisplay = '<b>' + reservation.Timeslot.start + ' - ' + reservation.Timeslot.end + '</b>' + html;
+		}
+        $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html(htmlDisplay);
     });
 }
 

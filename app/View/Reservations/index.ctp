@@ -242,10 +242,10 @@
 		
 		echo $this->element('week_iteration', array(
 			'displaySizes' => array('lg')
-		));
-
+		));	
+		
 		echo $this->element('week_iteration', array(
-			'displaySizes' => array('sm', 'md')
+				'displaySizes' => array('sm', 'md')
 		));
 
 		echo $this->element('week_iteration', array(

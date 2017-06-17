@@ -8,10 +8,10 @@
 
 <div class="timeslots index">
 	<br/>
-	<legend><?php echo __('Schichtzeiten der Versammlung ' . $publisher['Congregation']['name']); ?></legend>
+	<legend><?php echo __('Schichtzeiten der Route ') . '"' . $route['Route']['name'] . '" für Wochentag "' . $dayDisplay . '"'; ?></legend>
 
 	<p class="actions">
-		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" style="margin-top: -6px;"></span> Neue Schichtzeit anlegen</button>', array('action' => 'add', $routeId), array('escape' => false)); ?>
+		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" style="margin-top: -6px;"></span> Neue Schichtzeit anlegen</button>', array('action' => 'add', $routeId, 'day' => $day), array('escape' => false)); ?>
 	</p>
 
 

@@ -11,6 +11,10 @@
 				'type' => 'hidden',
 				'value' => $routeId
 			));
+			echo $this->Form->input('day', array('
+				type' => 'hidden',
+				'value' => $day
+			));
 		?>
 		<div class="form-group">
 			<div class="col-sm-1 col-md-2"></div>

@@ -8,5 +8,21 @@ App::uses('AppModel', 'Model');
  */
 class PublisherReservation extends AppModel {
 
+	public $belongsTo = array(
+			'Publisher' => array(
+					'className' => 'Publisher',
+					'foreignKey' => 'publisher_id',
+					'conditions' => '',
+					'fields' => '',
+					'order' => ''
+			),
+			'Reservation' => array(
+					'className' => 'Reservation',
+					'foreignKey' => 'reservation_id',
+					'conditions' => '',
+					'fields' => '',
+					'order' => ''
+			)
+	);
 
 }

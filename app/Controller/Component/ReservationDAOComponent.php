@@ -30,7 +30,7 @@ class ReservationDAOComponent extends Component {
             'recursive' => 1
             )
         );
-
+        
         return $result;
     }
 
@@ -45,7 +45,7 @@ class ReservationDAOComponent extends Component {
                     'Reservation.congregation_id' => $congregationId,
                     'Reservation.route_id' => $routeId
                 ),
-            'recursive' => 2
+            'recursive' => -1
             )
         );
 
@@ -76,16 +76,17 @@ class ReservationDAOComponent extends Component {
                     'conditions' => array(
                         'Reservation.id' => $reservation['Reservation']['id']
                     ),
-                    'recursive' => 2
+                    'recursive' => -1
                 )
             );
             $reservation['sendMail'] = $sendMail;
 
+            $reservation = $this->addPublisherRouteAndTimeslotToReservation($reservation, $routeId, $reservationTimeslot);
+            
             // debug($reservation);
             return $reservation;
         }
     }
-
 
     public function deletePublisher($congregationId, $routeId, $reservationDay, $reservationTimeslot, $deletePartners) {
         $model = ClassRegistry::init('Reservation');
@@ -98,7 +99,7 @@ class ReservationDAOComponent extends Component {
                     'Reservation.congregation_id' => $congregationId,
                     'Reservation.route_id' => $routeId
                 ),
-                'recursive' => 2
+                'recursive' => -1
             )
         );
 
@@ -124,12 +125,14 @@ class ReservationDAOComponent extends Component {
         				'conditions' => array(
         						'Reservation.id' => $reservation['Reservation']['id']
         				),
-        				'recursive' => 2
+        				'recursive' => -1
         			)
         		);
 				$sendMail = true;
         	}
 			$reservation['sendMail'] = $sendMail;
+			
+			$reservation = $this->addPublisherRouteAndTimeslotToReservation($reservation, $routeId, $reservationTimeslot);
 		}        
         // debug($reservation);
 
@@ -147,7 +150,7 @@ class ReservationDAOComponent extends Component {
                     'Reservation.congregation_id' => $congregationId,
                     'Reservation.route_id' => $routeId
                 ),
-                'recursive' => 2
+                'recursive' => -1
             )
         );
 
@@ -190,9 +193,11 @@ class ReservationDAOComponent extends Component {
                     'conditions' => array(
                         'Reservation.id' => $reservation['Reservation']['id']
                     ),
-                    'recursive' => 2
+                    'recursive' => -1
                 )
             );
+            
+            $reservation = $this->addPublisherRouteAndTimeslotToReservation($reservation, $routeId, $reservationTimeslot);
         }
 
         $reservation['sendMail'] = $sendMail;
@@ -207,6 +212,43 @@ class ReservationDAOComponent extends Component {
         // debug($reservation);
 
         return $reservation;
+    }
+    
+    private function addPublisherRouteAndTimeslotToReservation($reservation, $routeId, $reservationTimeslot) {
+    	$modelPublisherReservation = ClassRegistry::init('PublisherReservation');
+    	$modelRoute = ClassRegistry::init('Route');
+    	$modelTimeslot = ClassRegistry::init('Timeslot');
+    	 
+    	if (array_key_exists('Reservation', $reservation)) {
+    		$reservation['PublisherReservation'] = array();
+    		$reservation['Publisher'] = array();
+    		$publisherReservations = $modelPublisherReservation->find('all', array('conditions' => array('PublisherReservation.reservation_id' => $reservation['Reservation']['id']), 'recursive' => 1));
+    		
+    		foreach($publisherReservations as $publisherReservation) {
+    			array_push($reservation['PublisherReservation'], $publisherReservation['PublisherReservation']);
+    			array_push($reservation['Publisher'], $publisherReservation['Publisher']);
+    		}
+    	}
+    	 
+    	$route = $modelRoute->find('first', array(
+    			'conditions' => array(
+    					'Route.id' => $routeId
+    			),
+    			'recursive' => -1
+    		)
+    	);
+    	$reservation['Route'] = $route['Route'];
+    	 
+    	$timeslot = $modelTimeslot->find('first', array(
+    			'conditions' => array(
+    					'Timeslot.id' => $reservationTimeslot
+    			),
+    			'recursive' => -1
+    	)
+    			);
+    	$reservation['Timeslot'] = $timeslot['Timeslot'];
+    	 
+    	return $reservation;
     }
 	
 	public function getMissingReports($publisher) {
