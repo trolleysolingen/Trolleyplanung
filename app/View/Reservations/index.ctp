@@ -111,7 +111,7 @@
 						</p>
 						<?php if (glob("img/routes/route_" . $route['Routes']['id'] . ".*")) { 
 							$file = glob('img/routes/route_' . $route['Routes']['id'] . '.*');
-							echo '<button data-toggle="modal" data-target="#routeModal" type="button" data-data="' . $file[0] . '" class="open-RouteDialog btn btn-warning">';
+							echo '<button data-toggle="modal" data-target="#routeModal" type="button" data-data="' . '/' . $file[0] . '" class="open-RouteDialog btn btn-warning">';
 							echo 'Karte';
 							echo '</button>';
 							} 

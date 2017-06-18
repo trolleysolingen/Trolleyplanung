@@ -27,7 +27,7 @@ alter table reservations add (
 );
 
 alter table timeslots add (
-	INDEX `fk_timeslots_old_idx` (`old_id` ASC),
+	INDEX `fk_timeslots_old_idx` (`old_id` ASC)
 );
 
 update reservations set weekday = weekday(day);

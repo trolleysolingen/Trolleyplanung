@@ -66,10 +66,10 @@ class StatsController extends AppController {
 			$monthMagazines = $monthMagazines + $givenReport['Reservation']['magazines'];
 			$monthBrochures = $monthBrochures + $givenReport['Reservation']['brochures'];
 			$monthTracts = $monthTracts + $givenReport['Reservation']['tracts'];
-			$monthVideos = $monthTracts + $givenReport['Reservation']['videos'];
-			$monthJworgcard = $monthTracts + $givenReport['Reservation']['jworgcard'];
+			$monthVideos = $monthVideos + $givenReport['Reservation']['videos'];
+			$monthJworgcard = $monthJworgcard + $givenReport['Reservation']['jworgcard'];
 			$monthConversations = $monthConversations + $givenReport['Reservation']['conversations'];
-			$monthContacts = $monthTracts + $givenReport['Reservation']['contacts'];
+			$monthContacts = $monthContacts + $givenReport['Reservation']['contacts'];
 		}
 		
 		$report = array();
