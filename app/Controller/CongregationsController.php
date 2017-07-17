@@ -13,6 +13,7 @@ class CongregationsController extends AppController {
 	 * @var array
 	 */
 	public $components = array('Paginator', 'CongregationDAO', 'PublisherDAO', 'RequestHandler');
+	public $uses = array('Congregation', 'Publisher');
 
 	public function beforeFilter() {
 		parent::checkLoginPermission();
@@ -73,6 +74,31 @@ class CongregationsController extends AppController {
 				$this->Session->setFlash('Die Versammlung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
+	}
+	
+	/**
+	 * add method
+	 *
+	 * @return void
+	 */
+	public function addpublisher($congregationId) {
+		$publisher = $this->Session->read('publisher');
+	
+		if ($this->request->is('post')) {
+			$this->Publisher->create();
+			$newPublisher = $this->request->data;
+	
+			if ($this->Publisher->save($newPublisher)) {
+				$this->Session->setFlash('Der Verkündiger wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('controller' => 'congregations', 'action' => 'index'));
+			} else {
+				$this->Session->setFlash('Der Verkündiger konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+			}
+		}
+		$roles = $this->Publisher->Role->find('list', array('fields' => array('id', 'description'), 'conditions' => array('name not in' => array('admin', 'guest'))));
+		$this->set(compact('roles'));
+		$this->set('publisher', $publisher);
+		$this->set('congregationId', $congregationId);
 	}
 
 	/**
