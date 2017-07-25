@@ -217,7 +217,11 @@
 				<h4 class="panel-title">
 					<a data-toggle="collapse" href="#collapse_route">
 						<span style="font-size: 1.5em; margin-top: -5px;" class="glyphicon glyphicon-expand"></span>
-						Beschreibung & Karte der Route
+						Beschreibung 
+						<?php if (glob("img/routes/route_" . $route['Routes']['id'] . ".*") || $route['Routes']['maplink'] != "") { ?>
+							& Karte 
+						<?php } ?>
+						der Route
 					</a>
 				</h4>
 			</div>
@@ -231,6 +235,10 @@
 							echo 'Karte';
 							echo '</button>';
 						}	
+						
+						if ($route['Routes']['maplink'] != "") {
+							echo '<a class="btn btn-warning" target="_blank" href="' . $route['Routes']['maplink'] . '">Karte</a>';
+						}												
 					?>
 				</div>
 			</div>

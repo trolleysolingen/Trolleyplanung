@@ -47,6 +47,13 @@
 							<th width="15%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
 							<th width="25%" class="actions"><?php echo __('Aktionen'); ?></th>
 					<?php
+						} else if ($publisher['Congregation']['show_email_phone_publisherlist']) {
+					?>
+							<th width="30%"><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
+							<th width="20%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
+							<th width="20%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
+							<th width="30%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
+					<?php
 						} else {
 					?>
 							<th width="50%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
@@ -62,7 +69,7 @@
 				<?php foreach ($publishers as $publisherItem): ?>
 					<tr>
 						<?php
-							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin' || $publisher['Congregation']['show_email_phone_publisherlist']) {
 						?>
 							<td><?php
 									echo h($publisherItem['Publisher']['email']);
@@ -83,10 +90,14 @@
 						<td><?php echo h($publisherItem['Publisher']['prename']); ?>&nbsp;</td>
 
 						<?php
-							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin' || $publisher['Congregation']['show_email_phone_publisherlist']) {
 						?>
 							<td><?php echo h($publisherItem['Publisher']['phone']); ?>&nbsp;</td>
-
+						<?php
+							}
+							
+							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+						?>
 							<td class="actions" style="white-space:nowrap;">
 								<?php
 									if($publisher['Congregation']['key_management']) {

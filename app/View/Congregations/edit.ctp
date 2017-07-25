@@ -55,7 +55,7 @@
 					?>
 				</div>
 				
-				<legend></legend>
+				<br clear="all"/>
 				
 				<div class="col-sm-6 col-xs-12" style="margin-bottom:10px;">
 					<a href='javascript:void(0)' style="margin-right:10px;" data-toggle="modal" data-target="#guestsModal"><span style="margin-top:-5px;" class='glyphicon glyphicon-circle_info'></span></a>
@@ -79,7 +79,7 @@
 					?>
 				</div>
 				
-				<legend></legend>
+				<br clear="all"/>
 				
 				<div class="col-sm-6 col-xs-12" style="margin-bottom:10px;">
 					<a href='javascript:void(0)' style="margin-right:10px;" data-toggle="modal" data-target="#reportModal"><span style="margin-top:-5px;" class='glyphicon glyphicon-circle_info'></span></a>
@@ -112,6 +112,30 @@
 									</span>
 								</div>
 						<?php
+						}
+					?>
+				</div>
+				
+				<br clear="all"/>
+				
+				<div class="col-sm-6 col-xs-12" style="margin-bottom:10px;">
+					<a href='javascript:void(0)' style="margin-right:10px;" data-toggle="modal" data-target="#emailModal"><span style="margin-top:-5px;" class='glyphicon glyphicon-circle_info'></span></a>
+					Email und Telefon in Verkündigerliste für Verkündiger:
+					<?php
+						if($publisher['Congregation']['show_email_phone_publisherlist']) {
+							echo "<span style='color:#5cb85c'>anzeigen</span>";
+						} else {
+							echo "<span style='color:#d9534f'>nicht anzeigen</span>";
+						}
+					?>
+				</div>
+
+				<div class="col-sm-6 col-xs-12" style="padding:10px;">
+					<?php
+						if($publisher['Congregation']['show_email_phone_publisherlist']) {
+							echo $this->Html->link('<button type="button" class="btn btn-danger btn-block" style="margin-top:-15px;">Nicht anzeigen</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'show_email_phone_publisherlist'), array('escape' => false, 'style' => 'text-decoration: none;'));
+						} else {
+							echo $this->Html->link('<button type="button" class="btn btn-success btn-block" style="margin-top:-15px;">Anzeigen</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'show_email_phone_publisherlist'), array('escape' => false, 'style' => 'text-decoration: none;'));
 						}
 					?>
 				</div>
@@ -378,6 +402,27 @@
 		</p>
 		<b>So sieht ein Teil der Statistik aus:</b><br/><br/>
 		<img src="/img/help/stats.jpg" alt="Guests not allowed" class="img-rounded"><br/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- emailPhoneModal -->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myEmailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myEmailModalLabel">E-Mail und Telefon in Verkündigerliste Info</h4>
+      </div>
+      <div class="modal-body">
+		<p>
+			Hier kannst du einstellen, ob die Verkündiger deiner Versammlung in der Verkündigerliste deiner Versammlung die E-Mail und Telefonnummern von 
+			anderen Verkündigern sehen können.
+		</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
