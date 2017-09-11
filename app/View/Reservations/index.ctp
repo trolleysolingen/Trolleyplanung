@@ -248,7 +248,7 @@
 			}
 		}
 		
-		if ($publisher['Congregation']['show_lkw_numbers']) {
+		if ($publisher['Congregation']['typ'] == 'FFD' && $publisher['Congregation']['show_lkw_numbers']) {
 		?>
 		<div class="panel panel-primary">
         	<div class="panel-heading">

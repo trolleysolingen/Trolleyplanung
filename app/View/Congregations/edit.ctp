@@ -140,29 +140,32 @@
 					?>
 				</div>
 				
-				<br clear="all"/>
+				<?php if($publisher['Congregation']['typ'] == 'FFD') { ?>
+					<br clear="all"/>
+					
+					<div class="col-sm-6 col-xs-12" style="margin-bottom:10px;">
+						<a href='javascript:void(0)' style="margin-right:10px;" data-toggle="modal" data-target="#lkwnumbersModal"><span style="margin-top:-5px;" class='glyphicon glyphicon-circle_info'></span></a>
+						LKW-Nummernschild-Erfassung:
+						<?php
+							if($publisher['Congregation']['show_lkw_numbers']) {
+								echo "<span style='color:#5cb85c'>anzeigen</span>";
+							} else {
+								echo "<span style='color:#d9534f'>nicht anzeigen</span>";
+							}
+						?>
+					</div>
+	
+					<div class="col-sm-6 col-xs-12" style="padding:10px;">
+						<?php
+							if($publisher['Congregation']['show_lkw_numbers']) {
+								echo $this->Html->link('<button type="button" class="btn btn-danger btn-block" style="margin-top:-15px;">Nicht anzeigen</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'show_lkw_numbers'), array('escape' => false, 'style' => 'text-decoration: none;'));
+							} else {
+								echo $this->Html->link('<button type="button" class="btn btn-success btn-block" style="margin-top:-15px;">Anzeigen</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'show_lkw_numbers'), array('escape' => false, 'style' => 'text-decoration: none;'));
+							}
+						?>
+					</div>
+				<?php } ?>
 				
-				<div class="col-sm-6 col-xs-12" style="margin-bottom:10px;">
-					<a href='javascript:void(0)' style="margin-right:10px;" data-toggle="modal" data-target="#lkwnumbersModal"><span style="margin-top:-5px;" class='glyphicon glyphicon-circle_info'></span></a>
-					LKW-Nummernschild-Erfassung:
-					<?php
-						if($publisher['Congregation']['show_lkw_numbers']) {
-							echo "<span style='color:#5cb85c'>anzeigen</span>";
-						} else {
-							echo "<span style='color:#d9534f'>nicht anzeigen</span>";
-						}
-					?>
-				</div>
-
-				<div class="col-sm-6 col-xs-12" style="padding:10px;">
-					<?php
-						if($publisher['Congregation']['show_lkw_numbers']) {
-							echo $this->Html->link('<button type="button" class="btn btn-danger btn-block" style="margin-top:-15px;">Nicht anzeigen</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'show_lkw_numbers'), array('escape' => false, 'style' => 'text-decoration: none;'));
-						} else {
-							echo $this->Html->link('<button type="button" class="btn btn-success btn-block" style="margin-top:-15px;">Anzeigen</button>', array('action' => 'switchModuleStatus', $publisher['Congregation']['id'], 'show_lkw_numbers'), array('escape' => false, 'style' => 'text-decoration: none;'));
-						}
-					?>
-				</div>
 			  </div>
 			</div>
 		</div>
