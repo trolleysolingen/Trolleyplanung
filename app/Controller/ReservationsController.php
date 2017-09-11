@@ -8,7 +8,7 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class ReservationsController extends AppController {
 
-	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'WeekDay', 'RequestHandler');
+	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'WeekDay', 'LkwnumberDAO', 'RequestHandler');
 
 	public function beforeFilter() {
 		parent::checkLoginPermission();
@@ -51,9 +51,13 @@ class ReservationsController extends AppController {
 			$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"], $routeId);
 			$timeslots = $this->TimeslotDAO->getAll($publisher['Congregation']['id'], $routeId);
 			$dayslot = $this->DayslotDAO->getDayslot($publisher['Congregation']['id'], $routeId);	
-			$weekDays = $this->WeekDay->getWeekDays($dayslot, $timeslots);		
-			
+			$weekDays = $this->WeekDay->getWeekDays($dayslot, $timeslots);
 			$this->set("weekDays", $weekDays);
+			
+			if ($publisher['Congregation']['show_lkw_numbers']) {
+				$lkwnumbers = $this->LkwnumberDAO->getLkwnumbers($routeId);
+				$this->set("lkwnumbers", $lkwnumbers);
+			} 
 		}
 
 		$now = new DateTime('now');
@@ -388,5 +392,22 @@ class ReservationsController extends AppController {
 		$this->Session->write('admintools', !$admintools);
 		$this->Session->setFlash('Der Status wurde geändert', 'default', array('class' => 'alert alert-success'));
 		return $this->redirect(array('controller' => 'reservations', 'action' => 'index', $adminRouteId));
+	}
+	
+	public function saveLkwnumber() {
+		$model = ClassRegistry::init('Lkwnumber');
+		
+		$lkwnumber['Lkwnumber']['route_id'] = $this->request->data['Reservation']['route_id'];
+		$lkwnumber['Lkwnumber']['licenseplatenumber'] = $this->request->data['Reservation']['licenseplatenumber'];
+		
+		if ($model->save($lkwnumber)) {
+			$this->Session->setFlash('Das LKW-Nummernschild wurde abgespeichert.', 'default', array('class' => 'alert alert-success'));
+			
+			$this->LkwnumberDAO->deleteOldLkwnumbers();
+			
+			return $this->redirect(array('controller' => 'reservations', 'action' => 'index', $this->request->data['Reservation']['route_id']));
+		} else {
+			$this->Session->setFlash('Das LKW-Nummernschild konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
 	}
 }
