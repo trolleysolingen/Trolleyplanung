@@ -2,7 +2,7 @@
 	var publisherList = [
 		<?php
 			foreach ($publisherList as $publisherItem) {
-				echo "'" . $publisherItem['Publisher']['prename'] . " " . $publisherItem['Publisher']['surname'] . "', ";
+				echo $this->Js->value($publisherItem['Publisher']['prename'] . " " . $publisherItem['Publisher']['surname']) . ", ";
 			}
 		?>
 		];
