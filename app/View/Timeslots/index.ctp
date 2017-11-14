@@ -12,6 +12,7 @@
 
 	<p class="actions">
 		<?php echo $this->Html->link('<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" style="margin-top: -6px;"></span> Neue Schichtzeit anlegen</button>', array('action' => 'add', $routeId, 'day' => $day), array('escape' => false)); ?>
+		<?php echo $this->Html->link('<button type="button" class="btn btn-secondary"><span>Zurück zu Schichttage</span></button>', array('controller' => 'dayslots', 'action' => 'edit', $routeId), array('escape' => false, 'title' => 'Zurück zu Schichttage')); ?>
 	</p>
 
 
@@ -63,6 +64,7 @@
 		echo $this->Form->end();
 		?>
 	</div>
+	
 </div>
 
 <!-- Modal -->

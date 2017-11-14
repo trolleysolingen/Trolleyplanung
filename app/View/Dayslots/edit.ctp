@@ -3,6 +3,11 @@
 	<fieldset>
 		<div class="col-md-6 col-xs-12">
 			<legend><?php echo __('Verfügbare Tage festlegen für Route ') . '"' . $route['Route']['name'] . '"'; ?></legend>
+			
+			<p class="actions">
+				<?php echo $this->Html->link('<button type="button" class="btn btn-secondary"><span>Zurück zu Einstellungen</span></button>', array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']), array('escape' => false, 'title' => 'Zurück zu Einstellungen')); ?>
+			</p>
+			
 			<div class="panel panel-primary" style="padding:20px;">
 			  <?php
 				  echo $this->Form->input('id');
@@ -112,7 +117,8 @@
 					</div>
 				</div>
 			  </div>
-			  <?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary btn-block', 'name' => 'editSubmit')); ?>
+			  <?php echo $this->Form->end(array('label' => 'Speichern', 'class' => 'btn btn-primary btn-block', 'name' => 'editSubmit')); ?>			  	 
+			  
 			</div>
 		</div>
 
