@@ -52,7 +52,8 @@ class CongregationsController extends AppController {
 	 * @return void
 	 */
 	public function view($id = null) {
-		if (!$this->Congregation->exists($id)) {
+		$publisher = $this->Session->read('publisher');
+		if (!$this->Congregation->exists($id) || $id != $publisher['Congregation']['id']) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
 		$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $id));
@@ -109,10 +110,11 @@ class CongregationsController extends AppController {
 	 * @return void
 	 */
 	public function edit($id = null) {
-		if (!$this->Congregation->exists($id)) {
+		$publisher = $this->Session->read('publisher');
+		
+		if (!$this->Congregation->exists($id) || $id != $publisher['Congregation']['id']) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
-		$publisher = $this->Session->read('publisher');
 		$this->loadModel('Route');
 		$this->Route->recursive = 0;
 		$this->set('routes', $this->Paginator->paginate('Route', array('Route.congregation_id' => $publisher['Congregation']['id'])));
@@ -154,7 +156,9 @@ class CongregationsController extends AppController {
 	}
 	
 	public function switchModuleStatus($id = null, $module) {
-		if (!$this->Congregation->exists($id)) {
+		$publisher = $this->Session->read('publisher');
+		
+		if (!$this->Congregation->exists($id) || $id != $publisher['Congregation']['id']) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
 		
@@ -176,7 +180,6 @@ class CongregationsController extends AppController {
 			$this->Session->setFlash('Deine Änderung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 		
-		$publisher = $this->Session->read('publisher');
 		$publisher2 = $this->PublisherDAO->getById($publisher);
 		$this->Session->write('publisher', $publisher2);
 		

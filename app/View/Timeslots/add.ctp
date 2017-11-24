@@ -11,8 +11,8 @@
 				'type' => 'hidden',
 				'value' => $routeId
 			));
-			echo $this->Form->input('day', array('
-				type' => 'hidden',
+			echo $this->Form->input('day', array(
+				'type' => 'hidden',
 				'value' => $day
 			));
 		?>
