@@ -64,7 +64,7 @@
 			</button>
 			<?php 
 				echo $this->Html->link(
-					$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-grater jw-tower')) . $this->Session->read('verwaltungTyp', 'FFD') . "-Verwaltung",
+					$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-grater jw-tower')) . $this->Session->read('verwaltungTyp') . "-Verwaltung",
 					array('controller' => 'start', 'action' => 'index'),
 					array('class' => 'navbar-brand', 'escape' => false)
 				);
@@ -190,7 +190,7 @@
 					<li class="<?php echo $highlightContact ?>">
 						<?php echo $this->Html->link(
 								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-group', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Impressum",
-								array('controller' => 'contact', 'action' => 'index'),
+								array('controller' => 'contact', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
 								array('escape' => false)
 						);?>
 					</li>
