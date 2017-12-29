@@ -112,7 +112,7 @@ class CongregationsController extends AppController {
 	public function edit($id = null) {
 		$publisher = $this->Session->read('publisher');
 		
-		if (!$this->Congregation->exists($id) || $id != $publisher['Congregation']['id']) {
+		if (!$this->Congregation->exists($id) || ($id != $publisher['Congregation']['id'] && $publisher['Role']['name'] != 'admin')) {
 			throw new NotFoundException(__('Ungültige Versammlung'));
 		}
 		$this->loadModel('Route');
