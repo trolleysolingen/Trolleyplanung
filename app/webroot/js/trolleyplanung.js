@@ -220,10 +220,14 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 	}
 	
 	$.each(displaySizes, function( index, displaySize ) {
-		var htmlDisplay = html;
-		if (displaySize != 'xs') {
-			htmlDisplay = '<b>' + reservation.Timeslot.start + ' - ' + reservation.Timeslot.end + '</b>' + html;
+		var htmlDisplay = '';
+		if (reservation.Timeslot.bezeichnung) {
+			htmlDisplay += '<b>' + reservation.Timeslot.bezeichnung + '</b></br>';
 		}
+		if (displaySize != 'xs') {
+			htmlDisplay += '<b>' + reservation.Timeslot.start + ' - ' + reservation.Timeslot.end + '</b>';
+		} 
+		htmlDisplay += html;
         $('#td_' + displaySize + '_' + reservationDay + '_' + reservationTimeslot).html(htmlDisplay);
     });
 }

@@ -36,6 +36,16 @@
 			</div>
 			<div class="col-sm-1 col-md-2"></div>
 		</div>
+		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
+			<label for="end" class="col-sm-2 control-label">Bezeichnung (optional):</label>
+			<div class="col-sm-8 col-md-6">
+				<?php
+				echo $this->Form->input('bezeichnung', array('label'=>false, 'class' => 'form-control', 'id' => 'bezeichnung'));
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
+		</div>
 
 	</fieldset>
 

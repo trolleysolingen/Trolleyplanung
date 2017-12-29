@@ -20,9 +20,10 @@
 		<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
 			<thead>
 			<tr>
-				<th width="30%"><?php echo $this->Paginator->sort('start', 'Startzeit'); ?></th>
-				<th width="30%"><?php echo $this->Paginator->sort('end', 'Endezeit'); ?></th>
-				<th width="40%" class="actions"><?php echo __('Aktionen'); ?></th>
+				<th width="25%"><?php echo $this->Paginator->sort('start', 'Startzeit'); ?></th>
+				<th width="25%"><?php echo $this->Paginator->sort('end', 'Endezeit'); ?></th>
+				<th width="25%"><?php echo $this->Paginator->sort('bezeichnung', 'Bezeichnung'); ?></th>
+				<th width="25%" class="actions"><?php echo __('Aktionen'); ?></th>
 			</tr>
 			</thead>
 
@@ -32,6 +33,7 @@
 				<tr>
 					<td><?php echo h($timeslot['Timeslot']['start']); ?>&nbsp;</td>
 					<td><?php echo h($timeslot['Timeslot']['end']); ?>&nbsp;</td>
+					<td><?php echo h($timeslot['Timeslot']['bezeichnung']); ?>&nbsp;</td>
 					<td class="actions">
 						<?php
 						echo $this->Html->link('<button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>', array('action' => 'edit', $timeslot['Timeslot']['id']), array('escape' => false, 'title' => 'Bearbeiten'));

@@ -38,6 +38,10 @@ if ($reservationTmp != null) {
 }
 
 echo "<td id='td_" . $td_id . "_" . $dateTmp->format('Y-m-d') . "_" . $timeslots[$slot]['Timeslot']['id'] . "' class='" . $tdstyle . "' style='max-width:0'>";
+
+if (!empty($timeslots[$slot]['Timeslot']['bezeichnung'])) {
+	echo "<b>" . $timeslots[$slot]['Timeslot']['bezeichnung'] . "</b><br/>";
+}
 echo "<b>" . $headline . "</b>";
 
 if(($publisher['Publisher']['role_id'] == 4 || $publisher['Publisher']['role_id'] == 2) & $admintools) {
