@@ -219,7 +219,7 @@ class PublishersController extends AppController {
 			. "\n"
 			. "Unter dem Menüpunkt \"Schichten\", kannst du dich und einen Partner für eine Schicht eintragen, oder dich einfach eintragen und abwarten wer sich noch dazu einträgt. Sobald sich jemand zu deiner Schicht einträgt oder löscht, bekommst du eine Benachrichtigung per E-Mail. \n"
 			. "\n"
-			. "Ganz nach dem Motto aus Römer 12:10 \"Habt in brüderlicher Liebe innige Zuneigung zueinander. In Ehrerbietung komme einer dem anderen zuvor.\", denkt bitte daran, dass natürlich der Grundsatz gilt: Wer zuerst kommt, mahlt zuerst. ABER wir möchten doch darauf achten, dass wir uns nicht überall eintragen nur um für uns etwas reserviert zu haben und zu schauen wo sich jemand dazu einträgt und unseren Schwestern und Brüdern die Schichten damit wegzunehmen. \n"
+			. "Getreu dem Grundsatz aus Römer 12:10 \"Habt in brüderlicher Liebe innige Zuneigung zueinander. In Ehrerbietung komme einer dem anderen zuvor.\", nehmt bitte bei euren Reservierungen auch Rücksicht auf die Bedürfnisse anderer Verkündiger. \n"
 			. "\n"
 			. "Wir sind uns sicher, dass Jehova deine Bemühungen am öffentlichen Zeugnisgeben teil zu nehmen, segnen wird. \n"
 			. "\n"
