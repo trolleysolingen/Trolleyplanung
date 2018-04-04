@@ -37,18 +37,20 @@ class ReservationsController extends AppController {
 		$reservations = null;
 		$timeslots = null;
 		$dayslot = null;
+		$weeksDisplayed = $this->getWeeksDisplayed($routes, $routeId);
+		
 		if (sizeof($routes) >= 2) {
 			// überprüfe, ob gültige Route
 			if (!empty($routeId) && !$this->isValidRouteId($routes, $routeId)) {
 				$routeId = null;
-			}
+			} 
 		} else if (sizeof($routes) == 1) {
 			// nur eine Route für die Versammlung vorhanden
 			$routeId = $routes[0]['Routes']['id'];
 		}
 
 		if (!empty($routeId)) {
-			$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"], $routeId);
+			$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"], $routeId, $weeksDisplayed);
 			$timeslots = $this->TimeslotDAO->getAll($publisher['Congregation']['id'], $routeId);
 			$dayslot = $this->DayslotDAO->getDayslot($publisher['Congregation']['id'], $routeId);	
 			$weekDays = $this->WeekDay->getWeekDays($dayslot, $timeslots);
@@ -73,6 +75,7 @@ class ReservationsController extends AppController {
 		$this->set("reservations", $reservations);
 		$this->set("publisherList", $publisherList);
 		$this->set("displayTime", $now->format('Y-m-d H:i:s'));
+		$this->set("weeksDisplayed", $weeksDisplayed);
 
 		if($publisher['Congregation']['report']) {
 			$this->getMissingReports($publisher);
@@ -89,6 +92,15 @@ class ReservationsController extends AppController {
 		return false;
 	}
 
+	private function getWeeksDisplayed($routes, $routeId) {
+		foreach ($routes as $route) {
+			if ($route['Routes']['id'] == $routeId) {
+				return $route['Routes']['weeks_displayed'];
+			}
+		}
+		return 12;
+	}
+	
 	public function logout() {
 		$this->globalLogout();
 	}

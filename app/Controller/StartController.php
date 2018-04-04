@@ -36,6 +36,7 @@ class StartController extends AppController {
 					$this->Session->write('publisher', $publisher);
 					$this->Session->write('verwaltungTyp', $publisher['Congregation']['typ']);
 					$this->Session->write('admintools', false);
+					//$this->Session->write('Config.language', 'eng');
 					if($publisher['Congregation']['report']) {
 						if($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
 							$missingCongregationReportCount = $this->ReservationDAO->getMissingCongregationReportsCount($publisher);

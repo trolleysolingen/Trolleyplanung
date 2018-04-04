@@ -386,6 +386,4 @@ Cache::config('_cake_model_', array(
 	'duration' => $duration
 ));
 
-
-Configure::write('DISPLAYED_WEEKS', 12);
 Configure::write('DISPLAYED_WEEKS_OPEN', 4);

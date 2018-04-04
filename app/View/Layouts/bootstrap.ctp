@@ -177,6 +177,11 @@
 			min: 1,
 			max: 50
 		});
+
+		$("input[id='weeks_displayed']").TouchSpin({
+			min: 1,
+			max: 12
+		});
 		
 		$("input[class='touch-spin']").TouchSpin({
 			min: 0,

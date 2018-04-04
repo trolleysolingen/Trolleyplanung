@@ -11,7 +11,7 @@
 	$echoDate->sub(new DateInterval('P1D'));
     date_add($dateEnd, date_interval_create_from_date_string('6 days'));
 
-    for ($week = 0; $week < Configure::read("DISPLAYED_WEEKS"); $week++) { ?>
+    for ($week = 0; $week < $weeksDisplayed; $week++) { ?>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
