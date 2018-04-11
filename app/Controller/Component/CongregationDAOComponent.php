@@ -12,7 +12,13 @@ class CongregationDAOComponent extends Component {
         return $result;
     }
 
-
+    public function getRoutesAktiv($congregationId) {
+    	$model = ClassRegistry::init('Routes');
+    
+    	$result= $model->find('all', array('conditions' => array('congregation_id' => $congregationId, 'aktiv' => 1), 'recursive' => 0));
+    
+    	return $result;
+    }
 
 	public function killswitchAllCongregations() {
 		$db = ConnectionManager::getDataSource('default');

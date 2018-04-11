@@ -32,7 +32,7 @@ class ReservationsController extends AppController {
 		$mondayThisWeek = strtotime(date('o-\\WW'));
 
 		$publisher = $this->Session->read('publisher');
-		$routes = $this->CongregationDAO->getRoutes($publisher["Congregation"]["id"]);
+		$routes = $this->CongregationDAO->getRoutesAktiv($publisher["Congregation"]["id"]);
 
 		$reservations = null;
 		$timeslots = null;
