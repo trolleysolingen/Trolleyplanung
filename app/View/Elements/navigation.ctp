@@ -65,7 +65,7 @@
 			<?php 
 				echo $this->Html->link(
 					$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-grater jw-tower')) . $this->Session->read('verwaltungTyp') . "-Verwaltung",
-					array('controller' => 'start', 'action' => 'index'),
+					array('controller' => 'start', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
 					array('class' => 'navbar-brand', 'escape' => false)
 				);
 			?>
