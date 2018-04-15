@@ -279,6 +279,11 @@ class ReservationDAOComponent extends Component {
     			'conditions' => array(
     					'Route.id' => $routeId
     			),
+    			'fields' => array(
+    					'Route.id',
+    					'Route.congregation_id',
+    					'Route.publishers',    					
+    			),
     			'recursive' => -1
     		)
     	);
