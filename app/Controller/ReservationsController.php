@@ -39,10 +39,14 @@ class ReservationsController extends AppController {
 		$dayslot = null;
 		$weeksDisplayed = $this->getWeeksDisplayed($routes, $routeId);
 		
+		$indexRouteId = 0;
 		if (sizeof($routes) >= 2) {
 			// überprüfe, ob gültige Route
-			if (!empty($routeId) && !$this->isValidRouteId($routes, $routeId)) {
-				$routeId = null;
+			if (!empty($routeId)) {
+				$indexRouteId = $this->getIndexRouteId($routes, $routeId);				
+				if ($indexRouteId == -1) {
+					$routeId = null;
+				}
 			} 
 		} else if (sizeof($routes) == 1) {
 			// nur eine Route für die Versammlung vorhanden
@@ -50,6 +54,15 @@ class ReservationsController extends AppController {
 		}
 
 		if (!empty($routeId)) {
+			if (!empty($routes[$indexRouteId]['Routes']['start_date'])) {
+				// set the start date to the monday of the route when the route starts
+				$mondayWeekRouteStart = $this->last_monday($routes[$indexRouteId]['Routes']['start_date']);
+				
+				if ($mondayWeekRouteStart > $mondayThisWeek) {
+					$mondayThisWeek = $mondayWeekRouteStart;
+				}
+			}
+			
 			$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"], $routeId, $weeksDisplayed);
 			$timeslots = $this->TimeslotDAO->getAll($publisher['Congregation']['id'], $routeId);
 			$dayslot = $this->DayslotDAO->getDayslot($publisher['Congregation']['id'], $routeId);	
@@ -83,13 +96,26 @@ class ReservationsController extends AppController {
 		$this->set('title_for_layout', 'Schichten');
 	}
 
-	private function isValidRouteId($routes, $routeId) {
+	private function getIndexRouteId($routes, $routeId) {
+		$index = 0;
 		foreach ($routes as $route) {
 			if ($route['Routes']['id'] == $routeId) {
-				return true;
+				return $index;
 			}
+			$index++;
 		}
-		return false;
+		return -1;
+	}
+	
+	private function last_monday($date) {
+		if (!is_numeric($date)) {
+			$date = strtotime($date);
+		}
+		if (date('w', $date) == 1) {
+			return $date;
+		} else {
+			return strtotime('last monday', $date);
+		}
 	}
 
 	private function getWeeksDisplayed($routes, $routeId) {

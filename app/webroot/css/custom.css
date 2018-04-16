@@ -21,7 +21,11 @@
 }
 
 .error {
-	display: none;
+	color: #a94442;
+}
+
+.errorHidden {
+	display:none;
 }
 
 .vert-align {

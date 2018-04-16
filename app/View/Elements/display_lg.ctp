@@ -3,7 +3,7 @@
 //calc the td width
 $tdWidth = 100 / ($weekDays['activeDays'] + 1);
 
-echo "<div class='error alert alert-danger' role='alert'></div>";
+echo "<div class='errorHidden alert alert-danger' role='alert'></div>";
 echo "<table class='table table-striped table-hover'>";
 
 echo "<tr>";

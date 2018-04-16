@@ -2,7 +2,7 @@
 for ($weekDay = 0; $weekDay < sizeof($weekDays['weekDays']); $weekDay++) {
 	$echoDate->add(new DateInterval('P1D'));
 	if($weekDays['weekDays'][$weekDay] != null) {		
-		echo "<div class='error alert alert-danger' role='alert'></div>";
+		echo "<div class='errorHidden alert alert-danger' role='alert'></div>";
 		echo "<table class='table table-striped table-hover'>";
 		echo "<tr>";
 		echo "<th colspan='2'>";

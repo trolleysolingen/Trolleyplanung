@@ -235,7 +235,7 @@ function displayReservation(reservationDay, reservationTimeslot, reservation, pu
 
 function displayGuestField(reservationDay, reservationTimeslot, displayTime, admintools) {
 	html = '<div class="form-group">';
-    html += '<div id="guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg" class="error alert alert-danger"></div>';
+    html += '<div id="guestname_' + reservationDay + '_' + reservationTimeslot + '_errorMsg" class="errorHidden alert alert-danger"></div>';
     html += '<label for="guestname_' + reservationDay + '_' + reservationTimeslot + '">Name:</label>';
     html += '<input type="text" class="typeahead form-control" id="guestname_' + reservationDay + '_' + reservationTimeslot + '" name="guestname_' + reservationDay + '_' + reservationTimeslot + '" placeholder="Verkündiger eingeben"/>';
 	html += '</div>';
@@ -264,8 +264,8 @@ function displayGuestField(reservationDay, reservationTimeslot, displayTime, adm
 
 function clearError(reservationDay, reservationTimeslot) {
     $.each(displaySizes, function( index, displaySize ){
-        $('.error').html("");
-        $('.error').hide();
+        $('.errorHidden').html("");
+        $('.errorHidden').hide();
     });
 
 }

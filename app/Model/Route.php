@@ -32,6 +32,10 @@ class Route extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'start_date' => array(
+			'rule' => array('date', 'ymd'),
+			'message' => 'Bitte gib ein gültiges Datum ein!',
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

@@ -47,7 +47,7 @@ echo $this->Form->create('Route', array('class' => 'form-horizontal')); ?>
 			<label for="surname" class="col-sm-2 control-label">Anzuzeigende Wochen:</label>
 			<div class="col-sm-8 col-md-6">
 				<?php
-					echo $this->Form->input('weeks_displayed', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'weeks_displayed', 'type' => 'text'));
+					echo $this->Form->input('weeks_displayed', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'weeks_displayed', 'type' => 'text', 'value' => 12));
 				?>
 			</div>
 			<div class="col-sm-1 col-md-2"></div>
@@ -59,6 +59,17 @@ echo $this->Form->create('Route', array('class' => 'form-horizontal')); ?>
 			<div class="col-sm-8 col-md-6">
 				<?php
 				echo $this->Form->input('aktiv', array('type' => 'checkbox', 'label'=>false, 'id' => 'aktiv', 'style' => 'margin-left:0px;', 'checked' => true));
+				?>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
+			<label for="start" class="col-sm-2 control-label">Start-Datum:</label>
+			<div class="col-sm-8 col-md-6">
+				<?php
+				echo $this->Form->input('start_date', array('dateFormat' => 'DMY', 'label'=>false, 'id' => 'start_date', 'class' => 'form-control', 
+						'style' => 'width:150px', 'default' => strtotime(date('o-\\WW'))));
 				?>
 			</div>
 		</div>

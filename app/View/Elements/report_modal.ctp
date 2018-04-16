@@ -8,7 +8,7 @@
         <h4 class="modal-title" id="myModalLabel">Bericht abgeben</h4>
       </div>
       <div class="modal-body">
-		<div class="error alert alert-danger" role="alert" id="reportInfo">
+		<div class="errorHidden alert alert-danger" role="alert" id="reportInfo">
 			
 		</div>
         Dein Bericht für den <b><span id="date" name="date"></span> Uhr</b>

@@ -8,7 +8,7 @@
         <h4 class="modal-title" id="myModalLabel">Bericht nicht abgeben</h4>
       </div>
       <div class="modal-body">
-		<div class="error alert alert-danger" role="alert" id="reportDismissInfo">
+		<div class="errorHidden alert alert-danger" role="alert" id="reportDismissInfo">
 			
 		</div>
         Kannst du deinen Bericht für den <b><span id="date" name="date"></span> Uhr</b> aus irgendeinem Grund nicht abgeben, weil du z.B. die Schicht nicht wahrgenommen hast, schreibe eine kurze Begründung und der Versammlungsadmin bekommt eine Info darüber.

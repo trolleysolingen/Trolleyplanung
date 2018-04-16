@@ -57,7 +57,7 @@ class RoutesController extends AppController {
 				$this->Session->setFlash('Die Route wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			} else {
-				$this->Session->setFlash('Die Route konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash('Die Route konnte nicht gespeichert werden.', 'default', array('class' => 'alert alert-danger'));
 			}
 		}
 
@@ -82,7 +82,7 @@ class RoutesController extends AppController {
 				$this->Session->setFlash('Die Route wurde gespeichert.', 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id']));
 			} else {
-				$this->Session->setFlash('Die Route konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash('Die Route konnte nicht gespeichert werden.', 'default', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('Route.' . $this->Route->primaryKey => $id));
