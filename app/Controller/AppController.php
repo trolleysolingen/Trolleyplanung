@@ -37,6 +37,15 @@ class AppController extends Controller {
 	public $layout = 'bootstrap';
 	public $uses = array('PublisherDAO', 'CongregationDAO');
 	
+	public function checkDataprotection() {
+		$publisher = $this->Session->read('publisher');
+		
+		if (!$publisher['Publisher']['dataprotection']) {
+			return $this->redirect(array('controller' => 'dataprotection', 'action' => 'index'));			
+		}
+				
+	}
+	
 	public function checkLoginPermission() {
 		$publisher = $this->Session->read('publisher');
 		$logout = $this->PublisherDAO->getLoginPermission($publisher);

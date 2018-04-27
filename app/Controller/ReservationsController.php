@@ -13,6 +13,11 @@ class ReservationsController extends AppController {
 	public function beforeFilter() {
 		parent::checkLoginPermission();
 		parent::checkActiveKillswitch();
+		
+		if ($this->action != 'logout') {
+			parent::checkDataprotection();
+		}
+		
 		$publisher = $this->Session->read('publisher');
 		
 		if (!$publisher) {
