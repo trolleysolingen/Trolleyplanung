@@ -196,6 +196,51 @@ class PublisherDAOComponent extends Component {
 
         return $result;
     }
+    
+    public function getDataprotectionPublisherCount($congregationId) {
+    	$model = ClassRegistry::init('Publisher');
+    
+    	$result = $model->find('count', array(
+    			'conditions' => array(
+    					'congregation_id' => $congregationId,
+    					'dataprotection' => 1
+    			),
+    			'recursive' => -1
+    	)
+    			);
+    
+    	return $result;
+    }
+    
+    public function getPublisherCount($congregationId) {
+    	$model = ClassRegistry::init('Publisher');
+    
+    	$result = $model->find('count', array(
+    			'conditions' => array(
+    					'congregation_id' => $congregationId
+    			),
+    			'recursive' => -1
+    	)
+    			);
+    
+    	return $result;
+    }
+    
+    public function getDataPublisherWithoutLogin($congregationId) {
+    	$model = ClassRegistry::init('Publisher');
+    
+    	$result = $model->find('all', array(
+    			'conditions' => array(
+    					'congregation_id' => $congregationId,
+    					'dataprotection' => 0,
+    					'email' => ""
+    			),
+    			'recursive' => -1
+    	)
+    			);
+    
+    	return $result;
+    }
 	
 	public function getContactPersons($publisher) {
 		$model = ClassRegistry::init('Publisher');

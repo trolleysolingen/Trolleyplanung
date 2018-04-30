@@ -16,6 +16,7 @@ class ReportsController extends AppController {
 	public function beforeFilter() {
 		parent::checkLoginPermission ();
 		parent::checkActiveKillswitch ();
+		parent::checkDataprotection();
 		$publisher = $this->Session->read ( 'publisher' );
 		if ($publisher ['Congregation'] ['report'] == 0 || $publisher ['Congregation'] ['report_start_date'] > date ( "Y-m-d" )) {
 			return $this->redirect ( array (

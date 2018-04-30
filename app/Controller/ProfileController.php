@@ -16,6 +16,7 @@ class ProfileController extends AppController {
 	public function beforeFilter() {
 		parent::checkLoginPermission();
 		parent::checkActiveKillswitch();
+		parent::checkDataprotection();
 		$publisher = $this->Session->read('publisher');
 		if (!$publisher) {
 			if (!$this->request->is('ajax')) {

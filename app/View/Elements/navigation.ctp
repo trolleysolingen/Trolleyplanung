@@ -18,6 +18,9 @@
 	$highlightMyTrolley = "";
 	$highlightProfile = "";
 	$highlightAdmin = "";
+	$highlightImprint = "";
+	$highlightPrivacy = "";
+	$highlightCongregationDataprotection = "";
 
 	if (in_array("reservations", $linkarray)) {
 		$highlightReservations = "active";
@@ -43,9 +46,15 @@
 		$highlightProfile = "active";
 	} else if (in_array("admin", $linkarray)) {
 		$highlightAdmin = "active";
-	} 
+	} else if (in_array("imprint?ffd=true", $linkarray) || in_array("imprint?ffd=false", $linkarray) || in_array("imprint", $linkarray)) {
+		$highlightImprint = "active";
+	} else if (in_array("privacy?ffd=true", $linkarray) || in_array("privacy?ffd=false", $linkarray) || in_array("privacy", $linkarray)) {
+		$highlightPrivacy = "active";
+	} else if(in_array("dataprotection", $linkarray) && in_array("congregation", $linkarray)) {
+		$highlightCongregationDataprotection = "active";
+	}
 	
-	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightCongregations == "active" || $highlightMessages == "active" || $highlightCongregationReports == "active" || $highlightCongregationStats == "active") {
+	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightCongregations == "active" || $highlightMessages == "active" || $highlightCongregationReports == "active" || $highlightCongregationStats == "active" || $highlightCongregationDataprotection == "active") {
 		$highlightMyCongregation = "active";
 	} else if ($highlightTodos == "active" || $highlightContact == "active") {
 		$highlightSupport = "active";
@@ -108,6 +117,9 @@
 									<li class="<?php echo $highlightCongregationSettings ?>">
 										<?php echo $this->Html->link('Einstellungen', array('controller' => 'congregations', 'action' => 'edit', $publisher['Congregation']['id'])); ?>
 									</li>
+									<li class="<?php echo $highlightCongregationDataprotection ?>">
+										<?php echo $this->Html->link('Datenschutz', array('controller' => 'dataprotection', 'action' => 'congregation')); ?>
+									</li>
 								<?php
 								}
 								?>
@@ -163,6 +175,20 @@
 								<?php echo $this->Html->link("<span class='glyphicon glyphicon-warning_sign' style='margin-right:10px; margin-top:-5px;'></span><span class='hidden-sm hidden-md'> Admin</span>", array('controller' => 'admin', 'action' => 'index'), array('escape' =>false)); ?>
 							</li>
 						<?php } ?>
+						<li class="<?php echo $highlightImprint ?>">
+							<?php echo $this->Html->link(
+									$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-user', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Impressum",
+									array('controller' => 'imprint', 'action' => 'index'),
+									array('escape' => false)
+							);?>
+						</li>
+						<li class="<?php echo $highlightPrivacy ?>">
+							<?php echo $this->Html->link(
+									$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-lock', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Datenschutzerklärung",
+									array('controller' => 'privacy', 'action' => 'index'),
+									array('escape' => false)
+							);?>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
 						<li class="<?php echo $highlightProfile ?>">
@@ -187,10 +213,17 @@
 			?>
 			
 				<ul class="nav navbar-nav">
-					<li class="<?php echo $highlightContact ?>">
+					<li class="<?php echo $highlightImprint ?>">
 						<?php echo $this->Html->link(
-								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-group', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Impressum",
-								array('controller' => 'contact', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
+								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-user', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Impressum",
+								array('controller' => 'imprint', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
+								array('escape' => false)
+						);?>
+					</li>
+					<li class="<?php echo $highlightPrivacy ?>">
+						<?php echo $this->Html->link(
+								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-lock', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Datenschutzerklärung",
+								array('controller' => 'privacy', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
 								array('escape' => false)
 						);?>
 					</li>

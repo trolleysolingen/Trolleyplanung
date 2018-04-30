@@ -1,27 +1,4 @@
-﻿<legend>Impressum/Kontakt</legend>
-
-<div class="col-md-6 col-xs-12">
-	<div class="row">
-		<div class="text-center">
-			<div class="col-xs-4 visible-xs-block">
-			</div>	
-			<img src="/img/fb.jpg" class="img-circle col-xs-4" />
-		</div>
-		<div class="col-xs-12 col-sm-8 vert-align">
-			<blockquote>
-				<b>Felix Bornmann</b></br>
-				Ohligser Feld 10</br>
-				42697 Solingen</br>
-				Deutschland</br>
-				</br>
-				<span class="glyphicon glyphicon-phone_alt"></span>&nbsp;&nbsp;<a href="tel:017642057020">017642057020</a></br>
-				<span class="glyphicon glyphicon-message_new"></span>&nbsp;&nbsp;<a href="mailto:info@trolley.jw-center.com">info@trolley.jw-center.com</a></br>
-				</br>
-				<b>Webseiten Inhaber und technischer Kontakt</b>
-			</blockquote>
-		</div>
-	</div>
-</div>
+﻿<legend>Kontakt</legend>
 
 <?php if($publisher) {?>
 

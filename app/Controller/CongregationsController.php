@@ -18,6 +18,7 @@ class CongregationsController extends AppController {
 	public function beforeFilter() {
 		parent::checkLoginPermission();
 		parent::checkActiveKillswitch();
+		parent::checkDataprotection();
 		$publisher = $this->Session->read('publisher');
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (!$publisher) {

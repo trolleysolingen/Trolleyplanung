@@ -1,4 +1,4 @@
-﻿<div class="dataprotection form">
+﻿<div class="container">
 	
 	<fieldset>
 		<legend><h1>Einwilligung zur Datenverarbeitung</h1></legend>
@@ -37,7 +37,7 @@
 		
 		<p>
 		Weitere allgemeine Hinweise finde ich auf https://jw-center.com unter dem
-		Punkt "Datenschutzerklärung". Ich habe diese Hinweise gelesen und stimme
+		Punkt "Datenschutzerklärung" (<?= $this->Html->link('Link zur Datenschutzerklärung','/privacy/')?>). Ich habe diese Hinweise gelesen und stimme
 		ihnen zu.
 		</p>
 		

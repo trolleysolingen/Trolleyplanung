@@ -47,4 +47,16 @@ class DataprotectionController extends AppController {
 		
 		$this->redirect(array('controller' => 'reservations', 'action' => 'index'));
 	}
+	
+	public function congregation() {
+		$this->set('title_for_layout', 'Datenschutz');
+		
+		$publisher = $this->Session->read('publisher');
+		$dataprotectionCount = $this->PublisherDAO->getDataprotectionPublisherCount($publisher['Congregation']['id']);
+		$publisherCount = $this->PublisherDAO->getPublisherCount($publisher['Congregation']['id']);
+		$publishersNoDataprotectionWithoutAccount = $this->PublisherDAO->getDataPublisherWithoutLogin($publisher['Congregation']['id']);
+		$this->set("dataprotectionCount", $dataprotectionCount);
+		$this->set("publisherCount", $publisherCount);
+		$this->set("publishersNoDataprotectionWithoutAccount", $publishersNoDataprotectionWithoutAccount);
+	}
 }

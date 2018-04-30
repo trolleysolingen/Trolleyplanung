@@ -17,6 +17,7 @@ class ContactController extends AppController {
 		if($publisher) {
 			parent::checkLoginPermission();
 			parent::checkActiveKillswitch();
+			parent::checkDataprotection();
 		}
 	}
 
