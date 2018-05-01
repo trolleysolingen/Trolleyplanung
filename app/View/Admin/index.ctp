@@ -20,4 +20,6 @@
 			</select>
 		  </div>
 		<?php echo $this->Form->end(array('div' => false, 'label' => 'Login verwehren', 'class' => 'btn btn-danger')); ?>
+		<br/><br/>
+		<?= $allDataprotectionUserCount ?> von <?= $allUserCount ?> Verkündigern haben die Datenschutzerklärung akzeptiert.
 </div>

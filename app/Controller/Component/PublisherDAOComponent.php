@@ -226,6 +226,31 @@ class PublisherDAOComponent extends Component {
     	return $result;
     }
     
+    public function getAllDataprotectionUserCount() {
+    	$model = ClassRegistry::init('Publisher');
+    
+    	$result = $model->find('count', array(
+    			'conditions' => array(
+    					'dataprotection' => 1
+    			),
+    			'recursive' => -1
+    		)
+    	);
+    
+    	return $result;
+    }
+    
+    public function getAllUserCount() {
+    	$model = ClassRegistry::init('Publisher');
+    
+    	$result = $model->find('count', array(
+    			'recursive' => -1
+    		)
+    	);
+    
+    	return $result;
+    }
+    
     public function getDataPublisherWithoutLogin($congregationId) {
     	$model = ClassRegistry::init('Publisher');
     

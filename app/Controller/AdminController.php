@@ -38,6 +38,11 @@ class AdminController extends AppController {
 		$congregations = $this->Congregation->find('all', array('fields' => array('Congregation.id', 'Congregation.name'),'recursive' => -1));
 		$this->set("congregations", $congregations);
 		
+		$allUserCount = $this->PublisherDAO->getAllUserCount();
+		$allDataprotectionUserCount = $this->PublisherDAO->getAllDataprotectionUserCount();
+		$this->set("allUserCount", $allUserCount);
+		$this->set("allDataprotectionUserCount", $allDataprotectionUserCount);
+		
 		if ($this->request->is('post')) {
 			$options = array('conditions' => array('Congregation.' . $this->Congregation->primaryKey => $this->request->data["Congregation"]["kill"]));
 			$congregation = $this->Congregation->find('first', $options);
