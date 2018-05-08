@@ -3,7 +3,8 @@
 	<div class="col-md-6 col-xs-12">
 		<legend><?php echo __('Übersicht'); ?></legend>
 		<div class="panel panel-primary" style="padding:20px;">
-			In die Datenschutzvereinbarung haben <?= $dataprotectionCount ?> von <?= $publisherCount ?> Verkündigern eingewilligt.<br/><br/>
+			In die Datenschutzvereinbarung haben <?= $dataprotectionCount ?> von <?= $publisherCount ?> Verkündigern eingewilligt.<br/>
+			In der Verkündigerliste (unter Verwaltung > Verkündiger) kannst du sehen, wer bereits der Datenschutzvereinbarung zugestimmt hat.<br/><br/>
 			Folgende Verkündiger haben keinen Login und du hast noch keine Datenschutzvereinbarung von ihnen an mich geschickt:<br/><br/>
 			<?php 
 				foreach ($publishersNoDataprotectionWithoutAccount as $publisher) {
