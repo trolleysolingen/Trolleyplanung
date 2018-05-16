@@ -98,6 +98,20 @@ class PublisherDAOComponent extends Component {
 
         return $result;
     }
+    
+    public function getAllMailAdressesDataProtection() {
+    	$model = ClassRegistry::init('Publisher');
+    	$result = $model->find('all', array(
+    			'recursive' => 1,
+    			'conditions' => array(
+    					'Publisher.email !=' => '',
+    					'Publisher.dataprotection' => 0
+    			)
+    	)
+    			);
+    
+    	return $result;
+    }
 	
 	public function getAllCongMailAdresses($publisher) {
         $model = ClassRegistry::init('Publisher');
@@ -111,6 +125,21 @@ class PublisherDAOComponent extends Component {
         );
 
         return $result;
+    }
+    
+    public function getAllCongMailAdressesDataProtection($publisher) {
+    	$model = ClassRegistry::init('Publisher');
+    	$result = $model->find('all', array(
+    			'recursive' => 1,
+    			'conditions' => array(
+    					'Publisher.congregation_id' => $publisher['Congregation']['id'],
+    					'Publisher.email !=' => '',
+    					'Publisher.dataprotection' => 0
+    			)
+    	)
+    			);
+    
+    	return $result;
     }
 	
 	public function getAllCongAdminMailAdresses($publisher) {

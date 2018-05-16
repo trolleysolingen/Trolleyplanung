@@ -43,6 +43,9 @@ class MessagesController extends AppController {
 				if($this->request->data["Message"]["group"] == "myPub") {
 					$mailList = $this->PublisherDAO->getAllCongMailAdresses($publisher);
 					$newMessage['Message']['congregation_id'] = $publisher['Publisher']['congregation_id'];
+				} else if($this->request->data["Message"]["group"] == "myPubDataProtection") {
+					$mailList = $this->PublisherDAO->getAllCongMailAdressesDataProtection($publisher);
+					$newMessage['Message']['congregation_id'] = $publisher['Publisher']['congregation_id'];
 				} else if($this->request->data["Message"]["group"] == "myCongAd") {
 					$mailList = $this->PublisherDAO->getAllCongAdminMailAdresses($publisher);
 					$newMessage['Message']['congregation_id'] = $publisher['Publisher']['congregation_id'];
@@ -52,8 +55,11 @@ class MessagesController extends AppController {
 				} else if($this->request->data["Message"]["group"] == "allCongAd") {
 					$mailList = $this->PublisherDAO->getAllAdminMailAdresses();
 					$newMessage['Message']['role_id'] = 4;
+				} else if($this->request->data["Message"]["group"] == "allUsersDataProtection") {
+					$mailList = $this->PublisherDAO->getAllMailAdressesDataProtection();
+					$newMessage['Message']['role_id'] = 4;
 				}
-				
+								
 				if ($this->Message->save($newMessage)) {
 				
 					$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -67,7 +73,7 @@ class MessagesController extends AppController {
 
 						
 						if(!$success) {
-							$this->Session->setFlash('Die Nahrichten konnten nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+							$this->Session->setFlash('Die Nachrichten konnten nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 						} else {
 							$this->Session->setFlash('Die Nachrichten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
 						}

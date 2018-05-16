@@ -11,6 +11,12 @@
 			<input type="radio" name="data[Message][group]" id="optionsRadios1" value="myPub">
 			Alle Verkündiger meiner Versammlung
 		  </label>
+		</div>		
+		<div class="radio">
+		  <label>
+			<input type="radio" name="data[Message][group]" id="optionsRadios5" value="myPubDataProtection">
+			Alle Verkündiger meiner Versammlung, die der Datenschutzerklärung noch nicht zugestimmt haben
+		  </label>
 		</div>
 		<div class="radio">
 		  <label>
@@ -18,6 +24,7 @@
 			Alle Versammlungsadmins meiner Versammlung
 		  </label>
 		</div>
+		
 		<?php if ($publisher['Role']['name'] == 'admin') {?>
 		<br/>
 		<legend></legend>
@@ -25,6 +32,12 @@
 		  <label>
 			<input type="radio" name="data[Message][group]" id="optionsRadios3" value="allUsers">
 			Alle eingetragenden Verkündiger
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+			<input type="radio" name="data[Message][group]" id="optionsRadios6" value="allUsersDataProtection">
+			Alle eingetragenden Verkündiger, die der Datenschutzerklärung noch nicht zugestimmt haben
 		  </label>
 		</div>
 		<div class="radio">
