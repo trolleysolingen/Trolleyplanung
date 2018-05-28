@@ -128,7 +128,7 @@ class PublishersController extends AppController {
 			$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
 			$this->request->data = $this->Publisher->find('first', $options);
 
-			if ($this->request->data['Publisher']['congregation_id'] != $publisher['Publisher']['congregation_id']) {
+			if ($this->request->data['Publisher']['congregation_id'] != $publisher['Publisher']['congregation_id'] && $publisher['Publisher']['role_id'] != 2) {
 				return $this->redirect(array('controller' => 'publishers', 'action' => 'index'));
 			}
 		}
