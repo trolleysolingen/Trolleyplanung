@@ -76,6 +76,11 @@ class AdminController extends AppController {
 		return $this->redirect(array('controller' => 'admin', 'action' => 'index'));
 	}
 	
+	public function searchpublisher() {
+		$publisherSearchList = $this->PublisherDAO->searchPublisher($this->request->data["Publisher"]["searchstring"]);
+		$this->set("publisherSearchList", $publisherSearchList);
+	}
+	
 	public function killswitchOneCongregation() {
 	
 	}

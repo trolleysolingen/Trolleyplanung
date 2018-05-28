@@ -341,4 +341,21 @@ class PublishersController extends AppController {
 		
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	public function acceptDataprivacy($id = null) {
+		$options = array('conditions' => array('Publisher.' . $this->Publisher->primaryKey => $id));
+		$dbPublisher = $this->Publisher->find('first', $options);
+		$now = new DateTime('now');
+		
+		$dbPublisher['Publisher']['dataprotection'] = 1;
+		$dbPublisher['Publisher']['dataprotection_date'] = $now->format('Y-m-d H:i:s');
+	
+		if ($this->Publisher->save($dbPublisher)) {
+			$this->Session->setFlash('Deine Änderung wurde gespeichert', 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Session->setFlash('Deine Änderung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+	
+		$this->redirect(array('action' => 'index'));
+	}
 }

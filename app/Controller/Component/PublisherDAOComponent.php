@@ -336,4 +336,22 @@ class PublisherDAOComponent extends Component {
 
         return $result;
 	}
+	
+	public function searchPublisher($searchString) {
+		$model = ClassRegistry::init('Publisher');
+	
+		$result = $model->find('all', array(
+				'conditions' => array(
+				    'OR' => array(
+				        'email LIKE' => '%'. $searchString . '%',
+				        'prename LIKE' => '%'. $searchString . '%', 
+				    	'surname LIKE' => '%'. $searchString . '%'
+				    )
+				),
+				'recursive' => -1
+			)
+		);
+	
+		return $result;
+	}
 }

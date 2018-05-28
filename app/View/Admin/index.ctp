@@ -22,4 +22,12 @@
 		<?php echo $this->Form->end(array('div' => false, 'label' => 'Login verwehren', 'class' => 'btn btn-danger')); ?>
 		<br/><br/>
 		<?= $allDataprotectionUserCount ?> von <?= $allUserCount ?> Verkündigern haben die Datenschutzerklärung akzeptiert.
+		<br/>
+		<br/>
+		<br/><br/>
+		<legend>Verkündiger suchen</legend>
+		<?php echo $this->Form->create(null, array('url' => array('controller' => 'admin', 'action' => 'searchpublisher'), 'class' => 'form-inline')); 
+		echo $this->Form->input('searchstring', array('div' => false, 'label'=>false,  'class' => 'form-control', 'placeholder' => 'Verkündiger', 'id' => 'searchstring'));
+		echo $this->Form->end(array('div' => false, 'label' => 'Suchen', 'class' => 'btn btn-primary')); ?>
+
 </div>
