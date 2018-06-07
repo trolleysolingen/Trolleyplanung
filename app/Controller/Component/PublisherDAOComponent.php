@@ -32,7 +32,7 @@ class PublisherDAOComponent extends Component {
     public function getByEmail($email, $password) {
         $model = ClassRegistry::init('Publisher');
 
-        $result= $model->find('first', array('conditions' => array('email' => $email, 'password' => $password), 'recursive' => 1));
+        $result= $model->find('first', array('conditions' => array('email' => $email, 'password' => $password, 'congregation_id is not null'), 'recursive' => 1));
 
         return $result;
     }
