@@ -98,6 +98,9 @@ class ReservationDAOComponent extends Component {
         if ($reservation != null && $reservation['Reservation']['modified'] > $displayTime) {
             // Reservation has been modified -> don't save
             $reservation['error'] = 'Der Termin wurde zwischenzeitlich verändert. Bitte überprüfe deine Buchung!';
+            
+            $reservation = $this->addPublisherRouteAndTimeslotToReservation($reservation, $routeId, $reservationTimeslot);
+            
             return $reservation;
         } else {
             if ($reservation != null) {
