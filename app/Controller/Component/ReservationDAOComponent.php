@@ -17,8 +17,8 @@ class ReservationDAOComponent extends Component {
     public function getReservationsInTimeRange($mondayThisWeek, $congregationId, $routeId, $weeksDisplayed) {
         $model = ClassRegistry::init('Reservation');
 
-        $lastDateOnView = strtotime('monday this week +' .$weeksDisplayed . ' week');
-
+		$lastDateOnView = strtotime('+' . $weeksDisplayed . ' week', $mondayThisWeek);
+        
         $result= $model->find('all', array(      	
         	'fields' => array(
         			'Reservation.id',
