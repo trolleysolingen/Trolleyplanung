@@ -333,7 +333,8 @@ class ReservationDAOComponent extends Component {
                     'Reservation.congregation_id' => $publisher['Congregation']['id'],
 					'Reservation.report_necessary' => 1,
 					'Reservation.timeslot_id !=' => null,
-					'Reservation.minutes' => null
+					'Reservation.minutes' => null,
+					'Timeslot.id !=' => null
                 ),
             'order' => array('Reservation.day', 'Reservation.timeslot_id'),
             'recursive' => 1
