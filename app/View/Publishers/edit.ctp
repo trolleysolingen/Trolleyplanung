@@ -5,10 +5,19 @@
 		<?php
 			echo $this->Form->input('id');
 			echo $this->Form->input('congregation_id', array(
-				'type' => 'hidden',
-				'value' => $publisher['Congregation']['id']
-			));
+				'type' => 'hidden'
+			));	
 		?>
+		<div class="form-group">
+			<div class="col-sm-1 col-md-2"></div>
+			<label for="email" class="col-sm-2 control-label"><?php echo $this->request->data['Congregation']['typ'] == "FFD" ? "FFD-Kreis" : "Versammlung" ?></label>
+			<div class="col-sm-8 col-md-6">
+				<?php
+				echo $this->request->data['Congregation']['name'];
+				?>
+			</div>
+			<div class="col-sm-1 col-md-2"></div>
+		</div>
 		<div class="form-group">
 			<div class="col-sm-1 col-md-2"></div>
 			<label for="email" class="col-sm-2 control-label">E-Mail-Adresse:</label>
