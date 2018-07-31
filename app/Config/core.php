@@ -218,7 +218,8 @@
 	Configure::write('Session', array(
 		'defaults' => 'php',
 		'timeout' => 30, //30 minutes
-	));
+		'checkAgent' => false
+	)); 
 
 /**
  * A random string used in security hashing methods.
