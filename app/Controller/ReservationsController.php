@@ -42,6 +42,7 @@ class ReservationsController extends AppController {
 		$reservations = null;
 		$timeslots = null;
 		$dayslot = null;
+		
 		$weeksDisplayed = $this->getWeeksDisplayed($routes, $routeId);
 		
 		$indexRouteId = 0;
@@ -125,7 +126,7 @@ class ReservationsController extends AppController {
 
 	private function getWeeksDisplayed($routes, $routeId) {
 		foreach ($routes as $route) {
-			if ($route['Routes']['id'] == $routeId) {
+			if ($routeId == null || $route['Routes']['id'] == $routeId) {
 				return $route['Routes']['weeks_displayed'];
 			}
 		}
