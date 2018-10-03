@@ -8,7 +8,7 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class ReservationsController extends AppController {
 
-	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'WeekDay', 'LkwnumberDAO', 'RequestHandler');
+	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'WeekDay', 'LkwnumberDAO', 'ShipDAO', 'RequestHandler');
 
 	public function beforeFilter() {
 		parent::checkLoginPermission();
@@ -78,7 +78,12 @@ class ReservationsController extends AppController {
 			if ($publisher['Congregation']['show_lkw_numbers']) {
 				$lkwnumbers = $this->LkwnumberDAO->getLkwnumbers($routeId);
 				$this->set("lkwnumbers", $lkwnumbers);
-			} 
+			}
+			
+			if ($publisher['Congregation']['typ'] == "Hafen") {
+				$ships = $this->ShipDAO->getShips($routeId);
+				$this->set("ships", $ships);
+			}
 		}
 
 		$now = new DateTime('now');
@@ -452,6 +457,26 @@ class ReservationsController extends AppController {
 			return $this->redirect(array('controller' => 'reservations', 'action' => 'index', $this->request->data['Reservation']['route_id']));
 		} else {
 			$this->Session->setFlash('Das LKW-Nummernschild konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+		}
+	}
+	
+	public function saveShip() {
+		$model = ClassRegistry::init('Ship');
+		
+		$publisher = $this->Session->read('publisher');
+	
+		$ship['Ship']['route_id'] = $this->request->data['Reservation']['route_id'];
+		$ship['Ship']['name'] = $this->request->data['Reservation']['shipname'];
+		$ship['Ship']['publisher'] = $publisher["Publisher"]["prename"] . " " . $publisher["Publisher"]["surname"]; 
+	
+		if ($model->save($ship)) {
+			$this->Session->setFlash('Der Schiffsname wurde abgespeichert.', 'default', array('class' => 'alert alert-success'));
+				
+			$this->ShipDAO->deleteOldShips();
+				
+			return $this->redirect(array('controller' => 'reservations', 'action' => 'index', $this->request->data['Reservation']['route_id']));
+		} else {
+			$this->Session->setFlash('Der Schiffsname konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 	}
 }

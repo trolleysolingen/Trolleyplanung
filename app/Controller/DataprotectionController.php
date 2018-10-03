@@ -33,7 +33,10 @@ class DataprotectionController extends AppController {
 		$this->Publisher->delete($publisher['Publisher']['id']);		
 		$this->Session->delete('publisher');
 		
-		$this->redirect(array('controller' => 'start', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')));
+		$this->redirect(array('controller' => 'start', 'action' => 'index', 
+				'?' => array(
+						'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null,
+						'Hafen' => $this->Session->read("verwaltungTyp") == 'Hafen' ? 'true' : null)));
 	}
 	
 	public function accept() {

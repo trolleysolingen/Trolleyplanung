@@ -46,9 +46,9 @@
 		$highlightProfile = "active";
 	} else if (in_array("admin", $linkarray)) {
 		$highlightAdmin = "active";
-	} else if (in_array("imprint?ffd=true", $linkarray) || in_array("imprint?ffd=false", $linkarray) || in_array("imprint", $linkarray)) {
+	} else if (in_array("imprint?ffd=true", $linkarray) || in_array("imprint?Hafen=true", $linkarray) || in_array("imprint", $linkarray)) {
 		$highlightImprint = "active";
-	} else if (in_array("privacy?ffd=true", $linkarray) || in_array("privacy?ffd=false", $linkarray) || in_array("privacy", $linkarray)) {
+	} else if (in_array("privacy?ffd=true", $linkarray) || in_array("privacy?Hafen=true", $linkarray) || in_array("privacy", $linkarray)) {
 		$highlightPrivacy = "active";
 	} else if(in_array("dataprotection", $linkarray) && in_array("congregation", $linkarray)) {
 		$highlightCongregationDataprotection = "active";
@@ -74,7 +74,10 @@
 			<?php 
 				echo $this->Html->link(
 					$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-grater jw-tower')) . $this->Session->read('verwaltungTyp') . "-Verwaltung",
-					array('controller' => 'start', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
+					array('controller' => 'start', 'action' => 'index', 
+							'?' => array(
+									'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null, 
+									'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null)),
 					array('class' => 'navbar-brand', 'escape' => false)
 				);
 			?>
@@ -216,14 +219,20 @@
 					<li class="<?php echo $highlightImprint ?>">
 						<?php echo $this->Html->link(
 								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-user', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Impressum",
-								array('controller' => 'imprint', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
+								array('controller' => 'imprint', 'action' => 'index', 
+										'?' => array(
+												'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null,
+												'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null)),
 								array('escape' => false)
 						);?>
 					</li>
 					<li class="<?php echo $highlightPrivacy ?>">
 						<?php echo $this->Html->link(
 								$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-lock', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Datenschutzerklärung",
-								array('controller' => 'privacy', 'action' => 'index', '?' => array('ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : 'false')),
+								array('controller' => 'privacy', 'action' => 'index', 
+										'?' => array(
+												'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null,
+												'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null)),
 								array('escape' => false)
 						);?>
 					</li>

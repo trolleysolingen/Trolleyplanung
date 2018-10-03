@@ -20,7 +20,7 @@
 					<label for="typ" class="col-xs-4 control-label">Typ:</label>
 					<div class="col-sm-8 col-md-6">
 						<?php
-							echo $this->Form->input('typ', array('label'=>false, 'class' => 'form-control', 'id' => 'typ', 'options' => array('Trolley' => 'Trolley', 'FFD' => 'FFD')));
+							echo $this->Form->input('typ', array('label'=>false, 'class' => 'form-control', 'id' => 'typ', 'options' => array('Trolley' => 'Trolley', 'FFD' => 'FFD', 'Hafen' => 'Hafen')));
 						?>
 					</div>
 				</div>

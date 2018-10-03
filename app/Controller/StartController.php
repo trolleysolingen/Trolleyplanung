@@ -70,12 +70,14 @@ class StartController extends AppController {
 			}
 
 		} else {			
-			// not logged in; decide from hostname if to display trolley or ffd
-			// or check if parameter ffd is set
+			// not logged in; decide from hostname or url params if to display trolley or ffd or hafen		
 			$hostname = $_SERVER['HTTP_HOST'];
-			if (substr( $hostname, 0, 3 ) === "ffd" || (array_key_exists('ffd', $this->params['url']) && $this->params['url']['ffd'] == "true")) {
+			if ((strlen($hostname) >= 3 && substr( $hostname, 0, 3 ) === "ffd") || (array_key_exists('ffd', $this->params['url']) && $this->params['url']['ffd'] == "true")) {
 				$this->set('title_for_layout', 'FFD-Verwaltung');
 				$this->Session->write('verwaltungTyp', 'FFD');
+			} else if ((strlen($hostname) >= 5 && substr( $hostname, 0, 5 ) === "hafen") || (array_key_exists('Hafen', $this->params['url']) && $this->params['url']['Hafen'] == "true")) {
+				$this->set('title_for_layout', 'Hafen-Verwaltung');
+				$this->Session->write('verwaltungTyp', 'Hafen');
 			} else {
 				$this->set('title_for_layout', 'Trolleyverwaltung');
 				$this->Session->write('verwaltungTyp', 'Trolley');
