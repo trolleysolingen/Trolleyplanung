@@ -362,3 +362,9 @@ function ajaxCallCongregationReportDate(congregationId, url, data) {
 function addslashes( str ) {
     return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 }
+
+function setReservationStartDate(routeId) {
+	var reservationStartDate = $("#reservationStartDate").val();
+	
+	window.location.href = '/reservations/index/' + routeId + '?reservationStartDate=' + reservationStartDate;
+}

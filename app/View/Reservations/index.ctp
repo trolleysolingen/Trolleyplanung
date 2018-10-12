@@ -198,7 +198,26 @@
 						<li>Eintragen von Verkündigern in eine Schicht</li>
 						<li>Im Kalender zurückspringen um frühere Wochen einzusehen</li>		
 					</ul>
-					<br/>
+					
+					<?php if($admintools) { ?>
+						<div class="col-sm-4 col-md-3"  style="margin-top:20px;margin-bottom:20px;">
+							<div class='input-group date'>
+								<span class="input-group-addon datepickerbutton">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+								<?php 
+									echo $this->Form->input('reservationStartDate', array('div' => false, 'label'=>false, 'class' => 'form-control', 'id' => 'reservationStartDate', 'type' => 'text', 'placeholder' => 'Schichten anzeigen ab dem')); 
+								?>	
+								<span class="input-group-addon" style="background-color: #5cb85c">
+									<?php 
+										echo "<a href='javascript:void(0)' onclick='setReservationStartDate(\"" .  $routeId . "\")' style='text-decoration: none; color: white'>Schichtplan anzeigen</a>";
+									?>
+								</span>						
+							</div>		
+						</div>				
+					 <?php } ?>
+					
+					<br clear="all"/>
 					<div class="col-sm-8 col-md-6">
 						<?php if(!$admintools) {
 							echo $this->Html->link('<button type="button" class="btn btn-success">Admin Tools aktivieren</span></button>', array('controller' => 'reservations', 'action' => 'toggleAdminTools', $routeId), array('escape' => false, 'title' => 'Admin Tools aktivieren'));
@@ -207,20 +226,7 @@
 						} ?>
 					</div>
 					
-					<?php if($admintools && false) { ?>
-						<br/>
-						<br/>
-						<br/>
-						<br clear="all"/>
-						<div class="col-sm-8 col-md-6">
-							<?php echo $this->Form->input('weeks_back', array('div' => false, 'label'=>false, 'class' => 'touch-spin', 'id' => 'weeks_back', 'type' => 'text', 'value' => 1)); ?>													
-						</div>
-						<br/>
-						<br clear="all"/>
-						<div class="col-sm-8 col-md-6">
-							<?php echo $this->Html->link('<button type="button" class="btn btn-warning">Wochen zurück springen</span></button>', array('controller' => 'reservations', $routeId), array('escape' => false, 'title' => 'Wochen zurück springen')); ?>						
-						</div>
-					<?php } ?>
+					
 				</div>
 			</div>
 		</div>

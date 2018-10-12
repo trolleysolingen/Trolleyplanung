@@ -69,6 +69,9 @@ class ReservationsController extends AppController {
 				}
 			}
 			
+			if ($this->Session->read('admintools') && isset($this->params['url']['reservationStartDate'])) {				
+				$mondayThisWeek = $this->last_monday($this->params['url']['reservationStartDate']);
+			}
 			$reservations = $this->ReservationDAO->getReservationsInTimeRange($mondayThisWeek, $publisher["Congregation"]["id"], $routeId, $weeksDisplayed);
 			$timeslots = $this->TimeslotDAO->getAll($publisher['Congregation']['id'], $routeId);
 			$dayslot = $this->DayslotDAO->getDayslot($publisher['Congregation']['id'], $routeId);	
