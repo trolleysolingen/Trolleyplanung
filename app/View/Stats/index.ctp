@@ -19,7 +19,7 @@
 			<select name="data[Stat][month]" class="form-control" id="month">
 				<?php
 				foreach($monthArray as $key => $value):
-				echo '<option value="'.$key.'">'.$value.'</option>'; //close your tags!!
+				echo '<option value="'.$key.'" ' . ($key == $selectedMonth ? 'selected' : '') . '>'.$value.'</option>'; //close your tags!!
 				endforeach;
 				?>
 			</select>
@@ -61,7 +61,7 @@
 </div>
 
 <pre id="tsv" style="display:none">
-Publkation Monat	Abgaben
+Publikation Monat	Abgaben
 <?php
 	foreach($report as $reports) {
 		echo $reports . "\n";

@@ -29,11 +29,14 @@ class StatsController extends AppController {
 		$monthArray = array();
 		$monthArray = $this->getMonthList();
 		$this->set("monthArray", $monthArray);
+		$selectedMonth = null;
 		if ($this->request->is('post')) {
-			$this->getStatForMonth($this->request->data["Stat"]["month"]);
+			$selectedMonth = $this->request->data["Stat"]["month"];
+			$this->getStatForMonth($selectedMonth);			
 		} else {
 			$this->getStatForMonth(date('Y-m-01'));
 		}
+		$this->set("selectedMonth", $selectedMonth);
 	}
 	
 	public function getStatForMonth($date) {

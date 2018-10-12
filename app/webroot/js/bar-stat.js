@@ -99,25 +99,11 @@ $(function () {
                 });
             });
 			
-			//Delete to prevent clicking
-			if(columns[0].length > 6) {
-				$.each(versions, function (key, value) {
-					drilldownSeries.push({
-						name: key,
-						id: key,
-						data: value
-					});
-				});
-			}
-			
 			var title = "";
-			if(columns[0].length > 6) {
-				title = 'Bericht der letzten 12 Monate';
-				desc = 'Klicke auf die einzelne Spalte um eine detaillierte Ansicht zu bekommen.';
-			} else {
-				title = 'Bericht vom ' + oneMonth;
-				desc = '';
-			}
+			
+			title = 'Bericht vom ' + oneMonth;
+			desc = '';
+			
 
             // Create the chart
             $('#container').highcharts({
@@ -157,7 +143,7 @@ $(function () {
                 },
 
                 series: [{
-                    name: 'Jahresübersicht',
+                    name: 'Monatsübersicht',
                     colorByPoint: true,
                     data: brandsData
                 }],
