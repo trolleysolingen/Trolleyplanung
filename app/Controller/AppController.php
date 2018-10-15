@@ -62,7 +62,9 @@ class AppController extends Controller {
 		return $this->redirect(array('controller' => 'start', 'action' => 'index', 
 				'?' => array(
 						'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null,
-						'Hafen' => $this->Session->read("verwaltungTyp") == 'Hafen' ? 'true' : null)));
+						'Hafen' => $this->Session->read("verwaltungTyp") == 'Hafen' ? 'true' : null,
+						'swh' => $this->Session->read('verwaltungTyp') == 'SWH' ? 'true' : null
+				)));
 	}
 	
 	public function checkKillswitch($publisher) {

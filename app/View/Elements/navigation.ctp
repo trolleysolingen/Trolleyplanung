@@ -46,9 +46,9 @@
 		$highlightProfile = "active";
 	} else if (in_array("admin", $linkarray)) {
 		$highlightAdmin = "active";
-	} else if (in_array("imprint?ffd=true", $linkarray) || in_array("imprint?Hafen=true", $linkarray) || in_array("imprint", $linkarray)) {
+	} else if (in_array("imprint?ffd=true", $linkarray) || in_array("imprint?Hafen=true", $linkarray) || in_array("imprint?swh=true", $linkarray) || in_array("imprint", $linkarray)) {
 		$highlightImprint = "active";
-	} else if (in_array("privacy?ffd=true", $linkarray) || in_array("privacy?Hafen=true", $linkarray) || in_array("privacy", $linkarray)) {
+	} else if (in_array("privacy?ffd=true", $linkarray) || in_array("privacy?Hafen=true", $linkarray) || in_array("privacy?swh=true", $linkarray) || in_array("privacy", $linkarray)) {
 		$highlightPrivacy = "active";
 	} else if(in_array("dataprotection", $linkarray) && in_array("congregation", $linkarray)) {
 		$highlightCongregationDataprotection = "active";
@@ -77,7 +77,9 @@
 					array('controller' => 'start', 'action' => 'index', 
 							'?' => array(
 									'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null, 
-									'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null)),
+									'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null,
+									'swh' => $this->Session->read('verwaltungTyp') == 'SWH' ? 'true' : null,
+							)),
 					array('class' => 'navbar-brand', 'escape' => false)
 				);
 			?>
@@ -222,7 +224,9 @@
 								array('controller' => 'imprint', 'action' => 'index', 
 										'?' => array(
 												'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null,
-												'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null)),
+												'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null,
+												'swh' => $this->Session->read('verwaltungTyp') == 'SWH' ? 'true' : null
+										)),
 								array('escape' => false)
 						);?>
 					</li>
@@ -232,7 +236,9 @@
 								array('controller' => 'privacy', 'action' => 'index', 
 										'?' => array(
 												'ffd' => $this->Session->read('verwaltungTyp') == 'FFD' ? 'true' : null,
-												'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null)),
+												'Hafen' => $this->Session->read('verwaltungTyp') == 'Hafen' ? 'true' : null,
+												'swh' => $this->Session->read('verwaltungTyp') == 'SWH' ? 'true' : null
+										)),
 								array('escape' => false)
 						);?>
 					</li>

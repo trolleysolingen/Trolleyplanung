@@ -70,7 +70,7 @@ class StartController extends AppController {
 			}
 
 		} else {			
-			// not logged in; decide from hostname or url params if to display trolley or ffd or hafen		
+			// not logged in; decide from hostname or url params if to display trolley or ffd or hafen or swh		
 			$hostname = $_SERVER['HTTP_HOST'];
 			if ((strlen($hostname) >= 3 && substr( $hostname, 0, 3 ) === "ffd") || (array_key_exists('ffd', $this->params['url']) && $this->params['url']['ffd'] == "true")) {
 				$this->set('title_for_layout', 'FFD-Verwaltung');
@@ -78,6 +78,9 @@ class StartController extends AppController {
 			} else if ((strlen($hostname) >= 5 && substr( $hostname, 0, 5 ) === "hafen") || (array_key_exists('Hafen', $this->params['url']) && $this->params['url']['Hafen'] == "true")) {
 				$this->set('title_for_layout', 'Hafen-Verwaltung');
 				$this->Session->write('verwaltungTyp', 'Hafen');
+			} else if ((strlen($hostname) >= 3 && substr( $hostname, 0, 3 ) === "swh") || (array_key_exists('swh', $this->params['url']) && $this->params['url']['swh'] == "true")) {
+				$this->set('title_for_layout', 'Studentenwohnheim-Verwaltung');
+				$this->Session->write('verwaltungTyp', 'SWH');
 			} else {
 				$this->set('title_for_layout', 'Trolleyverwaltung');
 				$this->Session->write('verwaltungTyp', 'Trolley');

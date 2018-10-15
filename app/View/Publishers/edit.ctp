@@ -11,8 +11,17 @@
 		<div class="form-group">
 			<div class="col-sm-1 col-md-2"></div>
 			<label for="email" class="col-sm-2 control-label">
-				<?php echo $this->request->data['Congregation']['typ'] == "FFD" ? "FFD-Kreis" : 
-						($this->request->data['Congregation']['typ'] == "Hafen" ? "Hafendienstgruppe" : "Versammlung") ?>
+				<?php echo $this->request->data['Congregation']['typ'] == "FFD" ? 
+							"FFD-Kreis" : 
+							($this->request->data['Congregation']['typ'] == "Hafen" ? 
+									"Hafendienstgruppe" : 
+									($this->request->data['Congregation']['typ'] == "SWH" ?
+											"Studentenwohnheim-Verwaltung"
+											:
+											"Versammlung"
+									)
+							) 
+				?>
 			</label>
 			<div class="col-sm-8 col-md-6">
 				<?php
