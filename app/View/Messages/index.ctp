@@ -9,19 +9,19 @@
 		<div class="radio">
 		  <label>
 			<input type="radio" name="data[Message][group]" id="optionsRadios1" value="myPub">
-			Alle Verkündiger meiner Versammlung
+			Alle Verkündiger meiner Schichtplanung
 		  </label>
 		</div>		
 		<div class="radio">
 		  <label>
 			<input type="radio" name="data[Message][group]" id="optionsRadios5" value="myPubDataProtection">
-			Alle Verkündiger meiner Versammlung, die der Datenschutzerklärung noch nicht zugestimmt haben
+			Alle Verkündiger meiner Schichtplanung, die der Datenschutzerklärung noch nicht zugestimmt haben
 		  </label>
 		</div>
 		<div class="radio">
 		  <label>
 			<input type="radio" name="data[Message][group]" id="optionsRadios2" value="myCongAd">
-			Alle Versammlungsadmins meiner Versammlung
+			Alle Versammlungsadmins meiner Schichtplanung
 		  </label>
 		</div>
 		
@@ -43,7 +43,7 @@
 		<div class="radio">
 		  <label>
 			<input type="radio" name="data[Message][group]" id="optionsRadios4" value="allCongAd">
-			Alle eingetragenden Versammlungsadmins
+			Alle eingetragenden Schichtplanung-Admins
 		  </label>
 		</div>
 		<?php } ?>

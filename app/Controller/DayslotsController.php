@@ -62,7 +62,7 @@ class DayslotsController extends AppController {
 	public function edit($id = null) {
 		$publisher = $this->Session->read('publisher');
 		if (!$this->Dayslot->exists($id)) {
-			throw new NotFoundException(__('Ungültige Schichtzeit'));
+			throw new NotFoundException(__('Ungültige Schichttage'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Dayslot->save($this->request->data)) {
