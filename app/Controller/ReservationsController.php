@@ -121,6 +121,9 @@ class ReservationsController extends AppController {
 			$this->getMissingReports($publisher);
 		}
 		$this->set('title_for_layout', 'Schichten');
+		
+		$routes = $this->CongregationDAO->getRoutesAktiv($publisher["Congregation"]["id"]);
+		$this->set("routes", $routes);
 	}
 	
 	private function getIndexRouteId($routes, $routeId) {
