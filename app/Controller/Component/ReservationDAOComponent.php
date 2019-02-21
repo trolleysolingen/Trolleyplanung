@@ -324,6 +324,55 @@ class ReservationDAOComponent extends Component {
 		return $allReports;
 	}
 	
+	public function getMyReservations($publisher) {
+		$model = ClassRegistry::init('Reservation');
+
+                
+        $result= $model->find('all', array(
+        		'fields' => array(        				
+        				'Reservation.day',        				
+        				'Route.name',        				
+        				'Timeslot.start',
+        				'Timeslot.end',
+        		),
+        		
+        		'joins' => array(
+				    array('table' => 'publisher_reservations',		
+				    	'alias' => 'PublisherReservation',
+				        'type' => 'inner',
+				        'conditions' => array(
+				            'Reservation.id = PublisherReservation.reservation_id'
+				        )
+				    ),
+        			array('table' => 'routes',
+        				'alias' => 'Route',
+        				'type' => 'inner',
+        				'conditions' => array(
+        					'Reservation.route_id = Route.id'
+        				)
+        			),
+        			array('table' => 'timeslots',
+        				'alias' => 'Timeslot',
+        				'type' => 'inner',
+        				'conditions' => array(
+        					'Reservation.timeslot_id = Timeslot.id'
+        				)
+        			),
+				),
+				        		 
+        		'conditions' => array(
+        			'PublisherReservation.publisher_id' => $publisher['Publisher']['id'],
+					'Reservation.day >=' => date("Y-m-d"),					
+					'Reservation.timeslot_id is not null'
+        		),
+        		'order' => array('Reservation.day', 'Reservation.timeslot_id'),
+        		'recursive' => -1
+        	)
+        );
+        
+		return $result;		
+	}
+	
 	public function getMissingCongregationReports($publisher) {
 		$model = ClassRegistry::init('Reservation');
 

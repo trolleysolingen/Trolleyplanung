@@ -110,6 +110,19 @@ class ReservationsController extends AppController {
 		$this->set('title_for_layout', 'Schichten');
 	}
 
+	public function myreservations() {
+		$publisher = $this->Session->read('publisher');
+		
+		$myReservations = $this->ReservationDAO->getMyReservations($publisher);
+		$this->set("myReservations", $myReservations);
+		
+		$this->set("publisher", $this->Session->read('publisher'));
+		if($publisher['Congregation']['report']) {
+			$this->getMissingReports($publisher);
+		}
+		$this->set('title_for_layout', 'Schichten');
+	}
+	
 	private function getIndexRouteId($routes, $routeId) {
 		$index = 0;
 		foreach ($routes as $route) {
