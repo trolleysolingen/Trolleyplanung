@@ -23,38 +23,34 @@
 	<li class="active"><a href="/reservations/myreservations">Meine Schichten</a></li>
 </ul>
 <br/><br/>
-		
+
 Hier siehst du alle zukünftigen Schichten für die du dich eingetragen hast:
 <br/><br/>
 
-<?php 
+<?php
 	if (sizeof($myReservations) > 0) {
+		echo "<div class='row'>";
 		foreach ($myReservations as $myReservation) {
 ?>
-
-			<div class="myreservation-block">
-			 <div class="myreservation-row">
-				<div class="myreservation-column1"><strong>Tag:</strong></div> 
-				<div class="myreservation-column2"><?php echo $date = date("d.m.Y", strtotime($myReservation['Reservation']['day'] )) ?></div>
-			 </div>
-			 
-			 <div class="myreservation-row">
-				<div class="myreservation-column1"><strong>Zeit:</strong></div>
-				<div class="myreservation-column2"> <?php echo $myReservation['Timeslot']['start']?> - <?php echo $myReservation['Timeslot']['end']?> Uhr</div>
-			</div>	
-				<?php 
+		<div class="col-xs-12 xol-sm-6 col-md-4 col-lg-3">
+			<div class="panel panel-primary">
+				<div class="panel-body">
+				<strong>Tag: </strong> <?php echo $date = date("d.m.Y", strtotime($myReservation['Reservation']['day'] )) ?><br/>
+				<strong>Zeit:</strong> <?php echo $myReservation['Timeslot']['start']?> - <?php echo $myReservation['Timeslot']['end']?> Uhr
+				<?php
 					if (!empty($myReservation['Route']['name'])) {
 				?>
-					<div class="myreservation-row">
-						<div class="myreservation-column1"><strong>Route:</strong> </div>
-						<div class="myreservation-column2"><?php echo $myReservation['Route']['name']?></div>
-					</div>
-				<?php 
+					<br/>
+					<strong>Route:</strong> <?php echo $myReservation['Route']['name']?>
+				<?php
 					}
 				?>
+				</div>
 			</div>
-<?php 
+		</div>
+<?php
 		}
+		echo "</div>";
 	} else {
 		echo "Aktuell hast du keine Schichten reserviert.";
 	}
