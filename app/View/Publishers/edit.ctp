@@ -5,22 +5,23 @@
 		<?php
 			echo $this->Form->input('id');
 			echo $this->Form->input('congregation_id', array(
-				'type' => 'hidden'
-			));	
+				'type' => 'hidden',
+				'value' => $this->request->data['Congregation']['id']
+			));
 		?>
 		<div class="form-group">
 			<div class="col-sm-1 col-md-2"></div>
 			<label for="email" class="col-sm-2 control-label">
-				<?php echo $this->request->data['Congregation']['typ'] == "FFD" ? 
-							"FFD-Kreis" : 
-							($this->request->data['Congregation']['typ'] == "Hafen" ? 
-									"Hafendienstgruppe" : 
+				<?php echo $this->request->data['Congregation']['typ'] == "FFD" ?
+							"FFD-Kreis" :
+							($this->request->data['Congregation']['typ'] == "Hafen" ?
+									"Hafendienstgruppe" :
 									($this->request->data['Congregation']['typ'] == "SWH" ?
 											"Studentenwohnheim-Verwaltung"
 											:
 											"Versammlung"
 									)
-							) 
+							)
 				?>
 			</label>
 			<div class="col-sm-8 col-md-6">
@@ -92,7 +93,7 @@
 			</div>
 			<div class="col-sm-1 col-md-2"></div>
 		</div>
-		
+
 		<?php if($publisher['Congregation']['key_management']) { ?>
 			<div class="form-group">
 				<div class="col-sm-1 col-md-2"></div>

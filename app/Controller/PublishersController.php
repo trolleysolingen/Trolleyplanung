@@ -356,6 +356,6 @@ class PublishersController extends AppController {
 			$this->Session->setFlash('Deine Änderung konnte nicht gespeichert werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
 		}
 	
-		$this->redirect(array('action' => 'index'));
+		$this->redirect(array('controller' => 'admin', 'action' => 'index'));
 	}
 }
