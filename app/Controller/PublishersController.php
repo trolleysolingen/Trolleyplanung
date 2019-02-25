@@ -299,16 +299,23 @@ class PublishersController extends AppController {
 		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		if (strpos($actual_link,'trolleydemo') === false) {
 			$error = 0;
+			$failedMailAddresses = '';
 			foreach ($mailList as $publisherToSendAccount) {
-				$success = $this->sendMails($publisherToSendAccount);
+				try {
+					$success = $this->sendMails($publisherToSendAccount);
 				
-				if(!$success) {
+					if(!$success) {
+						$error++;
+						$failedMailAddresses = $failedMailAddresses . ' ' . $publisherToSendAccount["Publisher"]["email"];
+					}
+				} catch (Exception $e) {
 					$error++;
+					$failedMailAddresses = $failedMailAddresses . ' ' . $publisherToSendAccount["Publisher"]["email"];
 				}
 			}
 			
 			if($error>0) {
-				$this->Session->setFlash('Die Zugangsdaten konnten nicht verschickt werden. Bitte versuche es später nochmal.', 'default', array('class' => 'alert alert-danger'));
+				$this->Session->setFlash('Die Zugangsdaten konnten nicht vollständig verschickt werden. Folgende Mailadressen scheinen nicht korrekt zu sein: ' . $failedMailAddresses . ' . An alle anderen Mailadressen wurden die Zugangsdaten versandt.', 'default', array('class' => 'alert alert-danger'));
 			} else {
 				$this->Session->setFlash('Die Zugangsdaten wurden verschickt.', 'default', array('class' => 'alert alert-success'));
 			}
