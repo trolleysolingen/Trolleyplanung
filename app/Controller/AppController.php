@@ -97,7 +97,7 @@ class AppController extends Controller {
 	}
 	
 	public function sendMailBcc($recieverMailArray, $subject, $text) {
-		$mail = new CakeEmail('smtp');
+		$mail = new CakeEmail('default');
 		$result = $mail->emailFormat('text')
 		->bcc($recieverMailArray)
 		->subject($subject);
