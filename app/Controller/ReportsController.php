@@ -97,6 +97,8 @@ class ReportsController extends AppController {
 			$this->set ( "dataMinutes", $givenReport ['Report'] ['minutes'] );
 			$this->request->data = $givenReport;
 		}
+		
+		$this->set ( "publisher", $this->Session->read ( 'publisher' ) );
 	}
 	public function saveReport() {
 		$this->Report->id = $this->request->data ['Report'] ['id'];
@@ -203,6 +205,8 @@ class ReportsController extends AppController {
 		
 		$declinedReportList = $this->ReservationDAO->getDeclinedCongregationReports ( $publisher );
 		$this->set ( "declinedReportList", $declinedReportList );
+		
+		$this->set("publisher", $publisher);
 	}
 	public function markReportUnnecessaryAdmin() {
 		$this->Report->id = $this->request->data ['Report'] ['id'];

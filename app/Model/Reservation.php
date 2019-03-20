@@ -108,4 +108,12 @@ class Reservation extends AppModel {
 				'foreignKey' => 'reservation_id'
 			)
 	);
+	
+
+	public function beforeSave($options = array()) {
+		if (array_key_exists('report_languages_array', $this->data['Reservation']) && is_array($this->data['Reservation']['report_languages_array'])) {
+			$this->data['Reservation']['report_languages'] = implode(",", $this->data['Reservation']['report_languages_array']);
+		}
+		return true;
+	}
 }

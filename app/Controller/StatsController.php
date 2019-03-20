@@ -63,6 +63,11 @@ class StatsController extends AppController {
 		$monthJworgcard = 0;
 		$monthConversations = 0;
 		$monthContacts = 0;
+		$monthLevies = 0;
+		$monthMeetings = 0;
+		$monthExperiences = 0;
+		$monthLanguages = 0;
+		$monthShips = 0;
 		
 		foreach($givenReportList as $givenReport) {
 			$monthMinutes = $monthMinutes + $givenReport['Reservation']['minutes'];
@@ -74,18 +79,35 @@ class StatsController extends AppController {
 			$monthJworgcard = $monthJworgcard + $givenReport['Reservation']['jworgcard'];
 			$monthConversations = $monthConversations + $givenReport['Reservation']['conversations'];
 			$monthContacts = $monthContacts + $givenReport['Reservation']['contacts'];
+			$monthLevies = $monthLevies + $givenReport['Reservation']['report_levies'];
+			$monthMeetings = $monthMeetings + $givenReport['Reservation']['report_meetings'];
+			$monthExperiences = $monthExperiences + $givenReport['Reservation']['report_experiences'];
+			$monthLanguages = $monthLanguages + $givenReport['Reservation']['report_languages'];
+			$monthShips = $monthShips + $givenReport['Reservation']['report_ships'];
 		}
 		
 		$report = array();
 		$newDate = date("m.Y", strtotime($date));
-		$report[0] = "Bücher " . $newDate . "\t" .  $monthBooks;
-		$report[1] = "Zeitschriften " . $newDate . "\t" .  $monthMagazines;
-		$report[2] = "Broschüren " . $newDate . "\t" .  $monthBrochures;
-		$report[3] = "Traktate " . $newDate . "\t" .  $monthTracts;
-		$report[4] = "Videos " . $newDate . "\t" .  $monthVideos;
-		$report[5] = "Visitenkarten " . $newDate . "\t" .  $monthJworgcard;
-		$report[6] = "Gespräche " . $newDate . "\t" .  $monthConversations;
-		$report[7] = "Kontaktdaten erhalten " . $newDate . "\t" .  $monthContacts;
+		
+		
+		if ($publisher['Congregation']['typ'] == 'Hafen') {
+			$report[0] = "Erreichte Schiffe " . $newDate . "\t" .  $monthShips;
+			$report[1] = "Abgaben " . $newDate . "\t" .  $monthLevies;
+			$report[2] = "Videos " . $newDate . "\t" .  $monthVideos;
+			$report[3] = "Zusammenkünfte abgehalten" . $newDate . "\t" .  $monthMeetings;
+			$report[4] = "Erfahrungen " . $newDate . "\t" .  $monthExperiences;
+			$report[5] = "Gespräche " . $newDate . "\t" .  $monthConversations;
+			$report[6] = "Kontaktdaten erhalten " . $newDate . "\t" .  $monthContacts;			
+		} else {
+			$report[0] = "Bücher " . $newDate . "\t" .  $monthBooks;
+			$report[1] = "Zeitschriften " . $newDate . "\t" .  $monthMagazines;
+			$report[2] = "Broschüren " . $newDate . "\t" .  $monthBrochures;
+			$report[3] = "Traktate " . $newDate . "\t" .  $monthTracts;
+			$report[4] = "Videos " . $newDate . "\t" .  $monthVideos;
+			$report[5] = "Visitenkarten " . $newDate . "\t" .  $monthJworgcard;
+			$report[6] = "Gespräche " . $newDate . "\t" .  $monthConversations;
+			$report[7] = "Kontaktdaten erhalten " . $newDate . "\t" .  $monthContacts;
+		}
 		
 		settype($monthMinutes, 'integer');
 		$monthHours = floor($monthMinutes / 60);
