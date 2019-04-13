@@ -8,8 +8,9 @@ App::uses('CakeEmail', 'Network/Email');
  */
 class ReservationsController extends AppController {
 
-	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'WeekDay', 'LkwnumberDAO', 'ShipDAO', 'RequestHandler');
-
+	public $components = array('CongregationDAO', 'ReservationDAO', 'TimeslotDAO', 'DayslotDAO', 'PublisherDAO', 'WeekDay', 'LkwnumberDAO', 
+			'ShipDAO', 'ShiplistDAO', 'RequestHandler');
+	
 	public function beforeFilter() {
 		parent::checkLoginPermission();
 		parent::checkActiveKillswitch();
@@ -382,6 +383,7 @@ class ReservationsController extends AppController {
 		}
 		
 		$reservation = $this->request->data;
+		
 		$publisher = $this->Session->read('publisher');
 		
 		$reservation['Reservation']['minutes'] = $this->request->data['Reservation']['hours'] * 60 + $this->request->data['Reservation']['minutes'];
@@ -389,6 +391,15 @@ class ReservationsController extends AppController {
 		$reservation['Reservation']['no_report_reason'] = null;
 		$reservation['Reservation']['reporter_id'] = $publisher['Publisher']['id'];
 		$reservation['Reservation']['report_date'] = date("Y-m-d");
+		
+		if ($reservation['Reservation']['shiplistreport'] == true) {
+			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $this->Reservation->id));
+			$reservationDB = $this->Reservation->find('first', $options);
+			
+			for ($i = 0; $i < 10; $i++) {
+				$this->ShiplistDAO->saveShiplist($reservationDB, $reservation['shiplist' . $i]);
+			}	
+		}
 		
 		if ($this->Reservation->save($reservation)) {
 			$this->Session->setFlash('Dein Bericht wurde gespeichert.', 'default', array('class' => 'alert alert-success'));

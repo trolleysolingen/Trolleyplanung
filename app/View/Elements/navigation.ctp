@@ -21,6 +21,7 @@
 	$highlightImprint = "";
 	$highlightPrivacy = "";
 	$highlightCongregationDataprotection = "";
+	$highlightShiplists = "";
 
 	if (in_array("reservations", $linkarray)) {
 		$highlightReservations = "active";
@@ -52,6 +53,8 @@
 		$highlightPrivacy = "active";
 	} else if(in_array("dataprotection", $linkarray) && in_array("congregation", $linkarray)) {
 		$highlightCongregationDataprotection = "active";
+	} else if (in_array("shiplists", $linkarray)) {
+		$highlightShiplists = "active";
 	}
 	
 	if ($highlightCongregationSettings == "active" || $highlightPublishers == "active" || $highlightCongregations == "active" || $highlightMessages == "active" || $highlightCongregationReports == "active" || $highlightCongregationStats == "active" || $highlightCongregationDataprotection == "active") {
@@ -105,9 +108,23 @@
 									</li>
 								<?php
 								}
-								?>
+								?>								
 						  </ul>
 						</li>
+						
+						<?php 
+							if ($this->Session->read('verwaltungTyp') == 'Hafen') {
+						?>
+							<li class="<?php echo $highlightImprint ?>">
+								<?php echo $this->Html->link(
+										$this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-boat', 'style' => 'margin-right: 5px; margin-top: -6px;')) . "  Schiffslisten",
+										array('controller' => 'shiplists', 'action' => 'index'),
+										array('escape' => false)
+								);?>
+							</li>	
+						<?php 
+							}
+						?>				
 						
 						<li class="dropdown <?php echo $highlightMyCongregation ?>">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-cogwheels" style="margin-right: 10px; margin-top: -6px;"></span><span class="hidden-sm">Verwaltung </span><span class="badge"><?php echo $adminReportNumber; ?></span>

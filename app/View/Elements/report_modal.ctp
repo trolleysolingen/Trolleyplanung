@@ -2,7 +2,7 @@
 <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	  <?php echo $this->Form->create(null, array('url' => array('controller' => $controller, 'action' => 'saveReport'), 'class' => 'form-horizontal')); ?>
+	  <?php echo $this->Form->create(null, array('url' => array('controller' => $controller, 'action' => 'saveReport'), 'class' => 'form-horizontal', 'id' => 'ReservationSaveReportForm')); ?>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Bericht abgeben</h4>
@@ -181,14 +181,17 @@
 				</div>
 			</div>
 		
-		<?php 
+		<?php 		
+				echo $this->element('report_shiplist');
 			}
 		?>
       </div>
       <div class="modal-footer">
 		<div class="btn-group">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-			<?php echo $this->Form->end(array('div' => false, 'label' => 'Abschicken', 'class' => 'btn btn-success')); ?>
+			<?php 
+				echo $this->Form->end(array('div' => false, 'label' => 'Abschicken', 'class' => 'btn btn-success')); 
+			?>
 		</div>
       </div>
     </div>
