@@ -128,7 +128,7 @@ class ReportsController extends AppController {
 					$savedShips++;
 				}
 			}
-			$reservation['Reservation']['report_ships'] = $savedShips;
+			$reservation['Report']['report_ships'] = $savedShips;
 		}
 		
 		if ($this->Report->save ( $reservation )) {

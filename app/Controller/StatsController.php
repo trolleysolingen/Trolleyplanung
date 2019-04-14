@@ -66,7 +66,6 @@ class StatsController extends AppController {
 		$monthLevies = 0;
 		$monthMeetings = 0;
 		$monthExperiences = 0;
-		$monthLanguages = 0;
 		$monthShips = 0;
 		
 		foreach($givenReportList as $givenReport) {
@@ -82,7 +81,6 @@ class StatsController extends AppController {
 			$monthLevies = $monthLevies + $givenReport['Reservation']['report_levies'];
 			$monthMeetings = $monthMeetings + $givenReport['Reservation']['report_meetings'];
 			$monthExperiences = $monthExperiences + $givenReport['Reservation']['report_experiences'];
-			$monthLanguages = $monthLanguages + $givenReport['Reservation']['report_languages'];
 			$monthShips = $monthShips + $givenReport['Reservation']['report_ships'];
 		}
 		
