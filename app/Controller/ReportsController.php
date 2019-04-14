@@ -122,9 +122,13 @@ class ReportsController extends AppController {
 			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $this->Report->id));
 			$reservationDB = $this->Reservation->find('first', $options);
 				
+			$savedShips = 0;
 			for ($i = 0; $i < 10; $i++) {
-				$this->ShiplistDAO->saveShiplist($reservationDB, $reservation['shiplist' . $i]);
+				if ($this->ShiplistDAO->saveShiplist($reservationDB, $reservation['shiplist' . $i])) {
+					$savedShips++;
+				}
 			}
+			$reservation['Reservation']['report_ships'] = $savedShips;
 		}
 		
 		if ($this->Report->save ( $reservation )) {

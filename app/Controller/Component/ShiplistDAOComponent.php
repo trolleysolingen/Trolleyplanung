@@ -47,6 +47,10 @@ class ShiplistDAOComponent extends Component {
 	     	
 	     	$res = $model->save($shiplistEntry);
 	     	$model->clear();
+	     	
+	     	return true;
      	}
+
+     	return false;
      }
 }
