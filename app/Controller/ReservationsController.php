@@ -392,7 +392,7 @@ class ReservationsController extends AppController {
 		$reservation['Reservation']['reporter_id'] = $publisher['Publisher']['id'];
 		$reservation['Reservation']['report_date'] = date("Y-m-d");
 		
-		if ($reservation['Reservation']['shiplistreport'] == true) {
+		if (array_key_exists('shiplistreport', $reservation['Reservation']) && $reservation['Reservation']['shiplistreport'] == true) {
 			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $this->Reservation->id));
 			$reservationDB = $this->Reservation->find('first', $options);
 			

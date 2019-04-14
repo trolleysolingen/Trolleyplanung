@@ -118,7 +118,7 @@ class ReportsController extends AppController {
 		$reservation ['Report'] ['reporter_id'] = $publisher ['Publisher'] ['id'];
 		$reservation ['Report'] ['report_date'] = date ( "Y-m-d" );
 		
-		if ($reservation['Report']['shiplistreport'] == true) {
+		if (array_key_exists('shiplistreport', $reservation['Report']) &&  $reservation['Report']['shiplistreport'] == true) {
 			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $this->Report->id));
 			$reservationDB = $this->Reservation->find('first', $options);
 				
