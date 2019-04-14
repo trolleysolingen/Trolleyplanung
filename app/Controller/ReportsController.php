@@ -11,8 +11,11 @@ class ReportsController extends AppController {
 			'CongregationDAO',
 			'PublisherDAO',
 			'ReservationDAO',
+			'ShiplistDAO',
 			'RequestHandler' 
 	);
+	public $uses = array('Report', 'Reservation');
+	
 	public function beforeFilter() {
 		parent::checkLoginPermission ();
 		parent::checkActiveKillswitch ();
@@ -114,6 +117,15 @@ class ReportsController extends AppController {
 		$reservation ['Report'] ['no_report_reason'] = null;
 		$reservation ['Report'] ['reporter_id'] = $publisher ['Publisher'] ['id'];
 		$reservation ['Report'] ['report_date'] = date ( "Y-m-d" );
+		
+		if ($reservation['Report']['shiplistreport'] == true) {
+			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $this->Report->id));
+			$reservationDB = $this->Reservation->find('first', $options);
+				
+			for ($i = 0; $i < 10; $i++) {
+				$this->ShiplistDAO->saveShiplist($reservationDB, $reservation['shiplist' . $i]);
+			}
+		}
 		
 		if ($this->Report->save ( $reservation )) {
 			$this->Session->setFlash ( 'Dein Bericht wurde gespeichert.', 'default', array (
