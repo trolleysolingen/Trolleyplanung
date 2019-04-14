@@ -7,6 +7,17 @@
 		echo $this->Form->end(array('div' => false, 'label' => 'Suchen', 'class' => 'btn btn-primary')); 
 	?>
 </div>
+<div class="col-xs-12"  style="padding-top:20px">
+	<?php 
+	if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
+		echo $this->Html->link('Exportieren', array(
+			'controller' => 'shiplists', 
+			'action' => 'export',
+			'ext' => 'csv'
+		));
+	}
+	?>
+</div>
 
 <?php 
 	if (!empty($shiplist)) {

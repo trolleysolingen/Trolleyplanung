@@ -30,7 +30,7 @@
  */
 	//Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-Router::parseExtensions('json');
+Router::parseExtensions('json', 'csv');
 
 Router::connect('/', array('controller' => 'start', 'action' => 'index'));
 
