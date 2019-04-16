@@ -135,6 +135,7 @@
 									'Cebuano' => 'Cebuano',
 									'Chinesisch' => 'Chinesisch',
 									'Dänisch' => 'Dänisch',
+									'Deutsch' => 'Deutsch',
 									'Englisch' => 'Englisch',
 									'Estnisch' => 'Estnisch',
 									'Französisch' => 'Französisch',

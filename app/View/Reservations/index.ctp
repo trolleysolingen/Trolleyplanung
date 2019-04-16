@@ -218,8 +218,6 @@
 		
 		echo $this->element('lkwnumber');
 		
-		echo $this->element('ship');
-		
 		echo $this->element('week_iteration', array(
 			'displaySizes' => array('lg')
 		));	
@@ -317,5 +315,3 @@
 <?php echo $this->element('report_necessary_modal', array('controller' => 'reservations'));?>
 
 <?php echo $this->element('lkwnumber_modal');?>
-
-<?php echo $this->element('ship_modal');?>

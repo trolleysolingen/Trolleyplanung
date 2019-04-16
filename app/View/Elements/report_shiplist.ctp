@@ -15,10 +15,10 @@
 			<?php echo $this->Form->input('shiplist' . $i . '.shipname', array('onblur' => 'toggleRowRequired(' . $i . ')', 'div' => false, 'label'=>false, 'id' => 'shipname' . $i, 'type' => 'text', 'maxlength' => 30,  'class' => 'form-control')); ?>
 		</div>
 		<div class="col-xs-2">
-			<?php echo $this->Form->input('shiplist' . $i . '.imo', array('div' => false, 'label'=>false, 'id' => 'imo' . $i, 'type' => 'text', 'maxlength' => 7,  'class' => 'form-control')); ?>
+			<?php echo $this->Form->input('shiplist' . $i . '.imo', array('onblur' => 'toggleRowRequired(' . $i . ')', 'div' => false, 'label'=>false, 'id' => 'imo' . $i, 'type' => 'text', 'maxlength' => 7,  'class' => 'form-control')); ?>
 		</div>
 		<div class="col-xs-3">
-			<?php echo $this->Form->input('shiplist' . $i . '.shiptype', array('div' => false, 'label'=>false, 'id' => 'shiptype' . $i,  'class' => 'form-control',
+			<?php echo $this->Form->input('shiplist' . $i . '.shiptype', array('onblur' => 'toggleRowRequired(' . $i . ')', 'div' => false, 'label'=>false, 'id' => 'shiptype' . $i,  'class' => 'form-control',
 					'empty' => '-fill-',
 					'options' => array(
 							'Ro-Ro' => 'Ro-Ro',
@@ -40,7 +40,7 @@
 			)); ?>
 		</div>
 		<div class="col-xs-2">
-			<?php echo $this->Form->input('shiplist' . $i . '.recommendation', array('div' => false, 'label'=>false, 'id' => 'recommendation' . $i,  'class' => 'form-control',
+			<?php echo $this->Form->input('shiplist' . $i . '.recommendation', array('onblur' => 'toggleRowRequired(' . $i . ')', 'div' => false, 'label'=>false, 'id' => 'recommendation' . $i,  'class' => 'form-control',
 					'empty' => '-fill-',
 					'options' => array(
 							'P14D' => '2W',
