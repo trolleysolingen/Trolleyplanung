@@ -44,8 +44,9 @@
 							<th width="20%"><?php echo $this->Paginator->sort('email', 'Email'); ?></th>
 							<th width="15%"><?php echo $this->Paginator->sort('surname', 'Nachname'); ?></th>
 							<th width="15%"><?php echo $this->Paginator->sort('prename', 'Vorname'); ?></th>
-							<th width="15%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
-							<th width="10%"><?php echo $this->Paginator->sort('dataprotection', 'Datenschutz'); ?></th>
+							<th width="10%"><?php echo $this->Paginator->sort('phone', 'Telefon'); ?></th>
+							<th width="10%"><?php echo $this->Paginator->sort('description', 'Beschreibung'); ?></th>
+							<th width="5%"><?php echo $this->Paginator->sort('dataprotection', 'Datenschutz'); ?></th>
 							<th width="25%" class="actions"><?php echo __('Aktionen'); ?></th>
 					<?php
 						} else if ($publisher['Congregation']['show_email_phone_publisherlist']) {
@@ -99,6 +100,7 @@
 							
 							if ($publisher['Role']['name'] == 'admin' || $publisher['Role']['name'] == 'congregation admin') {
 						?>
+							<td><?php echo h($publisherItem['Publisher']['description']); ?>&nbsp;</td>
 							<td><?php echo h($publisherItem['Publisher']['dataprotection'] == 1 ? "ja" : "nein"); ?>&nbsp;</td>
 							<td class="actions" style="white-space:nowrap;">
 								<?php
