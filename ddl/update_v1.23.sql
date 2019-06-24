@@ -1,0 +1,1 @@
+alter table shiplists change column imo imo varchar(10) DEFAULT NULL;
